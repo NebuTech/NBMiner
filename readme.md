@@ -1,6 +1,6 @@
 # BTM GPU挖矿软件（NebuTech BTMiner）
 
-用于Nvidia显卡的BTM（比原币）挖矿软件。
+用于Nvidia显卡的BTM（比原链）挖矿软件。
 
 ## 下载地址
 
