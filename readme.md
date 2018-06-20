@@ -11,8 +11,8 @@ BTM Mining Software for Nvidia GPU
 * Support for Windows and Linux（Ubuntu 16.04）
 * **Windows图形界面操作** 
 * **GUI on Windows**
-* 支持标准stratum协议的矿池，测试过：[F2pool](https://www.f2pool.com/)、[Antpool](https://www.antpool.com/)、[Btcc](https://pool.btcc.com/) 
-* Supporting stratum protocol mine pool,such as [Antpool](https://www.antpool.com/)、[F2pool](https://www.f2pool.com/)、[Btcc](https://pool.btcc.com/)
+* 支持标准stratum协议的矿池，测试过：[F2pool](https://www.f2pool.com/)、[Antpool](https://www.antpool.com/)、[Btcc](https://pool.btcc.com/) 、[蜘蛛矿池](https://pool.zhizhu.top/)、[91pool](http://www.91pool.com/currency.html?coin=btm)
+* Supporting stratum protocol mine pool,such as [Antpool](https://www.antpool.com/)、[F2pool](https://www.f2pool.com/)、[Btcc](https://pool.btcc.com/)、[Zhizhu](https://pool.zhizhu.top/)、[91pool](http://www.91pool.com/currency.html?coin=btm)
 * 几乎不占用CPU和PCI-E带宽，现有6卡、8卡矿机适用
 * No CPU usage and PCI-E bandwidth. Can be used in 6 cards miner or more
 * 可选的CPU加速模式，在拥有高端CPU及高PCIE带宽的机器上进一步提升算力
@@ -24,14 +24,22 @@ BTM Mining Software for Nvidia GPU
    * **Update Graphics Driver to 396 version or higher.**
 2. **双击`GUI_Wrapper.exe`打开windows图形界面开始挖矿。**
    * **(GUI) Run GUI_Wrapper.exe and configure your mining pool to start.**
-2. 使用记事本打开`Windows.bat`文件(Linux系统修改`Linux.sh`)，修改`-url`后面的矿池地址和`-user`后面的钱包地址或用户名。如果有密码，添加`-p`参数和密码。
+3. 使用记事本打开`Windows.bat`文件(Linux系统修改`Linux.sh`)，修改`-url`后面的矿池地址和`-user`后面的钱包地址或用户名。如果有密码，添加`-p`参数和密码。
    * (CMD) Modify Windows.bat (Linux.sh)   -url pool -user wallet or username.miners
-3. Windows双击运行`Windows.bat`开始挖矿, Linux通过命令行运行`Linux.sh`开始挖矿。
+4. Windows双击运行`Windows.bat`开始挖矿, Linux通过命令行运行`Linux.sh`开始挖矿。
    * (windows) Double Click Windows.bat to start, (Linux) use ./linux.sh to start
 
 ## 参考显卡性能 GPU performance
 
-![](/performance.png)
+| 显卡     | 普通模式（H/s） | CPU辅助模式（H/s） | 系统        |
+| -------- | --------------- | ------------------ | ----------- |
+| 1050Ti   | 197             | 365                | Windows10   |
+| P106-100 | 370             | 298                | Windows10   |
+| 1066     | 360             | 580                | Windows10   |
+| P104-100 | 540             | 85                 | Windows10   |
+| 1070     | 520             | 750                | Windows10   |
+| 1070Ti   | 620             | 664                | Windows10   |
+| 1080Ti   | 920             | 1080               | Ubuntu16.04 |
 
 ## 命令行参数 CMD command ：
 
@@ -47,16 +55,16 @@ BTMiner_NebuTech.exe [参数]
   * -u, --url <url>     矿池地址.
   * -U, --user <user>   挖矿使用的用户名或钱包地址.
   * -p, --passwd <password>	挖矿使用的密码.
-  * -d, --devices <devices>	指定使用哪些显卡来挖矿. 比如: "-d 0,1,2,3" 使用前4个显卡.
+  	 -d, --devices <devices>	指定使用哪些显卡来挖矿. 比如: "-d 0,1,2,3" 使用前4个显卡.
   * **-C, --use-cpu     使用这个选项开启CPU加速模式。如果你有一颗强大的CPU和插在PCI-E x16插槽上的显卡，可以尝试开启这个选项来进一步提升算力.**
   * **-M, --more-gpu    使用这个选项可避免"cuda out of memory error"，可能会有小部分的算力损失.**
- 
+
   * -?, -h, --help      Help.
   * -v, --version       how version.
   * -u, --url <url>     Mining Pool address.
   * -U, --user <user>   username or wallet address.
   * -p, --passwd <password>	password.
-  * -d, --devices <devices>	specify which card to use for mining. such as : "-d 0,1,2,3" use the first four card.
+  	 -d, --devices <devices>	specify which card to use for mining. such as : "-d 0,1,2,3" use the first four card.
   * **-C, --use-cpu     CPU Boost mode**
   * **-M, --more-gpu    to solve "cuda out of memory error"**
 
@@ -64,9 +72,12 @@ BTMiner_NebuTech.exe [参数]
 
 3%
 
-## 故障排查
+## 开发计划
 
-TODO
+* 完善对显卡异常的处理
+* 提供API接口，方便集成和批量管理
+* 提高算力
+* 不再进行GUI版本开发，推荐使用集成了我们的BTMiner，功能更加丰富的软件：[深圳矿工](http://www.szminer.net/)（WIndows）、[矿山系统](http://40451.net/)（Linux）
 
 ## 致谢 Thanks
 
