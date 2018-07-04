@@ -1,117 +1,103 @@
-# BTM GPU挖矿软件（NebuTech BTMiner）
-用于Nvidia显卡的BTM（比原链）挖矿软件。
-BTM Mining Software for Nvidia GPU
-## 下载地址 Download
+# BTMiner_NebuTech
+GPU Miner for Bytom mining.
 
-[从这里下载](https://github.com/NebuTech/BTMiner_NebuTech/releases)
-[Click Here](https://github.com/NebuTech/BTMiner_NebuTech/releases)
-## 特点 Feature：
+## 中文说明
 
-* 支持Windows、Linux（测试过Ubuntu16.04）
-* Support for Windows and Linux（Ubuntu 16.04）
-* **Windows图形界面操作** 
-* **GUI on Windows**
-* 支持标准stratum协议的矿池，测试过：[F2pool](https://www.f2pool.com/)、[Antpool](https://www.antpool.com/)、[Btcc](https://pool.btcc.com/) 、[蜘蛛矿池](https://pool.zhizhu.top/)、[91pool](http://www.91pool.com/currency.html?coin=btm)
-* Supporting stratum protocol mine pool,such as [Antpool](https://www.antpool.com/)、[F2pool](https://www.f2pool.com/)、[Btcc](https://pool.btcc.com/)、[Zhizhu](https://pool.zhizhu.top/)、[91pool](http://www.91pool.com/currency.html?coin=btm)
-* 几乎不占用CPU和PCI-E带宽，现有6卡、8卡矿机适用
-* No CPU usage and PCI-E bandwidth. Can be used in 6 cards miner or more
-* 可选的CPU加速模式，在拥有高端CPU及高PCIE带宽的机器上进一步提升算力
-* Optional CPU boost mode, improving hashrate on high-end CPU and PCI-E 16X miner
+[查看中文说明](/readme_zh.md)
 
-## 使用方法 Usage：
+## Download
 
-1. **更新到最新版本的Nvidia显卡驱动，不支持旧版本驱动。（驱动版本需大于等于396）**
-   * **Update Graphics Driver to 396 version or higher.**
-2. **双击`GUI_Wrapper.exe`打开windows图形界面开始挖矿。**
-   * **(GUI) Run GUI_Wrapper.exe and configure your mining pool to start.**
-3. 使用记事本打开`Windows.bat`文件(Linux系统修改`Linux.sh`)，修改`-url`后面的矿池地址和`-user`后面的钱包地址或用户名。如果有密码，添加`-p`参数和密码。
-   * (CMD) Modify Windows.bat (Linux.sh)   -url pool -user wallet or username.miners
-4. Windows双击运行`Windows.bat`开始挖矿, Linux通过命令行运行`Linux.sh`开始挖矿。
-   * (windows) Double Click Windows.bat to start, (Linux) use ./linux.sh to start
+[Download here](https://github.com/NebuTech/BTMiner_NebuTech/releases)
 
-## 参考显卡性能 GPU performance
+## Features：
 
-| 显卡     | 普通模式（H/s） | CPU辅助模式（H/s） | 系统        |
-| -------- | --------------- | ------------------ | ----------- |
-| 1050Ti   | 197             | 365                | Windows10   |
-| P106-100 | 370             | 298                | Windows10   |
-| 1066     | 360             | 580                | Windows10   |
-| P104-100 | 540             | 85                 | Windows10   |
-| 1070     | 520             | 750                | Windows10   |
-| 1070Ti   | 620             | 664                | Windows10   |
-| 1080Ti   | 920             | 1080               | Ubuntu16.04 |
+* Support Win7、Win10、Linux
+* Support pools using stratum protocol，tested on：[f2pool](https://www.f2pool.com/)、[antpool](https://www.antpool.com/)、[zhizhu](https://pool.zhizhu.top/)、[btcc](https://btccpool.info/) 、[91pool](http://www.91pool.com)、[uupool](http://uupool.cn)
+* Do not require any CPU performance or PCIE bandwidth, funtion perfectly on rigs with 6 or more gpu cards.
+* **Only NVIDIA Pascal and later GPU cards are supprted.**
+* Contains 3% dev fee, can be turned off.
 
-## 命令行参数 CMD command ：
+## Usage：
 
-BTMiner_NebuTech.exe [参数]
-* BTMiner_NebuTech.exe [command]
+1. **Driver version: Windows >= 385 , Ubuntu >= 384**.
+2. Edit `start_cmd.bat`(`start_cmd.sh`if using linux), set mining pool url after `-url `and username after `-user.`
+3. Start mining by double click `start_cmd.bat` on windows, or start `start_cmd.sh` from terminal on linux.
 
-典型用法 Simple ：BTMiner_NebuTech.exe -url btm.f2pool.com:9221 -user bm1xxxxxxxxxxxx.rigName -p x
+## Reference GPU Hashrates
 
-参数 Command：
+* **Tested with stock settings**
 
-  * -?, -h, --help      显示帮助信息.
-  * -v, --version       显示版本号.
-  * -u, --url <url>     矿池地址.
-  * -U, --user <user>   挖矿使用的用户名或钱包地址.
-  * -p, --passwd <password>	挖矿使用的密码.
-  	 -d, --devices <devices>	指定使用哪些显卡来挖矿. 比如: "-d 0,1,2,3" 使用前4个显卡.
-  * **-C, --use-cpu     使用这个选项开启CPU加速模式。如果你有一颗强大的CPU和插在PCI-E x16插槽上的显卡，可以尝试开启这个选项来进一步提升算力.**
-  * **-M, --more-gpu    使用这个选项可避免"cuda out of memory error"，可能会有小部分的算力损失.**
+| GPU     | Hashrate（H/s） |
+| ------- | --------------- |
+| 1030    | 170             |
+| 1050    | 300             |
+| 1050Ti  | 360             |
+| 1060-3G | 570             |
+| 1060-6G | 610             |
+| 1070    | 850             |
+| 1070Ti  | 1100            |
+| 1080    | 1200            |
+| 1080Ti  | 1600            |
+| Titan V | 3300            |
 
-  * -?, -h, --help      Help.
-  * -v, --version       how version.
-  * -u, --url <url>     Mining Pool address.
-  * -U, --user <user>   username or wallet address.
-  * -p, --passwd <password>	password.
-  	 -d, --devices <devices>	specify which card to use for mining. such as : "-d 0,1,2,3" use the first four card.
-  * **-C, --use-cpu     CPU Boost mode**
-  * **-M, --more-gpu    to solve "cuda out of memory error"**
+## CMD options：
 
-## 开发手续费（Dev Fee）
+**Typical usage** ：BTMiner_NebuTech -url btm.f2pool.com:9221 -user bm1xxxxxxxxxxxx.rigName
 
-3%
+Options：
 
-## 开发计划
+  * -h, --help    Displays this help.
+  * -v, --version    Displays version information.
+  * -c, --config <config file path>    Use config file rather than cmd line options.
+  * -o, --url <url>    Mining pool url.
+  * -u, --user <user>    User used in Mining pool, wallet address or username.
+  * -p, --password <password>    Password used in mining pool.
+  * -d, --devices <devices>    Specify GPU list to use. Format: "-d 0,1,2,3" to use first 4 GPU.
+  * --no-fee    No dev fee, but turns off some optimization, result in lower hashrate.
+  * -S, --ssl    Use SSL instead of regular tcp socket when connect to mining pool.
+  * -M, --more-gpu    Set this option will avoid 'cuda out of memory error'.
 
-* 完善对显卡异常的处理
-* 提供API接口，方便集成和批量管理
-* 提高算力
-* 不再进行GUI版本开发，推荐使用集成了我们的BTMiner，功能更加丰富的软件：[深圳矿工](http://www.szminer.net/)（WIndows）、[矿山系统](http://40451.net/)（Linux）
+## TODO
 
-## 致谢 Thanks
+* Improve GPU error handle.
+* API for miner status query.
+* Try to improve hashrate
+
+## Thanks
 
 @earthGavinLee
 
-## 修改记录 Update History：
+## Change Log
+
+#### v5.0(2018-07-03)
+
+* Improve hashrate
+* Option to start program using json config file
+* Option to connect mining pool using SSL socket.
+* Option to turn off dev fee.
+* Remove CPU boost mode.
+* Remove GUI_Wrapper
 
 #### v3.3(2018-06-16)
 
-* GUI界面增加配置自动保存恢复功能
-* (GUI)Add auto saving config
-* 修复经常崩溃的bug，提升稳定性。 
-* Fix Crash, 
+* Function autosave user and url in GUI_Wrapper.
+* Bug fix.
 
 #### v3.0(2018-06-09)
 
-* 大幅提升算力
-* 自动优化选择上个版本的`-i`参数
-* 增加`-M`选项，应对多卡时可能出现的`CUDA out of memory error`
-* Windows增加图形界面壳程序，便于新手操作
-* 图形界面增加公告，获取最新版本通知
-* 修复已知BUG，提升稳定性。
+* Hashrate improved
+* Function auto set -i parameter for different gpu.
+* Option -M for rigs encounterd with `CUDA out of memory error`.
+* Function Simple GUI_Wrapper for beginners.
+* Bug fix.
 
 #### v2.0(2018-06-04)
 
-* 进一步降低CPU使用率。
-* 增加针对高端CPU及高PCIE带宽的加速模式。
-* 支持Linux
-* 修复已知BUG，提升稳定性。
+* Function lower CPU usage.
+* Option -C using CPU boost mode for high-end CPUs and motherboards with high PCIE bandwidth.
+* Function Linux support.
+* Bug fix.
 
 #### v1.3(2018-06-03)
 
-* 第一版。
-* 支持Windows。
-* 优化CPU、PCI-E带宽占用。
-* 优化挖矿速度。
-* 支持标准stratum协议。
+* First public version.
