@@ -1,5 +1,5 @@
 # BTMiner_NebuTech
-GPU Miner for Bytom mining.
+Nvidia GPU Miner for Bytom mining.
 
 ## 中文说明
 
@@ -68,6 +68,11 @@ Options：
 @earthGavinLee
 
 ## Change Log
+
+#### v5.1(2018-07-07)
+
+* Disable quick edit mode on windows CMD window, prevent from process frozen.
+* Disable windows error report when miner crash.
 
 #### v5.0(2018-07-03)
 

@@ -1,6 +1,6 @@
-# BTM GPU挖矿软件（NebuTech BTMiner）
+# BTM GPU挖矿软件（BTMiner_NebuTech）
 
-用于Nvidia显卡的BTM（比原链）挖矿软件。
+用于Nvidia显卡的`Bytom(比原链)`挖矿软件。
 
 ## 下载地址
 
@@ -11,7 +11,7 @@
 - 支持Win7、Win10、Linux
 - 支持标准stratum协议的矿池，测试过：[f2pool](https://www.f2pool.com/)、[antpool](https://www.antpool.com/)、[btcc](https://btccpool.info/) 、[蜘蛛矿池](https://pool.zhizhu.top/)、[91pool](http://www.91pool.com)
 - 不占用CPU和PCI-E带宽，现有6卡、8卡矿机适用
-- 从v5.0开始只支持10代及以后的N卡，前代卡请使用老版本软件
+- **从v5.0开始只支持10代及以后的N卡，前代卡请使用老版本软件**
 - 包含3%开发手续费，可以通过选项关闭
 
 ## 使用方法：
@@ -37,7 +37,7 @@
 | 1080Ti  | 1600            |
 | Titan V | 3300            |
 
-## 命令行参数 CMD command ：
+## 命令行参数：
 
 BTMiner_NebuTech [参数]
 
@@ -50,8 +50,8 @@ BTMiner_NebuTech [参数]
 - -c, --config        通过配置文件启动挖矿程序.
 - -o, --url <url>     矿池地址.
 - -u, --user <user>   挖矿使用的用户名或钱包地址.
-- -p, --passwd <password>	挖矿使用的密码.
-- -d, --devices <devices>	指定使用哪些显卡来挖矿. 比如: "-d 0,1,2,3" 使用前4个显卡.
+	 -p, --passwd <password>	挖矿使用的密码.
+	 -d, --devices <devices>	指定使用哪些显卡来挖矿. 比如: "-d 0,1,2,3" 使用前4个显卡.
 - -M, --more-gpu      使用这个选项可避免"cuda out of memory error"，可能会有小部分的算力损失.
 - -S, --ssl           使用SSL连接矿池（需矿池支持）
 - --no-fee            关闭开发者手续费，同时会关闭部分优化，算力有所下降。
@@ -63,11 +63,16 @@ BTMiner_NebuTech [参数]
 - 提高算力
 - 不再进行GUI版本开发，推荐使用集成了我们的BTMiner，功能更加丰富的软件：[深圳矿工](http://www.szminer.net/)（WIndows）、[矿山系统](http://40451.net/)（Linux）
 
-## 致谢 Thanks
+## 致谢
 
 @earthGavinLee
 
 ## 修改记录
+
+#### v5.1(2018-07-07)
+
+* 禁用CMD快速编辑模式，防止进程被冻结
+* 禁止程序崩溃时弹出windows错误报告
 
 #### v5.0(2018-07-03)
 
