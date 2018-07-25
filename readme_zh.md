@@ -9,7 +9,7 @@
 ## 功能特点：
 
 - 支持Win7、Win10、Linux
-- 支持标准stratum协议的矿池，测试过：[f2pool](https://www.f2pool.com/)、[antpool](https://www.antpool.com/)、[btcc](https://btccpool.info/) 、[蜘蛛矿池](https://pool.zhizhu.top/)、[91pool](http://www.91pool.com)
+- 支持标准stratum协议的矿池
 - 不占用CPU和PCI-E带宽，现有6卡、8卡矿机适用
 - **从v5.0开始只支持10代及以后的N卡，前代卡请使用老版本软件**
 - 包含3%开发手续费，可以通过选项关闭
@@ -26,48 +26,117 @@
 
 | 显卡    | 参考算力（H/s） |
 | ------- | --------------- |
-| 1030    | 170             |
-| 1050    | 300             |
-| 1050Ti  | 360             |
-| 1060-3G | 570             |
-| 1060-6G | 610             |
-| 1070    | 850             |
-| 1070Ti  | 1100            |
-| 1080    | 1200            |
-| 1080Ti  | 1600            |
-| Titan V | 3300            |
+| 1030    | 175             |
+| 1050    | 310             |
+| 1050Ti  | 375             |
+| 1060-3G | 590             |
+| 1060-6G | 630             |
+| 1070    | 880             |
+| 1070Ti  | 1140            |
+| 1080    | 1250            |
+| 1080Ti  | 1680            |
+| Titan V | 3400            |
 
 ## 命令行参数：
 
 BTMiner_NebuTech [参数]
 
-典型用法 Simple ：BTMiner_NebuTech -url btm.f2pool.com:9221 -user bm1xxxxxxxxxxxx.rigName
+**典型用法**：BTMiner_NebuTech -url btm.f2pool.com:9221 -user bm1xxxxxxxxxxxx.rigName
 
 参数：
 
 - -?, -h, --help      显示帮助信息.
 - -v, --version       显示版本号.
-- -c, --config        通过配置文件启动挖矿程序.
-- -o, --url <url>     矿池地址.
-- -u, --user <user>   挖矿使用的用户名或钱包地址.
-	 -p, --passwd <password>	挖矿使用的密码.
-	 -d, --devices <devices>	指定使用哪些显卡来挖矿. 比如: "-d 0,1,2,3" 使用前4个显卡.
+- -c, --config \<config file path>       通过配置文件启动挖矿程序.
+- --api \<host:port>        REST API监听端口.
+- -B, --browser        自动打开网页监控页面。仅适用于windows。
+- -o, --url \<url>     矿池地址.
+- -u, --user \<user>   挖矿使用的用户名或钱包地址.
+	 -p, --passwd \<password>	挖矿使用的密码.
+	 -d, --devices \<devices>	指定使用哪些显卡来挖矿. 比如: "-d 0,1,2,3" 使用前4个显卡.
 - -M, --more-gpu      使用这个选项可避免"cuda out of memory error"，可能会有小部分的算力损失.
-- -S, --ssl           使用SSL连接矿池（需矿池支持）
-- --no-fee            关闭开发者手续费，同时会关闭部分优化，算力有所下降。
+- -S, --ssl        使用SSL连接矿池（需矿池支持）
+- --no-fee        关闭开发者手续费，同时会关闭部分优化，算力有所下降。
+
+## GPU配置建议
+
+Bytom挖矿主要依靠GPU核心，矿工在实际挖矿中可以通过MSI Afterburner等工具将显存调整为-500，基本不会影响BTM的挖矿算力（以实测为准）。
+
+甚至如果设置了例如80%的功耗限制，降低显存设置可以带来算力提升（因为功耗限制，降显存频率以后可以有更多的电能共给到GPU核心）。
+
+## API查询接口
+
+### 网页监控
+
+在浏览器中打开 http://api_host:port/ 启动网页监控.
+
+### 请求
+
+GET http://api_host:port/api/v1/status
+
+### 返回
+
+```json
+{
+    "kernel_reboot_times": 0,
+    "miner": {
+        "devices": [{
+            "core_clock": 1556,
+            "core_utilization": 100,
+            "fan": 36,
+            "hashrate": 1499,
+            "id": 0,
+            "info": "GeForce GTX 1080 Ti 11178 MB",
+            "power": 182,
+            "temperature": 65
+        }, {
+            "core_clock": 1518,
+            "core_utilization": 100,
+            "fan": 34,
+            "hashrate": 1490,
+            "id": 1,
+            "info": "GeForce GTX 1080 Ti 11178 MB",
+            "power": 172,
+            "temperature": 62
+        }],
+        "total_hashrate": 2989,
+        "total_power_consume": 354
+    },
+    "start_time": 1532482659,
+    "stratum": {
+        "accepted_share_rate": 0.99,
+        "accepted_shares": 99,
+        "password": "",
+        "rejected_share_rate": 0.01,
+        "rejected_shares": 1,
+        "url": "btm.pool.zhizhu.top:3859",
+        "use_ssl": false,
+        "user": "bmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.test"
+    },
+    "version": "v6.0"
+}
+```
 
 ## 开发计划
 
 - 完善对显卡异常的处理
-- 提供API接口，方便集成和批量管理
 - 提高算力
-- 不再进行GUI版本开发，推荐使用集成了我们的BTMiner，功能更加丰富的软件：[深圳矿工](http://www.szminer.net/)（WIndows）、[矿山系统](http://40451.net/)（Linux）
+- 不再进行GUI版本开发，推荐使用集成了我们的BTMiner，功能更加丰富的软件：[深圳矿工](http://www.szminer.net/)（WIndows）、[矿山系统](http://40451.net/)（Linux）、[MinerOS](https://www.mineros.cn/#/)（Linux）
 
 ## 致谢
 
 @earthGavinLee
 
 ## 修改记录
+
+#### v6.0(2018-07-23)
+
+- 增加状态查询的API接口
+- 增加状态监控的web页面
+- 增加更多的GPU状态信息查询：功耗、核心频率、核心使用率
+- 底层参数调整，部分机器2-3%的算力提升
+- 运行时检查对矿池提交对应的应答数，防止矿池无响应现象出现
+- 优化控制台日志输出格式
 
 #### v5.1(2018-07-07)
 
