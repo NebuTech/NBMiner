@@ -26,16 +26,16 @@
 
 | 显卡    | 参考算力（H/s） |
 | ------- | --------------- |
-| 1030    | 175             |
-| 1050    | 310             |
-| 1050Ti  | 375             |
-| 1060-3G | 590             |
-| 1060-6G | 630             |
-| 1070    | 880             |
-| 1070Ti  | 1140            |
-| 1080    | 1250            |
-| 1080Ti  | 1680            |
-| Titan V | 3400            |
+| 1030    | 210             |
+| 1050    | 370             |
+| 1050Ti  | 450             |
+| 1060-3G | 700             |
+| 1060-6G | 760             |
+| 1070    | 1100            |
+| 1070Ti  | 1400            |
+| 1080    | 1530            |
+| 1080Ti  | 2100            |
+| Titan V | 4200            |
 
 ## 命令行参数：
 
@@ -45,18 +45,19 @@ BTMiner_NebuTech [参数]
 
 参数：
 
-- -?, -h, --help      显示帮助信息.
-- -v, --version       显示版本号.
-- -c, --config \<config file path>       通过配置文件启动挖矿程序.
-- --api \<host:port>        REST API监听端口.
-- -B, --browser        自动打开网页监控页面。仅适用于windows。
-- -o, --url \<url>     矿池地址.
-- -u, --user \<user>   挖矿使用的用户名或钱包地址.
-	 -p, --passwd \<password>	挖矿使用的密码.
-	 -d, --devices \<devices>	指定使用哪些显卡来挖矿. 比如: "-d 0,1,2,3" 使用前4个显卡.
-- -M, --more-gpu      使用这个选项可避免"cuda out of memory error"，可能会有小部分的算力损失.
-- -S, --ssl        使用SSL连接矿池（需矿池支持）
-- --no-fee        关闭开发者手续费，同时会关闭部分优化，算力有所下降。
+- -?, -h, --help    显示帮助信息.
+- -v, --version    显示版本号.
+- -c, --config \<config file path>    通过配置文件启动挖矿程序.
+- --api \<host:port>    REST API监听端口.
+- -B, --browser    自动打开网页监控页面。仅适用于windows。
+- -o, --url \<url>    矿池地址.
+- -u, --user \<user>    挖矿使用的用户名或钱包地址.
+- -p, --passwd \<password>    挖矿使用的密码.
+- -d, --devices \<devices>    指定使用哪些显卡来挖矿. 比如: "-d 0,1,2,3" 使用前4个显卡.
+- -S, --ssl    使用SSL连接矿池（需矿池支持）
+- --log    生成日志文件，文件名为 `log_<时间戳>.txt`.
+- --long-format    使用更长的日期时间格式
+- --no-fee    关闭开发者手续费，同时会关闭部分优化，算力有所下降。
 
 ## GPU配置建议
 
@@ -113,7 +114,7 @@ GET http://api_host:port/api/v1/status
         "use_ssl": false,
         "user": "bmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.test"
     },
-    "version": "v6.0"
+    "version": "v7.0"
 }
 ```
 
@@ -128,6 +129,14 @@ GET http://api_host:port/api/v1/status
 @earthGavinLee
 
 ## 修改记录
+
+#### v7.0(2018-08-03)
+
+- 提高20%左右算力
+- 增加长日期时间格式输出的选项
+- 增加日志文件输出的选项
+- 取消`-M`选项
+- 稳定性修复
 
 #### v6.0(2018-07-23)
 

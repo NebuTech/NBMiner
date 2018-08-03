@@ -29,16 +29,16 @@ Nvidia GPU Miner for `Bytom` mining.
 
 | GPU     | Hashrate（H/s） |
 | ------- | --------------- |
-| 1030    | 175             |
-| 1050    | 310             |
-| 1050Ti  | 375             |
-| 1060-3G | 590             |
-| 1060-6G | 630             |
-| 1070    | 880             |
-| 1070Ti  | 1140            |
-| 1080    | 1250            |
-| 1080Ti  | 1680            |
-| Titan V | 3400            |
+| 1030    | 210             |
+| 1050    | 370             |
+| 1050Ti  | 450             |
+| 1060-3G | 700             |
+| 1060-6G | 760             |
+| 1070    | 1100            |
+| 1070Ti  | 1400            |
+| 1080    | 1530            |
+| 1080Ti  | 2100            |
+| Titan V | 4200            |
 
 ## CMD options：
 
@@ -49,15 +49,16 @@ Options：
   * -h, --help    Displays this help.
   * -v, --version    Displays version information.
   * -c, --config \<config file path>    Use config file rather than cmd line options.
-  * --api  \<host:port>        The endpoint for serving REST API.
+  * --api  \<host:port>    The endpoint for serving REST API.
   * -B, --browser    Automatically open system browser for web monitor. Windows only.
   * -o, --url \<url>    Mining pool url.
   * -u, --user \<user>    User used in Mining pool, wallet address or username.
   * -p, --password \<password>    Password used in mining pool.
   * -d, --devices \<devices>    Specify GPU list to use. Format: "-d 0,1,2,3" to use first 4 GPU.
-  * --no-fee    No dev fee, but turns off some optimization, result in lower hashrate.
   * -S, --ssl    Use SSL instead of regular tcp socket when connect to mining pool.
-  * -M, --more-gpu    Set this option will avoid 'cuda out of memory error'.
+  * --log    Generate log file named `log_<timestamp>.txt`.
+  * --long-format    Use 'yyyy-MM-dd HH:mm:ss,zzz' for log time format.
+  * --no-fee    No dev fee, but turns off some optimization, result in lower hashrate.
 
 ## GPU Tuning
 
@@ -130,6 +131,14 @@ GET http://api_host:port/api/v1/status
 @earthGavinLee
 
 ## Change Log
+
+#### v7.0(2018-08-03)
+
+- Improve hashrate ~20%
+- Option to output long-format datetime strings.
+- Option to output log to file.
+- Remove `-M` option.
+- Improve stability.
 
 #### v6.0(2018-07-23)
 
