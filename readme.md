@@ -29,16 +29,15 @@ Nvidia GPU Miner for `Bytom` mining.
 
 | GPU     | Hashrate（H/s） |
 | ------- | --------------- |
-| 1030    | 210             |
-| 1050    | 370             |
-| 1050Ti  | 450             |
-| 1060-3G | 700             |
-| 1060-6G | 760             |
-| 1070    | 1100            |
-| 1070Ti  | 1400            |
-| 1080    | 1530            |
-| 1080Ti  | 2100            |
-| Titan V | 4200            |
+| 1030    | 235             |
+| 1050    | 410             |
+| 1050Ti  | 500             |
+| 1060-3G | 780             |
+| 1060-6G | 850             |
+| 1070    | 1250            |
+| 1070Ti  | 1550            |
+| 1080    | 1700            |
+| 1080Ti  | 2350            |
 
 ## CMD options：
 
@@ -115,15 +114,16 @@ GET http://api_host:port/api/v1/status
         "rejected_shares": 1,
         "url": "btm.pool.zhizhu.top:3859",
         "use_ssl": false,
-        "user": "bmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.test"
+        "user": "bmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.test",
+        "difficulty": "0003ffff",
+        "latency": 65
     },
-    "version": "v6.0"
+    "version": "v8.0"
 }
 ```
 
 ## TODO
 
-* Improve GPU error handle.
 * Try to improve hashrate
 
 ## Thanks
@@ -131,6 +131,14 @@ GET http://api_host:port/api/v1/status
 @earthGavinLee
 
 ## Change Log
+
+#### v8.0(2018-08-17)
+
+- Improve hashrate 10% - 15%
+- Lower skipped share rate, increase actual hashrate on mining pool.
+- Added display for mining pool latency.
+- Added display for mining pool difficulty.
+- Improve API web monitor.
 
 #### v7.0(2018-08-03)
 
