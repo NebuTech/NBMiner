@@ -29,15 +29,15 @@ Nvidia GPU Miner for `Bytom` mining.
 
 | GPU     | Hashrate（H/s） |
 | ------- | --------------- |
-| 1030    | 235             |
-| 1050    | 410             |
-| 1050Ti  | 500             |
-| 1060-3G | 780             |
-| 1060-6G | 850             |
-| 1070    | 1250            |
-| 1070Ti  | 1550            |
-| 1080    | 1700            |
-| 1080Ti  | 2350            |
+| 1030    | 300             |
+| 1050    | 500             |
+| 1050Ti  | 600             |
+| 1060-3G | 900             |
+| 1060-6G | 1000            |
+| 1070    | 1500            |
+| 1070Ti  | 1900            |
+| 1080    | 2000            |
+| 1080Ti  | 2800            |
 
 ## CMD options：
 
@@ -118,7 +118,7 @@ GET http://api_host:port/api/v1/status
         "difficulty": "0003ffff",
         "latency": 65
     },
-    "version": "v8.0"
+    "version": "v9.0"
 }
 ```
 
@@ -131,6 +131,11 @@ GET http://api_host:port/api/v1/status
 @earthGavinLee
 
 ## Change Log
+
+#### v9.0(2018-08-28)
+
+- Improve hashrate ~30%
+- Improve stability
 
 #### v8.0(2018-08-17)
 
