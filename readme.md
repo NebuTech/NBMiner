@@ -19,7 +19,7 @@ Nvidia GPU Miner for `Bytom` mining.
 
 ## Usage：
 
-1. **Driver version: Windows >= 385 , Ubuntu >= 384**.
+1. **Driver version: Windows >= 397 , Linux >= 396**.
 2. Edit `start_cmd.bat`(`start_cmd.sh`if using linux), set mining pool url after `-url `and username after `-user.`
 3. Start mining by double click `start_cmd.bat` on windows, or start `start_cmd.sh` from terminal on linux.
 
@@ -28,16 +28,16 @@ Nvidia GPU Miner for `Bytom` mining.
 * **Tested with stock settings**
 
 | GPU     | Hashrate（H/s） |
-| ------- | --------------- |
-| 1030    | 300             |
-| 1050    | 500             |
-| 1050Ti  | 600             |
-| 1060-3G | 900             |
-| 1060-6G | 1000            |
-| 1070    | 1500            |
-| 1070Ti  | 1900            |
-| 1080    | 2000            |
-| 1080Ti  | 2800            |
+| ------- | ------------- |
+| 1030    | 450           |
+| 1050    | 750           |
+| 1050Ti  | 850           |
+| 1060-3G | 1380          |
+| 1060-6G | 1530          |
+| 1070    | 2240          |
+| 1070Ti  | 2700          |
+| 1080    | 2950          |
+| 1080Ti  | 4100          |
 
 ## CMD options：
 
@@ -118,7 +118,7 @@ GET http://api_host:port/api/v1/status
         "difficulty": "0003ffff",
         "latency": 65
     },
-    "version": "v9.0"
+    "version": "v10.0"
 }
 ```
 
@@ -131,6 +131,10 @@ GET http://api_host:port/api/v1/status
 @earthGavinLee
 
 ## Change Log
+
+#### v10.0(2018-10-03)
+
+- Improve hashrate
 
 #### v9.0(2018-08-28)
 
