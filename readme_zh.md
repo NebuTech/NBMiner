@@ -1,6 +1,8 @@
-# BTM GPU挖矿软件（BTMiner_NebuTech）
+# NBMiner GPU挖矿软件
 
-用于Nvidia显卡的`Bytom(比原链)`挖矿软件。
+用于Nvidia显卡的`Bytom(比原链)`、`Ethereum(以太坊)`、`Monero(门罗币)`挖矿软件。
+
+之前名为`BTMiner_NebuTech`.
 
 ## 下载地址
 
@@ -8,55 +10,63 @@
 
 ## 功能特点
 
-- 支持Win7、Win10、Linux
-- 支持标准stratum协议的矿池
-- 不占用CPU和PCI-E带宽，现有6卡、8卡矿机适用
-- **从v5.0开始只支持10代及以后的N卡，前代卡请使用3.3版本**
-- 包含3%开发手续费，可以通过选项关闭
+- 支持比原链（Bytom, BTM）挖矿（Tensority算法）
+  - 默认频率下算力，P106达到1900H/s，1070ti达到3400H/s
+  - 支持英伟达GTX 10xx，RTX 20xx系列显卡
+- 支持以太坊（Ethereum, ETH）挖矿（ETHash算法）
+  - 最高的矿池收益
+  - 支持ethproxy协议的矿池
+- 支持门罗（Monero, XMR）挖矿（CryptoNightV8算法）
+- 支持Windows和Linux
+- 支持备用矿池的设置
+- 支持SSL方式连接矿池
+- 开发手续费：BTM 2%，ETH 0.65%，XMR 0.65%
 
 ## 使用方法
 
-1. **驱动版本，Windows大于等于397, Linux大于396**
-2. 编辑`start_cmd.bat`文件(Linux系统修改`start_cmd.sh`)，修改`-url`后面的矿池地址和`-user`后面的钱包地址或用户名。如果有密码，添加`-p`参数和密码。
-3. Windows双击运行`start_cmd.bat`开始挖矿, Linux通过命令行运行`start_cmd.sh`开始挖矿。
-
-## 参考显卡性能
-
-- **注：以下参数均为显卡默认频率功耗下的测试数据**
-
-| 显卡      | 参考算力（H/s） |
-| ------- | --------- |
-| 1030    | 450       |
-| 1050    | 750       |
-| 1050Ti  | 850       |
-| 1060-3G | 1380      |
-| 1060-6G | 1530      |
-| 1070    | 2240      |
-| 1070Ti  | 2700      |
-| 1080    | 2950      |
-| 1080Ti  | 4100      |
+- **驱动版本，Windows大于等于397, Linux大于396**
+- BTM挖矿：
+  - 编辑`start_btm.bat`文件，修改`-o` 参数后的矿池地址和`-u` 参数后的钱包地址或用户名。双击`start_btm.bat` 开始挖矿。
+- ETH挖矿：
+  - 编辑`start_eth.bat` 文件，修改`-o` 参数后的矿池地址和`-u` 参数后的钱包地址或用户名。双击`start_eth.bat` 开始挖矿。
+  - 若使用1080、1080ti、1060-5X等使用GDDR5X显存的用户，在挖矿之前先用管理员权限运行`OhGodAnETHlargementPill-r2.exe` 补丁，并保持在后台运行。
+- XMR挖矿：
+  - 对于windows用户，由于XMR挖矿内核的特殊性，会造成GPU单次调用时间过长。在windows下会造成系统认为GPU无响应进而杀掉进程。因此需要延长系统对该判断的时间。第一次进行门罗挖矿需先运行`modify_tdr_delay.reg` ，修改注册表后重启系统。
+  - 编辑`start_xmr.bat` 文件，修改`-o`后面的矿池地址和`-u`后面的钱包地址或用户名。双击`start_xmr.bat` 开始挖矿。
 
 ## 命令行参数
 
-BTMiner_NebuTech [参数]
+nbminer [参数]
 
-**典型用法**：BTMiner_NebuTech -url btm.f2pool.com:9221 -user bm1xxxxxxxxxxxx.rigName
+**典型用法**：
+
+- BTM: nbminer -a tensority -o stratum+tcp://btm.f2pool.com:9221 -u bm1xxxxxxxxxxxx.worker
+- ETH: nbminer -a ethash -o ethproxy+tcp://eth.f2pool.com:8008 -u 0xxxxxxxxxx.worker
+- XMR: nbminer -a cryptonightv8 -o -o stratum+tcp://xmr-jp1.nanopool.org:14444 -u 4xxxxxxxxx.worker
 
 参数：
 
 - -?, -h, --help    显示帮助信息.
 - -v, --version    显示版本号.
 - -c, --config \<config file path>    通过配置文件启动挖矿程序.
+- -a, --algo \<algo>    选择挖矿算法（BTM用`tensority`, ETH用`ethash`, 门罗用`cryptonightv8`）
 - --api \<host:port>    REST API监听端口.
-- -B, --browser    自动打开网页监控页面。仅适用于windows。
 - -o, --url \<url>    矿池地址.
+  - BTM: stratum+tcp://btm.f2pool.com:9221
+  - BTM with SSL: stratum+ssl://btm.f2pool.com:9443
+  - ETH: ethproxy+tcp://eth.f2pool.com:8008
+  - XMR: stratum+tcp://xmr.f2pool.com:13531
 - -u, --user \<user>    挖矿使用的用户名或钱包地址.
-- -p, --passwd \<password>    挖矿使用的密码.
+  - 格式：[用户名|钱包地址].矿机名:密码
+  - 举例：bmxxxxxx.worker       mypc.worker:password
+- -o1, --url1 \<url> 备用矿池1的URL
+- -u1, --user1 \<user> 备用矿池1的用户名
+- -o2, --url2 \<url> 备用矿池2的URL
+- -u2, --user2 \<user> 备用矿池2的用户名
 - -d, --devices \<devices>    指定使用哪些显卡来挖矿. 比如: "-d 0,1,2,3" 使用前4个显卡.
-- -S, --ssl    使用SSL连接矿池（需矿池支持）
+- --strict-ssl    使用SSL连接时验证矿池证书
 - --log    生成日志文件，文件名为 `log_<时间戳>.txt`.
 - --long-format    使用更长的日期时间格式
-- --no-fee    关闭开发者手续费，同时会关闭部分优化，算力有所下降。
 
 ## API查询接口
 
@@ -72,7 +82,6 @@ GET http://api_host:port/api/v1/status
 
 ```json
 {
-    "kernel_reboot_times": 0,
     "miner": {
         "devices": [{
             "core_clock": 1556,
@@ -134,16 +143,20 @@ GET http://api_host:port/api/v1/status
 - 由于主要依赖核心，因此矿工在实际挖矿中可以通过将显存调整为-500，基本不会影响BTM的挖矿算力（仅供参考，以实测为准）。
 - 如果限制了功耗在100%以下，此时降低显存频率甚至可以带来算力的提升（因为功耗限制，降显存频率以后可以有更多的电能共给到GPU核心）。
 
-## 开发计划
-
-- 尽量提高算力
-- 不再进行GUI版本开发，推荐使用集成了我们的BTMiner，功能更加丰富的软件：[深圳矿工](http://www.szkg.top/)（WIndows）、[矿山系统](http://40451.net/)（Linux）、[MinerOS](https://www.mineros.cn/#/)（Linux）
-
 ## 致谢
 
 @earthGavinLee
 
 ## 修改记录
+
+####v11.0(2018-12-12)
+
+- 大幅提升BTM算力
+- 加入对ETH、XMR挖矿的支持
+- 优化新任务的处理，提高矿池端实际收益
+- 带颜色的日志输出
+- 加入对备用矿池的支持
+- BTM开发手续费降为2%
 
 #### v10.0(2018-10-03)
 
@@ -161,65 +174,3 @@ GET http://api_host:port/api/v1/status
 - 增加矿池延迟显示
 - 增加矿池难度显示
 - 完善API监控页面
-
-#### v7.0(2018-08-03)
-
-- 提高20%左右算力
-- 增加长日期时间格式输出的选项
-- 增加日志文件输出的选项
-- 取消`-M`选项
-- 稳定性修复
-
-#### v6.0(2018-07-23)
-
-- 增加状态查询的API接口
-- 增加状态监控的web页面
-- 增加更多的GPU状态信息查询：功耗、核心频率、核心使用率
-- 底层参数调整，部分机器2-3%的算力提升
-- 运行时检查对矿池提交对应的应答数，防止矿池无响应现象出现
-- 优化控制台日志输出格式
-
-#### v5.1(2018-07-07)
-
-* 禁用CMD快速编辑模式，防止进程被冻结
-* 禁止程序崩溃时弹出windows错误报告
-
-#### v5.0(2018-07-03)
-
-- 大幅提高算力
-- 可使用配置文件启动
-- 增加使用SSL矿池连接的选项
-- 增加关闭手续费的选项
-- 取消CPU模式的选项
-- 取消GUI壳程序（后续不在更新）
-
-#### v3.3(2018-06-16)
-
-- GUI界面增加配置自动保存恢复功能
-- (GUI)Add auto saving config
-- 修复经常崩溃的bug，提升稳定性。 
-- Fix Crash, 
-
-#### v3.0(2018-06-09)
-
-- 大幅提升算力
-- 自动优化选择上个版本的`-i`参数
-- 增加`-M`选项，应对多卡时可能出现的`CUDA out of memory error`
-- Windows增加图形界面壳程序，便于新手操作
-- 图形界面增加公告，获取最新版本通知
-- 修复已知BUG，提升稳定性。
-
-#### v2.0(2018-06-04)
-
-- 进一步降低CPU使用率。
-- 增加针对高端CPU及高PCIE带宽的加速模式。
-- 支持Linux
-- 修复已知BUG，提升稳定性。
-
-#### v1.3(2018-06-03)
-
-- 第一版。
-- 支持Windows。
-- 优化CPU、PCI-E带宽占用。
-- 优化挖矿速度。
-- 支持标准stratum协议。

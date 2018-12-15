@@ -1,5 +1,7 @@
-# BTMiner_NebuTech
-Nvidia GPU Miner for `Bytom` mining.
+# NBMiner
+Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)`, `Monero(XMR)` mining.
+
+Previously named `BTMiner_NebuTech`.
 
 ## 中文说明
 
@@ -11,53 +13,61 @@ Nvidia GPU Miner for `Bytom` mining.
 
 ## Features：
 
-* Support Win7、Win10、Linux
-* Support pools using stratum protocol
-* Do not require any CPU performance or PCIE bandwidth, funtion perfectly on rigs with 6 or more gpu cards.
-* **Only NVIDIA Pascal and later GPU cards are supprted.**
-* Contains 3% dev fee, can be turned off.
+* Support Bytom (BTM) mining, tensority algorithm.
+  * Hashrate under default frequency: P106  1900H/s, 1070ti  3400H/s
+  * Support Nvidia 10xx & 20xx GPUs.
+* Support Ethereum (ETH) mining.
+  * Highest profit on mining pools.
+  * Support mining pools using ethproxy protocol.
+* Support Monero(XMR) mining.
+* Support Windows & Linux.
+* Support backup mining pool configuration.
+* Support SSL connection to mining pools.
+* Dev Fee: BTM 2%, ETH 0.65%, XMR 0.65%
 
 ## Usage：
 
-1. **Driver version: Windows >= 397 , Linux >= 396**.
-2. Edit `start_cmd.bat`(`start_cmd.sh`if using linux), set mining pool url after `-url `and username after `-user.`
-3. Start mining by double click `start_cmd.bat` on windows, or start `start_cmd.sh` from terminal on linux.
-
-## Reference GPU Hashrates
-
-* **Tested with stock settings**
-
-| GPU     | Hashrate（H/s） |
-| ------- | ------------- |
-| 1030    | 450           |
-| 1050    | 750           |
-| 1050Ti  | 850           |
-| 1060-3G | 1380          |
-| 1060-6G | 1530          |
-| 1070    | 2240          |
-| 1070Ti  | 2700          |
-| 1080    | 2950          |
-| 1080Ti  | 4100          |
+- **Driver version: Windows >= 397 , Linux >= 396**.
+- BTM Mining:
+  - Edit `start_btm.bat`, modify mining pool url after `-o` and username or wallet address after `-u`. 
+- ETH Mining:
+  - Edit `start_eth.bat`, modify mining pool url after `-o` and username or wallet address after `-u`. 
+  - For users using 1080, 1080ti, 1060-5X cards, which equiped with GDDR5X memory, remember to start `OhGodAnETHlargementPill-r2.exe`  patch before mining and keep it running background.
+- XMR Mining:
+  - For windows users, the time-consume kernel used in XMR mining will cause TDR issue. Run `modify_tdr_delay.reg` and reboot windows for the first time you mine XMR.
+  - Edit `start_xmr.bat`, modify mining pool url after `-o` and username or wallet address after `-u`. 
 
 ## CMD options：
 
-**Typical usage** ：BTMiner_NebuTech -url btm.f2pool.com:9221 -user bm1xxxxxxxxxxxx.rigName
+**Typical usage** ：
+
+- BTM: nbminer -a tensority -o stratum+tcp://btm.f2pool.com:9221 -u bm1xxxxxxxxxxxx.worker
+- ETH: nbminer -a ethash -o **ethproxy**+tcp://eth.f2pool.com:8008 -u 0xxxxxxxxxx.worker
+- XMR: nbminer -a cryptonightv8 -o -o stratum+tcp://xmr-jp1.nanopool.org:14444 -u 4xxxxxxxxx.worker
 
 Options：
 
   * -h, --help    Displays this help.
   * -v, --version    Displays version information.
   * -c, --config \<config file path>    Use config file rather than cmd line options.
+  * -a, --algo \<algo>    Select algorithm, `tensority` for BTM, `ethash` for ETH, `cryptonightv8` for XMR.
   * --api  \<host:port>    The endpoint for serving REST API.
-  * -B, --browser    Automatically open system browser for web monitor. Windows only.
   * -o, --url \<url>    Mining pool url.
+    - BTM: stratum+tcp://btm.f2pool.com:9221
+    - BTM with SSL: stratum+ssl://btm.f2pool.com:9443
+    - ETH: ethproxy+tcp://eth.f2pool.com:8008
+    - XMR: stratum+tcp://xmr.f2pool.com:13531
   * -u, --user \<user>    User used in Mining pool, wallet address or username.
-  * -p, --password \<password>    Password used in mining pool.
+      * Format: [username|wallet].workername:password
+      * Example: bm1xxxxxx.worker      myusername.worker:password
+  * -o1, --url1 \<url> url for backup mining pool 1.
+  * -u1, --user1 \<user> username for backup mining pool 1.
+  * -o2, --url2 \<url> url for backup mining pool 2.
+* -u2, --user2 \<user> username for backup mining pool 2.
   * -d, --devices \<devices>    Specify GPU list to use. Format: "-d 0,1,2,3" to use first 4 GPU.
-  * -S, --ssl    Use SSL instead of regular tcp socket when connect to mining pool.
+  * --strict-ssl    Check validity of certificate when use SSL connection.
   * --log    Generate log file named `log_<timestamp>.txt`.
   * --long-format    Use 'yyyy-MM-dd HH:mm:ss,zzz' for log time format.
-  * --no-fee    No dev fee, but turns off some optimization, result in lower hashrate.
 
 ## GPU Tuning
 
@@ -81,7 +91,6 @@ GET http://api_host:port/api/v1/status
 
 ``` json
 {
-    "kernel_reboot_times": 0,
     "miner": {
         "devices": [{
             "core_clock": 1556,
@@ -122,15 +131,20 @@ GET http://api_host:port/api/v1/status
 }
 ```
 
-## TODO
-
-* Try to improve hashrate
-
 ## Thanks
 
 @earthGavinLee
 
 ## Change Log
+
+#### v11.0(2018-12-12)
+
+- Improve BTM hashrate.
+- Add support for ETH and XMR mining.
+- Optimize handle for new job, increase profit on mining pool.
+- Colorful output on console.
+- Add support for backup mining pools.
+- Decrease dev fee of BTM to 2%.
 
 #### v10.0(2018-10-03)
 
@@ -148,58 +162,3 @@ GET http://api_host:port/api/v1/status
 - Added display for mining pool latency.
 - Added display for mining pool difficulty.
 - Improve API web monitor.
-
-#### v7.0(2018-08-03)
-
-- Improve hashrate ~20%
-- Option to output long-format datetime strings.
-- Option to output log to file.
-- Remove `-M` option.
-- Improve stability.
-
-#### v6.0(2018-07-23)
-
-- Add API for status query.
-- Add dummy web monitor.
-- Add more GPU status report: power usage, core clock, core utilization
-- Low-level parameter adjustment, improve 2-3% hashrate on some mining rigs.
-- Runtime check for number of corresponding responses for submits.
-- Improve console log format
-
-#### v5.1(2018-07-07)
-
-* Disable quick edit mode on windows CMD window, prevent from process frozen.
-* Disable windows error report when miner crash.
-
-#### v5.0(2018-07-03)
-
-* Improve hashrate
-* Option to start program using json config file
-* Option to connect mining pool using SSL socket.
-* Option to turn off dev fee.
-* Remove CPU boost mode.
-* Remove GUI_Wrapper
-
-#### v3.3(2018-06-16)
-
-* Function autosave user and url in GUI_Wrapper.
-* Bug fix.
-
-#### v3.0(2018-06-09)
-
-* Hashrate improved
-* Function auto set -i parameter for different gpu.
-* Option -M for rigs encounterd with `CUDA out of memory error`.
-* Function Simple GUI_Wrapper for beginners.
-* Bug fix.
-
-#### v2.0(2018-06-04)
-
-* Function lower CPU usage.
-* Option -C using CPU boost mode for high-end CPUs and motherboards with high PCIE bandwidth.
-* Function Linux support.
-* Bug fix.
-
-#### v1.3(2018-06-03)
-
-* First public version.
