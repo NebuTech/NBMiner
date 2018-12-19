@@ -1,6 +1,6 @@
 # NBMiner GPU挖矿软件
 
-用于Nvidia显卡的`Bytom(比原链)`、`Ethereum(以太坊)`、`Monero(门罗币)`挖矿软件。
+用于Nvidia显卡的`Bytom(比原链)`、`Ethereum(以太坊)`挖矿软件。
 
 之前名为`BTMiner_NebuTech`.
 
@@ -16,23 +16,29 @@
 - 支持以太坊（Ethereum, ETH）挖矿（ETHash算法）
   - 最高的矿池收益
   - 支持ethproxy协议的矿池
-- 支持门罗（Monero, XMR）挖矿（CryptoNightV8算法）
+- **支持BTM + ETH双挖，收益比单挖高20%以上**
 - 支持Windows和Linux
 - 支持备用矿池的设置
 - 支持SSL方式连接矿池
-- 开发手续费：BTM 2%，ETH 0.65%，XMR 0.65%
+- 开发手续费：BTM+ETH 3%，BTM 2%，ETH 0.65%
 
 ## 使用方法
 
-- **驱动版本，Windows大于等于397, Linux大于396**
+- **驱动版本，大于等于377**
 - BTM挖矿：
   - 编辑`start_btm.bat`文件，修改`-o` 参数后的矿池地址和`-u` 参数后的钱包地址或用户名。双击`start_btm.bat` 开始挖矿。
 - ETH挖矿：
   - 编辑`start_eth.bat` 文件，修改`-o` 参数后的矿池地址和`-u` 参数后的钱包地址或用户名。双击`start_eth.bat` 开始挖矿。
   - 若使用1080、1080ti、1060-5X等使用GDDR5X显存的用户，在挖矿之前先用管理员权限运行`OhGodAnETHlargementPill-r2.exe` 补丁，并保持在后台运行。
-- XMR挖矿：
-  - 对于windows用户，由于XMR挖矿内核的特殊性，会造成GPU单次调用时间过长。在windows下会造成系统认为GPU无响应进而杀掉进程。因此需要延长系统对该判断的时间。第一次进行门罗挖矿需先运行`modify_tdr_delay.reg` ，修改注册表后重启系统。
-  - 编辑`start_xmr.bat` 文件，修改`-o`后面的矿池地址和`-u`后面的钱包地址或用户名。双击`start_xmr.bat` 开始挖矿。
+- **BTM+ETH双挖：**
+  - 编辑`start_btm_eth.bat` 文件
+  - 修改`-o` 参数后的矿池地址为BTM的矿池地址，修改`-u` 参数后的钱包地址为BTM的钱包地址。
+  - 修改`-do` 参数后的矿池地址为ETH的矿池地址，修改`-du` 参数后的钱包地址为ETH的钱包地址。
+  - 双击`start_btm_eth.bat` 开始挖矿。
+  - **不同卡双挖时的配置不同，请自行测试合适的挖矿强度参数`-di` 最佳值。**
+- 使用配置文件进行配置
+  - 配置文件的样例在`config.json` 中，参考上述挖矿方法以及下述命令行参数修改对应的参数设置。
+  - 双击`start_config.bat` 进行挖矿。
 
 ## 命令行参数
 
@@ -42,20 +48,19 @@ nbminer [参数]
 
 - BTM: nbminer -a tensority -o stratum+tcp://btm.f2pool.com:9221 -u bm1xxxxxxxxxxxx.worker
 - ETH: nbminer -a ethash -o ethproxy+tcp://eth.f2pool.com:8008 -u 0xxxxxxxxxx.worker
-- XMR: nbminer -a cryptonightv8 -o -o stratum+tcp://xmr-jp1.nanopool.org:14444 -u 4xxxxxxxxx.worker
+- BTM+ETH: nbminer -a tensority_ethash -o stratum+tcp://btm.f2pool.com:9221 -u btm_wallet_address.worker -do ethproxy+tcp://eth.f2pool.com:8008 -du 0x_eth_wallet_address.worker
 
 参数：
 
 - -?, -h, --help    显示帮助信息.
 - -v, --version    显示版本号.
-- -c, --config \<config file path>    通过配置文件启动挖矿程序.
-- -a, --algo \<algo>    选择挖矿算法（BTM用`tensority`, ETH用`ethash`, 门罗用`cryptonightv8`）
+- -c, --config \<config file path>    通过json格式配置文件启动挖矿程序.
+- -a, --algo \<algo>    选择挖矿算法（BTM用`tensority`, ETH用`ethash`, 双挖用`tensority_ethash`）
 - --api \<host:port>    REST API监听端口.
 - -o, --url \<url>    矿池地址.
   - BTM: stratum+tcp://btm.f2pool.com:9221
   - BTM with SSL: stratum+ssl://btm.f2pool.com:9443
   - ETH: ethproxy+tcp://eth.f2pool.com:8008
-  - XMR: stratum+tcp://xmr.f2pool.com:13531
 - -u, --user \<user>    挖矿使用的用户名或钱包地址.
   - 格式：[用户名|钱包地址].矿机名:密码
   - 举例：bmxxxxxx.worker       mypc.worker:password
@@ -63,6 +68,13 @@ nbminer [参数]
 - -u1, --user1 \<user> 备用矿池1的用户名
 - -o2, --url2 \<url> 备用矿池2的URL
 - -u2, --user2 \<user> 备用矿池2的用户名
+- **-di, --secondary-intensity \<intensity>    双挖时ETH的相对挖矿强度**
+- -do, --secondary-url \<url>    双挖时ETH的矿池地址
+- -du, --secondary-user \<user>    双挖时ETH的用户名
+- -do1, --secondary-url \<url>    双挖备用矿池1的矿池地址
+- -du1, --secondary-user \<user>    双挖备用矿池1的用户名
+- -do2, --secondary-url \<url>    双挖备用矿池2的矿池地址
+- -du2, --secondary-user \<user>    双挖备用矿池2的用户名
 - -d, --devices \<devices>    指定使用哪些显卡来挖矿. 比如: "-d 0,1,2,3" 使用前4个显卡.
 - --strict-ssl    使用SSL连接时验证矿池证书
 - --log    生成日志文件，文件名为 `log_<时间戳>.txt`.
@@ -73,6 +85,8 @@ nbminer [参数]
 ### 网页监控
 
 在浏览器中打开 http://api_host:port/ 启动网页监控.
+
+`注：双挖时的网页监控暂时不完善。`
 
 ### 请求
 
@@ -124,6 +138,13 @@ GET http://api_host:port/api/v1/status
 
 ## FAQ
 
+#### BTM+ETH双挖时如何调整强度？
+
+- 合适的双挖强度取决于 `核心算力/显存带宽` 这个比例。
+- 显存带宽占比较低的卡，如1070ti，可以适当降低双挖强度。反之如1060等卡，可以尝试增大双挖强度。
+- 显存带宽占比会随着核心和显存超频数值不同而变化。
+- 用户需根据卡的型号、超频、电费、当前币价等综合考虑需要采用的双挖强度。
+
 #### 为什么我的矿池算力比本地算力低?
 
 - `矿池的显示算力` = `本地实际算力` x (`1.0` - `手续费比例0.03` - `本地跳过提交的过期share率`) x (`1.0` - `矿池过期拒绝率` ± `误差率`)
@@ -149,7 +170,15 @@ GET http://api_host:port/api/v1/status
 
 ## 修改记录
 
-####v11.0(2018-12-12)
+#### v12.0(2018-12-19)
+
+- **新增BTM+ETH双挖**
+- 降低对显卡驱动版本的要求，最低可用377版本驱动
+- 暂时去掉对XMR挖矿的支持
+- 完善配置文件启动
+- 矿池参数增加默认协议头
+
+#### v11.0(2018-12-12)
 
 - 大幅提升BTM算力
 - 加入对ETH、XMR挖矿的支持

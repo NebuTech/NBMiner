@@ -1,5 +1,5 @@
 # NBMiner
-Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)`, `Monero(XMR)` mining.
+Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` mining.
 
 Previously named `BTMiner_NebuTech`.
 
@@ -13,29 +13,31 @@ Previously named `BTMiner_NebuTech`.
 
 ## Features：
 
+* **Support `BTM+ETH dual mining`** , 20% more profit than single mining.
 * Support Bytom (BTM) mining, tensority algorithm.
   * Hashrate under default frequency: P106  1900H/s, 1070ti  3400H/s
   * Support Nvidia 10xx & 20xx GPUs.
 * Support Ethereum (ETH) mining.
   * Highest profit on mining pools.
   * Support mining pools using ethproxy protocol.
-* Support Monero(XMR) mining.
 * Support Windows & Linux.
 * Support backup mining pool configuration.
 * Support SSL connection to mining pools.
-* Dev Fee: BTM 2%, ETH 0.65%, XMR 0.65%
+* Dev Fee: BTM+ETH 3%, BTM 2%, ETH 0.65%
 
 ## Usage：
 
-- **Driver version: Windows >= 397 , Linux >= 396**.
+- **Driver version: >= 377**.
 - BTM Mining:
   - Edit `start_btm.bat`, modify mining pool url after `-o` and username or wallet address after `-u`. 
 - ETH Mining:
   - Edit `start_eth.bat`, modify mining pool url after `-o` and username or wallet address after `-u`. 
   - For users using 1080, 1080ti, 1060-5X cards, which equiped with GDDR5X memory, remember to start `OhGodAnETHlargementPill-r2.exe`  patch before mining and keep it running background.
-- XMR Mining:
-  - For windows users, the time-consume kernel used in XMR mining will cause TDR issue. Run `modify_tdr_delay.reg` and reboot windows for the first time you mine XMR.
-  - Edit `start_xmr.bat`, modify mining pool url after `-o` and username or wallet address after `-u`. 
+- BTM+ETH Dual Mining:
+  -  Edit `start_btm_eth.bat`
+  - Set mining pool for BTM after option `-o`, set username for BTM pool after option `-u`
+  - Set mining pool for ETH after option `-do`, set username for ETH pool after option `-du`
+  - There is an option `-di` (secondary-intensity) stands for the relative intensity of mining ETH.  Tuning this option to get best performance on different cards.
 
 ## CMD options：
 
@@ -43,20 +45,19 @@ Previously named `BTMiner_NebuTech`.
 
 - BTM: nbminer -a tensority -o stratum+tcp://btm.f2pool.com:9221 -u bm1xxxxxxxxxxxx.worker
 - ETH: nbminer -a ethash -o **ethproxy**+tcp://eth.f2pool.com:8008 -u 0xxxxxxxxxx.worker
-- XMR: nbminer -a cryptonightv8 -o -o stratum+tcp://xmr-jp1.nanopool.org:14444 -u 4xxxxxxxxx.worker
+- BTM+ETH: nbminer -a tensority_ethash -o stratum+tcp://btm.f2pool.com:9221 -u btm_wallet_address.worker -do ethproxy+tcp://eth.f2pool.com:8008 -du 0x_eth_wallet_address.worker
 
 Options：
 
   * -h, --help    Displays this help.
   * -v, --version    Displays version information.
-  * -c, --config \<config file path>    Use config file rather than cmd line options.
+  * -c, --config \<config file path>    Use json format config file rather than cmd line options.
   * -a, --algo \<algo>    Select algorithm, `tensority` for BTM, `ethash` for ETH, `cryptonightv8` for XMR.
   * --api  \<host:port>    The endpoint for serving REST API.
   * -o, --url \<url>    Mining pool url.
     - BTM: stratum+tcp://btm.f2pool.com:9221
     - BTM with SSL: stratum+ssl://btm.f2pool.com:9443
     - ETH: ethproxy+tcp://eth.f2pool.com:8008
-    - XMR: stratum+tcp://xmr.f2pool.com:13531
   * -u, --user \<user>    User used in Mining pool, wallet address or username.
       * Format: [username|wallet].workername:password
       * Example: bm1xxxxxx.worker      myusername.worker:password
@@ -64,18 +65,28 @@ Options：
   * -u1, --user1 \<user> username for backup mining pool 1.
   * -o2, --url2 \<url> url for backup mining pool 2.
 * -u2, --user2 \<user> username for backup mining pool 2.
-  * -d, --devices \<devices>    Specify GPU list to use. Format: "-d 0,1,2,3" to use first 4 GPU.
-  * --strict-ssl    Check validity of certificate when use SSL connection.
-  * --log    Generate log file named `log_<timestamp>.txt`.
-  * --long-format    Use 'yyyy-MM-dd HH:mm:ss,zzz' for log time format.
+* **-di, --secondary-intensity \<intensity>    The relative intensity for ETH when dual mining.**
+* -do, --secondary-url \<url>    ETH mining pool when dual mining.
+* -du, --secondary-user \<user>    ETH username when dual mining.
+* -do1, --secondary-url1 \<url>    Backup 1 ETH mining pool when dual mining.
+* -du1, --secondary-user1 \<user>    Backup 1 ETH username when dual mining.
+* -do2, --secondary-url2 \<url>    Backup 2 ETH mining pool when dual mining.
+* -du2, --secondary-user2 \<user>    Backup 2 ETH username when dual mining.
+* -d, --devices \<devices>    Specify GPU list to use. Format: "-d 0,1,2,3" to use first 4 GPU.
+* --strict-ssl    Check validity of certificate when use SSL connection.
+* --log    Generate log file named `log_<timestamp>.txt`.
+* --long-format    Use 'yyyy-MM-dd HH:mm:ss,zzz' for log time format.
 
 ## GPU Tuning
 
-Bytom mining performance depend heavily on GPU core, instead of GPU memory.
-
-Miner can gain beffer hashrate if tuning down GPU memory frequency.
-
-For example, using MSI Afterburner to turn down GPU memory to -500.
+- BTM + ETH:
+  - Suitable `secondary intensity` depends on the ratio of `core performance / memory bandwidth`
+  - GPU with relative low memory bandwidth, eg. 1070ti, could tune down the `di`. Otherwise tune up.
+  - The ratio changes with different `core`, `tdp`, `memory`  settings when overclock GPU.
+- BTM:
+  - Bytom mining performance depend heavily on GPU core, instead of GPU memory.
+  - Miner can gain beffer hashrate if tuning down GPU memory frequency.
+  - For example, using MSI Afterburner to turn down GPU memory to -500.
 
 ## API Reference
 
@@ -136,6 +147,14 @@ GET http://api_host:port/api/v1/status
 @earthGavinLee
 
 ## Change Log
+
+#### v12.0(2018-12-19)
+
+- **New `BTM+ETH` dual mining mode.**
+- Decrease the requested drive version to 377
+- Temporarily remove support for XMR mining.
+- Fix start using config file.
+- Add a default protocol header if not specified.
 
 #### v11.0(2018-12-12)
 
