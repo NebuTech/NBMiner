@@ -61,6 +61,7 @@ nbminer [参数]
   - BTM: stratum+tcp://btm.f2pool.com:9221
   - BTM with SSL: stratum+ssl://btm.f2pool.com:9443
   - ETH: ethproxy+tcp://eth.f2pool.com:8008
+  - ETH NiceHash: ethnh+tcp://daggerhashimoto.eu.nicehash.com:3353
 - -u, --user \<user>    挖矿使用的用户名或钱包地址.
   - 格式：[用户名|钱包地址].矿机名:密码
   - 举例：bmxxxxxx.worker       mypc.worker:password
@@ -68,7 +69,7 @@ nbminer [参数]
 - -u1, --user1 \<user> 备用矿池1的用户名
 - -o2, --url2 \<url> 备用矿池2的URL
 - -u2, --user2 \<user> 备用矿池2的用户名
-- **-di, --secondary-intensity \<intensity>    双挖时ETH的相对挖矿强度**
+- **-di, --secondary-intensity \<intensity>    双挖时ETH的相对挖矿强度，默认16，建议在8-24之间调整**
 - -do, --secondary-url \<url>    双挖时ETH的矿池地址
 - -du, --secondary-user \<user>    双挖时ETH的用户名
 - -do1, --secondary-url \<url>    双挖备用矿池1的矿池地址
@@ -169,6 +170,13 @@ GET http://api_host:port/api/v1/status
 @earthGavinLee
 
 ## 修改记录
+
+#### v12.1(2018-12-24)
+
+- 完善ETH协议对鱼池pps+模式的支持
+- 新增ETH对NiceHash协议的支持（url协议头用`ethnh`）
+- rest api增加双挖的算力内容(网页监控暂时还没有)
+- 修复部分潜在的bug
 
 #### v12.0(2018-12-19)
 

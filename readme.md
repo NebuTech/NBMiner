@@ -35,9 +35,9 @@ Previously named `BTMiner_NebuTech`.
   - For users using 1080, 1080ti, 1060-5X cards, which equiped with GDDR5X memory, remember to start `OhGodAnETHlargementPill-r2.exe`  patch before mining and keep it running background.
 - BTM+ETH Dual Mining:
   -  Edit `start_btm_eth.bat`
-  - Set mining pool for BTM after option `-o`, set username for BTM pool after option `-u`
-  - Set mining pool for ETH after option `-do`, set username for ETH pool after option `-du`
-  - There is an option `-di` (secondary-intensity) stands for the relative intensity of mining ETH.  Tuning this option to get best performance on different cards.
+  -  Set mining pool for BTM after option `-o`, set username for BTM pool after option `-u`
+  -  Set mining pool for ETH after option `-do`, set username for ETH pool after option `-du`
+  -  There is an option `-di` (secondary-intensity) stands for the relative intensity of mining ETH.  Tuning this option to get best performance on different cards.
 
 ## CMD options：
 
@@ -58,6 +58,7 @@ Options：
     - BTM: stratum+tcp://btm.f2pool.com:9221
     - BTM with SSL: stratum+ssl://btm.f2pool.com:9443
     - ETH: ethproxy+tcp://eth.f2pool.com:8008
+    - ETH with NiceHash: ethnh+tcp://daggerhashimoto.eu.nicehash.com:3353
   * -u, --user \<user>    User used in Mining pool, wallet address or username.
       * Format: [username|wallet].workername:password
       * Example: bm1xxxxxx.worker      myusername.worker:password
@@ -65,7 +66,7 @@ Options：
   * -u1, --user1 \<user> username for backup mining pool 1.
   * -o2, --url2 \<url> url for backup mining pool 2.
 * -u2, --user2 \<user> username for backup mining pool 2.
-* **-di, --secondary-intensity \<intensity>    The relative intensity for ETH when dual mining.**
+* **-di, --secondary-intensity \<intensity>    The relative intensity for ETH when dual mining. recommend: 8 - 24, default to 16.**
 * -do, --secondary-url \<url>    ETH mining pool when dual mining.
 * -du, --secondary-user \<user>    ETH username when dual mining.
 * -do1, --secondary-url1 \<url>    Backup 1 ETH mining pool when dual mining.
@@ -79,7 +80,7 @@ Options：
 
 ## GPU Tuning
 
-- BTM + ETH:
+- **BTM + ETH:**
   - Suitable `secondary intensity` depends on the ratio of `core performance / memory bandwidth`
   - GPU with relative low memory bandwidth, eg. 1070ti, could tune down the `di`. Otherwise tune up.
   - The ratio changes with different `core`, `tdp`, `memory`  settings when overclock GPU.
@@ -108,6 +109,9 @@ GET http://api_host:port/api/v1/status
             "core_utilization": 100,
             "fan": 36,
             "hashrate": 1499,
+            "hashrate2": "23.0 M",
+            "hashrate_raw": 1499,
+            "hashrate2_raw": 23030000,
             "id": 0,
             "info": "GeForce GTX 1080 Ti 11178 MB",
             "power": 182,
@@ -123,6 +127,9 @@ GET http://api_host:port/api/v1/status
             "temperature": 62
         }],
         "total_hashrate": 2989,
+        "total_hashrate_raw": 2989,
+      	"total_hashrate2": "48.3 M",
+        "total_hashrate2_raw": 48308746, 
         "total_power_consume": 354
     },
     "start_time": 1532482659,
@@ -148,10 +155,17 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v12.1(2018-12-24)
+
+- Fix support ETH PPS+ mode on F2pool
+- Add support for ETH on NiceHash (with protocol header `ethnh`)
+- Fix rest api when dual mining.
+- Minor bug fixs.
+
 #### v12.0(2018-12-19)
 
 - **New `BTM+ETH` dual mining mode.**
-- Decrease the requested drive version to 377
+- Decrease the required driver version to 377.
 - Temporarily remove support for XMR mining.
 - Fix start using config file.
 - Add a default protocol header if not specified.
