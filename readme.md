@@ -155,6 +155,12 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v12.2(2018-12-26)
+
+- Fix high stale share and reject share ratio when use big `-di` for dual mining BTM+ETH.
+- Fix the support of web monitor for dual mining.
+- Minor bug fixs and improvements.
+
 #### v12.1(2018-12-24)
 
 - Fix support ETH PPS+ mode on F2pool
