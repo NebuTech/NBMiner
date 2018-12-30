@@ -155,6 +155,10 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v12.3(2018-12-30)
+
+- Fix a bug that could cause many reject shares when epoch changes under ETH dual mining .
+
 #### v12.2(2018-12-26)
 
 - Fix high stale share and reject share ratio when use big `-di` for dual mining BTM+ETH.
