@@ -155,6 +155,10 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v12.4(2018-01-05)
+
+- Improve hashrate of BTM+ETH dual mining about 6%.
+
 #### v12.3(2018-12-30)
 
 - Fix a bug that could cause many reject shares when epoch changes under ETH dual mining .
