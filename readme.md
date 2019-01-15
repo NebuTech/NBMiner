@@ -20,6 +20,7 @@ Previously named `BTMiner_NebuTech`.
 * Support Ethereum (ETH) mining.
   * Highest profit on mining pools.
   * Support mining pools using ethproxy protocol.
+* Support Grin coin mining (Cuckaroo29).
 * Support Windows & Linux.
 * Support backup mining pool configuration.
 * Support SSL connection to mining pools.
@@ -38,6 +39,9 @@ Previously named `BTMiner_NebuTech`.
   -  Set mining pool for BTM after option `-o`, set username for BTM pool after option `-u`
   -  Set mining pool for ETH after option `-do`, set username for ETH pool after option `-du`
   -  There is an option `-di` (secondary-intensity) stands for the relative intensity of mining ETH.  Tuning this option to get best performance on different cards.
+- Grin Mining:
+  - Edit `start_grin.bat`
+  - Set mining pool for Grin after option `-o`, set username for Grin pool after option `-u`
 
 ## CMD options：
 
@@ -46,6 +50,7 @@ Previously named `BTMiner_NebuTech`.
 - BTM: nbminer -a tensority -o stratum+tcp://btm.f2pool.com:9221 -u bm1xxxxxxxxxxxx.worker
 - ETH: nbminer -a ethash -o **ethproxy**+tcp://eth.f2pool.com:8008 -u 0xxxxxxxxxx.worker
 - BTM+ETH: nbminer -a tensority_ethash -o stratum+tcp://btm.f2pool.com:9221 -u btm_wallet_address.worker -do ethproxy+tcp://eth.f2pool.com:8008 -du 0x_eth_wallet_address.worker
+- Grin: nbminer -a cuckaroo -o stratum+tcp://grin.sparkpool.com:6666 -u username@email.com.worker
 
 Options：
 
@@ -154,6 +159,11 @@ GET http://api_host:port/api/v1/status
 @earthGavinLee
 
 ## Change Log
+
+#### v13.0
+
+- Add support for mining Grin coin (cuckaroo29).
+- Minor bug fix and improvement.
 
 #### v12.4(2018-01-05)
 

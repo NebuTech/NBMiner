@@ -16,11 +16,12 @@
 - 支持以太坊（Ethereum, ETH）挖矿（ETHash算法）
   - 最高的矿池收益
   - 支持ethproxy协议的矿池
+- 支持Grin挖矿（Cuckaroo29）
 - **支持BTM + ETH双挖，收益比单挖高20%以上**
 - 支持Windows和Linux
 - 支持备用矿池的设置
 - 支持SSL方式连接矿池
-- 开发手续费：BTM+ETH 3%，BTM 2%，ETH 0.65%
+- 开发手续费：BTM+ETH 3%，BTM 2%，ETH 0.65%, GRIN 2%
 
 ## 使用方法
 
@@ -36,6 +37,10 @@
   - 修改`-do` 参数后的矿池地址为ETH的矿池地址，修改`-du` 参数后的钱包地址为ETH的钱包地址。
   - 双击`start_btm_eth.bat` 开始挖矿。
   - **不同卡双挖时的配置不同，请自行测试合适的挖矿强度参数`-di` 最佳值。**
+- GRIN挖矿:
+  - 编辑`start_grin.bat` 文件
+  - 修改`-o` 参数后的矿池地址为BTM的矿池地址，修改`-u` 参数后的钱包地址为GRIN的矿池用户名或邮箱。
+  - **注意，使用邮箱时请一定加上矿工名，如 `1234454345@qq.com.worker`** 
 - 使用配置文件进行配置
   - 配置文件的样例在`config.json` 中，参考上述挖矿方法以及下述命令行参数修改对应的参数设置。
   - 双击`start_config.bat` 进行挖矿。
@@ -49,6 +54,7 @@ nbminer [参数]
 - BTM: nbminer -a tensority -o stratum+tcp://btm.f2pool.com:9221 -u bm1xxxxxxxxxxxx.worker
 - ETH: nbminer -a ethash -o ethproxy+tcp://eth.f2pool.com:8008 -u 0xxxxxxxxxx.worker
 - BTM+ETH: nbminer -a tensority_ethash -o stratum+tcp://btm.f2pool.com:9221 -u btm_wallet_address.worker -do ethproxy+tcp://eth.f2pool.com:8008 -du 0x_eth_wallet_address.worker
+- Grin: nbminer -a cuckaroo -o stratum+tcp://grin.sparkpool.com:6666 -u username@email.com.worker
 
 参数：
 
@@ -170,6 +176,11 @@ GET http://api_host:port/api/v1/status
 @earthGavinLee
 
 ## 修改记录
+
+#### v13.0(2019-01-15)
+
+- 加入对Grin（Cuckaroo29）的支持
+- 其他细节改进
 
 #### v12.4(2018-01-05)
 
