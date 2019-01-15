@@ -177,7 +177,7 @@ GET http://api_host:port/api/v1/status
 
 ## 修改记录
 
-#### v13.0(2019-01-15)
+#### v13.1(2019-01-15)
 
 - 加入对Grin（Cuckaroo29）的支持
 - 其他细节改进

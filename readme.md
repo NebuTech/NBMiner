@@ -160,7 +160,7 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
-#### v13.0
+#### v13.1
 
 - Add support for mining Grin coin (cuckaroo29).
 - Minor bug fix and improvement.
