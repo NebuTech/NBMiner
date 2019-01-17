@@ -177,6 +177,11 @@ GET http://api_host:port/api/v1/status
 
 ## 修改记录
 
+#### v13.2（2019-01-17）
+
+- 支持Grin在win10 1066的挖矿
+- 修复对Grin Solo矿池协议的支持
+
 #### v13.1(2019-01-15)
 
 - 加入对Grin（Cuckaroo29）的支持

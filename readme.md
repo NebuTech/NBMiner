@@ -160,7 +160,12 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
-#### v13.1
+#### v13.2(2019-01-17)
+
+- Add support mining Grin on 1066-win10.
+- Fix support for Solo mining using grin-server.
+
+#### v13.1(2019-01-15)
 
 - Add support for mining Grin coin (cuckaroo29).
 - Minor bug fix and improvement.
