@@ -1,5 +1,5 @@
 # NBMiner
-Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` mining.
+Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin` mining.
 
 Previously named `BTMiner_NebuTech`.
 
