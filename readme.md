@@ -11,6 +11,10 @@ Previously named `BTMiner_NebuTech`.
 
 [Download here](https://github.com/NebuTech/BTMiner_NebuTech/releases)
 
+## Support on Bitcointalk
+
+[BitcoinTalk](https://bitcointalk.org/index.php?topic=5099379)
+
 ## Features：
 
 * **Support `BTM+ETH dual mining`** , 20% more profit than single mining.

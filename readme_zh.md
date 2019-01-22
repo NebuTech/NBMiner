@@ -8,6 +8,10 @@
 
 [从这里下载](https://github.com/NebuTech/BTMiner_NebuTech/releases)
 
+## 社区支持
+
+官方QQ群：795224121
+
 ## 功能特点
 
 - 支持比原链（Bytom, BTM）挖矿（Tensority算法）
