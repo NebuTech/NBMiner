@@ -1,8 +1,6 @@
 # NBMiner
 Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin` mining.
 
-Previously named `BTMiner_NebuTech`.
-
 ## 中文说明
 
 [查看中文说明](/readme_zh.md)
@@ -19,8 +17,7 @@ Previously named `BTMiner_NebuTech`.
 
 * **Support `BTM+ETH dual mining`** , 20% more profit than single mining.
 * Support Bytom (BTM) mining, tensority algorithm.
-  * Hashrate under default frequency: P106  1900H/s, 1070ti  3400H/s
-  * Support Nvidia 10xx & 20xx GPUs.
+  * **Hashrate under default frequency: RTX2080 12000H/s，P106  1900H/s, 1070ti  3400H/s**
 * Support Ethereum (ETH) mining.
   * Highest profit on mining pools.
   * Support mining pools using ethproxy protocol.
@@ -163,6 +160,11 @@ GET http://api_host:port/api/v1/status
 @earthGavinLee
 
 ## Change Log
+
+#### v14.0(2019-01-30)
+
+- **BTM mining, improve over 200% on RTX cards.**
+- Improve Grin mining.
 
 #### v13.2(2019-01-17)
 

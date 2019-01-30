@@ -1,8 +1,6 @@
 # NBMiner GPU挖矿软件
 
-用于Nvidia显卡的`Bytom(比原链)`、`Ethereum(以太坊)`, `Grin`挖矿软件。
-
-之前名为`BTMiner_NebuTech`.
+用于Nvidia显卡的`Bytom(比原链)`、`Ethereum(以太坊)` 、`Grin`挖矿软件。
 
 ## 下载地址
 
@@ -15,8 +13,7 @@
 ## 功能特点
 
 - 支持比原链（Bytom, BTM）挖矿（Tensority算法）
-  - 默认频率下算力，P106达到1900H/s，1070ti达到3400H/s
-  - 支持英伟达GTX 10xx，RTX 20xx系列显卡
+  - **默认频率下算力，RTX2080 达到 12000H/s，P106达到1900H/s，1070ti达到3400H/s**
 - 支持以太坊（Ethereum, ETH）挖矿（ETHash算法）
   - 最高的矿池收益
   - 支持ethproxy协议的矿池
@@ -25,7 +22,7 @@
 - 支持Windows和Linux
 - 支持备用矿池的设置
 - 支持SSL方式连接矿池
-- 开发手续费：BTM+ETH 3%，BTM 2%，ETH 0.65%, GRIN 2%
+- 开发手续费：BTM+ETH 3%，BTM 2%， BTM(RTX) 3%，ETH 0.65%, GRIN 2%
 
 ## 使用方法
 
@@ -35,7 +32,7 @@
 - ETH挖矿：
   - 编辑`start_eth.bat` 文件，修改`-o` 参数后的矿池地址和`-u` 参数后的钱包地址或用户名。双击`start_eth.bat` 开始挖矿。
   - 若使用1080、1080ti、1060-5X等使用GDDR5X显存的用户，在挖矿之前先用管理员权限运行`OhGodAnETHlargementPill-r2.exe` 补丁，并保持在后台运行。
-- **BTM+ETH双挖：**
+- BTM+ETH双挖：
   - 编辑`start_btm_eth.bat` 文件
   - 修改`-o` 参数后的矿池地址为BTM的矿池地址，修改`-u` 参数后的钱包地址为BTM的钱包地址。
   - 修改`-do` 参数后的矿池地址为ETH的矿池地址，修改`-du` 参数后的钱包地址为ETH的钱包地址。
@@ -181,7 +178,12 @@ GET http://api_host:port/api/v1/status
 
 ## 修改记录
 
-#### v13.2（2019-01-17）
+#### v14.0(2019-01-30)
+
+- **针对RTX卡优化BTM，提升算力超过200%**
+- 提升Grin29算力
+
+#### v13.2(2019-01-17)
 
 - 支持Grin在win10 1066的挖矿
 - 修复对Grin Solo矿池协议的支持
