@@ -10,19 +10,26 @@
 
 官方QQ群：795224121
 
+## 参考算力（默认频率）
+
+| 算法               | 币种      | P106-100  |  1070ti  |  1080ti  |  2080  |
+| :--------------- | ------- | :-------: | :------: | :------: | :----: |
+| tensority        | BTM     |   1,900   |  3,400   |  5,000   | 11,500 |
+| ethash           | ETH     |   19.5M   |   26M    |   46M    |  35M   |
+| tensority_ethash | BTM+ETH | 950+15.5M | 1350+22M | 2450+40M |  8000  |
+| cuckaroo         | GRIN29  |    2.7    |   4.1    |   6.2    |  6.9   |
+| cucaktoo         | GRIN31  |     -     |   0.85   |   1.25   |   -    |
+
 ## 功能特点
 
-- 支持比原链（Bytom, BTM）挖矿（Tensority算法）
-  - **默认频率下算力，RTX2080 达到 12000H/s，P106达到1900H/s，1070ti达到3400H/s**
-- 支持以太坊（Ethereum, ETH）挖矿（ETHash算法）
-  - 最高的矿池收益
-  - 支持ethproxy协议的矿池
-- 支持Grin挖矿（Cuckaroo29）
-- **支持BTM + ETH双挖，收益比单挖高20%以上**
 - 支持Windows和Linux
 - 支持备用矿池的设置
 - 支持SSL方式连接矿池
-- 开发手续费：BTM+ETH 3%，BTM 2%， BTM(RTX) 3%，ETH 0.65%, GRIN 2%
+- 开发手续费:
+  - tensority_ethash 3%
+  - tensority(Pascal) 2%, tensority(Turing) 3%
+  - ethash 0.65%
+  - cuckaroo & cuckatoo 2%
 
 ## 使用方法
 
@@ -41,28 +48,54 @@
 - GRIN挖矿:
   - 编辑`start_grin.bat` 文件
   - 修改`-o` 参数后的矿池地址为BTM的矿池地址，修改`-u` 参数后的钱包地址为GRIN的矿池用户名或邮箱。
-  - **注意，使用邮箱时请一定加上矿工名，如 `1234454345@qq.com.worker`** 
 - 使用配置文件进行配置
   - 配置文件的样例在`config.json` 中，参考上述挖矿方法以及下述命令行参数修改对应的参数设置。
   - 双击`start_config.bat` 进行挖矿。
 
+## 使用样例
+
+#### BTM
+
+- **f2pool:** nbminer -a tensority -o stratum+tcp://btm.f2pool.com:9221 -u bm1xxxxxxxxxx.worker
+- **antpool:** nbminer -a tensority -o stratum+tcp://stratum-btm.antpool.com:6666 -u username.worker
+- **matpool.io:** nbminer -a tensority -o stratum+tcp://btm.matpool.io:8118 -u bm1xxxxxxxxxxx.worker
+
+#### ETH
+
+- **ethermine:** nbminer -a ethash -o ethproxy+tcp://asia1.ethermine.org -u 0x12343bdgf.worker
+- **sparkpool:** nbminer -a ethash -o ethproxy+tcp://cn.sparkpool.com:3333 -u 0x12343bdgf.worker
+- **f2pool:** nbminer -a ethash -o ethproxy+tcp://eth.f2pool.com:8008 -u 0x12343bdgf.worker
+- **nanopool:** nbminer -a ethash -o ethproxy+tcp://eth-asia1.nanopool.org:9999 -u 0x12343bdgf.worker
+
+#### BTM+ETH
+
+- **f2pool:** nbminer -a tensority_ethash -o stratum+tcp://btm.f2pool.com:9221 -u btm_address.btm_worker -do ethproxy+tcp://eth.f2pool.com:8008 -du eth_address.eth_worker
+
+#### Grin29
+
+- **sparkpool:** nbminer -a cuckaroo -o stratum+tcp://grin.sparkpool.com:6666 -u 123@qq.com/worker
+- **f2pool:** nbminer -a cuckaroo -o stratum+tcp://grin29.f2pool.com:13654 -u username.worker:passwd
+- **nicehash:** nbminer -a cuckaroo -o stratum+tcp://grincuckaroo29.eu.nicehash.com:3371 -u btc_address.worker
+
+#### Grin31
+
+- **sparkpool:** nbminer -a cuckatoo -o stratum+tcp://grin.sparkpool.com:66667-u 123@qq.com/worker
+- **f2pool:** nbminer -a cuckatoo -o stratum+tcp://grin31.f2pool.com:13654 -u username.worker:passwd
+- **nicehash:** nbminer -a cuckatoo -o stratum+tcp://grincuckaroo31.eu.nicehash.com:3372 -u btc_address.worker
+
 ## 命令行参数
 
-nbminer [参数]
-
-**典型用法**：
-
-- BTM: nbminer -a tensority -o stratum+tcp://btm.f2pool.com:9221 -u bm1xxxxxxxxxxxx.worker
-- ETH: nbminer -a ethash -o ethproxy+tcp://eth.f2pool.com:8008 -u 0xxxxxxxxxx.worker
-- BTM+ETH: nbminer -a tensority_ethash -o stratum+tcp://btm.f2pool.com:9221 -u btm_wallet_address.worker -do ethproxy+tcp://eth.f2pool.com:8008 -du 0x_eth_wallet_address.worker
-- Grin: nbminer -a cuckaroo -o stratum+tcp://grin.sparkpool.com:6666 -u username@email.com.worker
-
-参数：
+nbminer -a algo -o protocol+socket_type://pool_host:pool:port -u wallet_address.workername:password
 
 - -?, -h, --help    显示帮助信息.
 - -v, --version    显示版本号.
 - -c, --config \<config file path>    通过json格式配置文件启动挖矿程序.
-- -a, --algo \<algo>    选择挖矿算法（BTM用`tensority`, ETH用`ethash`, 双挖用`tensority_ethash`）
+- -a, --algo \<algo>    选择挖矿算法
+  - BTM: tensority
+  - ETH: ethash
+  - BTM+ETH: tensority_ethash
+  - Grin29: cuckaroo
+  - Grin31: cuckatoo
 - --api \<host:port>    REST API监听端口.
 - -o, --url \<url>    矿池地址.
   - BTM: stratum+tcp://btm.f2pool.com:9221
@@ -76,7 +109,7 @@ nbminer [参数]
 - -u1, --user1 \<user> 备用矿池1的用户名
 - -o2, --url2 \<url> 备用矿池2的URL
 - -u2, --user2 \<user> 备用矿池2的用户名
-- **-di, --secondary-intensity \<intensity>    双挖时ETH的相对挖矿强度，默认16，建议在8-24之间调整**
+- -di, --secondary-intensity \<intensity>    双挖时ETH的相对挖矿强度，默认16，建议在8-24之间调整
 - -do, --secondary-url \<url>    双挖时ETH的矿池地址
 - -du, --secondary-user \<user>    双挖时ETH的用户名
 - -do1, --secondary-url \<url>    双挖备用矿池1的矿池地址
@@ -85,6 +118,7 @@ nbminer [参数]
 - -du2, --secondary-user \<user>    双挖备用矿池2的用户名
 - -d, --devices \<devices>    指定使用哪些显卡来挖矿. 比如: "-d 0,1,2,3" 使用前4个显卡.
 - --strict-ssl    使用SSL连接时验证矿池证书
+- **--cuckoo-intensity \<intensity>    设置挖Grin时的CPU负载，取值范围[1,12]，值越小挖矿算力越高，相对应的CPU负载也会更高。设置为0软件从1开始自适应调整。默认为0**
 - --log    生成日志文件，文件名为 `log_<时间戳>.txt`.
 - --long-format    使用更长的日期时间格式
 
@@ -163,8 +197,7 @@ GET http://api_host:port/api/v1/status
 
 #### 为什么会出现CUDA错误导致内核重启?
 
-- 驱动版本过低会导致`CUDA error: insufficient driver`，请更新驱动版本，满足[使用方法](#使用方法)部分的版本要求。
-- 当核心超频过度，或者显卡本身的核心体质不好时，会因为显卡内部计算错误，导致出现各种的CUDA错误。此时应该尝试降低核心频率、降低功耗，再做尝试。
+- 当核心超频过度，或者显卡本身的核心体质不好时，会因为显卡内部计算错误，导致出现各种的CUDA错误。此时应该尝试 检查转接板连接稳定性、降低核心频率、降低功耗，再做尝试。
 
 #### 显卡超频参数应如何设置才能更好的挖BTM?
 
@@ -172,11 +205,16 @@ GET http://api_host:port/api/v1/status
 - 由于主要依赖核心，因此矿工在实际挖矿中可以通过将显存调整为-500，基本不会影响BTM的挖矿算力（仅供参考，以实测为准）。
 - 如果限制了功耗在100%以下，此时降低显存频率甚至可以带来算力的提升（因为功耗限制，降显存频率以后可以有更多的电能共给到GPU核心）。
 
-## 致谢
-
-@earthGavinLee
-
 ## 修改记录
+
+#### v20.0(2019-02-21)
+
+- 新增对Grin31的支持
+- 新增Grin对NiceHash的支持
+- Grin新增调整CPU负载选项 --cuckoo-intensity
+- 优化20系卡BTM+ETH双挖
+- 修复在10和20系列卡混插平台进行BTM挖矿时，10系卡算力降低的bug
+- 当用户不指定矿工名时，不再增加默认default矿工名
 
 #### v14.0(2019-01-30)
 

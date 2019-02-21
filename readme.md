@@ -13,23 +13,30 @@ Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin` mining.
 
 [BitcoinTalk](https://bitcointalk.org/index.php?topic=5099379)
 
-## Features：
+## Performance (stock frequency)
 
-* **Support `BTM+ETH dual mining`** , 20% more profit than single mining.
-* Support Bytom (BTM) mining, tensority algorithm.
-  * **Hashrate under default frequency: RTX2080 12000H/s，P106  1900H/s, 1070ti  3400H/s**
-* Support Ethereum (ETH) mining.
-  * Highest profit on mining pools.
-  * Support mining pools using ethproxy protocol.
-* Support Grin coin mining (Cuckaroo29).
+| Algorithm        | Coin    | P106-100  |  1070ti  |  1080ti  |  2080  |
+| :--------------- | ------- | :-------: | :------: | :------: | :----: |
+| tensority        | BTM     |   1,900   |  3,400   |  5,000   | 11,500 |
+| ethash           | ETH     |   19.5M   |   26M    |   46M    |  35M   |
+| tensority_ethash | BTM+ETH | 950+15.5M | 1350+22M | 2450+40M |  8000  |
+| cuckaroo         | GRIN29  |    2.7    |   4.1    |   6.2    |  6.9   |
+| cucaktoo         | GRIN31  |     -     |   0.85   |   1.25   |   -    |
+
+## Features
+
 * Support Windows & Linux.
 * Support backup mining pool configuration.
 * Support SSL connection to mining pools.
-* Dev Fee: BTM+ETH 3%, BTM 2%, ETH 0.65%
+* Dev Fee: 
+  * tensority_ethash 3%
+  * tensority(Pascal) 2%, tensority(Turing) 3%
+  * ethash 0.65%
+  * cuckaroo & cuckatoo 2%
 
-## Usage：
+## Usage
 
-- **Driver version: >= 377**.
+- **MakeDriver version: >= 377**.
 - BTM Mining:
   - Edit `start_btm.bat`, modify mining pool url after `-o` and username or wallet address after `-u`. 
 - ETH Mining:
@@ -44,6 +51,37 @@ Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin` mining.
   - Edit `start_grin.bat`
   - Set mining pool for Grin after option `-o`, set username for Grin pool after option `-u`
 
+## Sample Usages
+
+#### BTM
+
+- **f2pool:** nbminer -a tensority -o stratum+tcp://btm.f2pool.com:9221 -u bm1xxxxxxxxxx.worker
+- **antpool:** nbminer -a tensority -o stratum+tcp://stratum-btm.antpool.com:6666 -u username.worker
+- **matpool.io:** nbminer -a tensority -o stratum+tcp://btm.matpool.io:8118 -u bm1xxxxxxxxxxx.worker
+
+#### ETH
+
+- **ethermine:** nbminer -a ethash -o ethproxy+tcp://asia1.ethermine.org -u 0x12343bdgf.worker
+- **sparkpool:** nbminer -a ethash -o ethproxy+tcp://cn.sparkpool.com:3333 -u 0x12343bdgf.worker
+- **f2pool:** nbminer -a ethash -o ethproxy+tcp://eth.f2pool.com:8008 -u 0x12343bdgf.worker
+- **nanopool:** nbminer -a ethash -o ethproxy+tcp://eth-asia1.nanopool.org:9999 -u 0x12343bdgf.worker
+
+#### BTM+ETH
+
+- **f2pool:** nbminer -a tensority_ethash -o stratum+tcp://btm.f2pool.com:9221 -u btm_address.btm_worker -do ethproxy+tcp://eth.f2pool.com:8008 -du eth_address.eth_worker
+
+#### Grin29
+
+- **sparkpool:** nbminer -a cuckaroo -o stratum+tcp://grin.sparkpool.com:6666 -u 123@qq.com/worker
+- **f2pool:** nbminer -a cuckaroo -o stratum+tcp://grin29.f2pool.com:13654 -u username.worker:passwd
+- **nicehash:** nbminer -a cuckaroo -o stratum+tcp://grincuckaroo29.eu.nicehash.com:3371 -u btc_address.worker
+
+#### Grin31
+
+- **sparkpool:** nbminer -a cuckatoo -o stratum+tcp://grin.sparkpool.com:66667-u 123@qq.com/worker
+- **f2pool:** nbminer -a cuckatoo -o stratum+tcp://grin31.f2pool.com:13654 -u username.worker:passwd
+- **nicehash:** nbminer -a cuckatoo -o stratum+tcp://grincuckaroo31.eu.nicehash.com:3372 -u btc_address.worker
+
 ## CMD options：
 
 **Typical usage** ：
@@ -51,14 +89,20 @@ Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin` mining.
 - BTM: nbminer -a tensority -o stratum+tcp://btm.f2pool.com:9221 -u bm1xxxxxxxxxxxx.worker
 - ETH: nbminer -a ethash -o **ethproxy**+tcp://eth.f2pool.com:8008 -u 0xxxxxxxxxx.worker
 - BTM+ETH: nbminer -a tensority_ethash -o stratum+tcp://btm.f2pool.com:9221 -u btm_wallet_address.worker -do ethproxy+tcp://eth.f2pool.com:8008 -du 0x_eth_wallet_address.worker
-- Grin: nbminer -a cuckaroo -o stratum+tcp://grin.sparkpool.com:6666 -u username@email.com.worker
+- Grin29: nbminer -a cuckaroo -o stratum+tcp://grin.sparkpool.com:6666 -u username@email.com/rig
+- Grin31: nbminer -a cuckatoo -o stratum+tcp://grin.sparkpool.com:6667 -u username@email.com/rig
 
 Options：
 
   * -h, --help    Displays this help.
   * -v, --version    Displays version information.
   * -c, --config \<config file path>    Use json format config file rather than cmd line options.
-  * -a, --algo \<algo>    Select algorithm, `tensority` for BTM, `ethash` for ETH, `cryptonightv8` for XMR.
+  * -a, --algo \<algo>    Select mining algorithm
+        * BTM: tensority
+        * ETH: ethash
+        * BTM+ETH: tensority_ethash
+        * Grin29: cuckaroo
+        * Grin31: cuckatoo
   * --api  \<host:port>    The endpoint for serving REST API.
   * -o, --url \<url>    Mining pool url.
     - BTM: stratum+tcp://btm.f2pool.com:9221
@@ -72,7 +116,7 @@ Options：
   * -u1, --user1 \<user> username for backup mining pool 1.
   * -o2, --url2 \<url> url for backup mining pool 2.
 * -u2, --user2 \<user> username for backup mining pool 2.
-* **-di, --secondary-intensity \<intensity>    The relative intensity for ETH when dual mining. recommend: 8 - 24, default to 16.**
+* -di, --secondary-intensity \<intensity>    The relative intensity for ETH when dual mining. recommend: 8 - 24, default to 16.
 * -do, --secondary-url \<url>    ETH mining pool when dual mining.
 * -du, --secondary-user \<user>    ETH username when dual mining.
 * -do1, --secondary-url1 \<url>    Backup 1 ETH mining pool when dual mining.
@@ -81,6 +125,7 @@ Options：
 * -du2, --secondary-user2 \<user>    Backup 2 ETH username when dual mining.
 * -d, --devices \<devices>    Specify GPU list to use. Format: "-d 0,1,2,3" to use first 4 GPU.
 * --strict-ssl    Check validity of certificate when use SSL connection.
+* **--cuckoo-intensity \<intensity>    Set intensity of cuckoo, cuckaroo, cuckatoo, [1, 12]. Set to 0 means autumatically adapt. Default: 0.**
 * --log    Generate log file named `log_<timestamp>.txt`.
 * --long-format    Use 'yyyy-MM-dd HH:mm:ss,zzz' for log time format.
 
@@ -155,15 +200,20 @@ GET http://api_host:port/api/v1/status
 }
 ```
 
-## Thanks
-
-@earthGavinLee
-
 ## Change Log
+
+#### v20.0(2019-02-21)
+
+- Add support for Grin31
+- Add support for mining Grin on NiceHash
+- Add new option to tune CPU usage when mining Grin.
+- Improve BTM+ETH performance on RTX cards.
+- FIx bug of lower hashrate when mining BTM on rigs with mixed 10 series and 20 series cards.
+- Do not add a default worker name if no worker name specified by user.
 
 #### v14.0(2019-01-30)
 
-- **BTM mining, improve over 200% on RTX cards.**
+- BTM mining, improve over 200% on RTX cards.
 - Improve Grin mining.
 
 #### v13.2(2019-01-17)
