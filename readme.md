@@ -15,13 +15,13 @@ Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin` mining.
 
 ## Performance (stock frequency)
 
-| Algorithm        | Coin    | P106-100  |  1070ti  |  1080ti  |  2080  |
-| :--------------- | ------- | :-------: | :------: | :------: | :----: |
-| tensority        | BTM     |   1,900   |  3,400   |  5,000   | 11,500 |
-| ethash           | ETH     |   19.5M   |   26M    |   46M    |  35M   |
-| tensority_ethash | BTM+ETH | 950+15.5M | 1350+22M | 2450+40M |  8000  |
-| cuckaroo         | GRIN29  |    2.7    |   4.1    |   6.2    |  6.9   |
-| cucaktoo         | GRIN31  |     -     |   0.85   |   1.25   |   -    |
+| Algorithm        | Coin    | P106-100  |  1070ti  |  1080ti  |   2080   |
+| :--------------- | ------- | :-------: | :------: | :------: | :------: |
+| tensority        | BTM     |   1,900   |  3,400   |  5,000   |  11,500  |
+| ethash           | ETH     |   19.5M   |   26M    |   46M    |   35M    |
+| tensority_ethash | BTM+ETH | 950+15.5M | 1350+22M | 2450+40M | 8000+30M |
+| cuckaroo         | GRIN29  |    2.7    |   4.1    |   6.2    |   6.9    |
+| cuckatoo         | GRIN31  |     -     |   0.85   |   1.25   |    -     |
 
 ## Features
 
@@ -125,7 +125,7 @@ Options：
 * -du2, --secondary-user2 \<user>    Backup 2 ETH username when dual mining.
 * -d, --devices \<devices>    Specify GPU list to use. Format: "-d 0,1,2,3" to use first 4 GPU.
 * --strict-ssl    Check validity of certificate when use SSL connection.
-* **--cuckoo-intensity \<intensity>    Set intensity of cuckoo, cuckaroo, cuckatoo, [1, 12]. Set to 0 means autumatically adapt. Default: 0.**
+* **--cuckoo-intensity \<intensity>    Set intensity of cuckoo, cuckaroo, cuckatoo, [1, 12]. Smaller value means higher CPU usage to gain more hashrate. Set to 0 means autumatically adapt. Default: 0.**
 * --log    Generate log file named `log_<timestamp>.txt`.
 * --long-format    Use 'yyyy-MM-dd HH:mm:ss,zzz' for log time format.
 
