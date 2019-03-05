@@ -75,12 +75,14 @@
 
 - **sparkpool:** nbminer -a cuckaroo -o stratum+tcp://grin.sparkpool.com:6666 -u 123@qq.com/worker
 - **f2pool:** nbminer -a cuckaroo -o stratum+tcp://grin29.f2pool.com:13654 -u username.worker:passwd
+- **btc.com**: nbminer -a cuckaroo -o stratum+tcp://sz-grin.ss.btc.com:1800 -u username.worker:passwd
 - **nicehash:** nbminer -a cuckaroo -o stratum+tcp://grincuckaroo29.eu.nicehash.com:3371 -u btc_address.worker
 
 #### Grin31
 
 - **sparkpool:** nbminer -a cuckatoo -o stratum+tcp://grin.sparkpool.com:66667-u 123@qq.com/worker
 - **f2pool:** nbminer -a cuckatoo -o stratum+tcp://grin31.f2pool.com:13654 -u username.worker:passwd
+- **btc.com**: nbminer -a cuckatoo -o stratum+tcp://sz-grin.ss.btc.com:1800 -u username.worker:passwd
 - **nicehash:** nbminer -a cuckatoo -o stratum+tcp://grincuckaroo31.eu.nicehash.com:3372 -u btc_address.worker
 
 ## 命令行参数
