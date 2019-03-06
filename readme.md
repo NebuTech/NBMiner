@@ -15,13 +15,14 @@ Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin` mining.
 
 ## Performance (stock frequency)
 
-| Algorithm        | Coin    | P106-100  |  1070ti  |  1080ti  |   2080   |
-| :--------------- | ------- | :-------: | :------: | :------: | :------: |
-| tensority        | BTM     |   1,900   |  3,400   |  5,000   |  11,500  |
-| ethash           | ETH     |   19.5M   |   26M    |   46M    |   35M    |
-| tensority_ethash | BTM+ETH | 950+15.5M | 1350+22M | 2450+40M | 8000+30M |
-| cuckaroo         | GRIN29  |    2.7    |   4.1    |   6.2    |   6.9    |
-| cuckatoo         | GRIN31  |     -     |   0.85   |   1.25   |    -     |
+| Algorithm        |  Coin   | P106-100  |  1070ti  |  1080ti  |   2080   |
+| :--------------- | :-----: | :-------: | :------: | :------: | :------: |
+| tensority        |   BTM   |   1,900   |  3,400   |  5,000   |  11,500  |
+| ethash           |   ETH   |   19.5M   |   26M    |   46M    |   35M    |
+| tensority_ethash | BTM+ETH | 950+15.5M | 1350+22M | 2450+40M | 7000+28M |
+| cuckaroo         | GRIN29  |   3.15    |   4.85   |   7.3    |    -     |
+| cuckatoo         | GRIN31  |     -     |   0.92   |   1.45   |    -     |
+| cuckoo_ae        |   AE    |    3.3    |   5.0    |   7.6    |    -     |
 
 ## Features
 
@@ -32,7 +33,7 @@ Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin` mining.
   * tensority_ethash 3%
   * tensority(Pascal) 2%, tensority(Turing) 3%
   * ethash 0.65%
-  * cuckaroo & cuckatoo 2%
+  * cuckaroo & cuckatoo & cuckoo_ae 2%
 
 ## Usage
 
@@ -84,6 +85,12 @@ Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin` mining.
 - **btc.com**: nbminer -a cuckatoo -o stratum+tcp://sz-grin.ss.btc.com:1800 -u username.worker:passwd
 - **nicehash:** nbminer -a cuckatoo -o stratum+tcp://grincuckaroo31.eu.nicehash.com:3372 -u btc_address.worker
 
+#### AE
+
+- **f2pool**: nbminer -a cuckoo_ae -o stratum+tcp://ae.f2pool.com:7898 -u ak_xxxxxxx.worker:passwd
+- **beepool**: nbminer -a cuckoo_ae -o stratum+tcp://ae-pool.beepool.org:9505 -u ak_xxxx.worker:passwd
+- **uupool**: nbminer -a cuckoo_ae -o stratum+tcp://ae.uupool.cn:6210 -u ak_xxxxxx.worker:passwd
+
 ## CMD options：
 
 **Typical usage** ：
@@ -105,6 +112,7 @@ Options：
         * BTM+ETH: tensority_ethash
         * Grin29: cuckaroo
         * Grin31: cuckatoo
+        * AE: cuckoo_ae
   * --api  \<host:port>    The endpoint for serving REST API.
   * -o, --url \<url>    Mining pool url.
     - BTM: stratum+tcp://btm.f2pool.com:9221
@@ -130,6 +138,7 @@ Options：
 * **--cuckoo-intensity \<intensity>    Set intensity of cuckoo, cuckaroo, cuckatoo, [1, 12]. Smaller value means higher CPU usage to gain more hashrate. Set to 0 means autumatically adapt. Default: 0.**
 * --log    Generate log file named `log_<timestamp>.txt`.
 * --long-format    Use 'yyyy-MM-dd HH:mm:ss,zzz' for log time format.
+* --device-info    Print device cuda information.
 
 ## GPU Tuning
 
@@ -203,6 +212,12 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v21.0(2019-03-06)
+
+- Add suuport for AE (Aeternity)
+- Improve performance on Grin29 & Grin31
+- Improve miner stability.
 
 #### v20.0(2019-02-21)
 

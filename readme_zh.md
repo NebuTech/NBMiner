@@ -12,13 +12,14 @@
 
 ## 参考算力（默认频率）
 
-| 算法               |   币种    | P106-100  |  1070ti  |  1080ti  |   2080   |
+| 算法             |  币种   | P106-100  |  1070ti  |  1080ti  |   2080   |
 | :--------------- | :-----: | :-------: | :------: | :------: | :------: |
 | tensority        |   BTM   |   1,900   |  3,400   |  5,000   |  11,500  |
 | ethash           |   ETH   |   19.5M   |   26M    |   46M    |   35M    |
-| tensority_ethash | BTM+ETH | 950+15.5M | 1350+22M | 2450+40M | 8000+30M |
-| cuckaroo         | GRIN29  |    2.7    |   4.1    |   6.2    |   6.9    |
-| cuckatoo         | GRIN31  |     -     |   0.85   |   1.25   |    -     |
+| tensority_ethash | BTM+ETH | 950+15.5M | 1350+22M | 2450+40M | 7000+28M |
+| cuckaroo         | GRIN29  |   3.15    |   4.85   |   7.3    |    -     |
+| cuckatoo         | GRIN31  |     -     |   0.92   |   1.45   |    -     |
+| cuckoo_ae        |   AE    |    3.3    |   5.0    |   7.6    |    -     |
 
 ## 功能特点
 
@@ -29,7 +30,7 @@
   - tensority_ethash 3%
   - tensority(Pascal) 2%, tensority(Turing) 3%
   - ethash 0.65%
-  - cuckaroo & cuckatoo 2%
+  - cuckaroo & cuckatoo & cuckoo_ae 2%
 
 ## 使用方法
 
@@ -85,6 +86,12 @@
 - **btc.com**: nbminer -a cuckatoo -o stratum+tcp://sz-grin.ss.btc.com:1800 -u username.worker:passwd
 - **nicehash:** nbminer -a cuckatoo -o stratum+tcp://grincuckaroo31.eu.nicehash.com:3372 -u btc_address.worker
 
+#### AE
+
+- **f2pool**: nbminer -a cuckoo_ae -o stratum+tcp://ae.f2pool.com:7898 -u ak_xxxxxxx.worker:passwd
+- **beepool**: nbminer -a cuckoo_ae -o stratum+tcp://ae-pool.beepool.org:9505 -u ak_xxxx.worker:passwd
+- **uupool**: nbminer -a cuckoo_ae -o stratum+tcp://ae.uupool.cn:6210 -u ak_xxxxxx.worker:passwd
+
 ## 命令行参数
 
 nbminer -a algo -o protocol+socket_type://pool_host:pool:port -u wallet_address.workername:password
@@ -98,6 +105,7 @@ nbminer -a algo -o protocol+socket_type://pool_host:pool:port -u wallet_address.
   - BTM+ETH: tensority_ethash
   - Grin29: cuckaroo
   - Grin31: cuckatoo
+  - AE: cuckoo_ae
 - --api \<host:port>    REST API监听端口.
 - -o, --url \<url>    矿池地址.
   - BTM: stratum+tcp://btm.f2pool.com:9221
@@ -123,6 +131,7 @@ nbminer -a algo -o protocol+socket_type://pool_host:pool:port -u wallet_address.
 - **--cuckoo-intensity \<intensity>    设置挖Grin时的CPU负载，取值范围[1,12]，值越小挖矿算力越高，相对应的CPU负载也会更高。设置为0软件从1开始自适应调整。默认为0**
 - --log    生成日志文件，文件名为 `log_<时间戳>.txt`.
 - --long-format    使用更长的日期时间格式
+- --device-info    打印显卡的CUDA信息.
 
 ## API查询接口
 
@@ -208,6 +217,12 @@ GET http://api_host:port/api/v1/status
 - 如果限制了功耗在100%以下，此时降低显存频率甚至可以带来算力的提升（因为功耗限制，降显存频率以后可以有更多的电能共给到GPU核心）。
 
 ## 修改记录
+
+#### v21.0(2019-03-06)
+
+- 新增对AE的支持
+- 提高Grin29、Grin31的算力
+- 修复部分小概率出现的bug，提高程序稳定性
 
 #### v20.0(2019-02-21)
 
