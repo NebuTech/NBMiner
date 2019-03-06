@@ -215,7 +215,7 @@ GET http://api_host:port/api/v1/status
 
 #### v21.0(2019-03-06)
 
-- Add suuport for AE (Aeternity)
+- Add support for AE (Aeternity)
 - Improve performance on Grin29 & Grin31
 - Improve miner stability.
 
