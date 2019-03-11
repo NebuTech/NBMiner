@@ -1,6 +1,6 @@
-# NBMiner GPU挖矿软件
-
 ![](/logo.png)
+
+# NBMiner
 
 用于Nvidia显卡的`Bytom(比原链)`、`Ethereum(以太坊)` 、`Grin`、`AE`挖矿软件。
 

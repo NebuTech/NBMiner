@@ -1,5 +1,6 @@
-# NBMiner
 ![](/logo.png)
+
+# NBMiner
 
 Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin`, `Aeternity(AE)` mining.
 
