@@ -19,9 +19,9 @@
 | tensority        |   BTM   |   1,900   |  3,400   |  5,000   |  11,500  |
 | ethash           |   ETH   |   19.5M   |   26M    |   46M    |   35M    |
 | tensority_ethash | BTM+ETH | 950+15.5M | 1350+22M | 2450+40M | 7000+28M |
-| cuckaroo         | GRIN29  |   3.15    |   4.85   |   7.3    |    -     |
-| cuckatoo         | GRIN31  |     -     |   0.92   |   1.45   |    -     |
-| cuckoo_ae        |   AE    |    3.3    |   5.0    |   7.6    |    -     |
+| cuckaroo         | GRIN29  |    3.2    |   5.0    |   7.45   |   7.5    |
+| cuckatoo         | GRIN31  |     -     |   0.92   |   1.45   |   1.66   |
+| cuckoo_ae        |   AE    |    3.3    |   5.0    |   7.6    |   8.3    |
 
 ## 功能特点
 
@@ -69,6 +69,7 @@
 - **sparkpool:** nbminer -a ethash -o ethproxy+tcp://cn.sparkpool.com:3333 -u 0x12343bdgf.worker
 - **f2pool:** nbminer -a ethash -o ethproxy+tcp://eth.f2pool.com:8008 -u 0x12343bdgf.worker
 - **nanopool:** nbminer -a ethash -o ethproxy+tcp://eth-asia1.nanopool.org:9999 -u 0x12343bdgf.worker
+- **nicehash:** nbminer -a ethash -o ethnh+tcp://daggerhashimoto.eu.nicehash.com:3353 -u btc_address.worker
 
 #### BTM+ETH
 
@@ -219,6 +220,15 @@ GET http://api_host:port/api/v1/status
 - 如果限制了功耗在100%以下，此时降低显存频率甚至可以带来算力的提升（因为功耗限制，降显存频率以后可以有更多的电能共给到GPU核心）。
 
 ## 修改记录
+
+#### v21.1(2019-03-14)
+
+- 提高Grin29算力
+- 增加Grin、AE对20系卡的支持
+- 新增GPU挂起状态检测
+- 提高Grin在Nicehash上的share接受率
+- 修复ETH对NiceHash的支持
+- 修复备用矿池使用时的bug
 
 #### v21.0(2019-03-06)
 

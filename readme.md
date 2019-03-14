@@ -23,9 +23,9 @@ Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin`, `Aeternity(AE)` min
 | tensority        |   BTM   |   1,900   |  3,400   |  5,000   |  11,500  |
 | ethash           |   ETH   |   19.5M   |   26M    |   46M    |   35M    |
 | tensority_ethash | BTM+ETH | 950+15.5M | 1350+22M | 2450+40M | 7000+28M |
-| cuckaroo         | GRIN29  |   3.15    |   4.85   |   7.3    |    -     |
-| cuckatoo         | GRIN31  |     -     |   0.92   |   1.45   |    -     |
-| cuckoo_ae        |   AE    |    3.3    |   5.0    |   7.6    |    -     |
+| cuckaroo         | GRIN29  |    3.2    |   5.0    |   7.45   |   7.5    |
+| cuckatoo         | GRIN31  |     -     |   0.92   |   1.45   |   1.66   |
+| cuckoo_ae        |   AE    |    3.3    |   5.0    |   7.6    |   8.3    |
 
 ## Features
 
@@ -69,6 +69,7 @@ Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin`, `Aeternity(AE)` min
 - **sparkpool:** nbminer -a ethash -o ethproxy+tcp://cn.sparkpool.com:3333 -u 0x12343bdgf.worker
 - **f2pool:** nbminer -a ethash -o ethproxy+tcp://eth.f2pool.com:8008 -u 0x12343bdgf.worker
 - **nanopool:** nbminer -a ethash -o ethproxy+tcp://eth-asia1.nanopool.org:9999 -u 0x12343bdgf.worker
+- **nicehash:** nbminer -a ethash -o ethnh+tcp://daggerhashimoto.eu.nicehash.com:3353 -u btc_address.worker
 
 #### BTM+ETH
 
@@ -215,6 +216,15 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v21.1(2019-03-14)
+
+- Improve Grin29 performance
+- Add support for mining Grin & AE on Turing cards.
+- Add detection for GPU hung.
+- Increase chance of accept share when mining Grin on NiceHash.
+- Fix ETH mining on NiceHash.
+- Fix "accecpt share checking" bug  when using backup mining pools.
 
 #### v21.0(2019-03-06)
 
