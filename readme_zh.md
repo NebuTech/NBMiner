@@ -221,6 +221,10 @@ GET http://api_host:port/api/v1/status
 
 ## 修改记录
 
+#### v21.2(2019-03-15)
+
+- 修复在部分正常情况下出现 `"GPU hung detected"` 异常
+
 #### v21.1(2019-03-14)
 
 - 提高Grin29算力

@@ -217,6 +217,10 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v21.2(2019-03-15)
+
+- Fix bug: `"GPU hung detected"` happens under some normal conditions.
+
 #### v21.1(2019-03-14)
 
 - Improve Grin29 performance
