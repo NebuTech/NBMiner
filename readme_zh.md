@@ -34,26 +34,21 @@
   - ethash 0.65%
   - cuckaroo & cuckatoo & cuckoo_ae 2%
 
-## 使用方法
+## 配置需求
 
-- **驱动版本，大于等于377**
-- BTM挖矿：
-  - 编辑`start_btm.bat`文件，修改`-o` 参数后的矿池地址和`-u` 参数后的钱包地址或用户名。双击`start_btm.bat` 开始挖矿。
-- ETH挖矿：
-  - 编辑`start_eth.bat` 文件，修改`-o` 参数后的矿池地址和`-u` 参数后的钱包地址或用户名。双击`start_eth.bat` 开始挖矿。
-  - 若使用1080、1080ti、1060-5X等使用GDDR5X显存的用户，在挖矿之前先用管理员权限运行`OhGodAnETHlargementPill-r2.exe` 补丁，并保持在后台运行。
-- BTM+ETH双挖：
-  - 编辑`start_btm_eth.bat` 文件
-  - 修改`-o` 参数后的矿池地址为BTM的矿池地址，修改`-u` 参数后的钱包地址为BTM的钱包地址。
-  - 修改`-do` 参数后的矿池地址为ETH的矿池地址，修改`-du` 参数后的钱包地址为ETH的钱包地址。
-  - 双击`start_btm_eth.bat` 开始挖矿。
-  - **不同卡双挖时的配置不同，请自行测试合适的挖矿强度参数`-di` 最佳值。**
-- GRIN挖矿:
-  - 编辑`start_grin.bat` 文件
-  - 修改`-o` 参数后的矿池地址为BTM的矿池地址，修改`-u` 参数后的钱包地址为GRIN的矿池用户名或邮箱。
-- 使用配置文件进行配置
-  - 配置文件的样例在`config.json` 中，参考上述挖矿方法以及下述命令行参数修改对应的参数设置。
-  - 双击`start_config.bat` 进行挖矿。
+- **NVIDIA显卡驱动版本，大于等于377**
+- 显卡参数需求:
+
+|       算法       |  币种   | Compute Capability | 显存 (Win7 & Linux) | 显存 (Win10) |
+| :--------------: | :-----: | :----------------: | :-----------------: | :----------: |
+|    tensority     |   BTM   |   6.1, 7.0, 7.5    |         1GB         |     1GB      |
+|      ethash      |   ETH   | 6.0, 6.1, 7.0, 7.5 |         4GB         |     4GB      |
+| tensority_ethash | BTM+ETH |   6.1, 7.0, 7.5    |         4GB         |     4GB      |
+|     cuckaroo     | GRIN29  | 6.0, 6.1, 7.0, 7.5 |         5GB         |     6GB      |
+|     cuckatoo     | GRIN31  | 6.0, 6.1, 7.0, 7.5 |         8GB         |     10GB     |
+|    cuckoo_ae     |   AE    | 6.0, 6.1, 7.0, 7.5 |         5GB         |     6GB      |
+
+- \* Compute Capability 查询参考链接: [维基百科](<https://en.wikipedia.org/wiki/CUDA#GPUs_supported>)
 
 ## 使用样例
 
@@ -220,6 +215,11 @@ GET http://api_host:port/api/v1/status
 - 如果限制了功耗在100%以下，此时降低显存频率甚至可以带来算力的提升（因为功耗限制，降显存频率以后可以有更多的电能共给到GPU核心）。
 
 ## 修改记录
+
+#### v21.3(2019-03-20)
+
+- 修复可能出现的本地显示算力较低的情况
+- Grin、AE在矿池连接失效时不进行GPU运算
 
 #### v21.2(2019-03-15)
 
