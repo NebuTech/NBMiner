@@ -38,22 +38,21 @@ Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin`, `Aeternity(AE)` min
   * ethash 0.65%
   * cuckaroo & cuckatoo & cuckoo_ae 2%
 
-## Usage
+## Requirements
 
-- **MakeDriver version: >= 377**.
-- BTM Mining:
-  - Edit `start_btm.bat`, modify mining pool url after `-o` and username or wallet address after `-u`. 
-- ETH Mining:
-  - Edit `start_eth.bat`, modify mining pool url after `-o` and username or wallet address after `-u`. 
-  - For users using 1080, 1080ti, 1060-5X cards, which equiped with GDDR5X memory, remember to start `OhGodAnETHlargementPill-r2.exe`  patch before mining and keep it running background.
-- BTM+ETH Dual Mining:
-  -  Edit `start_btm_eth.bat`
-  -  Set mining pool for BTM after option `-o`, set username for BTM pool after option `-u`
-  -  Set mining pool for ETH after option `-do`, set username for ETH pool after option `-du`
-  -  There is an option `-di` (secondary-intensity) stands for the relative intensity of mining ETH.  Tuning this option to get best performance on different cards.
-- Grin Mining:
-  - Edit `start_grin.bat`
-  - Set mining pool for Grin after option `-o`, set username for Grin pool after option `-u`
+- **NVIDIA Driver version: >= 377**.
+- GPU Specific Requirements:
+
+|    Algorithm     |  Coin   | Compute Capability | Memory (Win7 & Linux) | Memory (Win10) |
+| :--------------: | :-----: | :----------------: | :-------------------: | :------------: |
+|    tensority     |   BTM   |   6.1, 7.0, 7.5    |          1GB          |      1GB       |
+|      ethash      |   ETH   | 6.0, 6.1, 7.0, 7.5 |          4GB          |      4GB       |
+| tensority_ethash | BTM+ETH |   6.1, 7.0, 7.5    |          4GB          |      4GB       |
+|     cuckaroo     | GRIN29  | 6.0, 6.1, 7.0, 7.5 |          5GB          |      6GB       |
+|     cuckatoo     | GRIN31  | 6.0, 6.1, 7.0, 7.5 |          8GB          |      10GB      |
+|    cuckoo_ae     |   AE    | 6.0, 6.1, 7.0, 7.5 |          5GB          |      6GB       |
+
+- \* Compute Capability reference link: [wikipedia](<https://en.wikipedia.org/wiki/CUDA#GPUs_supported>)
 
 ## Sample Usages
 
@@ -216,6 +215,11 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v21.3(2019-03-20)
+
+- Fix bug: Occasionlly lower local hashrate than previously version.
+- Do not run GPU if mining pool not connected when mining Grin & AE.
 
 #### v21.2(2019-03-15)
 
