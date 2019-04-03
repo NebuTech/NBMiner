@@ -23,9 +23,9 @@ Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin`, `Aeternity(AE)` min
 | tensority        |   BTM   |   1,900   |  3,400   |  5,000   |  11,500  |
 | ethash           |   ETH   |   19.5M   |   26M    |   46M    |   35M    |
 | tensority_ethash | BTM+ETH | 950+15.5M | 1350+22M | 2450+40M | 7000+28M |
-| cuckaroo         | GRIN29  |    3.2    |   5.0    |   7.45   |   7.5    |
-| cuckatoo         | GRIN31  |     -     |   0.92   |   1.45   |   1.66   |
-| cuckoo_ae        |   AE    |    3.3    |   5.0    |   7.6    |   8.3    |
+| cuckaroo         | GRIN29  |    3.2    |   4.9    |   7.5    |   7.7    |
+| cuckatoo         | GRIN31  |     -     |   0.94   |   1.48   |   1.65   |
+| cuckoo_ae        |   AE    |    3.3    |   5.0    |   7.6    |   8.6    |
 
 ## Features
 
@@ -138,21 +138,11 @@ Options：
 * -du2, --secondary-user2 \<user>    Backup 2 ETH username when dual mining.
 * -d, --devices \<devices>    Specify GPU list to use. Format: "-d 0,1,2,3" to use first 4 GPU.
 * --strict-ssl    Check validity of certificate when use SSL connection.
-* **--cuckoo-intensity \<intensity>    Set intensity of cuckoo, cuckaroo, cuckatoo, [1, 12]. Smaller value means higher CPU usage to gain more hashrate. Set to 0 means autumatically adapt. Default: 0.**
+* --cuckoo-intensity \<intensity>    Set intensity of cuckoo, cuckaroo, cuckatoo, [1, 12]. Smaller value means higher CPU usage to gain more hashrate. Set to 0 means autumatically adapt. Default: 0.
+* --cuckatoo-power-optimize    Set this option to reduce the range of power consumed by rig when minining with algo cuckatoo. This feature can reduce the chance of power supply shutdown caused by overpowered. Warning: Setting this option may cause drop on minining performance.
 * --log    Generate log file named `log_<timestamp>.txt`.
 * --long-format    Use 'yyyy-MM-dd HH:mm:ss,zzz' for log time format.
 * --device-info    Print device cuda information.
-
-## GPU Tuning
-
-- **BTM + ETH:**
-  - Suitable `secondary intensity` depends on the ratio of `core performance / memory bandwidth`
-  - GPU with relative low memory bandwidth, eg. 1070ti, could tune down the `di`. Otherwise tune up.
-  - The ratio changes with different `core`, `tdp`, `memory`  settings when overclock GPU.
-- BTM:
-  - Bytom mining performance depend heavily on GPU core, instead of GPU memory.
-  - Miner can gain beffer hashrate if tuning down GPU memory frequency.
-  - For example, using MSI Afterburner to turn down GPU memory to -500.
 
 ## API Reference
 
@@ -215,6 +205,14 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v21.4(2019-04-03)
+
+- Improve Grin31 performance.
+- Improve performance of Grin29 & AE on RTX cards.
+- Fix Grin31 compatibility on Win7 with 8G cards.
+- New option to reduce the range of power consumption by multi-gpu rig.
+- Add miner Up Time print in cmd outputs.
 
 #### v21.3(2019-03-20)
 

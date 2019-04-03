@@ -19,9 +19,9 @@
 | tensority        |   BTM   |   1,900   |  3,400   |  5,000   |  11,500  |
 | ethash           |   ETH   |   19.5M   |   26M    |   46M    |   35M    |
 | tensority_ethash | BTM+ETH | 950+15.5M | 1350+22M | 2450+40M | 7000+28M |
-| cuckaroo         | GRIN29  |    3.2    |   5.0    |   7.45   |   7.5    |
-| cuckatoo         | GRIN31  |     -     |   0.92   |   1.45   |   1.66   |
-| cuckoo_ae        |   AE    |    3.3    |   5.0    |   7.6    |   8.3    |
+| cuckaroo         | GRIN29  |    3.2    |   4.9    |   7.5    |   7.7    |
+| cuckatoo         | GRIN31  |     -     |   0.94   |   1.48   |   1.65   |
+| cuckoo_ae        |   AE    |    3.3    |   5.0    |   7.6    |   8.6    |
 
 ## 功能特点
 
@@ -126,7 +126,8 @@ nbminer -a algo -o protocol+socket_type://pool_host:pool:port -u wallet_address.
 - -du2, --secondary-user \<user>    双挖备用矿池2的用户名
 - -d, --devices \<devices>    指定使用哪些显卡来挖矿. 比如: "-d 0,1,2,3" 使用前4个显卡.
 - --strict-ssl    使用SSL连接时验证矿池证书
-- **--cuckoo-intensity \<intensity>    设置挖Grin时的CPU负载，取值范围[1,12]，值越小挖矿算力越高，相对应的CPU负载也会更高。设置为0软件从1开始自适应调整。默认为0**
+- --cuckoo-intensity \<intensity>    设置挖Grin时的CPU负载，取值范围[1,12]，值越小挖矿算力越高，相对应的CPU负载也会更高。设置为0软件从1开始自适应调整。默认为0
+- --cuckatoo-power-optimize    减小多卡矿机挖Grin31的总功耗波动，避免电源过载关机（设置该选项可能导致算力略微降低，请测试后谨慎使用）
 - --log    生成日志文件，文件名为 `log_<时间戳>.txt`.
 - --long-format    使用更长的日期时间格式
 - --device-info    打印显卡的CUDA信息.
@@ -215,6 +216,14 @@ GET http://api_host:port/api/v1/status
 - 如果限制了功耗在100%以下，此时降低显存频率甚至可以带来算力的提升（因为功耗限制，降显存频率以后可以有更多的电能共给到GPU核心）。
 
 ## 修改记录
+
+#### v21.4(2019-04-03)
+
+- 提高Grin31的算力
+- 提高Grin29、AE在20系列卡的算力
+- 修复Grin31在win7对于 8G卡的兼容性
+- 新增选项，可降低挖Grin31的总功耗波动，减少电源过载的概率
+- 命令行输出增加内核挖矿时间(Up Time).
 
 #### v21.3(2019-03-20)
 
