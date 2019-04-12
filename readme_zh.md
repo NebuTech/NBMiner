@@ -2,7 +2,7 @@
 
 # NBMiner
 
-用于Nvidia显卡的`Bytom(比原链)`、`Ethereum(以太坊)` 、`Grin`、`AE`挖矿软件。
+用于Nvidia显卡的`Bytom(比原链)`、`Ethereum(以太坊)` 、`Grin`、`AE`、`SWAP(XWP)`挖矿软件。
 
 ## 下载地址
 
@@ -19,9 +19,10 @@
 | tensority        |   BTM   |   1,900   |  3,400   |  5,000   |  11,500  |
 | ethash           |   ETH   |   19.5M   |   26M    |   46M    |   35M    |
 | tensority_ethash | BTM+ETH | 950+15.5M | 1350+22M | 2450+40M | 7000+28M |
-| cuckaroo         | GRIN29  |    3.2    |   4.9    |   7.5    |   7.7    |
+| cuckaroo         | GRIN29  |   3.35    |   5.05   |   7.8    |   7.75   |
 | cuckatoo         | GRIN31  |     -     |   0.94   |   1.48   |   1.65   |
-| cuckoo_ae        |   AE    |    3.3    |   5.0    |   7.6    |   8.6    |
+| cuckoo_ae        |   AE    |    3.3    |   5.0    |   7.65   |   8.6    |
+| cuckaroo_swap    |  SWAP   |   3.35    |   5.05   |   7.8    |   7.75   |
 
 ## 功能特点
 
@@ -32,7 +33,7 @@
   - tensority_ethash 3%
   - tensority(Pascal) 2%, tensority(Turing) 3%
   - ethash 0.65%
-  - cuckaroo & cuckatoo & cuckoo_ae 2%
+  - cuckaroo & cuckatoo & cuckoo_ae & cuckaroo_swap 2%
 
 ## 配置需求
 
@@ -47,6 +48,7 @@
 |     cuckaroo     | GRIN29  | 6.0, 6.1, 7.0, 7.5 |         5GB         |     6GB      |
 |     cuckatoo     | GRIN31  | 6.0, 6.1, 7.0, 7.5 |         8GB         |     10GB     |
 |    cuckoo_ae     |   AE    | 6.0, 6.1, 7.0, 7.5 |         5GB         |     6GB      |
+|  cuckaroo_swap   |  SWAP   | 6.0, 6.1, 7.0, 7.5 |         5GB         |     6GB      |
 
 - \* Compute Capability 查询参考链接: [维基百科](<https://en.wikipedia.org/wiki/CUDA#GPUs_supported>)
 
@@ -90,6 +92,11 @@
 - **beepool**: nbminer -a cuckoo_ae -o stratum+tcp://ae-pool.beepool.org:9505 -u ak_xxxx.worker:passwd
 - **uupool**: nbminer -a cuckoo_ae -o stratum+tcp://ae.uupool.cn:6210 -u ak_xxxxxx.worker:passwd
 
+#### SWAP
+
+- **luckypool:** -a cuckaroo_swap -o stratum+tcp://swap2.luckypool.io:4466 -u wallet_address.test
+- **herominers**: -a cuckaroo_swap -o stratum+tcp://swap.herominers.com:10441 -u wallet_address.test
+
 ## 命令行参数
 
 nbminer -a algo -o protocol+socket_type://pool_host:pool:port -u wallet_address.workername:password
@@ -104,6 +111,7 @@ nbminer -a algo -o protocol+socket_type://pool_host:pool:port -u wallet_address.
   - Grin29: cuckaroo
   - Grin31: cuckatoo
   - AE: cuckoo_ae
+  - SWAP: cuckaroo_swap
 - --api \<host:port>    REST API监听端口.
 - -o, --url \<url>    矿池地址.
   - BTM: stratum+tcp://btm.f2pool.com:9221
@@ -216,6 +224,12 @@ GET http://api_host:port/api/v1/status
 - 如果限制了功耗在100%以下，此时降低显存频率甚至可以带来算力的提升（因为功耗限制，降显存频率以后可以有更多的电能共给到GPU核心）。
 
 ## 修改记录
+
+#### v22.1(2019-04-12)
+
+- 增加对Swap（XWP）的支持
+- 提高Grin29、AE的算力
+- 优化Grin、AE在windows上的兼容性，算力提升明显
 
 #### v21.4(2019-04-03)
 
