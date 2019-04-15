@@ -225,6 +225,11 @@ GET http://api_host:port/api/v1/status
 
 ## 修改记录
 
+#### v22.2(2019-04-15)
+
+- 提高Grin31对Windows 8G卡的兼容性
+- 默认设置Grin、AE的`--cuckoo-intensity`参数为4，降低默认情况下CPU使用
+
 #### v22.1(2019-04-12)
 
 - 增加对Swap（XWP）的支持

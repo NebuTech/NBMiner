@@ -8,6 +8,10 @@ Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin`, `Aeternity(AE)` , `
 
 [查看中文说明](/readme_zh.md)
 
+## Contact Us
+
+nebutech@hotmail.com
+
 ## Download
 
 [Download here](https://github.com/NebuTech/BTMiner_NebuTech/releases)
@@ -213,6 +217,11 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v22.2(2019-04-15)
+
+- Improve compatiblity for mining Grin31 on windows 8GB cards.
+- Set default `--cuckoo-intensity` to 4, lower CPU usage on default settings when mining Grin & AE.
 
 #### v22.1(2019-04-12)
 
