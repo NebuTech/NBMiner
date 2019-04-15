@@ -28,7 +28,7 @@ nebutech@hotmail.com
 | ethash           |   ETH   |   19.5M   |   26M    |   46M    |   35M    |
 | tensority_ethash | BTM+ETH | 950+15.5M | 1350+22M | 2450+40M | 7000+28M |
 | cuckaroo         | GRIN29  |   3.35    |   5.05   |   7.8    |   7.75   |
-| cuckatoo         | GRIN31  |     -     |   0.94   |   1.48   |   1.65   |
+| cuckatoo         | GRIN31  |     -     |   0.94   |   1.56   |   1.65   |
 | cuckoo_ae        |   AE    |    3.3    |   5.0    |   7.65   |   8.6    |
 | cuckaroo_swap    |  SWAP   |   3.35    |   5.05   |   7.8    |   7.75   |
 
