@@ -21,8 +21,8 @@
 | tensority_ethash | BTM+ETH | 950+15.5M | 1600+26.5M | 1350+22M | 2450+40M | 7000+28M |
 | cuckaroo         | GRIN29  |    3.4    |    5.5     |   5.15   |   7.9    |   7.75   |
 | cuckatoo         | GRIN31  |     -     |    0.89    |   0.94   |   1.56   |   1.65   |
-| cuckoo_ae        |   AE    |   3.35    |    5.45    |   5.1    |   7.7    |   8.6    |
-| cuckaroo_swap    |  SWAP   |    3.4    |    5.5     |   5.15   |   7.8    |   7.75   |
+| cuckoo_ae        |   AE    |   3.35    |    5.45    |   5.1    |   7.75   |   8.6    |
+| cuckaroo_swap    |  SWAP   |    3.4    |    5.5     |   5.15   |   7.9    |   7.75   |
 
 ## 功能特点
 
