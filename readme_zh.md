@@ -14,15 +14,15 @@
 
 ## 参考算力（默认频率）
 
-| 算法             |  币种   | P106-100  |  1070ti  |  1080ti  |   2080   |
-| :--------------- | :-----: | :-------: | :------: | :------: | :------: |
-| tensority        |   BTM   |   1,900   |  3,400   |  5,000   |  11,500  |
-| ethash           |   ETH   |   19.5M   |   26M    |   46M    |   35M    |
-| tensority_ethash | BTM+ETH | 950+15.5M | 1350+22M | 2450+40M | 7000+28M |
-| cuckaroo         | GRIN29  |   3.35    |   5.05   |   7.8    |   7.75   |
-| cuckatoo         | GRIN31  |     -     |   0.94   |   1.56   |   1.65   |
-| cuckoo_ae        |   AE    |    3.3    |   5.0    |   7.65   |   8.6    |
-| cuckaroo_swap    |  SWAP   |   3.35    |   5.05   |   7.8    |   7.75   |
+| 算法             |  币种   | P106-100  |  P104-8G   |  1070ti  |  1080ti  |   2080   |
+| :--------------- | :-----: | :-------: | :--------: | :------: | :------: | :------: |
+| tensority        |   BTM   |   1,900   |    3000    |  3,400   |  5,000   |  11,500  |
+| ethash           |   ETH   |   21.2M   |   34.5M    |  26.9M   |   46M    |   35M    |
+| tensority_ethash | BTM+ETH | 950+15.5M | 1600+26.5M | 1350+22M | 2450+40M | 7000+28M |
+| cuckaroo         | GRIN29  |    3.4    |    5.5     |   5.15   |   7.9    |   7.75   |
+| cuckatoo         | GRIN31  |     -     |    0.89    |   0.94   |   1.56   |   1.65   |
+| cuckoo_ae        |   AE    |   3.35    |    5.45    |   5.1    |   7.7    |   8.6    |
+| cuckaroo_swap    |  SWAP   |    3.4    |    5.5     |   5.15   |   7.8    |   7.75   |
 
 ## 功能特点
 
@@ -91,6 +91,7 @@
 - **f2pool**: nbminer -a cuckoo_ae -o stratum+tcp://ae.f2pool.com:7898 -u ak_xxxxxxx.worker:passwd
 - **beepool**: nbminer -a cuckoo_ae -o stratum+tcp://ae-pool.beepool.org:9505 -u ak_xxxx.worker:passwd
 - **uupool**: nbminer -a cuckoo_ae -o stratum+tcp://ae.uupool.cn:6210 -u ak_xxxxxx.worker:passwd
+- **nicehash**: nbminer -a cuckoo_ae -o stratum+tcp://cuckoocycle.eu.nicehash.com:3376 -u btc_address.test
 
 #### SWAP
 
@@ -99,7 +100,7 @@
 
 ## 命令行参数
 
-nbminer -a algo -o protocol+socket_type://pool_host:pool:port -u wallet_address.workername:password
+**nbminer -a algo -o protocol+socket_type://pool_host:pool:port -u wallet_address.worker:passwd**
 
 - -?, -h, --help    显示帮助信息.
 - -v, --version    显示版本号.
@@ -217,13 +218,13 @@ GET http://api_host:port/api/v1/status
 
 - 当核心超频过度，或者显卡本身的核心体质不好时，会因为显卡内部计算错误，导致出现各种的CUDA错误。此时应该尝试 检查转接板连接稳定性、降低核心频率、降低功耗，再做尝试。
 
-#### 显卡超频参数应如何设置才能更好的挖BTM?
-
-- Bytom挖矿主要依靠GPU核心（相对而言，ETH挖矿则更依靠显存带宽），因此若需超频应该增大核心频率，一般建议核心+100~+200。
-- 由于主要依赖核心，因此矿工在实际挖矿中可以通过将显存调整为-500，基本不会影响BTM的挖矿算力（仅供参考，以实测为准）。
-- 如果限制了功耗在100%以下，此时降低显存频率甚至可以带来算力的提升（因为功耗限制，降显存频率以后可以有更多的电能共给到GPU核心）。
-
 ## 修改记录
+
+#### v23.2(2019-05-09)
+
+- 提高Grin、AE算力
+- 增加保真度（幸运值）显示
+- 细节改进和修复
 
 #### v22.3(2019-04-15)
 

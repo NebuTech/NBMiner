@@ -22,15 +22,15 @@ nebutech@hotmail.com
 
 ## Performance (stock frequency)
 
-| Algorithm        |  Coin   | P106-100  |  1070ti  |  1080ti  |   2080   |
-| :--------------- | :-----: | :-------: | :------: | :------: | :------: |
-| tensority        |   BTM   |   1,900   |  3,400   |  5,000   |  11,500  |
-| ethash           |   ETH   |   19.5M   |   26M    |   46M    |   35M    |
-| tensority_ethash | BTM+ETH | 950+15.5M | 1350+22M | 2450+40M | 7000+28M |
-| cuckaroo         | GRIN29  |   3.35    |   5.05   |   7.8    |   7.75   |
-| cuckatoo         | GRIN31  |     -     |   0.94   |   1.56   |   1.65   |
-| cuckoo_ae        |   AE    |    3.3    |   5.0    |   7.65   |   8.6    |
-| cuckaroo_swap    |  SWAP   |   3.35    |   5.05   |   7.8    |   7.75   |
+| Algorithm        |  Coin   | P106-100  |  P104-8G   |  1070ti  |  1080ti  |   2080   |
+| :--------------- | :-----: | :-------: | :--------: | :------: | :------: | :------: |
+| tensority        |   BTM   |   1,900   |    3000    |  3,400   |  5,000   |  11,500  |
+| ethash           |   ETH   |   21.2M   |   34.5M    |  26.9M   |   46M    |   35M    |
+| tensority_ethash | BTM+ETH | 950+15.5M | 1600+26.5M | 1350+22M | 2450+40M | 7000+28M |
+| cuckaroo         | GRIN29  |    3.4    |    5.5     |   5.15   |   7.9    |   7.75   |
+| cuckatoo         | GRIN31  |     -     |    0.89    |   0.94   |   1.56   |   1.65   |
+| cuckoo_ae        |   AE    |   3.35    |    5.45    |   5.1    |   7.7    |   8.6    |
+| cuckaroo_swap    |  SWAP   |    3.4    |    5.5     |   5.15   |   7.8    |   7.75   |
 
 ## Features
 
@@ -99,6 +99,7 @@ nebutech@hotmail.com
 - **f2pool**: nbminer -a cuckoo_ae -o stratum+tcp://ae.f2pool.com:7898 -u ak_xxxxxxx.worker:passwd
 - **beepool**: nbminer -a cuckoo_ae -o stratum+tcp://ae-pool.beepool.org:9505 -u ak_xxxx.worker:passwd
 - **uupool**: nbminer -a cuckoo_ae -o stratum+tcp://ae.uupool.cn:6210 -u ak_xxxxxx.worker:passwd
+- **nicehash**: nbminer -a cuckoo_ae -o stratum+tcp://cuckoocycle.eu.nicehash.com:3376 -u btc_address.test
 
 #### SWAP
 
@@ -217,6 +218,13 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v23.2(2019-05-09)
+
+- Improve Grin & AE & SWAP performance.
+- Add support for mining AE on NiceHash.
+- Add display output of Fidelity.
+- Minor improvement and bug fix.
 
 #### v22.2(2019-04-15)
 
