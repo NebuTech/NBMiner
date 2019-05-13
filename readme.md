@@ -105,6 +105,7 @@ nebutech@hotmail.com
 
 - **luckypool:** -a cuckaroo_swap -o stratum+tcp://swap2.luckypool.io:4466 -u wallet_address.test
 - **herominers**: -a cuckaroo_swap -o stratum+tcp://swap.herominers.com:10441 -u wallet_address.test
+- **herominers solo**: -a cuckaroo_swap -o stratum+tcp://swap.herominers.com:10441 -u solo:wallet_address.test:arbitrary
 
 ## CMD options：
 
