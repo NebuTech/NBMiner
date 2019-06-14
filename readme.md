@@ -10,15 +10,13 @@ Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin`, `Aeternity(AE)` , `
 
 ## Contact Us
 
-nebutech@hotmail.com
+- Email: nebutech@hotmail.com
+- Discord: https://discord.gg/3gDU8Kf
+- BitcoinTalk: https://bitcointalk.org/index.php?topic=5099379
 
 ## Download
 
 [Download here](https://github.com/NebuTech/BTMiner_NebuTech/releases)
-
-## Support on Bitcointalk
-
-[BitcoinTalk](https://bitcointalk.org/index.php?topic=5099379)
 
 ## Performance (stock frequency)
 
