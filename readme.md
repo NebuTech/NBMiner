@@ -154,6 +154,7 @@ Options：
 * --strict-ssl    Check validity of certificate when use SSL connection.
 * --cuckoo-intensity \<intensity>    Set intensity of cuckoo, cuckaroo, cuckatoo, [1, 12]. Smaller value means higher CPU usage to gain more hashrate. Set to 0 means autumatically adapt. Default: 0.
 * --cuckatoo-power-optimize    Set this option to reduce the range of power consumed by rig when minining with algo cuckatoo. This feature can reduce the chance of power supply shutdown caused by overpowered. Warning: Setting this option may cause drop on minining performance.
+* --temperature-limit \<temp-limit>    Set temperature limit of GPU, if exceeds, stop GPU for 10 seconds and continue.
 * --log    Generate log file named `log_<timestamp>.txt`.
 * --long-format    Use 'yyyy-MM-dd HH:mm:ss,zzz' for log time format.
 * --device-info    Print device cuda information.
@@ -219,6 +220,11 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v23.3(2019-06-14)
+
+- Fix mining AE (cuckoocycle) on NiceHash.
+- Add option to set a temperature limit on GPU.
 
 #### v23.2(2019-05-09)
 
