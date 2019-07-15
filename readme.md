@@ -2,7 +2,7 @@
 
 # NBMiner
 
-Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin`, `Aeternity(AE)` , `SWAP(XWP)`mining.
+Nvidia GPU Miner for `GRIN`, `AE`, `SERO`, `BTM`, `ETH`, `SWAP`mining.
 
 ## 中文说明
 
@@ -25,10 +25,12 @@ Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin`, `Aeternity(AE)` , `
 | tensority        |   BTM   |   1,900   |    3000    |  3,400   |  5,000   |  11,500  |
 | ethash           |   ETH   |   21.2M   |   34.5M    |  26.9M   |   46M    |   35M    |
 | tensority_ethash | BTM+ETH | 950+15.5M | 1600+26.5M | 1350+22M | 2450+40M | 7000+28M |
-| cuckaroo         | GRIN29  |    3.4    |    5.5     |   5.15   |   7.9    |   7.75   |
+| cuckaroo         | GRIN29  |   3.45    |    5.6     |   5.25   |   8.1    |   8.9    |
+| cuckarood        | GRIN29  |   3.45    |    5.6     |   5.25   |   8.1    |   9.1    |
 | cuckatoo         | GRIN31  |     -     |    0.89    |   0.94   |   1.56   |   1.65   |
-| cuckoo_ae        |   AE    |   3.35    |    5.45    |   5.1    |   7.7    |   8.6    |
-| cuckaroo_swap    |  SWAP   |    3.4    |    5.5     |   5.15   |   7.9    |   7.75   |
+| cuckoo_ae        |   AE    |   3.35    |    5.5     |   5.15   |   7.9    |   8.75   |
+| cuckaroo_swap    |  SWAP   |   3.45    |    5.6     |   5.25   |   8.1    |   8.9    |
+| progpow_sero     |  SERO   |   10.3M   |   17.5M    |  13.3M   |  22.5M   |  25.8M   |
 
 ## Features
 
@@ -39,7 +41,8 @@ Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin`, `Aeternity(AE)` , `
   * tensority_ethash 3%
   * tensority(Pascal) 2%, tensority(Turing) 3%
   * ethash 0.65%
-  * cuckaroo & cuckatoo & cuckoo_ae & cuckaroo_swap 2%
+  * cuckaroo & cuckarood & cuckatoo & cuckoo_ae & cuckaroo_swap 2%
+  * progpow_sero 2%
 
 ## Requirements
 
@@ -51,10 +54,11 @@ Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin`, `Aeternity(AE)` , `
 |    tensority     |   BTM   |   6.1, 7.0, 7.5    |          1GB          |      1GB       |
 |      ethash      |   ETH   | 6.0, 6.1, 7.0, 7.5 |          4GB          |      4GB       |
 | tensority_ethash | BTM+ETH |   6.1, 7.0, 7.5    |          4GB          |      4GB       |
-|     cuckaroo     | GRIN29  | 6.0, 6.1, 7.0, 7.5 |          5GB          |      6GB       |
+|   cuckaroo(d)    | GRIN29  | 6.0, 6.1, 7.0, 7.5 |          5GB          |      6GB       |
 |     cuckatoo     | GRIN31  | 6.0, 6.1, 7.0, 7.5 |          8GB          |      10GB      |
 |    cuckoo_ae     |   AE    | 6.0, 6.1, 7.0, 7.5 |          5GB          |      6GB       |
 |  cuckaroo_swap   |  SWAP   | 6.0, 6.1, 7.0, 7.5 |          5GB          |      6GB       |
+|   progpow_sero   |  SERO   |     6.0 - 7.5      |          2GB          |      2GB       |
 
 - \* Compute Capability reference link: [wikipedia](<https://en.wikipedia.org/wiki/CUDA#GPUs_supported>)
 
@@ -72,7 +76,7 @@ Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin`, `Aeternity(AE)` , `
 - **sparkpool:** nbminer -a ethash -o ethproxy+tcp://cn.sparkpool.com:3333 -u 0x12343bdgf.worker
 - **f2pool:** nbminer -a ethash -o ethproxy+tcp://eth.f2pool.com:8008 -u 0x12343bdgf.worker
 - **nanopool:** nbminer -a ethash -o ethproxy+tcp://eth-asia1.nanopool.org:9999 -u 0x12343bdgf.worker
-- **nicehash:** nbminer -a ethash -o ethnh+tcp://daggerhashimoto.eu.nicehash.com:3353 -u btc_address.worker
+- **nicehash:** nbminer -a ethash -o nicehash+tcp://daggerhashimoto.eu.nicehash.com:3353 -u btc_address.worker
 
 #### BTM+ETH
 
@@ -83,21 +87,21 @@ Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin`, `Aeternity(AE)` , `
 - **sparkpool:** nbminer -a cuckaroo -o stratum+tcp://grin.sparkpool.com:6666 -u 123@qq.com/worker
 - **f2pool:** nbminer -a cuckaroo -o stratum+tcp://grin29.f2pool.com:13654 -u username.worker:passwd
 - **btc.com**: nbminer -a cuckaroo -o stratum+tcp://sz-grin.ss.btc.com:1800 -u username.worker:passwd
-- **nicehash:** nbminer -a cuckaroo -o stratum+tcp://grincuckaroo29.eu.nicehash.com:3371 -u btc_address.worker
+- **nicehash:** nbminer -a cuckaroo -o nicehash+tcp://grincuckaroo29.eu.nicehash.com:3371 -u btc_address.worker
 
 #### Grin31
 
 - **sparkpool:** nbminer -a cuckatoo -o stratum+tcp://grin.sparkpool.com:66667-u 123@qq.com/worker
 - **f2pool:** nbminer -a cuckatoo -o stratum+tcp://grin31.f2pool.com:13654 -u username.worker:passwd
 - **btc.com**: nbminer -a cuckatoo -o stratum+tcp://sz-grin.ss.btc.com:1800 -u username.worker:passwd
-- **nicehash:** nbminer -a cuckatoo -o stratum+tcp://grincuckaroo31.eu.nicehash.com:3372 -u btc_address.worker
+- **nicehash:** nbminer -a cuckatoo -o nicehash+tcp://grincuckaroo31.eu.nicehash.com:3372 -u btc_address.worker
 
 #### AE
 
 - **f2pool**: nbminer -a cuckoo_ae -o stratum+tcp://ae.f2pool.com:7898 -u ak_xxxxxxx.worker:passwd
 - **beepool**: nbminer -a cuckoo_ae -o stratum+tcp://ae-pool.beepool.org:9505 -u ak_xxxx.worker:passwd
 - **uupool**: nbminer -a cuckoo_ae -o stratum+tcp://ae.uupool.cn:6210 -u ak_xxxxxx.worker:passwd
-- **nicehash**: nbminer -a cuckoo_ae -o stratum+tcp://cuckoocycle.eu.nicehash.com:3376 -u btc_address.test
+- **nicehash**: nbminer -a cuckoo_ae -o nicehash+tcp://cuckoocycle.eu.nicehash.com:3376 -u btc_address.test
 
 #### SWAP
 
@@ -105,38 +109,23 @@ Nvidia GPU Miner for `Bytom(BTM)`, `Ethereum(ETH)` , `Grin`, `Aeternity(AE)` , `
 - **herominers**: -a cuckaroo_swap -o stratum+tcp://swap.herominers.com:10441 -u wallet_address.test
 - **herominers solo**: -a cuckaroo_swap -o stratum+tcp://swap.herominers.com:10441 -u solo:wallet_address.test:arbitrary
 
+#### SERO
+
+- **beepool**: -a progpow_sero -o stratum+tcp://sero-pool.beepool.org:9515 -u wallet_address.worker:pswd
+- **f2pool**: -a progpow_sero -o stratum+tcp//sero.f2pool.com:4200 -u wallet_address.worker:pswd
+
 ## CMD options：
 
-**Typical usage** ：
-
-- BTM: nbminer -a tensority -o stratum+tcp://btm.f2pool.com:9221 -u bm1xxxxxxxxxxxx.worker
-- ETH: nbminer -a ethash -o **ethproxy**+tcp://eth.f2pool.com:8008 -u 0xxxxxxxxxx.worker
-- BTM+ETH: nbminer -a tensority_ethash -o stratum+tcp://btm.f2pool.com:9221 -u btm_wallet_address.worker -do ethproxy+tcp://eth.f2pool.com:8008 -du 0x_eth_wallet_address.worker
-- Grin29: nbminer -a cuckaroo -o stratum+tcp://grin.sparkpool.com:6666 -u username@email.com/rig
-- Grin31: nbminer -a cuckatoo -o stratum+tcp://grin.sparkpool.com:6667 -u username@email.com/rig
-
-Options：
+**nbminer -a algo -o protocol+socket_type://pool_host:pool_port -u wallet_address.worker:passwd**
 
   * -h, --help    Displays this help.
   * -v, --version    Displays version information.
   * -c, --config \<config file path>    Use json format config file rather than cmd line options.
   * -a, --algo \<algo>    Select mining algorithm
-        * BTM: tensority
-        * ETH: ethash
-        * BTM+ETH: tensority_ethash
-        * Grin29: cuckaroo
-        * Grin31: cuckatoo
-        * AE: cuckoo_ae
-        * SWAP: cuckaroo_swap
   * --api  \<host:port>    The endpoint for serving REST API.
   * -o, --url \<url>    Mining pool url.
-    - BTM: stratum+tcp://btm.f2pool.com:9221
-    - BTM with SSL: stratum+ssl://btm.f2pool.com:9443
-    - ETH: ethproxy+tcp://eth.f2pool.com:8008
-    - ETH with NiceHash: ethnh+tcp://daggerhashimoto.eu.nicehash.com:3353
   * -u, --user \<user>    User used in Mining pool, wallet address or username.
       * Format: [username|wallet].workername:password
-      * Example: bm1xxxxxx.worker      myusername.worker:password
   * -o1, --url1 \<url> url for backup mining pool 1.
   * -u1, --user1 \<user> username for backup mining pool 1.
   * -o2, --url2 \<url> url for backup mining pool 2.
@@ -149,13 +138,18 @@ Options：
 * -do2, --secondary-url2 \<url>    Backup 2 ETH mining pool when dual mining.
 * -du2, --secondary-user2 \<user>    Backup 2 ETH username when dual mining.
 * -d, --devices \<devices>    Specify GPU list to use. Format: "-d 0,1,2,3" to use first 4 GPU.
+* -i, --intensity \<intensities>    Comma-separated list of intensities (1 -100).
 * --strict-ssl    Check validity of certificate when use SSL connection.
 * --cuckoo-intensity \<intensity>    Set intensity of cuckoo, cuckaroo, cuckatoo, [1, 12]. Smaller value means higher CPU usage to gain more hashrate. Set to 0 means autumatically adapt. Default: 0.
 * --cuckatoo-power-optimize    Set this option to reduce the range of power consumed by rig when minining with algo cuckatoo. This feature can reduce the chance of power supply shutdown caused by overpowered. Warning: Setting this option may cause drop on minining performance.
 * --temperature-limit \<temp-limit>    Set temperature limit of GPU, if exceeds, stop GPU for 10 seconds and continue.
-* --log    Generate log file named `log_<timestamp>.txt`.
+* --log    Generate log file named `logs/log_<timestamp>.txt`.
+* --log-file \<filename>    Generate custom log file. Note: This option will override `--log`.
+* --no-nvml    Do not query cuda device health status.
+* --fidelity-timeframe \<timeframe>    Set timeframe for the calculation of fidelity, unit in hour. Default: 24.
 * --long-format    Use 'yyyy-MM-dd HH:mm:ss,zzz' for log time format.
 * --device-info    Print device cuda information.
+* --no-watchdog    Disable watchdog process.
 
 ## API Reference
 
@@ -218,6 +212,21 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v24.0(2019-07-15)
+
+- Support Grin29 fork on 17th, July.
+  - When using algo `cuckaroo`, v24.0 will do an automatically switch to `cuckarood` on height 262080.
+  - Add a temporary option `-grin29-fork-height`, user can test the auto-switch by setting this option to lower height value.
+- Improve performance on Grin29 & AE.
+- Add support for mining `SERO`, algo `progpow_sero`.
+- Add option `-intensity` to set the intensity level for each GPU.
+- Add option `-fidelity-timeframe` to customize the timeframe for fidelity calculation.
+- Add option `-log-file` to set a specified log filename.
+- Add option `-no-nvml` to close the periodical query for GPU status.
+- Add new method to turn on NiceHash protocol, `nicehash+tcp://`
+  - Also compatible with previous url based method.
+- Minor improvement and bug fix.
 
 #### v23.3(2019-06-14)
 

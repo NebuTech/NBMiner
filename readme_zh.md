@@ -2,7 +2,7 @@
 
 # NBMiner
 
-用于Nvidia显卡的`Bytom(比原链)`、`Ethereum(以太坊)` 、`Grin`、`AE`、`SWAP(XWP)`挖矿软件。
+用于Nvidia显卡的`GRIN`、`AE`、`SERO`、`BTM`、`ETH` 、`SWAP`挖矿软件。
 
 ## 下载地址
 
@@ -19,10 +19,12 @@
 | tensority        |   BTM   |   1,900   |    3000    |  3,400   |  5,000   |  11,500  |
 | ethash           |   ETH   |   21.2M   |   34.5M    |  26.9M   |   46M    |   35M    |
 | tensority_ethash | BTM+ETH | 950+15.5M | 1600+26.5M | 1350+22M | 2450+40M | 7000+28M |
-| cuckaroo         | GRIN29  |    3.4    |    5.5     |   5.15   |   7.9    |   7.75   |
+| cuckaroo         | GRIN29  |   3.45    |    5.6     |   5.25   |   8.1    |   8.9    |
+| cuckarood        | GRIN29  |   3.45    |    5.6     |   5.25   |   8.1    |   9.1    |
 | cuckatoo         | GRIN31  |     -     |    0.89    |   0.94   |   1.56   |   1.65   |
-| cuckoo_ae        |   AE    |   3.35    |    5.45    |   5.1    |   7.75   |   8.6    |
-| cuckaroo_swap    |  SWAP   |    3.4    |    5.5     |   5.15   |   7.9    |   7.75   |
+| cuckoo_ae        |   AE    |   3.35    |    5.5     |   5.15   |   7.9    |   8.75   |
+| cuckaroo_swap    |  SWAP   |   3.45    |    5.6     |   5.25   |   8.1    |   8.9    |
+| progpow_sero     |  SERO   |   10.3M   |   17.5M    |  13.3M   |  22.5M   |  25.8M   |
 
 ## 功能特点
 
@@ -33,7 +35,8 @@
   - tensority_ethash 3%
   - tensority(Pascal) 2%, tensority(Turing) 3%
   - ethash 0.65%
-  - cuckaroo & cuckatoo & cuckoo_ae & cuckaroo_swap 2%
+  - cuckaroo & cuckarood & cuckatoo & cuckoo_ae & cuckaroo_swap 2%
+  - progpow_sero 2%
 
 ## 配置需求
 
@@ -45,10 +48,11 @@
 |    tensority     |   BTM   |   6.1, 7.0, 7.5    |         1GB         |     1GB      |
 |      ethash      |   ETH   | 6.0, 6.1, 7.0, 7.5 |         4GB         |     4GB      |
 | tensority_ethash | BTM+ETH |   6.1, 7.0, 7.5    |         4GB         |     4GB      |
-|     cuckaroo     | GRIN29  | 6.0, 6.1, 7.0, 7.5 |         5GB         |     6GB      |
+|   cuckaroo(d)    | GRIN29  | 6.0, 6.1, 7.0, 7.5 |         5GB         |     6GB      |
 |     cuckatoo     | GRIN31  | 6.0, 6.1, 7.0, 7.5 |         8GB         |     10GB     |
 |    cuckoo_ae     |   AE    | 6.0, 6.1, 7.0, 7.5 |         5GB         |     6GB      |
 |  cuckaroo_swap   |  SWAP   | 6.0, 6.1, 7.0, 7.5 |         5GB         |     6GB      |
+|   progpow_sero   |  SERO   |     6.0 - 7.5      |         2GB         |     2GB      |
 
 - \* Compute Capability 查询参考链接: [维基百科](<https://en.wikipedia.org/wiki/CUDA#GPUs_supported>)
 
@@ -66,7 +70,7 @@
 - **sparkpool:** nbminer -a ethash -o ethproxy+tcp://cn.sparkpool.com:3333 -u 0x12343bdgf.worker
 - **f2pool:** nbminer -a ethash -o ethproxy+tcp://eth.f2pool.com:8008 -u 0x12343bdgf.worker
 - **nanopool:** nbminer -a ethash -o ethproxy+tcp://eth-asia1.nanopool.org:9999 -u 0x12343bdgf.worker
-- **nicehash:** nbminer -a ethash -o ethnh+tcp://daggerhashimoto.eu.nicehash.com:3353 -u btc_address.worker
+- **nicehash:** nbminer -a ethash -o nicehash+tcp://daggerhashimoto.eu.nicehash.com:3353 -u btc_address.worker
 
 #### BTM+ETH
 
@@ -77,51 +81,44 @@
 - **sparkpool:** nbminer -a cuckaroo -o stratum+tcp://grin.sparkpool.com:6666 -u 123@qq.com/worker
 - **f2pool:** nbminer -a cuckaroo -o stratum+tcp://grin29.f2pool.com:13654 -u username.worker:passwd
 - **btc.com**: nbminer -a cuckaroo -o stratum+tcp://sz-grin.ss.btc.com:1800 -u username.worker:passwd
-- **nicehash:** nbminer -a cuckaroo -o stratum+tcp://grincuckaroo29.eu.nicehash.com:3371 -u btc_address.worker
+- **nicehash:** nbminer -a cuckaroo -o nicehash+tcp://grincuckaroo29.eu.nicehash.com:3371 -u btc_address.worker
 
 #### Grin31
 
 - **sparkpool:** nbminer -a cuckatoo -o stratum+tcp://grin.sparkpool.com:66667-u 123@qq.com/worker
 - **f2pool:** nbminer -a cuckatoo -o stratum+tcp://grin31.f2pool.com:13654 -u username.worker:passwd
 - **btc.com**: nbminer -a cuckatoo -o stratum+tcp://sz-grin.ss.btc.com:1800 -u username.worker:passwd
-- **nicehash:** nbminer -a cuckatoo -o stratum+tcp://grincuckaroo31.eu.nicehash.com:3372 -u btc_address.worker
+- **nicehash:** nbminer -a cuckatoo -o nicehash+tcp://grincuckaroo31.eu.nicehash.com:3372 -u btc_address.worker
 
 #### AE
 
 - **f2pool**: nbminer -a cuckoo_ae -o stratum+tcp://ae.f2pool.com:7898 -u ak_xxxxxxx.worker:passwd
 - **beepool**: nbminer -a cuckoo_ae -o stratum+tcp://ae-pool.beepool.org:9505 -u ak_xxxx.worker:passwd
 - **uupool**: nbminer -a cuckoo_ae -o stratum+tcp://ae.uupool.cn:6210 -u ak_xxxxxx.worker:passwd
-- **nicehash**: nbminer -a cuckoo_ae -o stratum+tcp://cuckoocycle.eu.nicehash.com:3376 -u btc_address.test
+- **nicehash**: nbminer -a cuckoo_ae -o nicehash+tcp://cuckoocycle.eu.nicehash.com:3376 -u btc_address.worker
 
 #### SWAP
 
 - **luckypool:** -a cuckaroo_swap -o stratum+tcp://swap2.luckypool.io:4466 -u wallet_address.test
 - **herominers**: -a cuckaroo_swap -o stratum+tcp://swap.herominers.com:10441 -u wallet_address.test
 
+#### SERO
+
+- **beepool**: -a progpow_sero -o stratum+tcp://sero-pool.beepool.org:9515 -u wallet_address.worker:pswd
+- **f2pool**: -a progpow_sero -o stratum+tcp//sero.f2pool.com:4200 -u wallet_address.worker:pswd
+
 ## 命令行参数
 
-**nbminer -a algo -o protocol+socket_type://pool_host:pool:port -u wallet_address.worker:passwd**
+**nbminer -a algo -o 协议+连接类型://矿池地址:矿池端口 -u 钱包地址或用户名.矿工名:密码可选**
 
 - -?, -h, --help    显示帮助信息.
 - -v, --version    显示版本号.
 - -c, --config \<config file path>    通过json格式配置文件启动挖矿程序.
 - -a, --algo \<algo>    选择挖矿算法
-  - BTM: tensority
-  - ETH: ethash
-  - BTM+ETH: tensority_ethash
-  - Grin29: cuckaroo
-  - Grin31: cuckatoo
-  - AE: cuckoo_ae
-  - SWAP: cuckaroo_swap
 - --api \<host:port>    REST API监听端口.
 - -o, --url \<url>    矿池地址.
-  - BTM: stratum+tcp://btm.f2pool.com:9221
-  - BTM with SSL: stratum+ssl://btm.f2pool.com:9443
-  - ETH: ethproxy+tcp://eth.f2pool.com:8008
-  - ETH NiceHash: ethnh+tcp://daggerhashimoto.eu.nicehash.com:3353
 - -u, --user \<user>    挖矿使用的用户名或钱包地址.
   - 格式：[用户名|钱包地址].矿机名:密码
-  - 举例：bmxxxxxx.worker       mypc.worker:password
 - -o1, --url1 \<url> 备用矿池1的URL
 - -u1, --user1 \<user> 备用矿池1的用户名
 - -o2, --url2 \<url> 备用矿池2的URL
@@ -134,21 +131,24 @@
 - -do2, --secondary-url \<url>    双挖备用矿池2的矿池地址
 - -du2, --secondary-user \<user>    双挖备用矿池2的用户名
 - -d, --devices \<devices>    指定使用哪些显卡来挖矿. 比如: "-d 0,1,2,3" 使用前4个显卡.
+- -i, --intensity \<intensities>    GPU使用强度列表 (1 -100)，默认100.
 - --strict-ssl    使用SSL连接时验证矿池证书
 - --cuckoo-intensity \<intensity>    设置挖Grin时的CPU负载，取值范围[1,12]，值越小挖矿算力越高，相对应的CPU负载也会更高。设置为0软件从1开始自适应调整。默认为0
 - --cuckatoo-power-optimize    减小多卡矿机挖Grin31的总功耗波动，避免电源过载关机（设置该选项可能导致算力略微降低，请测试后谨慎使用）
 - --temperature-limit \<temp-limit>    设置显卡温度上限，一旦超过，停止挖矿10s后继续
 - --log    生成日志文件，文件名为 `log_<时间戳>.txt`.
+- --log-file \<filename>    自定义日志文件名，该选项将覆盖`--log`.
+- --no-nvml    不周期性地查询GPU的温度功耗等状态.
+- --fidelity-timeframe \<timeframe>    设置保真度计算的时间范围，以小时为单位，默认24.
 - --long-format    使用更长的日期时间格式
 - --device-info    打印显卡的CUDA信息.
+- --no-watchdog    不启动看门狗进程.
 
 ## API查询接口
 
 ### 网页监控
 
 在浏览器中打开 http://api_host:port/ 启动网页监控.
-
-`注：双挖时的网页监控暂时不完善。`
 
 ### 请求
 
@@ -220,6 +220,19 @@ GET http://api_host:port/api/v1/status
 - 当核心超频过度，或者显卡本身的核心体质不好时，会因为显卡内部计算错误，导致出现各种的CUDA错误。此时应该尝试 检查转接板连接稳定性、降低核心频率、降低功耗，再做尝试。
 
 ## 修改记录
+
+#### v24.0(2019-07-15)
+
+- 支持Grin29分叉
+  - 此版本cuckaroo算法会在262080块自动切换为cuckarood算法，也可分叉后手动指定。
+  - 此版本新增临时选项`-grin29-fork-height`，可通过其修改预设的`262080`高度进行自动切换测试。
+- 提升Grin29、AE算力
+- 新增对SERO挖矿的支持
+- 新增选项-`intensity`可调节显卡挖矿强度
+- 新增选项`-fidelity-timeframe`可自定义保真度计算时间范围
+- 新增选项`-log-file`可指定log文件名
+- 新增选项`-no-nvml`可关闭温度等显卡状态查询，
+- 细节改进和修复
 
 #### v23.3(2019-06-14)
 
