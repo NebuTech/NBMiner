@@ -11,7 +11,7 @@ Nvidia GPU Miner for `GRIN`, `AE`, `SERO`, `BTM`, `ETH`, `SWAP`mining.
 ## Contact Us
 
 - Email: nebutech@hotmail.com
-- Discord: https://discord.gg/3gDU8Kf
+- Discord: https://discord.gg/ZMejVXj
 - BitcoinTalk: https://bitcointalk.org/index.php?topic=5099379
 
 ## Download
