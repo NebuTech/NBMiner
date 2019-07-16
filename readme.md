@@ -213,6 +213,14 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v24.1(2019-07-16)
+
+- Fix lower hashrate than previous version for Grin29 & AE on 10xx 6GB cards
+- Fix mining Grin29 AE on Turing 6GB Cards on Win10.
+- Fix the disfunction of auto-reboot when GPU error happens.
+- Fix start using json config file.
+- Change the GPU MEM size display upon launch from Total Size to Available Size.
+
 #### v24.0(2019-07-15)
 
 - Support Grin29 fork on 17th, July.
