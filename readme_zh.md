@@ -78,10 +78,10 @@
 
 #### Grin29
 
-- **sparkpool:** nbminer -a cuckaroo -o stratum+tcp://grin.sparkpool.com:6666 -u 123@qq.com/worker
-- **f2pool:** nbminer -a cuckaroo -o stratum+tcp://grin29.f2pool.com:13654 -u username.worker:passwd
-- **btc.com**: nbminer -a cuckaroo -o stratum+tcp://sz-grin.ss.btc.com:1800 -u username.worker:passwd
-- **nicehash:** nbminer -a cuckaroo -o nicehash+tcp://grincuckaroo29.eu.nicehash.com:3371 -u btc_address.worker
+- **sparkpool:** nbminer -a cuckarood -o stratum+tcp://grin.sparkpool.com:6666 -u 123@qq.com/worker
+- **f2pool:** nbminer -a cuckarood -o stratum+tcp://grin29.f2pool.com:13654 -u username.worker:passwd
+- **btc.com**: nbminer -a cuckarood -o stratum+tcp://sz-grin.ss.btc.com:1800 -u username.worker:passwd
+- **nicehash:** nbminer -a cuckarood -o nicehash+tcp://grincuckaroo29.eu.nicehash.com:3371 -u btc_address.worker
 
 #### Grin31
 
@@ -220,6 +220,14 @@ GET http://api_host:port/api/v1/status
 - 当核心超频过度，或者显卡本身的核心体质不好时，会因为显卡内部计算错误，导致出现各种的CUDA错误。此时应该尝试 检查转接板连接稳定性、降低核心频率、降低功耗，再做尝试。
 
 ## 修改记录
+
+#### v24.2(2019-07-17)
+
+- cuckaroo不再自动切换到cuckarood，挖Grin29请使用cuckarood算法
+- 略微提高2060在win10下的Grin29算力
+- 修复部分linux发行版启动卡住的情况
+- 新增选项`--generate-config`可生成样例配置文件
+- **在linux挖sero的用户，如果要关闭看门狗，注意样例脚本中的环境变量设置**
 
 #### v24.1(2019-07-16)
 
