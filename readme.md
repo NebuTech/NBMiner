@@ -84,10 +84,10 @@ Nvidia GPU Miner for `GRIN`, `AE`, `SERO`, `BTM`, `ETH`, `SWAP`mining.
 
 #### Grin29
 
-- **sparkpool:** nbminer -a cuckaroo -o stratum+tcp://grin.sparkpool.com:6666 -u 123@qq.com/worker
-- **f2pool:** nbminer -a cuckaroo -o stratum+tcp://grin29.f2pool.com:13654 -u username.worker:passwd
-- **btc.com**: nbminer -a cuckaroo -o stratum+tcp://sz-grin.ss.btc.com:1800 -u username.worker:passwd
-- **nicehash:** nbminer -a cuckaroo -o nicehash+tcp://grincuckaroo29.eu.nicehash.com:3371 -u btc_address.worker
+- **sparkpool:** nbminer -a cuckarood -o stratum+tcp://grin.sparkpool.com:6666 -u 123@qq.com/worker
+- **f2pool:** nbminer -a cuckarood -o stratum+tcp://grin29.f2pool.com:13654 -u username.worker:passwd
+- **btc.com**: nbminer -a cuckarood -o stratum+tcp://sz-grin.ss.btc.com:1800 -u username.worker:passwd
+- **nicehash:** nbminer -a cuckarood -o nicehash+tcp://grincuckaroo29.eu.nicehash.com:3371 -u btc_address.worker
 
 #### Grin31
 
@@ -149,6 +149,7 @@ Nvidia GPU Miner for `GRIN`, `AE`, `SERO`, `BTM`, `ETH`, `SWAP`mining.
 * --fidelity-timeframe \<timeframe>    Set timeframe for the calculation of fidelity, unit in hour. Default: 24.
 * --long-format    Use 'yyyy-MM-dd HH:mm:ss,zzz' for log time format.
 * --device-info    Print device cuda information.
+* --generate-config \<filename>    Generate a sample config json file.
 * --no-watchdog    Disable watchdog process.
 
 ## API Reference
@@ -212,6 +213,14 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v24.2(2019-07-17)
+
+- Disable the auto-switch from cuckaroo -> cuckarood
+- Slightliy improve RTX2060 Grin29 performance under win10
+- Fix startup stuck issue on some linux distro.
+- Add new option `--generate-config` to generate a sample config file.
+- **Note: Linux sero mining need to set a env before start if run with --no-watchdog, please check `start_sero.sh`**
 
 #### v24.1(2019-07-16)
 
