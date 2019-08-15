@@ -2,7 +2,7 @@
 
 # NBMiner
 
-用于Nvidia显卡的`GRIN`、`AE`、`SERO`、`BTM`、`ETH` 、`SWAP`挖矿软件。
+用于Nvidia显卡的`GRIN`、`AE`、`SERO`、`SIPC`、`BTM`、`ETH` 、`SWAP`挖矿软件。
 
 ## 下载地址
 
@@ -25,6 +25,7 @@
 | cuckoo_ae        |   AE    |   3.35    |    5.5     |   5.15   |   7.9    |   8.75   |
 | cuckaroo_swap    |  SWAP   |   3.45    |    5.6     |   5.25   |   8.1    |   8.9    |
 | progpow_sero     |  SERO   |   10.3M   |   17.5M    |  13.3M   |  22.5M   |  25.8M   |
+| sipc             |  SIPC   |   600k    |    940k    |   780k   |   960k   |  1050k   |
 
 ## 功能特点
 
@@ -37,6 +38,7 @@
   - ethash 0.65%
   - cuckaroo & cuckarood & cuckatoo & cuckoo_ae & cuckaroo_swap 2%
   - progpow_sero 2%
+  - sipc 2%
 
 ## 配置需求
 
@@ -53,6 +55,7 @@
 |    cuckoo_ae     |   AE    | 6.0, 6.1, 7.0, 7.5 |         5GB         |     6GB      |
 |  cuckaroo_swap   |  SWAP   | 6.0, 6.1, 7.0, 7.5 |         5GB         |     6GB      |
 |   progpow_sero   |  SERO   |     6.0 - 7.5      |         2GB         |     2GB      |
+|       sipc       |  SIPC   | 6.0, 6.1, 7.0, 7.5 |         1GB         |     1GB      |
 
 - \* Compute Capability 查询参考链接: [维基百科](<https://en.wikipedia.org/wiki/CUDA#GPUs_supported>)
 
@@ -88,7 +91,7 @@
 - **sparkpool:** nbminer -a cuckatoo -o stratum+tcp://grin.sparkpool.com:66667-u 123@qq.com/worker
 - **f2pool:** nbminer -a cuckatoo -o stratum+tcp://grin31.f2pool.com:13654 -u username.worker:passwd
 - **btc.com**: nbminer -a cuckatoo -o stratum+tcp://sz-grin.ss.btc.com:1800 -u username.worker:passwd
-- **nicehash:** nbminer -a cuckatoo -o nicehash+tcp://grincuckaroo31.eu.nicehash.com:3372 -u btc_address.worker
+- **nicehash:** nbminer -a cuckatoo -o nicehash+tcp://grincuckatoo31.eu.nicehash.com:3372 -u btc_address.worker
 
 #### AE
 
@@ -99,13 +102,19 @@
 
 #### SWAP
 
-- **luckypool:** -a cuckaroo_swap -o stratum+tcp://swap2.luckypool.io:4466 -u wallet_address.test
-- **herominers**: -a cuckaroo_swap -o stratum+tcp://swap.herominers.com:10441 -u wallet_address.test
+- **luckypool:** nbminer -a cuckaroo_swap -o stratum+tcp://swap2.luckypool.io:4466 -u wallet_address.test
+- **herominers**: nbminer -a cuckaroo_swap -o stratum+tcp://swap.herominers.com:10441 -u wallet_address.test
+- **herominers solo**: nbminer -a cuckaroo_swap -o stratum+tcp://swap.herominers.com:10441 -u solo:wallet_address.test:arbitrary
 
 #### SERO
 
-- **beepool**: -a progpow_sero -o stratum+tcp://sero-pool.beepool.org:9515 -u wallet_address.worker:pswd
-- **f2pool**: -a progpow_sero -o stratum+tcp//sero.f2pool.com:4200 -u wallet_address.worker:pswd
+- **beepool**: nbminer -a progpow_sero -o stratum+tcp://sero-pool.beepool.org:9515 -u wallet_address.worker:pswd
+- **f2pool**: nbminer -a progpow_sero -o stratum+tcp//sero.f2pool.com:4200 -u wallet_address.worker:pswd
+
+#### SIPC
+
+- **simpool:** nbminer -a sipc -o stratum+tcp://sipc.simpool.vip:8801 -u username.worker:passwd
+- **matpool**: nbminer -a sipc -o stratum+tcp://sipc.matpool.io:11100 -u username.worker:passwd
 
 ## 命令行参数
 
@@ -221,6 +230,12 @@ GET http://api_host:port/api/v1/status
 - 当核心超频过度，或者显卡本身的核心体质不好时，会因为显卡内部计算错误，导致出现各种的CUDA错误。此时应该尝试 检查转接板连接稳定性、降低核心频率、降低功耗，再做尝试。
 
 ## 修改记录
+
+#### v24.3(2019-08-15)
+
+- 增加对SIPC挖矿的支持
+- 修复24.1，24.2版本挖SERO时CPU占用过高的问题
+- 修复Grin的intensity参数
 
 #### v24.2(2019-07-17)
 
