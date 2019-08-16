@@ -31,7 +31,7 @@ Nvidia GPU Miner for `GRIN`, `AE`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 | cuckoo_ae        |   AE    |   3.35    |    5.5     |   5.15   |   7.9    |   8.75   |
 | cuckaroo_swap    |  SWAP   |   3.45    |    5.6     |   5.25   |   8.1    |   8.9    |
 | progpow_sero     |  SERO   |   10.3M   |   17.5M    |  13.3M   |  22.5M   |  25.8M   |
-| sipc             |  SIPC   |   600k    |    940k    |   780k   |   960k   |  1050k   |
+| sipc             |  SIPC   |   600k    |    940k    |   780k   |  1170k   |  1050k   |
 
 ## Features
 
@@ -221,6 +221,11 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v24.4(2019-08-16)
+
+- Fix SIPC dxpool compatibility.
+- **1080 & 1080ti  users should use `OhGodAnETHlargementPill` to boost SIPC performance.**
 
 #### v24.3(2019-08-15)
 
