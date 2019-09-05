@@ -2,7 +2,7 @@
 
 # NBMiner
 
-Nvidia GPU Miner for `GRIN`, `AE`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
+Nvidia GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 
 ## 中文说明
 
@@ -20,18 +20,20 @@ Nvidia GPU Miner for `GRIN`, `AE`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 
 ## Performance (stock frequency)
 
-| Algorithm        |  Coin   | P106-100  |  P104-8G   |  1070ti  |  1080ti  |   2080   |
-| :--------------- | :-----: | :-------: | :--------: | :------: | :------: | :------: |
-| tensority        |   BTM   |   1,900   |    3000    |  3,400   |  5,000   |  11,500  |
-| ethash           |   ETH   |   21.2M   |   34.5M    |  26.9M   |   46M    |   35M    |
-| tensority_ethash | BTM+ETH | 950+15.5M | 1600+26.5M | 1350+22M | 2450+40M | 7000+28M |
-| cuckaroo         | GRIN29  |   3.45    |    5.6     |   5.25   |   8.1    |   8.9    |
-| cuckarood        | GRIN29  |   3.45    |    5.6     |   5.25   |   8.1    |   9.1    |
-| cuckatoo         | GRIN31  |     -     |    0.89    |   0.94   |   1.56   |   1.65   |
-| cuckoo_ae        |   AE    |   3.35    |    5.5     |   5.15   |   7.9    |   8.75   |
-| cuckaroo_swap    |  SWAP   |   3.45    |    5.6     |   5.25   |   8.1    |   8.9    |
-| progpow_sero     |  SERO   |   10.3M   |   17.5M    |  13.3M   |  22.5M   |  25.8M   |
-| sipc             |  SIPC   |   600k    |    940k    |   780k   |  1170k   |  1050k   |
+| Algorithm        |  Coin   | P106-100  |  P104-8G   |   1070ti   |   1080ti   |   2080   |
+| :--------------- | :-----: | :-------: | :--------: | :--------: | :--------: | :------: |
+| tensority        |   BTM   |   1,900   |    3000    |   3,400    |   5,000    |  11,500  |
+| ethash           |   ETH   |   21.2M   |   34.5M    |   26.9M    |    46M     |  35.5M   |
+| tensority_ethash | BTM+ETH | 950+15.5M | 1600+26.5M |  1350+22M  |  2450+40M  | 7000+28M |
+| cuckaroo         | GRIN29  |   3.45    |    5.6     |    5.25    |    8.1     |   8.9    |
+| cuckarood        | GRIN29  |   3.45    |    5.6     |    5.25    |    8.1     |   9.1    |
+| cuckatoo         | GRIN31  |     -     |    0.89    |    0.94    |    1.56    |   1.65   |
+| cuckoo_ae        |   AE    |   3.35    |    5.5     |    5.15    |    7.9     |   8.75   |
+| cuckaroo_swap    |  SWAP   |   3.45    |    5.6     |    5.25    |    8.1     |   8.9    |
+| progpow_sero     |  SERO   |   10.3M   |   17.5M    |   13.3M    |   22.5M    |  25.8M   |
+| sipc             |  SIPC   |   600k    |    940k    |    780k    |   1170k    |  1050k   |
+| eaglesong        |   CKB   |   200M    |    305M    |    350M    |    535M    |   540M   |
+| eaglesong_ethash | CKB+ETH | 100M+20M  | 160M+32.5M | 210M+26.5M | 305M+43.5M | 395M+35M |
 
 ## Features
 
@@ -39,29 +41,31 @@ Nvidia GPU Miner for `GRIN`, `AE`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 * Support backup mining pool configuration.
 * Support SSL connection to mining pools.
 * Dev Fee: 
-  * tensority_ethash 3%
-  * tensority(Pascal) 2%, tensority(Turing) 3%
+  * tensority(Pascal) 2%, tensority(Turing) 3%, tensority_ethash 3%
   * ethash 0.65%
   * cuckaroo & cuckarood & cuckatoo & cuckoo_ae & cuckaroo_swap 2%
   * progpow_sero 2%
   * sipc 2%
+  * eaglehash 2%, eaglehash_ethash 3%
 
 ## Requirements
 
 - **NVIDIA Driver version: >= 377**.
 - GPU Specific Requirements:
 
-|    Algorithm     |  Coin   | Compute Capability | Memory (Win7 & Linux) | Memory (Win10) |
-| :--------------: | :-----: | :----------------: | :-------------------: | :------------: |
-|    tensority     |   BTM   |   6.1, 7.0, 7.5    |          1GB          |      1GB       |
-|      ethash      |   ETH   | 6.0, 6.1, 7.0, 7.5 |          4GB          |      4GB       |
+| Algorithm        |  Coin   | Compute Capability | Memory (Win7 & Linux) | Memory (Win10) |
+| :--------------- | :-----: | :----------------: | :-------------------: | :------------: |
+| tensority        |   BTM   |   6.1, 7.0, 7.5    |          1GB          |      1GB       |
+| ethash           |   ETH   | 6.0, 6.1, 7.0, 7.5 |          4GB          |      4GB       |
 | tensority_ethash | BTM+ETH |   6.1, 7.0, 7.5    |          4GB          |      4GB       |
-|   cuckaroo(d)    | GRIN29  | 6.0, 6.1, 7.0, 7.5 |          5GB          |      6GB       |
-|     cuckatoo     | GRIN31  | 6.0, 6.1, 7.0, 7.5 |          8GB          |      10GB      |
-|    cuckoo_ae     |   AE    | 6.0, 6.1, 7.0, 7.5 |          5GB          |      6GB       |
-|  cuckaroo_swap   |  SWAP   | 6.0, 6.1, 7.0, 7.5 |          5GB          |      6GB       |
-|   progpow_sero   |  SERO   |     6.0 - 7.5      |          2GB          |      2GB       |
-|       sipc       |  SIPC   | 6.0, 6.1, 7.0, 7.5 |          1GB          |      1GB       |
+| cuckaroo(d)      | GRIN29  | 6.0, 6.1, 7.0, 7.5 |          5GB          |      6GB       |
+| cuckatoo         | GRIN31  | 6.0, 6.1, 7.0, 7.5 |          8GB          |      10GB      |
+| cuckoo_ae        |   AE    | 6.0, 6.1, 7.0, 7.5 |          5GB          |      6GB       |
+| cuckaroo_swap    |  SWAP   | 6.0, 6.1, 7.0, 7.5 |          5GB          |      6GB       |
+| progpow_sero     |  SERO   |     6.0 - 7.5      |          2GB          |      2GB       |
+| sipc             |  SIPC   | 6.0, 6.1, 7.0, 7.5 |          1GB          |      1GB       |
+| eaglesong        |   CKB   | 6.0, 6.1, 7.0, 7.5 |         0.1GB         |     0.1GB      |
+| eaglesong_ethash | CKB+ETH | 6.0, 6.1, 7.0, 7.5 |          4GB          |      4GB       |
 
 - \* Compute Capability reference link: [wikipedia](<https://en.wikipedia.org/wiki/CUDA#GPUs_supported>)
 
@@ -121,6 +125,20 @@ Nvidia GPU Miner for `GRIN`, `AE`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 
 - **simpool:** nbminer -a sipc -o stratum+tcp://sipc.simpool.vip:8801 -u username.worker:passwd
 - **matpool**: nbminer -a sipc -o stratum+tcp://sipc.matpool.io:11100 -u username.worker:passwd
+
+#### CKB
+
+- **sparkpool**: nbminer -a eaglesong -o ckbproxy+tcp://ckb.sparkpool.com:8888 -u user.worker:passwd
+- **beepool**: nbminer -a eaglesong -o stratum+tcp://ckb-pool.beepool.org:9550 -u email/worker:passwd
+- **uupool**: nbminer -a eaglesong -o stratum+tcp://ckb.uupool.cn:10861 -u user.worker:passwd
+- **f2pool**: nbminer -a eaglesong -o stratum+tcp://ckb.f2pool.com:4300 -u wallet.worker:passwd
+
+#### CKB+ETH
+
+- **sparkpool**: nbminer -a eaglesong_ethash -o ckbproxy+tcp://ckb.sparkpool.com:8888 -u user.worker:passwd
+- **beepool**: nbminer -a eaglesong -o stratum+tcp://ckb-pool.beepool.org:9550 -u email/worker:passwd
+- **uupool**: nbminer -a eaglesong -o stratum+tcp://ckb.uupool.cn:10861 -u user.worker:passwd
+- **f2pool**: nbminer -a eaglesong -o stratum+tcp://ckb.f2pool.com:4300 -u wallet.worker:passwd
 
 ## CMD options：
 
@@ -221,6 +239,13 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v25.0(2019-09-05)
+
+- Add support for `CKB` mining & `CKB`+`ETH` dual mining.
+- Enhance `-di` parameter to support comma separated list to specify `-di` value for each card.
+- The default value of `-di` for `CKB`+`ETH` mining ranges from 4 ~ 8 depending on GPU model, valid value range in [1, 10], higher value means higher intensity for `ETH`.
+- The best value of `-di` differs by GPU model, overclock and power limitation.
 
 #### v24.4(2019-08-16)
 
