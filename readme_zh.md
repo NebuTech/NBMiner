@@ -2,7 +2,7 @@
 
 # NBMiner
 
-用于Nvidia显卡的`GRIN`、`AE`、`CKB`、`SERO`、`SIPC`、`BTM`、`ETH` 、`SWAP`挖矿软件。
+NVIDIA、AMD显卡的`GRIN`、`AE`、`CKB`、`SERO`、`SIPC`、`BTM`、`ETH` 、`SWAP`挖矿软件。
 
 ## 下载地址
 
@@ -248,6 +248,10 @@ GET http://api_host:port/api/v1/status
 - 当核心超频过度，或者显卡本身的核心体质不好时，会因为显卡内部计算错误，导致出现各种的CUDA错误。此时应该尝试 检查转接板连接稳定性、降低核心频率、降低功耗，再做尝试。
 
 ## 修改记录
+
+#### v25.1(2019-09-07)
+
+- 新增A卡单挖`CKB`
 
 #### v25.0(2019-09-05)
 

@@ -2,7 +2,7 @@
 
 # NBMiner
 
-Nvidia GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
+GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 
 ## 中文说明
 
@@ -239,6 +239,10 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v25.1(2019-09-07)
+
+- Add support for `CKB` mining on AMD cards.
 
 #### v25.0(2019-09-05)
 
