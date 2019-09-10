@@ -240,6 +240,11 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v25.2(2019-09-10)
+
+- Add support for `CKB` mining on AMD cards under linux.
+- Bug fix.
+
 #### v25.1(2019-09-07)
 
 - Add support for `CKB` mining on AMD cards.
