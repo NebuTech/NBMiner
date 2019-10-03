@@ -20,20 +20,20 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 
 ## Performance (stock frequency)
 
-| Algorithm        |  Coin   | P106-100  |  P104-8G   |   1070ti   |   1080ti   |   2080   |
-| :--------------- | :-----: | :-------: | :--------: | :--------: | :--------: | :------: |
-| tensority        |   BTM   |   1,900   |    3000    |   3,400    |   5,000    |  11,500  |
-| ethash           |   ETH   |   21.2M   |   34.5M    |   26.9M    |    46M     |  35.5M   |
-| tensority_ethash | BTM+ETH | 950+15.5M | 1600+26.5M |  1350+22M  |  2450+40M  | 7000+28M |
-| cuckaroo         | GRIN29  |   3.45    |    5.6     |    5.25    |    8.1     |   8.9    |
-| cuckarood        | GRIN29  |   3.45    |    5.6     |    5.25    |    8.1     |   9.1    |
-| cuckatoo         | GRIN31  |     -     |    0.89    |    0.94    |    1.56    |   1.65   |
-| cuckoo_ae        |   AE    |   3.35    |    5.5     |    5.15    |    7.9     |   8.75   |
-| cuckaroo_swap    |  SWAP   |   3.45    |    5.6     |    5.25    |    8.1     |   8.9    |
-| progpow_sero     |  SERO   |   10.3M   |   17.5M    |   13.3M    |   22.5M    |  25.8M   |
-| sipc             |  SIPC   |   600k    |    940k    |    780k    |   1170k    |  1050k   |
-| eaglesong        |   CKB   |   200M    |    305M    |    350M    |    535M    |   540M   |
-| eaglesong_ethash | CKB+ETH | 100M+20M  | 160M+32.5M | 210M+26.5M | 305M+43.5M | 395M+35M |
+| Algorithm        |  Coin   |  P106-100  |  P104-8G   |   1070ti   |  1080ti  |   2080   | RX580 2048sp |
+| :--------------- | :-----: | :--------: | :--------: | :--------: | :------: | :------: | :----------: |
+| tensority        |   BTM   |   1,900    |    3000    |   3,400    |  5,000   |  11,500  |      -       |
+| ethash           |   ETH   |   21.2M    |   34.5M    |   26.9M    |   46M    |  35.5M   |      -       |
+| tensority_ethash | BTM+ETH | 950+15.5M  | 1600+26.5M |  1350+22M  | 2450+40M | 7000+28M |      -       |
+| cuckaroo         | GRIN29  |    3.45    |    5.6     |    5.25    |   8.1    |   8.9    |      -       |
+| cuckarood        | GRIN29  |    3.45    |    5.6     |    5.25    |   8.1    |   9.1    |      -       |
+| cuckatoo         | GRIN31  |     -      |    0.89    |    0.94    |   1.56   |   1.65   |      -       |
+| cuckoo_ae        |   AE    |    3.35    |    5.5     |    5.15    |   7.9    |   8.75   |      -       |
+| cuckaroo_swap    |  SWAP   |    3.45    |    5.6     |    5.25    |   8.1    |   8.9    |      -       |
+| progpow_sero     |  SERO   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     10M      |
+| sipc             |  SIPC   |    600k    |    940k    |    780k    |  1170k   |  1050k   |      -       |
+| eaglesong        |   CKB   |    212M    |    325M    |    370M    |   580M   |   580M   |     173M     |
+| eaglesong_ethash | CKB+ETH | 102M+20.5M |  165M+33M  | 215M+26.5M | 310M+44M | 395M+36M |      -       |
 
 ## Features
 
@@ -128,14 +128,14 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 
 #### CKB
 
-- **sparkpool**: nbminer -a eaglesong -o ckbproxy+tcp://ckb.sparkpool.com:8888 -u user.worker:passwd
+- **sparkpool**: nbminer -a eaglesong -o stratum+tcp://ckb.sparkpool.com:8888 -u user.worker:passwd
 - **beepool**: nbminer -a eaglesong -o stratum+tcp://ckb-pool.beepool.org:9550 -u email/worker:passwd
 - **uupool**: nbminer -a eaglesong -o stratum+tcp://ckb.uupool.cn:10861 -u user.worker:passwd
 - **f2pool**: nbminer -a eaglesong -o stratum+tcp://ckb.f2pool.com:4300 -u wallet.worker:passwd
 
 #### CKB+ETH
 
-- **sparkpool**: nbminer -a eaglesong_ethash -o ckbproxy+tcp://ckb.sparkpool.com:8888 -u user.worker:passwd -do stratum+tcp://cn.sparkpool.com:3333 -du wallet.worker:passwd
+- **sparkpool**: nbminer -a eaglesong_ethash -o stratum+tcp://ckb.sparkpool.com:8888 -u user.worker:passwd -do stratum+tcp://cn.sparkpool.com:3333 -du wallet.worker:passwd
 - **beepool**: nbminer -a eaglesong_ethash -o stratum+tcp://ckb-pool.beepool.org:9550 -u email/worker:passwd -do stratum+tcp://eth-pool.beepool.org:9530 -du wallet.worker:passwd
 - **uupool**: nbminer -a eaglesong_ethash -o stratum+tcp://ckb.uupool.cn:10861 -u user.worker:passwd      -do stratum+tcp://eth.uupool.cn:8008 -du wallet.worker:passwd
 - **f2pool**: nbminer -a eaglesong_ethash -o stratum+tcp://ckb.f2pool.com:4300 -u wallet.worker:passwd     -do stratum+tcp://eth.f2pool.com:8008 -du wallet.worker:passwd
@@ -177,6 +177,7 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 * --device-info    Print device cuda information.
 * --generate-config \<filename>    Generate a sample config json file.
 * --no-watchdog    Disable watchdog process.
+* --platform \<platform>    Choose platform，0: NVIDIA+AMD (default), 1: NVIDIA only, 2: AMD only
 
 ## API Reference
 
@@ -239,6 +240,13 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v25.3(2019-10-03)
+
+- Improve CKB mining performance on both NVIDIA & AMD cards.
+- Slightly improve CKB+ETH performance on NVIDIA cards.
+- Add support for mining SERO on AMD cards.
+- Add a new option `--platform` to allow users to choose GPU platform.
 
 #### v25.2(2019-09-10)
 
