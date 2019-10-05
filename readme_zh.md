@@ -250,6 +250,11 @@ GET http://api_host:port/api/v1/status
 
 ## 修改记录
 
+#### v25.5(2019-10-05)
+
+- 修复CKB+ETH双挖异常的bug
+- 修复CKB与矿池的协议兼容性
+
 #### v25.4(2019-10-04)
 
 - 提高CKB在NVIDIA、AMD的算力
