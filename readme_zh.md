@@ -26,8 +26,8 @@ NVIDIA、AMD显卡的`GRIN`、`AE`、`CKB`、`SERO`、`SIPC`、`BTM`、`ETH` 、
 | cuckaroo_swap    |  SWAP   |    3.45    |    5.6     |    5.25    |   8.1    |   8.9    |      -       |
 | progpow_sero     |  SERO   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     10M      |
 | sipc             |  SIPC   |    600k    |    940k    |    780k    |  1170k   |  1050k   |      -       |
-| eaglesong        |   CKB   |    212M    |    325M    |    370M    |   580M   |   580M   |     173M     |
-| eaglesong_ethash | CKB+ETH | 102M+20.5M |  165M+33M  | 215M+26.5M | 310M+44M | 395M+35M |      -       |
+| eaglesong        |   CKB   |    420M    |    635M    |    710M    |  1140M   |  1155M   |     350M     |
+| eaglesong_ethash | CKB+ETH | 203M+20.5M |  275M+33M  | 415M+26.5M | 600M+44M | 790M+35M |      -       |
 
 ## 功能特点
 
@@ -250,10 +250,10 @@ GET http://api_host:port/api/v1/status
 
 ## 修改记录
 
-#### v25.3(2019-10-03)
+#### v25.4(2019-10-04)
 
 - 提高CKB在NVIDIA、AMD的算力
-- 略微提高CKB+ETH的算力
+- 提高CKB+ETH的算力
 - 新增SERO在AMD卡上挖矿的支持
 - 新增选项`--platform`选择启用的平台（NVIDIA或AMD）
 

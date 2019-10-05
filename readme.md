@@ -32,8 +32,8 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 | cuckaroo_swap    |  SWAP   |    3.45    |    5.6     |    5.25    |   8.1    |   8.9    |      -       |
 | progpow_sero     |  SERO   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     10M      |
 | sipc             |  SIPC   |    600k    |    940k    |    780k    |  1170k   |  1050k   |      -       |
-| eaglesong        |   CKB   |    212M    |    325M    |    370M    |   580M   |   580M   |     173M     |
-| eaglesong_ethash | CKB+ETH | 102M+20.5M |  165M+33M  | 215M+26.5M | 310M+44M | 395M+36M |      -       |
+| eaglesong        |   CKB   |    420M    |    635M    |    710M    |  1140M   |  1155M   |     350M     |
+| eaglesong_ethash | CKB+ETH | 203M+20.5M |  275M+33M  | 415M+26.5M | 600M+44M | 790M+36M |      -       |
 
 ## Features
 
@@ -241,10 +241,10 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
-#### v25.3(2019-10-03)
+#### v25.4(2019-10-04)
 
 - Improve CKB mining performance on both NVIDIA & AMD cards.
-- Slightly improve CKB+ETH performance on NVIDIA cards.
+- Improve CKB+ETH performance on NVIDIA cards.
 - Add support for mining SERO on AMD cards.
 - Add a new option `--platform` to allow users to choose GPU platform.
 
