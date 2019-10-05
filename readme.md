@@ -241,6 +241,11 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v25.5(2019-10-05)
+
+- Fix a bug when mining CKB+ETH.
+- Fix a compatibility issue in CKB stratum protocol.
+
 #### v25.4(2019-10-04)
 
 - Improve CKB mining performance on both NVIDIA & AMD cards.
