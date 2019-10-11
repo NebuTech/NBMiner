@@ -34,6 +34,7 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 | sipc             |  SIPC   |    600k    |    940k    |    780k    |  1170k   |  1050k   |      -       |
 | eaglesong        |   CKB   |    420M    |    635M    |    710M    |  1140M   |  1155M   |     350M     |
 | eaglesong_ethash | CKB+ETH | 203M+20.5M |  275M+33M  | 415M+26.5M | 600M+44M | 790M+36M |      -       |
+| bfc              |   BFC   |     80     |    130     |    120     |   190    |   210    |      -       |
 
 ## Features
 
@@ -47,6 +48,7 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
   * progpow_sero 2%
   * sipc 2%
   * eaglehash 2%, eaglehash_ethash 3%
+  * bfc 3%
 
 ## Requirements
 
@@ -66,6 +68,7 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 | sipc             |  SIPC   | 6.0, 6.1, 7.0, 7.5 |          1GB          |      1GB       |
 | eaglesong        |   CKB   | 6.0, 6.1, 7.0, 7.5 |         0.1GB         |     0.1GB      |
 | eaglesong_ethash | CKB+ETH | 6.0, 6.1, 7.0, 7.5 |          4GB          |      4GB       |
+| bfc              |   BFC   | 6.0, 6.1, 7.0, 7.5 |          5GB          |      6GB       |
 
 - \* Compute Capability reference link: [wikipedia](<https://en.wikipedia.org/wiki/CUDA#GPUs_supported>)
 
@@ -139,6 +142,11 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 - **beepool**: nbminer -a eaglesong_ethash -o stratum+tcp://ckb-pool.beepool.org:9550 -u email/worker:passwd -do stratum+tcp://eth-pool.beepool.org:9530 -du wallet.worker:passwd
 - **uupool**: nbminer -a eaglesong_ethash -o stratum+tcp://ckb.uupool.cn:10861 -u user.worker:passwd      -do stratum+tcp://eth.uupool.cn:8008 -du wallet.worker:passwd
 - **f2pool**: nbminer -a eaglesong_ethash -o stratum+tcp://ckb.f2pool.com:4300 -u wallet.worker:passwd     -do stratum+tcp://eth.f2pool.com:8008 -du wallet.worker:passwd
+
+#### BFC
+
+- **uupool**: nbminer -a bfc -o stratum+tcp://bfc.uupool.cn:12210 -u username.worker
+- **bfcpool**: nbminer -a bfc -o stratum+tcp://ss.bfcpool.com:3333 -u wallet.worker
 
 ## CMD options：
 
@@ -240,6 +248,12 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v26.0(2019-10-11)
+
+- Add support for BFC mininig on Nvidia GPU.
+- Fix CKB compatibility on AMD GPU.
+- Fix cuckcoocycle on nicehash.
 
 #### v25.5(2019-10-05)
 

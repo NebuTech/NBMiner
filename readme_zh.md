@@ -18,6 +18,7 @@ NVIDIA、AMD显卡的`GRIN`、`AE`、`CKB`、`SERO`、`SIPC`、`BTM`、`ETH` 、
 | :--------------- | :-----: | :--------: | :--------: | :--------: | :------: | :------: | :----------: |
 | tensority        |   BTM   |   1,900    |    3000    |   3,400    |  5,000   |  11,500  |      -       |
 | ethash           |   ETH   |   21.2M    |   34.5M    |   26.9M    |   46M    |  35.5M   |      -       |
+|                  |         |            |            |            |          |          |              |
 | tensority_ethash | BTM+ETH | 950+15.5M  | 1600+26.5M |  1350+22M  | 2450+40M | 7000+28M |      -       |
 | cuckaroo         | GRIN29  |    3.45    |    5.6     |    5.25    |   8.1    |   8.9    |      -       |
 | cuckarood        | GRIN29  |    3.45    |    5.6     |    5.25    |   8.1    |   9.1    |      -       |
@@ -28,6 +29,7 @@ NVIDIA、AMD显卡的`GRIN`、`AE`、`CKB`、`SERO`、`SIPC`、`BTM`、`ETH` 、
 | sipc             |  SIPC   |    600k    |    940k    |    780k    |  1170k   |  1050k   |      -       |
 | eaglesong        |   CKB   |    420M    |    635M    |    710M    |  1140M   |  1155M   |     350M     |
 | eaglesong_ethash | CKB+ETH | 203M+20.5M |  275M+33M  | 415M+26.5M | 600M+44M | 790M+35M |      -       |
+| bfc              |   BFC   |     80     |    130     |    120     |   190    |   210    |      -       |
 
 ## 功能特点
 
@@ -60,6 +62,7 @@ NVIDIA、AMD显卡的`GRIN`、`AE`、`CKB`、`SERO`、`SIPC`、`BTM`、`ETH` 、
 | sipc             |  SIPC   | 6.0, 6.1, 7.0, 7.5 |         1GB         |     1GB      |
 | eaglesong        |   CKB   | 6.0, 6.1, 7.0, 7.5 |        0.1GB        |    0.1GB     |
 | eaglesong_ethash | CKB+ETH | 6.0, 6.1, 7.0, 7.5 |         4GB         |     4GB      |
+| bfc              |   BFC   | 6.0, 6.1, 7.0, 7.5 |         5GB         |     6GB      |
 
 - \* Compute Capability 查询参考链接: [维基百科](<https://en.wikipedia.org/wiki/CUDA#GPUs_supported>)
 
@@ -133,6 +136,11 @@ NVIDIA、AMD显卡的`GRIN`、`AE`、`CKB`、`SERO`、`SIPC`、`BTM`、`ETH` 、
 - **beepool**: nbminer -a eaglesong_ethash -o stratum+tcp://ckb-pool.beepool.org:9550 -u email/worker:passwd -do stratum+tcp://eth-pool.beepool.org:9530 -du wallet.worker:passwd
 - **uupool**: nbminer -a eaglesong_ethash -o stratum+tcp://ckb.uupool.cn:10861 -u user.worker:passwd      -do stratum+tcp://eth.uupool.cn:8008 -du wallet.worker:passwd
 - **f2pool**: nbminer -a eaglesong_ethash -o stratum+tcp://ckb.f2pool.com:4300 -u wallet.worker:passwd     -do stratum+tcp://eth.f2pool.com:8008 -du wallet.worker:passwd
+
+#### BFC
+
+- **uupool**: nbminer -a bfc -o stratum+tcp://bfc.uupool.cn:12210 -u username.worker
+- **bfcpool**: nbminer -a bfc -o stratum+tcp://ss.bfcpool.com:3333 -u wallet.worker
 
 ## 命令行参数
 
@@ -249,6 +257,11 @@ GET http://api_host:port/api/v1/status
 - 当核心超频过度，或者显卡本身的核心体质不好时，会因为显卡内部计算错误，导致出现各种的CUDA错误。此时应该尝试 检查转接板连接稳定性、降低核心频率、降低功耗，再做尝试。
 
 ## 修改记录
+
+#### v26.0(2019-10-11)
+
+- 新增N卡BFC挖矿
+- 修复CKB在AMD显卡上的兼容性
 
 #### v25.5(2019-10-05)
 
