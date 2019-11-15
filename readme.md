@@ -32,8 +32,8 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 | cuckaroo_swap    |  SWAP   |    3.45    |    5.6     |    5.25    |   8.1    |   8.9    |      -       |
 | progpow_sero     |  SERO   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     10M      |
 | sipc             |  SIPC   |    600k    |    940k    |    780k    |  1170k   |  1050k   |      -       |
-| eaglesong        |   CKB   |    420M    |    635M    |    710M    |  1140M   |  1155M   |     350M     |
-| eaglesong_ethash | CKB+ETH | 203M+20.5M |  275M+33M  | 415M+26.5M | 600M+44M | 790M+36M |      -       |
+| eaglesong        |   CKB   |    430M    |    650M    |    740M    |  1150M   |  1160M   |     350M     |
+| eaglesong_ethash | CKB+ETH | 203M+20.5M |  275M+34M  | 415M+26.5M | 600M+44M | 790M+36M |   80M+24M    |
 | bfc              |   BFC   |     80     |    130     |    120     |   190    |   210    |      -       |
 
 ## Features
@@ -183,6 +183,7 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 * --fidelity-timeframe \<timeframe>    Set timeframe for the calculation of fidelity, unit in hour. Default: 24.
 * --long-format    Use 'yyyy-MM-dd HH:mm:ss,zzz' for log time format.
 * --device-info    Print device cuda information.
+* --fee \<fee>    Change devfee in percentage, [0-5]. Set to '0' to turn off devfee with lower hashrate. Otherwise, devfee = max(set_value, def_value).
 * --generate-config \<filename>    Generate a sample config json file.
 * --no-watchdog    Disable watchdog process.
 * --platform \<platform>    Choose platform，0: NVIDIA+AMD (default), 1: NVIDIA only, 2: AMD only
@@ -248,6 +249,11 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v26.1(2019-11-15)
+
+- Add support for mining CKB+ETH on AMD GPU.
+- Improve performance for mining CKB on Nvidia GPU.
 
 #### v26.0(2019-10-11)
 
