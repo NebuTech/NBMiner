@@ -47,7 +47,7 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
   * cuckaroo & cuckarood & cuckatoo & cuckoo_ae & cuckaroo_swap 2%
   * progpow_sero 2%
   * sipc 2%
-  * eaglehash 2%, eaglehash_ethash 3%
+  * eaglesong 2%, eaglesong_ethash 3%
   * bfc 3%
 
 ## Requirements
