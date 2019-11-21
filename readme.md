@@ -32,8 +32,8 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 | cuckaroo_swap    |  SWAP   |    3.45    |    5.6     |    5.25    |   8.1    |   8.9    |      -       |
 | progpow_sero     |  SERO   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     10M      |
 | sipc             |  SIPC   |    600k    |    940k    |    780k    |  1170k   |  1050k   |      -       |
-| eaglesong        |   CKB   |    430M    |    650M    |    740M    |  1150M   |  1160M   |     350M     |
-| eaglesong_ethash | CKB+ETH | 203M+20.5M |  275M+34M  | 415M+26.5M | 600M+44M | 790M+36M |   80M+24M    |
+| eaglesong        |   CKB   |    430M    |    640M    |    740M    |  1150M   |  1160M   |     350M     |
+| eaglesong_ethash | CKB+ETH | 203M+20.5M |  275M+34M  | 415M+26.5M | 600M+44M | 790M+36M |   200M+22M   |
 | bfc              |   BFC   |     80     |    130     |    120     |   190    |   210    |      -       |
 
 ## Features
@@ -249,6 +249,11 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v26.2(2019-11-21)
+
+- Improve CKB+ETH performance on AMD GPU.
+- Fix bug of 26.1: Launch crash on certain AMD rigs.
 
 #### v26.1(2019-11-15)
 
