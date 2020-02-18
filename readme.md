@@ -35,6 +35,8 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 | eaglesong        |   CKB   |    430M    |    640M    |    740M    |  1150M   |  1160M   |     350M     |
 | eaglesong_ethash | CKB+ETH | 203M+20.5M |  275M+34M  | 415M+26.5M | 600M+44M | 790M+36M |   200M+22M   |
 | bfc              |   BFC   |     80     |    130     |    120     |   190    |   210    |      -       |
+| hns              |   HNS   |    160M    |    240M    |    285M    |   440M   |   410M   |      -       |
+| hns_ethash       | HNS+ETH |  60M+20M   |  100M+32M  |  130M+26M  | 135M+45M | 280M+35M |      -       |
 
 ## Features
 
@@ -49,6 +51,7 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
   * sipc 2%
   * eaglesong 2%, eaglesong_ethash 3%
   * bfc 3%
+  * hns 2%, hns_ethash 3%
 
 ## Requirements
 
@@ -69,6 +72,8 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 | eaglesong        |   CKB   | 6.0, 6.1, 7.0, 7.5 |         0.1GB         |     0.1GB      |
 | eaglesong_ethash | CKB+ETH | 6.0, 6.1, 7.0, 7.5 |          4GB          |      4GB       |
 | bfc              |   BFC   | 6.0, 6.1, 7.0, 7.5 |          5GB          |      6GB       |
+| hns              |   HNS   | 6.0, 6.1, 7.0, 7.5 |         0.1GB         |      4GB       |
+| hns_ethash       | HNS+ETH | 6.0, 6.1, 7.0, 7.5 |          4GB          |      4GB       |
 
 - \* Compute Capability reference link: [wikipedia](<https://en.wikipedia.org/wiki/CUDA#GPUs_supported>)
 
@@ -147,6 +152,14 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 
 - **uupool**: nbminer -a bfc -o stratum+tcp://bfc.uupool.cn:12210 -u username.worker
 - **bfcpool**: nbminer -a bfc -o stratum+tcp://ss.bfcpool.com:3333 -u wallet.worker
+
+#### HNS
+
+- **f2pool**: nbminer -a hns -o stratum+tcp://hns.f2pool.com:6000 -u wallet.worker
+
+#### HNS+ETH:
+
+- **f2pool**: nbminer -a hns_ethash -o stratum+tcp://hns.f2pool.com:6000 -u wallet.worker -do stratum+tcp://eth.f2pool.com:8008 -du wallet.worker
 
 ## CMD options：
 
@@ -249,6 +262,11 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v27.0(2020-02-18)
+
+- Add support for HNS & HNS_ETH mining for NVIDIA GPU
+- Minor bug fix and improvements.
 
 #### v26.2(2019-11-21)
 
