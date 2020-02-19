@@ -29,7 +29,7 @@ NVIDIA、AMD显卡的`GRIN`、`AE`、`CKB`、`SERO`、`SIPC`、`BTM`、`ETH` 、
 | eaglesong        |   CKB   |    430M    |    640M    |    740M    |  1150M   |  1160M   |     350M     |
 | eaglesong_ethash | CKB+ETH | 203M+20.5M |  275M+34M  | 415M+26.5M | 600M+44M | 790M+35M |   200M+22M   |
 | bfc              |   BFC   |     80     |    130     |    120     |   190    |   210    |      -       |
-| hns              |   HNS   |    160M    |    240M    |    285M    |   440M   |   410M   |      -       |
+| hns              |   HNS   |    165M    |    250M    |    295M    |   450M   |   420M   |     76M      |
 | hns_ethash       | HNS+ETH |  60M+20M   |  100M+32M  |  130M+26M  | 135M+45M | 280M+35M |      -       |
 
 ## 功能特点
@@ -270,6 +270,11 @@ GET http://api_host:port/api/v1/status
 - 当核心超频过度，或者显卡本身的核心体质不好时，会因为显卡内部计算错误，导致出现各种的CUDA错误。此时应该尝试 检查转接板连接稳定性、降低核心频率、降低功耗，再做尝试。
 
 ## 修改记录
+
+#### v27.1(2020-02-19)
+
+- 提高HNS在Nnvidia显卡上的算力
+- 新增HNS在AMD显卡上的支持
 
 #### v27.0(2020-02-18)
 
