@@ -36,7 +36,7 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 | eaglesong_ethash | CKB+ETH | 203M+20.5M |  275M+34M  | 415M+26.5M | 600M+44M | 790M+36M |   200M+22M   |
 | bfc              |   BFC   |     80     |    130     |    120     |   190    |   210    |      -       |
 | hns              |   HNS   |    165M    |    250M    |    295M    |   450M   |   420M   |     145M     |
-| hns_ethash       | HNS+ETH |  60M+20M   |  100M+32M  |  130M+26M  | 135M+45M | 280M+35M |      -       |
+| hns_ethash       | HNS+ETH |  76M+19M   |  120M+30M  |  130M+26M  | 176M+44M | 305M+34M |  68M+22.5M   |
 
 ## Features
 
@@ -262,6 +262,14 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v27.3(2020-02-27)
+
+- Add HNS+ETH mining on AMD GPU
+- Improve HNS+ETH performance on Nvidia GPU
+- **Note**: `-di` calculation is changed in this version for HNS+ETH.
+  - The value of `-di`  = `work_size_of_hns` / `work_size_of_eth`
+  - E.g, `-di 5`  on a stock freq 1070ti will get 26M for eth & 130M for hns.
 
 #### v27.2(2020-02-20)
 
