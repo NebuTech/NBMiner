@@ -263,6 +263,11 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v27.4(2020-02-28)
+
+- FIx support the certain AMD Vega GPUs.
+- Fix a potential bug when mining under AMD+Nvidia mixed rig.
+
 #### v27.3(2020-02-27)
 
 - Add HNS+ETH mining on AMD GPU
