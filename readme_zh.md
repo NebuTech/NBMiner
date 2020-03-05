@@ -150,6 +150,7 @@ NVIDIA、AMD显卡的`GRIN`、`AE`、`CKB`、`SERO`、`SIPC`、`BTM`、`ETH` 、
 #### HNS
 
 - **f2pool**: nbminer -a hns -o stratum+tcp://hns.f2pool.com:6000 -u wallet.worker
+- **6block**: nbminer -a hns -o stratum+tcp://handshake.6block.com:7701 -u username.worker
 
 #### HNS+ETH:
 
@@ -171,7 +172,7 @@ NVIDIA、AMD显卡的`GRIN`、`AE`、`CKB`、`SERO`、`SIPC`、`BTM`、`ETH` 、
 - -u1, --user1 \<user> 备用矿池1的用户名
 - -o2, --url2 \<url> 备用矿池2的URL
 - -u2, --user2 \<user> 备用矿池2的用户名
-- -di, --secondary-intensity \<intensity>    双挖时ETH的相对挖矿强度，默认16，建议在8-24之间调整
+- -di, --secondary-intensity \<intensity>    双挖时相对挖矿强度
 - -do, --secondary-url \<url>    双挖时ETH的矿池地址
 - -du, --secondary-user \<user>    双挖时ETH的用户名
 - -do1, --secondary-url \<url>    双挖备用矿池1的矿池地址
@@ -193,6 +194,7 @@ NVIDIA、AMD显卡的`GRIN`、`AE`、`CKB`、`SERO`、`SIPC`、`BTM`、`ETH` 、
 - --generate-config \<filename>    生成一个样例配置文件.
 - --no-watchdog    不启动看门狗进程.
 - --platform \<platform>    选择平台，0: NVIDIA+AMD (默认), 1: 只启用NVIDIA, 2: 只启用AMD
+- --coin \<coin>    设置ethash算法的币种，如 eth、etc
 
 ## API查询接口
 
@@ -263,6 +265,16 @@ GET http://api_host:port/api/v1/status
 - 当核心超频过度，或者显卡本身的核心体质不好时，会因为显卡内部计算错误，导致出现各种的CUDA错误。此时应该尝试 检查转接板连接稳定性、降低核心频率、降低功耗，再做尝试。
 
 ## 修改记录
+
+#### v27.5(2020-03-05)
+
+- 修复在部分矿池双挖时ETH拒绝率、延迟率较高的问题
+- 略微提升N卡双挖HNS的算力
+
+#### v27.4(2020-02-28)
+
+- 修复对部分AMD Vega卡的支持
+- 修复在A、N卡混插下的一个可能的索引bug
 
 #### v27.3(2020-02-27)
 

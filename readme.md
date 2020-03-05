@@ -156,6 +156,7 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 #### HNS
 
 - **f2pool**: nbminer -a hns -o stratum+tcp://hns.f2pool.com:6000 -u wallet.worker
+- **6block**: nbminer -a hns -o stratum+tcp://handshake.6block.com:7701 -u username.worker
 
 #### HNS+ETH:
 
@@ -177,7 +178,7 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
   * -u1, --user1 \<user> username for backup mining pool 1.
   * -o2, --url2 \<url> url for backup mining pool 2.
 * -u2, --user2 \<user> username for backup mining pool 2.
-* -di, --secondary-intensity \<intensity>    The relative intensity for ETH when dual mining. recommend: 8 - 24, default to 16.
+* -di, --secondary-intensity \<intensity>    The relative intensity when dual mining.
 * -do, --secondary-url \<url>    ETH mining pool when dual mining.
 * -du, --secondary-user \<user>    ETH username when dual mining.
 * -do1, --secondary-url1 \<url>    Backup 1 ETH mining pool when dual mining.
@@ -200,6 +201,7 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 * --generate-config \<filename>    Generate a sample config json file.
 * --no-watchdog    Disable watchdog process.
 * --platform \<platform>    Choose platform，0: NVIDIA+AMD (default), 1: NVIDIA only, 2: AMD only
+* --coin \<coin>    Set coin for ethash algo. E.g, eth, etc
 
 ## API Reference
 
@@ -263,9 +265,14 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v27.5(2020-03-05)
+
+- Fix high ETH reject rate on certain pools when mining HNS+ETH
+- Slightly improve mining HNS+ETH on Nvidia GPU.
+
 #### v27.4(2020-02-28)
 
-- FIx support the certain AMD Vega GPUs.
+- Fix support the certain AMD Vega GPUs.
 - Fix a potential bug when mining under AMD+Nvidia mixed rig.
 
 #### v27.3(2020-02-27)
