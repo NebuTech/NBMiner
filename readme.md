@@ -35,8 +35,8 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 | eaglesong        |   CKB   |    430M    |    640M    |    740M    |  1150M   |  1160M   |     350M     |
 | eaglesong_ethash | CKB+ETH | 203M+20.5M |  275M+34M  | 415M+26.5M | 600M+44M | 790M+36M |   200M+22M   |
 | bfc              |   BFC   |     80     |    130     |    120     |   190    |   210    |      -       |
-| hns              |   HNS   |    165M    |    250M    |    295M    |   450M   |   420M   |     145M     |
-| hns_ethash       | HNS+ETH |  76M+19M   |  120M+30M  |  130M+26M  | 176M+44M | 305M+34M |  68M+22.5M   |
+| hns              |   HNS   |    170M    |    255M    |    300M    |   455M   |   425M   |     145M     |
+| hns_ethash       | HNS+ETH |  76M+19M   |  120M+30M  | 158M+26.2M | 176M+44M | 305M+34M |  68M+22.5M   |
 
 ## Features
 
@@ -264,6 +264,10 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v27.6(2020-03-14)
+
+- Improve HNS & NS+ETH on Nvidia GPU.
 
 #### v27.5(2020-03-05)
 
