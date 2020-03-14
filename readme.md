@@ -267,7 +267,7 @@ GET http://api_host:port/api/v1/status
 
 #### v27.6(2020-03-14)
 
-- Improve HNS & NS+ETH on Nvidia GPU.
+- Improve HNS & HNS+ETH on Nvidia GPU.
 
 #### v27.5(2020-03-05)
 
