@@ -265,6 +265,11 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v27.7(2020-03-15)
+
+- Fix ETH mining on NiceHash
+- Fix NVML initialization failure on certain cases.
+
 #### v27.6(2020-03-14)
 
 - Improve HNS & HNS+ETH on Nvidia GPU.

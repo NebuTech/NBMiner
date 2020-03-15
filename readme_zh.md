@@ -266,6 +266,11 @@ GET http://api_host:port/api/v1/status
 
 ## 修改记录
 
+#### v27.7(2020-03-15)
+
+- 修复ETH Nicehash协议
+- 修复部分情况下NVML初始化失败的问题
+
 #### v27.6(2020-03-14)
 
 - 提升N卡 HNS单挖、HNS+ETH双挖的算力
