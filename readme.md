@@ -22,21 +22,23 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 
 | Algorithm        |  Coin   |  P106-100  |  P104-8G   |   1070ti   |  1080ti  |   2080   | RX580 2048sp |
 | :--------------- | :-----: | :--------: | :--------: | :--------: | :------: | :------: | :----------: |
-| tensority        |   BTM   |   1,900    |    3000    |   3,400    |  5,000   |  11,500  |      -       |
-| ethash           |   ETH   |   21.2M    |   34.5M    |   26.9M    |   46M    |  35.5M   |      -       |
-| tensority_ethash | BTM+ETH | 950+15.5M  | 1600+26.5M |  1350+22M  | 2450+40M | 7000+28M |      -       |
-| cuckaroo         | GRIN29  |    3.45    |    5.6     |    5.25    |   8.1    |   8.9    |      -       |
-| cuckarood        | GRIN29  |    3.45    |    5.6     |    5.25    |   8.1    |   9.1    |      -       |
-| cuckatoo         | GRIN31  |     -      |    0.89    |    0.94    |   1.56   |   1.65   |      -       |
-| cuckoo_ae        |   AE    |    3.35    |    5.5     |    5.15    |   7.9    |   8.75   |      -       |
-| cuckaroo_swap    |  SWAP   |    3.45    |    5.6     |    5.25    |   8.1    |   8.9    |      -       |
+| tensority        |   BTM   |   1,900    |    3000    |   3,400    |  5,000   |  11,500  |      X       |
+| ethash           |   ETH   |   21.2M    |   34.5M    |   26.9M    |   46M    |  35.5M   |      X       |
+| tensority_ethash | BTM+ETH | 950+15.5M  | 1600+26.5M |  1350+22M  | 2450+40M | 7000+28M |      X       |
+| cuckaroo         | GRIN29  |    3.45    |    5.6     |    5.25    |   8.1    |   8.9    |      X       |
+| cuckarood        | GRIN29  |    3.45    |    5.6     |    5.25    |   8.1    |   9.1    |      X       |
+| cuckatoo         | GRIN31  |     -      |    0.89    |    0.94    |   1.56   |   1.65   |      X       |
+| cuckoo_ae        |   AE    |    3.35    |    5.5     |    5.15    |   7.9    |   8.75   |      X       |
+| cuckaroo_swap    |  SWAP   |    3.45    |    5.6     |    5.25    |   8.1    |   8.9    |      X       |
 | progpow_sero     |  SERO   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     10M      |
-| sipc             |  SIPC   |    600k    |    940k    |    780k    |  1170k   |  1050k   |      -       |
+| sipc             |  SIPC   |    600k    |    940k    |    780k    |  1170k   |  1050k   |      X       |
 | eaglesong        |   CKB   |    430M    |    640M    |    740M    |  1150M   |  1160M   |     350M     |
 | eaglesong_ethash | CKB+ETH | 203M+20.5M |  275M+34M  | 415M+26.5M | 600M+44M | 790M+36M |   200M+22M   |
-| bfc              |   BFC   |     80     |    130     |    120     |   190    |   210    |      -       |
+| bfc              |   BFC   |     80     |    130     |    120     |   190    |   210    |      X       |
 | hns              |   HNS   |    170M    |    255M    |    300M    |   455M   |   425M   |     145M     |
 | hns_ethash       | HNS+ETH |  76M+19M   |  120M+30M  | 158M+26.2M | 176M+44M | 305M+34M |  68M+22.5M   |
+| trb              |   TRB   |    280M    |    435M    |    510M    |   750M   |   880M   |      X       |
+| trb_ethash       | TRB+ETH | 122M+20.3M |  170M+34M  | 240M+26.7M | 315M+45M |    -     |      X       |
 
 ## Features
 
@@ -52,6 +54,7 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
   * eaglesong 2%, eaglesong_ethash 3%
   * bfc 3%
   * hns 2%, hns_ethash 3%
+  * trb 2%, trb_ethash 3%
 
 ## Requirements
 
@@ -72,8 +75,10 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 | eaglesong        |   CKB   | 6.0, 6.1, 7.0, 7.5 |         0.1GB         |     0.1GB      |
 | eaglesong_ethash | CKB+ETH | 6.0, 6.1, 7.0, 7.5 |          4GB          |      4GB       |
 | bfc              |   BFC   | 6.0, 6.1, 7.0, 7.5 |          5GB          |      6GB       |
-| hns              |   HNS   | 6.0, 6.1, 7.0, 7.5 |         0.1GB         |      4GB       |
+| hns              |   HNS   | 6.0, 6.1, 7.0, 7.5 |         0.1GB         |     0.1GB      |
 | hns_ethash       | HNS+ETH | 6.0, 6.1, 7.0, 7.5 |          4GB          |      4GB       |
+| trb              |   TRB   | 6.0, 6.1, 7.0, 7.5 |         0.1GB         |     0.1GB      |
+| trb_ethash       | TRB+ETH | 6.0, 6.1, 7.0, 7.5 |          4GB          |      4GB       |
 
 - \* Compute Capability reference link: [wikipedia](<https://en.wikipedia.org/wiki/CUDA#GPUs_supported>)
 
@@ -87,7 +92,7 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 
 #### ETH
 
-- **ethermine:** nbminer -a ethash -o ethproxy+tcp://asia1.ethermine.org -u 0x12343bdgf.worker
+- **ethermine:** nbminer -a ethash -o ethproxy+tcp://asia1.ethermine.org:4444 -u 0x12343bdgf.worker
 - **sparkpool:** nbminer -a ethash -o ethproxy+tcp://cn.sparkpool.com:3333 -u 0x12343bdgf.worker
 - **f2pool:** nbminer -a ethash -o ethproxy+tcp://eth.f2pool.com:8008 -u 0x12343bdgf.worker
 - **nanopool:** nbminer -a ethash -o ethproxy+tcp://eth-asia1.nanopool.org:9999 -u 0x12343bdgf.worker
@@ -161,6 +166,15 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 #### HNS+ETH:
 
 - **f2pool**: nbminer -a hns_ethash -o stratum+tcp://hns.f2pool.com:6000 -u wallet.worker -do stratum+tcp://eth.f2pool.com:8008 -du wallet.worker
+
+#### TRB
+
+- **uupool**: nbminer -a trb -o stratum+tcp://trb.uupool.cn:11002 -u wallet.worker
+- **hashpool**: nbminer -a trb -o stratum+tcp://pplns.trb.stratum.hashpool.com:8208 -u wallet.worker
+
+#### TRB+ETH
+
+- **uupool**: nbminer -a trb_ethash -o stratum+tcp://trb.uupool.cn:11002 -u wallet.worker -do stratum+tcp://eth.uupool.cn:8008 -du wallet.worker
 
 ## CMD options：
 
@@ -264,6 +278,12 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v28.0(2020-03-28)
+
+- Add support for mining TRB & TRB+ETH on Nvidia GPU
+- Add support for mining ETH on `miningrigrentals`.
+- Minor improvements and fixes.
 
 #### v27.7(2020-03-15)
 
