@@ -280,6 +280,10 @@ GET http://api_host:port/api/v1/status
 
 ## 修改记录
 
+#### v28.1(2020-03-30)
+
+- 添加HNS、HNS+ETH在NiceHash挖矿的支持
+
 #### v28.0(2020-03-28)
 
 - 新增TRB、TRB+ETH在Nvidia显卡的支持

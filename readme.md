@@ -279,6 +279,10 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v28.1(2020-03-30)
+
+- Support HNS & HNS+ETH mining on NiceHash
+
 #### v28.0(2020-03-28)
 
 - Add support for mining TRB & TRB+ETH on Nvidia GPU
