@@ -33,6 +33,7 @@ NVIDIA、AMD显卡的`GRIN`、`AE`、`CKB`、`SERO`、`SIPC`、`BTM`、`ETH` 、
 | hns_ethash       | HNS+ETH |  76M+19M   |  120M+30M  | 158M+26.2M | 176M+44M | 305M+34M |  68M+22.5M   |
 | trb              |   TRB   |    280M    |    435M    |    510M    |   750M   |   880M   |      X       |
 | trb_ethash       | TRB+ETH | 122M+20.3M |  170M+34M  | 240M+26.7M | 315M+45M |    -     |      X       |
+| kawpow           |  RVNt   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |    10.3M     |
 
 ## 功能特点
 
@@ -49,6 +50,7 @@ NVIDIA、AMD显卡的`GRIN`、`AE`、`CKB`、`SERO`、`SIPC`、`BTM`、`ETH` 、
   - bfc 3%
   - hns 2%, hns_ethash 3%
   - trb 2%, trb_ethash 3%
+  - kawpow 2%
 
 ## 配置需求
 
@@ -73,6 +75,7 @@ NVIDIA、AMD显卡的`GRIN`、`AE`、`CKB`、`SERO`、`SIPC`、`BTM`、`ETH` 、
 | hns_ethash       | HNS+ETH | 6.0, 6.1, 7.0, 7.5 |          4GB          |      4GB       |
 | trb              |   TRB   | 6.0, 6.1, 7.0, 7.5 |         0.1GB         |     0.1GB      |
 | trb_ethash       | TRB+ETH | 6.0, 6.1, 7.0, 7.5 |          4GB          |      4GB       |
+| kawpow | RVNt | 6.0, 6.1, 7.0, 7.5 | 3GB | 3GB |
 
 - \* Compute Capability 查询参考链接: [维基百科](<https://en.wikipedia.org/wiki/CUDA#GPUs_supported>)
 
@@ -169,6 +172,10 @@ NVIDIA、AMD显卡的`GRIN`、`AE`、`CKB`、`SERO`、`SIPC`、`BTM`、`ETH` 、
 #### TRB+ETH
 
 - **uupool**: nbminer -a trb_ethash -o stratum+tcp://trb.uupool.cn:11002 -u wallet.worker -do stratum+tcp://eth.uupool.cn:8008 -du wallet.worker
+
+#### RVNt
+
+- **minermore**: nbminer -a kawpow -o stratum+tcp://rvnt.minermore.com:4505 -u wallet.worker:passwd
 
 ## 命令行参数
 
@@ -279,6 +286,10 @@ GET http://api_host:port/api/v1/status
 - 当核心超频过度，或者显卡本身的核心体质不好时，会因为显卡内部计算错误，导致出现各种的CUDA错误。此时应该尝试 检查转接板连接稳定性、降低核心频率、降低功耗，再做尝试。
 
 ## 修改记录
+
+#### v29.0(2020-04-03)
+
+- 对RVN即将分叉算法kawpow的支持，Nvidia & AMD
 
 #### v28.1(2020-03-30)
 

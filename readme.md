@@ -39,6 +39,7 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 | hns_ethash       | HNS+ETH |  76M+19M   |  120M+30M  | 158M+26.2M | 176M+44M | 305M+34M |  68M+22.5M   |
 | trb              |   TRB   |    280M    |    435M    |    510M    |   750M   |   880M   |      X       |
 | trb_ethash       | TRB+ETH | 122M+20.3M |  170M+34M  | 240M+26.7M | 315M+45M |    -     |      X       |
+| kawpow           |  RVNt   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |    10.3M     |
 
 ## Features
 
@@ -55,6 +56,7 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
   * bfc 3%
   * hns 2%, hns_ethash 3%
   * trb 2%, trb_ethash 3%
+  * kawpow 2%
 
 ## Requirements
 
@@ -79,6 +81,7 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 | hns_ethash       | HNS+ETH | 6.0, 6.1, 7.0, 7.5 |          4GB          |      4GB       |
 | trb              |   TRB   | 6.0, 6.1, 7.0, 7.5 |         0.1GB         |     0.1GB      |
 | trb_ethash       | TRB+ETH | 6.0, 6.1, 7.0, 7.5 |          4GB          |      4GB       |
+| kawpow           |  RVNt   | 6.0, 6.1, 7.0, 7.5 |          3GB          |      3GB       |
 
 - \* Compute Capability reference link: [wikipedia](<https://en.wikipedia.org/wiki/CUDA#GPUs_supported>)
 
@@ -175,6 +178,10 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 #### TRB+ETH
 
 - **uupool**: nbminer -a trb_ethash -o stratum+tcp://trb.uupool.cn:11002 -u wallet.worker -do stratum+tcp://eth.uupool.cn:8008 -du wallet.worker
+
+#### RVNt
+
+- **minermore**: nbminer -a kawpow -o stratum+tcp://rvnt.minermore.com:4505 -u wallet.worker:passwd
 
 ## CMD options：
 
@@ -278,6 +285,10 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v29.0(2020-04-03)
+
+- Add support for RVN new algo 'kawpow' mining on Nvidia & AMD gpus.
 
 #### v28.1(2020-03-30)
 
