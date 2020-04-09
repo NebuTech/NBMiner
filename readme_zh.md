@@ -33,7 +33,7 @@ NVIDIA、AMD显卡的`GRIN`、`AE`、`CKB`、`SERO`、`SIPC`、`BTM`、`ETH` 、
 | hns_ethash       | HNS+ETH |  76M+19M   |  120M+30M  | 158M+26.2M | 176M+44M | 305M+34M |  68M+22.5M   |
 | trb              |   TRB   |    280M    |    435M    |    510M    |   750M   |   880M   |      X       |
 | trb_ethash       | TRB+ETH | 122M+20.3M |  170M+34M  | 240M+26.7M | 315M+45M |    -     |      X       |
-| kawpow           |  RVNt   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |    10.3M     |
+| kawpow           |  RVNt   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
 
 ## 功能特点
 
@@ -286,6 +286,11 @@ GET http://api_host:port/api/v1/status
 - 当核心超频过度，或者显卡本身的核心体质不好时，会因为显卡内部计算错误，导致出现各种的CUDA错误。此时应该尝试 检查转接板连接稳定性、降低核心频率、降低功耗，再做尝试。
 
 ## 修改记录
+
+#### v29.1(2020-04-09)
+
+- 修复kawpow在RDNA 系列显卡上算力过低的bug
+- 提升kawpow在AMD显卡上的算力
 
 #### v29.0(2020-04-03)
 

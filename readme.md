@@ -39,7 +39,7 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 | hns_ethash       | HNS+ETH |  76M+19M   |  120M+30M  | 158M+26.2M | 176M+44M | 305M+34M |  68M+22.5M   |
 | trb              |   TRB   |    280M    |    435M    |    510M    |   750M   |   880M   |      X       |
 | trb_ethash       | TRB+ETH | 122M+20.3M |  170M+34M  | 240M+26.7M | 315M+45M |    -     |      X       |
-| kawpow           |  RVNt   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |    10.3M     |
+| kawpow           |  RVNt   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
 
 ## Features
 
@@ -285,6 +285,11 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v29.1(2020-04-09)
+
+- Fix low hashrate of `kawpow` on AMD RDNA GPU.
+- Improve kawpow hashrate on AMD GPU.
 
 #### v29.0(2020-04-03)
 
