@@ -2,7 +2,7 @@
 
 # NBMiner
 
-GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
+GPU Miner for `ETH`, `RVN`, `TRB`, `CKB`, `GRIN`, `AE`, `BTM`, `SERO`, `HNS`, `BFC`, `SIPC`
 
 ## 中文说明
 
@@ -81,7 +81,7 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 | hns_ethash       | HNS+ETH | 6.0, 6.1, 7.0, 7.5 |          4GB          |      4GB       |
 | trb              |   TRB   | 6.0, 6.1, 7.0, 7.5 |         0.1GB         |     0.1GB      |
 | trb_ethash       | TRB+ETH | 6.0, 6.1, 7.0, 7.5 |          4GB          |      4GB       |
-| kawpow           |  RVNt   | 6.0, 6.1, 7.0, 7.5 |          3GB          |      3GB       |
+| kawpow           |   RVN   | 6.0, 6.1, 7.0, 7.5 |          3GB          |      3GB       |
 
 - \* Compute Capability reference link: [wikipedia](<https://en.wikipedia.org/wiki/CUDA#GPUs_supported>)
 
@@ -179,7 +179,7 @@ GPU Miner for `GRIN`, `AE`, `CKB`, `SERO`, `SIPC`, `BTM`, `ETH`, `SWAP`mining.
 
 - **uupool**: nbminer -a trb_ethash -o stratum+tcp://trb.uupool.cn:11002 -u wallet.worker -do stratum+tcp://eth.uupool.cn:8008 -du wallet.worker
 
-#### RVNt
+#### RVN
 
 - **minermore**: nbminer -a kawpow -o stratum+tcp://rvnt.minermore.com:4505 -u wallet.worker:passwd
 
@@ -239,48 +239,79 @@ GET http://api_host:port/api/v1/status
 ``` json
 {
     "miner": {
-        "devices": [{
-            "core_clock": 1556,
-            "core_utilization": 100,
-            "fan": 36,
-            "hashrate": 1499,
-            "hashrate2": "23.0 M",
-            "hashrate_raw": 1499,
-            "hashrate2_raw": 23030000,
-            "id": 0,
-            "info": "GeForce GTX 1080 Ti 11178 MB",
-            "power": 182,
-            "temperature": 65
-        }, {
-            "core_clock": 1518,
-            "core_utilization": 100,
-            "fan": 34,
-            "hashrate": 1490,
-            "id": 1,
-            "info": "GeForce GTX 1080 Ti 11178 MB",
-            "power": 172,
-            "temperature": 62
-        }],
-        "total_hashrate": 2989,
-        "total_hashrate_raw": 2989,
-      	"total_hashrate2": "48.3 M",
-        "total_hashrate2_raw": 48308746, 
-        "total_power_consume": 354
+        "devices": [
+            {
+                "accepted_shares": 2,
+                "accepted_shares2": 0,
+                "core_clock": 1620,
+                "core_utilization": 100,
+                "fan": 47,
+                "fidelity1": 5.859799716605649,
+                "fidelity2": 0,
+                "hashrate": "217.1 M",
+                "hashrate2": "36.19 M",
+                "hashrate2_raw": 36190716.266428046,
+                "hashrate_raw": 217144297.59856823,
+                "id": 0,
+                "info": "GeForce RTX 2070",
+                "mem_clock": 6801,
+                "mem_utilization": 86,
+                "pci_bus_id": 1,
+                "power": 188,
+                "rejected_shares": 0,
+                "rejected_shares2": 0,
+                "temperature": 72
+            },
+            {
+                "accepted_shares": 0,
+                "accepted_shares2": 0,
+                "core_clock": 1607,
+                "core_utilization": 100,
+                "fan": 0,
+                "fidelity1": 0,
+                "fidelity2": 0,
+                "hashrate": "168.5 M",
+                "hashrate2": "42.11 M",
+                "hashrate2_raw": 42113955.19774488,
+                "hashrate_raw": 168455820.79097953,
+                "id": 1,
+                "info": "P102-100",
+                "mem_clock": 5508,
+                "mem_utilization": 100,
+                "pci_bus_id": 4,
+                "power": 232,
+                "rejected_shares": 0,
+                "rejected_shares2": 0,
+                "temperature": 57
+            }
+        ],
+        "total_hashrate": "708 M",
+        "total_hashrate2": "164.4 M",
+        "total_hashrate2_raw": 164395439.13815895,
+        "total_hashrate_raw": 708044466.8349969,
+        "total_power_consume": 839
     },
-    "start_time": 1532482659,
+    "reboot_times": 0,
+    "start_time": 1586944619,
     "stratum": {
-        "accepted_share_rate": 0.99,
-        "accepted_shares": 99,
-        "password": "",
-        "rejected_share_rate": 0.01,
-        "rejected_shares": 1,
-        "url": "btm.pool.zhizhu.top:3859",
+        "accepted_shares": 2,
+        "accepted_shares2": 0,
+        "algorithm": "hns_ethash",
+        "difficulty": "8.59 G",
+        "difficulty2": "8.59 G",
+        "dual_mine": true,
+        "latency": 221,
+        "latency2": 0,
+        "rejected_shares": 0,
+        "rejected_shares2": 0,
+        "url": "handshake.hk.nicehash.com:3384",
+        "url2": "daggerhashimoto.hk.nicehash.com:3353",
         "use_ssl": false,
-        "user": "bmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.test",
-        "difficulty": "0003ffff",
-        "latency": 65
+        "use_ssl2": false,
+        "user": "3QHNv52ahdCyeYTGVYDPGjRzMpkknjjfAf.test",
+        "user2": "3QHNv52ahdCyeYTGVYDPGjRzMpkknjjfAf.test"
     },
-    "version": "v10.0"
+    "version": "30.0"
 }
 ```
 
