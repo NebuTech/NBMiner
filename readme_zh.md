@@ -203,6 +203,7 @@ NVIDIA、AMD显卡的`ETH`, `RVN`, `TRB`, `CKB`, `GRIN`, `AE`, `BTM`, `SERO`, `H
 - -d, --devices \<devices>    指定使用哪些显卡来挖矿. 比如: "-d 0,1,2,3" 使用前4个显卡.
 - -i, --intensity \<intensities>    GPU使用强度列表 (1 -100)，默认100.
 - --strict-ssl    使用SSL连接时验证矿池证书
+- --proxy    使用Socks5代理连接矿池，例如: 127.0.0.1:1080
 - --cuckoo-intensity \<intensity>    设置挖Grin时的CPU负载，取值范围[1,12]，值越小挖矿算力越高，相对应的CPU负载也会更高。设置为0软件从1开始自适应调整。默认为0
 - --cuckatoo-power-optimize    减小多卡矿机挖Grin31的总功耗波动，避免电源过载关机（设置该选项可能导致算力略微降低，请测试后谨慎使用）
 - --temperature-limit \<temp-limit>    设置显卡温度上限，一旦超过，停止挖矿10s后继续
@@ -211,6 +212,7 @@ NVIDIA、AMD显卡的`ETH`, `RVN`, `TRB`, `CKB`, `GRIN`, `AE`, `BTM`, `SERO`, `H
 - --no-nvml    不周期性地查询GPU的温度功耗等状态.
 - --fidelity-timeframe \<timeframe>    设置保真度计算的时间范围，以小时为单位，默认24.
 - --long-format    使用更长的日期时间格式
+- --verbose    在日志中输出与矿池的通信数据
 - --device-info    打印显卡的CUDA信息.
 - --generate-config \<filename>    生成一个样例配置文件.
 - --no-watchdog    不启动看门狗进程.

@@ -209,6 +209,7 @@ GPU Miner for `ETH`, `RVN`, `TRB`, `CKB`, `GRIN`, `AE`, `BTM`, `SERO`, `HNS`, `B
 * -d, --devices \<devices>    Specify GPU list to use. Format: "-d 0,1,2,3" to use first 4 GPU.
 * -i, --intensity \<intensities>    Comma-separated list of intensities (1 -100).
 * --strict-ssl    Check validity of certificate when use SSL connection.
+* --proxy    Socks5 proxy used to eastablish connection with pool, E.g. 127.0.0.1:1080
 * --cuckoo-intensity \<intensity>    Set intensity of cuckoo, cuckaroo, cuckatoo, [1, 12]. Smaller value means higher CPU usage to gain more hashrate. Set to 0 means autumatically adapt. Default: 0.
 * --cuckatoo-power-optimize    Set this option to reduce the range of power consumed by rig when minining with algo cuckatoo. This feature can reduce the chance of power supply shutdown caused by overpowered. Warning: Setting this option may cause drop on minining performance.
 * --temperature-limit \<temp-limit>    Set temperature limit of GPU, if exceeds, stop GPU for 10 seconds and continue.
@@ -217,6 +218,7 @@ GPU Miner for `ETH`, `RVN`, `TRB`, `CKB`, `GRIN`, `AE`, `BTM`, `SERO`, `HNS`, `B
 * --no-nvml    Do not query cuda device health status.
 * --fidelity-timeframe \<timeframe>    Set timeframe for the calculation of fidelity, unit in hour. Default: 24.
 * --long-format    Use 'yyyy-MM-dd HH:mm:ss,zzz' for log time format.
+* --verbose    Print communication data between miner and pool in log file.
 * --device-info    Print device cuda information.
 * --fee \<fee>    Change devfee in percentage, [0-5]. Set to '0' to turn off devfee with lower hashrate. Otherwise, devfee = max(set_value, def_value).
 * --generate-config \<filename>    Generate a sample config json file.
