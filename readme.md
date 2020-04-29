@@ -48,7 +48,7 @@ GPU Miner for `ETH`, `RVN`, `TRB`, `CKB`, `GRIN`, `AE`, `BTM`, `SERO`, `HNS`, `B
 * Support SSL connection to mining pools.
 * Dev Fee: 
   * tensority(Pascal) 2%, tensority(Turing) 3%, tensority_ethash 3%
-  * ethash 0.65%
+  * ethash 1%
   * cuckaroo & cuckarood & cuckatoo & cuckoo_ae & cuckaroo_swap 2%
   * progpow_sero 2%
   * sipc 2%
@@ -225,6 +225,8 @@ GPU Miner for `ETH`, `RVN`, `TRB`, `CKB`, `GRIN`, `AE`, `BTM`, `SERO`, `HNS`, `B
 * --no-watchdog    Disable watchdog process.
 * --platform \<platform>    Choose platform，0: NVIDIA+AMD (default), 1: NVIDIA only, 2: AMD only
 * --coin \<coin>    Set coin for ethash algo. E.g, eth, etc
+* **--mt, --memory-tweak \<mode>    Memory timings optimize for Nvidia GDDR5 & GDDR5X gpus. range [1-6]. Higher value equals higher hashrate. Individual value can be set via comma seperated list. Power limit may need to be tuned up to get more hashrate. Higher reject share ratio can happen if mining rig hits high temperature, set lower value of `-mt` can reduce reject ratio. Under windows, a custom driver need to be installed before using `-mt`, see description of  `--driver` for more detail. Admin priviledge is needed to run under linux, `sudo ./nbminer -mt x`. `OhGodAnETHlargementPill` is not needed anymore if `-mt` is enabled when mining on 1080 & 1080ti GPUs.**
+* **--driver \<action>    Windows only option, install / uninstall driver for `memory tweak`. Run with admin priviledge. install: `nbminer.exe --driver install`, uninstall: `nbminer.exe --driver uninstall`. Note: the installed custom driver is not signed by microsoft, users need to disable secure boot in BIOS settings to get the driver work.**
 
 ## API Reference
 
@@ -318,6 +320,14 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v30.0(2020-04-30)
+
+- Add option `--memory-tweak` , optimize memory timings of Nvidia GD5 & GD5X GPUs. Detail describe can be found in readme.md
+- Add option `--verbose`, print pool communucation log.
+- Add option `--proxy`, user can using socks5 proxy to set up connection with pool.
+- Add number of shares per GPU in both log print and api.
+- Minor bug fix and improvements.
 
 #### v29.1(2020-04-09)
 
