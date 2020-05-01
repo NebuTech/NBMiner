@@ -39,7 +39,7 @@ GPU Miner for `ETH`, `RVN`, `TRB`, `CKB`, `GRIN`, `AE`, `BTM`, `SERO`, `HNS`, `B
 | hns_ethash       | HNS+ETH |  76M+19M   |  120M+30M  | 158M+26.2M | 176M+44M | 305M+34M |  68M+22.5M   |
 | trb              |   TRB   |    280M    |    435M    |    510M    |   750M   |   880M   |      X       |
 | trb_ethash       | TRB+ETH | 122M+20.3M |  170M+34M  | 240M+26.7M | 315M+45M |    -     |      X       |
-| kawpow           |  RVNt   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
+| kawpow           |   RVN   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
 
 ## Features
 
@@ -226,7 +226,7 @@ GPU Miner for `ETH`, `RVN`, `TRB`, `CKB`, `GRIN`, `AE`, `BTM`, `SERO`, `HNS`, `B
 * --platform \<platform>    Choose platform，0: NVIDIA+AMD (default), 1: NVIDIA only, 2: AMD only
 * --coin \<coin>    Set coin for ethash algo. E.g, eth, etc
 * **--mt, --memory-tweak \<mode>    Memory timings optimize for Nvidia GDDR5 & GDDR5X gpus. range [1-6]. Higher value equals higher hashrate. Individual value can be set via comma seperated list. Power limit may need to be tuned up to get more hashrate. Higher reject share ratio can happen if mining rig hits high temperature, set lower value of `-mt` can reduce reject ratio. Under windows, a custom driver need to be installed before using `-mt`, see description of  `--driver` for more detail. Admin priviledge is needed to run under linux, `sudo ./nbminer -mt x`. `OhGodAnETHlargementPill` is not needed anymore if `-mt` is enabled when mining on 1080 & 1080ti GPUs.**
-* **--driver \<action>    Windows only option, install / uninstall driver for `memory tweak`. Run with admin priviledge. install: `nbminer.exe --driver install`, uninstall: `nbminer.exe --driver uninstall`. Note: the installed custom driver is not signed by microsoft, users need to disable secure boot in BIOS settings to get the driver work.**
+* **--driver \<action>    Windows only option, install / uninstall driver for `memory tweak`. Run with admin priviledge. install: `nbminer.exe --driver install`, uninstall: `nbminer.exe --driver uninstall`. **
 
 ## API Reference
 
