@@ -175,7 +175,11 @@ NVIDIA、AMD显卡的`ETH`, `RVN`, `TRB`, `CKB`, `GRIN`, `AE`, `BTM`, `SERO`, `H
 
 #### RVN
 
-- **minermore**: nbminer -a kawpow -o stratum+tcp://rvnt.minermore.com:4505 -u wallet.worker:passwd
+- **f2pool**: nbminer -a kawpow -o  stratum+tcp://raven.f2pool.com:3636 -u wallet.worker:passwd
+- **poolin**: nbminer -a kawpow -o stratum+tcp://rvn.ss.poolin.com:443 -u wallet.worker:passwd
+- **beepool**: nbminer -a kawpow -o  stratum+tcp://rvn-pool.beepool.org:9531 -u wallet.worker:passwd
+- **minermore**: nbminer -a kawpow -o stratum+tcp://us.rvn.minermore.com:4501 -u wallet.worker:paswd
+- **bsod**: nbminer -a kawpow -o stratum+tcp://pool.bsod.pw:2640 -u wallet.worker:passwd
 
 ## 命令行参数
 
