@@ -325,6 +325,13 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v30.1(2020-05-03)
+
+- Reduce `ethash` `kawpow` startup time.
+- Fix a possible crash on certain rigs of reason `invalid kernel image`.
+- Do not apply memory tweak if `-mt` is set to 0 on corresponding gpu.
+- Print system information on start.
+
 #### v30.0(2020-04-30)
 
 - Add option `--memory-tweak` , optimize memory timings of Nvidia GD5 & GD5X GPUs. Detail describe can be found in readme.md

@@ -332,6 +332,13 @@ GET http://api_host:port/api/v1/status
 
 ## 修改记录
 
+#### v30.1(2020-05-03)
+
+- 缩短 `ethash` & `kawpow`算法的启动时间
+- 修复 30.0 版本有小概率出现`invalid kernel image` 崩溃的情况
+- 当`-mt`设置为 0 的时候，对应显卡不启用时序调整功能
+- 在启动时打印系统信息
+
 #### v30.0(2020-04-30)
 
 - 新增`--memory-tweak`选项，用于优化Nvidia GD5和GD5X的显卡时序。详细说明见readme_zh.md
