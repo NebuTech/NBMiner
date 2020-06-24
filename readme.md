@@ -2,7 +2,7 @@
 
 # NBMiner
 
-GPU Miner for `ETH`, `RVN`, `TRB`, `CKB`, `GRIN`, `AE`, `BTM`, `SERO`, `HNS`, `BFC`, `SIPC`
+GPU Miner for `ETH`, `RVN`,  `GRIN`, `TRB`, `CKB`,`AE`, `BTM`, `SERO`, `HNS`, `BFC`, `SIPC`
 
 ## 中文说明
 
@@ -27,7 +27,8 @@ GPU Miner for `ETH`, `RVN`, `TRB`, `CKB`, `GRIN`, `AE`, `BTM`, `SERO`, `HNS`, `B
 | tensority_ethash | BTM+ETH | 950+15.5M  | 1600+26.5M |  1350+22M  | 2450+40M | 7000+28M |      X       |
 | cuckaroo         | GRIN29  |    3.45    |    5.6     |    5.25    |   8.1    |   8.9    |      X       |
 | cuckarood        | GRIN29  |    3.45    |    5.6     |    5.25    |   8.1    |   9.1    |      X       |
-| cuckatoo         | GRIN31  |     -      |    0.89    |    0.94    |   1.56   |   1.65   |      X       |
+| cuckatoo         | GRIN31  |     X      |    0.89    |    0.94    |   1.56   |   1.65   |      X       |
+| cuckatoo32       | GRIN32  |     X      |    0.38    |    0.41    |   0.63   |   0.65   |      X       |
 | cuckoo_ae        |   AE    |    3.35    |    5.5     |    5.15    |   7.9    |   8.75   |      X       |
 | cuckaroo_swap    |  SWAP   |    3.45    |    5.6     |    5.25    |   8.1    |   8.9    |      X       |
 | progpow_sero     |  SERO   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     10M      |
@@ -49,7 +50,7 @@ GPU Miner for `ETH`, `RVN`, `TRB`, `CKB`, `GRIN`, `AE`, `BTM`, `SERO`, `HNS`, `B
 * Dev Fee: 
   * tensority(Pascal) 2%, tensority(Turing) 3%, tensority_ethash 3%
   * ethash 1%
-  * cuckaroo & cuckarood & cuckatoo & cuckoo_ae & cuckaroo_swap 2%
+  * cuckaroo & cuckarood & cuckatoo & cuckatoo32 & cuckoo_ae & cuckaroo_swap 2%
   * progpow_sero 2%
   * sipc 2%
   * eaglesong 2%, eaglesong_ethash 3%
@@ -70,6 +71,7 @@ GPU Miner for `ETH`, `RVN`, `TRB`, `CKB`, `GRIN`, `AE`, `BTM`, `SERO`, `HNS`, `B
 | tensority_ethash | BTM+ETH |   6.1, 7.0, 7.5    |          4GB          |      4GB       |
 | cuckaroo(d)      | GRIN29  | 6.0, 6.1, 7.0, 7.5 |          5GB          |      6GB       |
 | cuckatoo         | GRIN31  | 6.0, 6.1, 7.0, 7.5 |          8GB          |      10GB      |
+| cuckatoo32 | GRIN32 | 6.0, 6.1, 7.0, 7.5 | 8GB | 10GB |
 | cuckoo_ae        |   AE    | 6.0, 6.1, 7.0, 7.5 |          5GB          |      6GB       |
 | cuckaroo_swap    |  SWAP   | 6.0, 6.1, 7.0, 7.5 |          5GB          |      6GB       |
 | progpow_sero     |  SERO   |     6.0 - 7.5      |          2GB          |      2GB       |
@@ -118,6 +120,12 @@ GPU Miner for `ETH`, `RVN`, `TRB`, `CKB`, `GRIN`, `AE`, `BTM`, `SERO`, `HNS`, `B
 - **f2pool:** nbminer -a cuckatoo -o stratum+tcp://grin31.f2pool.com:13654 -u username.worker:passwd
 - **btc.com**: nbminer -a cuckatoo -o stratum+tcp://sz-grin.ss.btc.com:1800 -u username.worker:passwd
 - **nicehash:** nbminer -a cuckatoo -o nicehash+tcp://grincuckatoo31.eu.nicehash.com:3372 -u btc_address.worker
+
+#### Grin32
+
+- **sparkpool**: nbminer -a cuckatoo32 -o stratum+tcp://grin.sparkpool.com:6665 -u 123@qq.com/worker
+- **f2pool:** nbminer -a cuckatoo32 -o stratum+tcp://grin32.f2pool.com:13654 -u username.worker:passwd
+- **nicehash:** nbminer -a cuckatoo32 -o nicehash+tcp://grincuckatoo32.hk.nicehash.com:3383 -u btc_address.worker
 
 #### AE
 
@@ -325,6 +333,11 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v31.1(2020-06-24)
+
+- `new algo`: `cuckatoo32`  for `Grin32` on Nvidia 8G above GPUs
+- `kawpow`: support for `NiceHash`'s `extranonce.subscribe` protocol
+
 #### v30.2(2020-05-05)
 
 - `windows`: Auto install driver if `--memory-tweak` is set and driver is not installed.
@@ -353,7 +366,7 @@ GET http://api_host:port/api/v1/status
 
 #### v29.0(2020-04-03)
 
-- Add support for RVN new algo 'kawpow' mining on Nvidia & AMD gpus.
+- Add support for RVN new algo `kawpow` mining on Nvidia & AMD gpus.
 
 #### v28.1(2020-03-30)
 
