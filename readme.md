@@ -346,6 +346,7 @@ GET http://api_host:port/api/v1/status
 - `new algo`: `beamv3` for mining `BEAM` with Nvidia 3GB+ GPUs
 - `new algo`: `cuckatoo32` add support for Nvidia 6GB GPU
 - `optimize`: `ethash` for AMD RX 4xx, 5xx, Vega series 8GB+ GPUs 
+- `feature`: `ethash` support mining up to epoch 800
 
 #### v31.1(2020-06-24)
 

@@ -339,6 +339,7 @@ GET http://api_host:port/api/v1/status
 - `新增算法`: `beamv3` 用于`BEAM`挖矿，支持Nvidia 3GB+ 显卡
 - `新增算法`: `cuckatoo32` 新增对Nvidia 6GB显卡的支持
 - `优化`: `ethash` 对于AMD RX 4xx、5xx、Vega 系列8GB+显卡优化
+- `特性`: `ethash`支持挖矿时间到epoch 800
 
 #### v31.1(2020-06-24)
 
