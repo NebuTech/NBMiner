@@ -2,7 +2,7 @@
 
 # NBMiner
 
-NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `TRB`, `CKB`,`AE`, `BTM`, `SERO`, `HNS`, `BFC`, `SIPC`挖矿软件。
+NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `TRB`, `CKB`,`AE`, `BTM`, `SERO`, `HNS`, `BFC`, `SIPC`挖矿软件。
 
 ## 下载地址
 
@@ -17,12 +17,12 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `TRB`, `CKB`,`AE`, `BTM`, `SERO`, `H
 | 算法             |  币种   |  P106-100  |  P104-8G   |   1070ti   |  1080ti  |   2080   | RX580 2048sp |
 | :--------------- | :-----: | :--------: | :--------: | :--------: | :------: | :------: | :----------: |
 | tensority        |   BTM   |   1,900    |    3000    |   3,400    |  5,000   |  11,500  |      X       |
-| ethash           |   ETH   |   21.2M    |   34.5M    |   26.9M    |   46M    |  35.5M   |      X       |
+| ethash           |   ETH   |   21.2M    |   34.5M    |   26.9M    |   46M    |  35.5M   |     24M      |
 | tensority_ethash | BTM+ETH | 950+15.5M  | 1600+26.5M |  1350+22M  | 2450+40M | 7000+28M |      X       |
 | cuckaroo         | GRIN29  |    3.45    |    5.6     |    5.25    |   8.1    |   8.9    |      X       |
 | cuckarood        | GRIN29  |    3.45    |    5.6     |    5.25    |   8.1    |   9.1    |      X       |
 | cuckatoo         | GRIN31  |     X      |    0.89    |    0.94    |   1.56   |   1.65   |      X       |
-| cuckatoo32       | GRIN32  |     X      |    0.38    |    0.41    |   0.63   |   0.65   |      X       |
+| cuckatoo32       | GRIN32  |   0.215    |    0.38    |    0.41    |   0.63   |   0.65   |      X       |
 | cuckoo_ae        |   AE    |    3.35    |    5.5     |    5.15    |   7.9    |   8.75   |      X       |
 | cuckaroo_swap    |  SWAP   |    3.45    |    5.6     |    5.25    |   8.1    |   8.9    |      X       |
 | progpow_sero     |  SERO   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     10M      |
@@ -35,6 +35,7 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `TRB`, `CKB`,`AE`, `BTM`, `SERO`, `H
 | trb              |   TRB   |    280M    |    435M    |    510M    |   750M   |   880M   |      X       |
 | trb_ethash       | TRB+ETH | 122M+20.3M |  170M+34M  | 240M+26.7M | 315M+45M |    -     |      X       |
 | kawpow           |   RVN   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
+| beamv3           |  BEAM   |    12.5    |    19.6    |    18.6    |    26    |   30.5   |      X       |
 
 ## 功能特点
 
@@ -52,6 +53,7 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `TRB`, `CKB`,`AE`, `BTM`, `SERO`, `H
   - hns 2%, hns_ethash 3%
   - trb 2%, trb_ethash 3%
   - kawpow 2%
+  - beamv3 2%
 
 ## 配置需求
 
@@ -189,6 +191,12 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `TRB`, `CKB`,`AE`, `BTM`, `SERO`, `H
 - **bsod**: nbminer -a kawpow -o stratum+tcp://pool.bsod.pw:2640 -u wallet.worker:passwd
 - **woolypooly**: nbminer -a kawpow -o stratum+tcp://rvn.woolypooly.com:55555 -u wallet.worker:passwd 
 
+#### BEAM
+
+- **sparkpool**: nbminer -a beamv3 -o stratum+ssl://beam.sparkpool.com:2222 -u wallet.worker:passwd
+- **leafpool**: nbminer -a beamv3 -o stratum+ssl://beam-eu.leafpool.com:3333 -u wallet.worker:passwd
+- **nicehash**: nbminer -a beamv3 -o stratum+tcp://beamv3.eu.nicehash.com:3387 -u btc_address.worker
+
 ## 命令行参数
 
 **nbminer -a algo -o 协议+连接类型://矿池地址:矿池端口 -u 钱包地址或用户名.矿工名:密码可选**
@@ -324,21 +332,13 @@ GET http://api_host:port/api/v1/status
 }
 ```
 
-## FAQ
-
-#### 为什么我的矿池算力比本地算力低?
-
-- `矿池的显示算力` = `本地实际算力` x (`1.0` - `手续费比例0.03` - `本地跳过提交的过期share率`) x (`1.0` - `矿池过期拒绝率` ± `误差率`)
-- `本地实际算力`：挖矿程序中显示的`Hashrate`
-- `本地跳过提交的过期share率`：源于挖矿程序中对`nonce`值计算采用批处理，若在批处理任务计算完成后，有可以提交的share，但此时矿池已经下发新的任务（`New Job`），则会跳过该过期share的提交（`Skip expired submit`）,即使提交到矿池也会被拒绝掉（`reject`）。跳过的share数量占全部share的比例即为本地跳过提交的过期share率。
-- `矿池的过期拒绝率`：从挖矿程序发现share向矿池提交，到矿池验证完成这段时间内，若矿池任务有更新，会导致本次提交的share过期被拒绝。从其产生的原因看，若要改善矿池的过期拒绝率，需用户优化网络部署，减小矿机到矿池之间的网络延迟；同时矿池也需要尽量快的做nonce值的验证。
-- `误差率`：矿池的显示算力，来源于矿池根据其设定的挖矿难度以及用户矿机提交的有效share数推算而得。而挖矿过程中，发现有效`nonce`获得share在短期内有运气成分，造成误差（偏高偏低都有可能），理论上挖矿时间越长误差率越低。所以对比矿池算力和本地算力应采用`矿池24小时的平均算力`来减小运气因素导致的差别。
-
-#### 为什么会出现CUDA错误导致内核重启?
-
-- 当核心超频过度，或者显卡本身的核心体质不好时，会因为显卡内部计算错误，导致出现各种的CUDA错误。此时应该尝试 检查转接板连接稳定性、降低核心频率、降低功耗，再做尝试。
-
 ## 修改记录
+
+#### v32.0(2020-09-30)
+
+- `新增算法`: `beamv3` 用于`BEAM`挖矿，支持Nvidia 3GB+ 显卡
+- `新增算法`: `cuckatoo32` 新增对Nvidia 6GB显卡的支持
+- `优化`: `ethash` 对于AMD RX 4xx、5xx、Vega 系列8GB+显卡优化
 
 #### v31.1(2020-06-24)
 

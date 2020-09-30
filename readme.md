@@ -2,7 +2,7 @@
 
 # NBMiner
 
-GPU Miner for `ETH`, `RVN`,  `GRIN`, `TRB`, `CKB`,`AE`, `BTM`, `SERO`, `HNS`, `BFC`, `SIPC`
+GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `TRB`, `CKB`,`AE`, `BTM`, `SERO`, `HNS`, `BFC`, `SIPC`
 
 ## 中文说明
 
@@ -23,12 +23,12 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `TRB`, `CKB`,`AE`, `BTM`, `SERO`, `HNS`, `B
 | Algorithm        |  Coin   |  P106-100  |  P104-8G   |   1070ti   |  1080ti  |   2080   | RX580 2048sp |
 | :--------------- | :-----: | :--------: | :--------: | :--------: | :------: | :------: | :----------: |
 | tensority        |   BTM   |   1,900    |    3000    |   3,400    |  5,000   |  11,500  |      X       |
-| ethash           |   ETH   |   21.2M    |   34.5M    |   26.9M    |   46M    |  35.5M   |      X       |
+| ethash           |   ETH   |   21.2M    |   34.5M    |   26.9M    |   46M    |  35.5M   |     24M      |
 | tensority_ethash | BTM+ETH | 950+15.5M  | 1600+26.5M |  1350+22M  | 2450+40M | 7000+28M |      X       |
 | cuckaroo         | GRIN29  |    3.45    |    5.6     |    5.25    |   8.1    |   8.9    |      X       |
 | cuckarood        | GRIN29  |    3.45    |    5.6     |    5.25    |   8.1    |   9.1    |      X       |
 | cuckatoo         | GRIN31  |     X      |    0.89    |    0.94    |   1.56   |   1.65   |      X       |
-| cuckatoo32       | GRIN32  |     X      |    0.38    |    0.41    |   0.63   |   0.65   |      X       |
+| cuckatoo32       | GRIN32  |   0.215    |    0.38    |    0.41    |   0.63   |   0.65   |      X       |
 | cuckoo_ae        |   AE    |    3.35    |    5.5     |    5.15    |   7.9    |   8.75   |      X       |
 | cuckaroo_swap    |  SWAP   |    3.45    |    5.6     |    5.25    |   8.1    |   8.9    |      X       |
 | progpow_sero     |  SERO   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     10M      |
@@ -41,6 +41,7 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `TRB`, `CKB`,`AE`, `BTM`, `SERO`, `HNS`, `B
 | trb              |   TRB   |    280M    |    435M    |    510M    |   750M   |   880M   |      X       |
 | trb_ethash       | TRB+ETH | 122M+20.3M |  170M+34M  | 240M+26.7M | 315M+45M |    -     |      X       |
 | kawpow           |   RVN   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
+| beamv3           |  BEAM   |    12.5    |    19.6    |    18.6    |    26    |   30.5   |      X       |
 
 ## Features
 
@@ -58,6 +59,7 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `TRB`, `CKB`,`AE`, `BTM`, `SERO`, `HNS`, `B
   * hns 2%, hns_ethash 3%
   * trb 2%, trb_ethash 3%
   * kawpow 2%
+  * beamv3 2%
 
 ## Requirements
 
@@ -194,6 +196,12 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `TRB`, `CKB`,`AE`, `BTM`, `SERO`, `HNS`, `B
 - **minermore**: nbminer -a kawpow -o stratum+tcp://us.rvn.minermore.com:4501 -u wallet.worker:paswd
 - **bsod**: nbminer -a kawpow -o stratum+tcp://pool.bsod.pw:2640 -u wallet.worker:passwd
 - **woolypooly**: nbminer -a kawpow -o stratum+tcp://rvn.woolypooly.com:55555 -u wallet.worker:passwd 
+
+#### BEAM
+
+- **sparkpool**: nbminer -a beamv3 -o stratum+ssl://beam.sparkpool.com:2222 -u wallet.worker:passwd
+- **leafpool**: nbminer -a beamv3 -o stratum+ssl://beam-eu.leafpool.com:3333 -u wallet.worker:passwd
+- **nicehash**: nbminer -a beamv3 -o stratum+tcp://beamv3.eu.nicehash.com:3387 -u btc_address.worker
 
 ## CMD options：
 
@@ -332,6 +340,12 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v32.0(2020-09-30)
+
+- `new algo`: `beamv3` for mining `BEAM` with Nvidia 3GB+ GPUs
+- `new algo`: `cuckatoo32` add support for Nvidia 6GB GPU
+- `optimize`: `ethash` for AMD RX 4xx, 5xx, Vega series 8GB+ GPUs 
 
 #### v31.1(2020-06-24)
 
