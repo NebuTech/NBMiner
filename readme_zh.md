@@ -334,6 +334,10 @@ GET http://api_host:port/api/v1/status
 
 ## 修改记录
 
+#### v32.1(2020-10-05)
+
+- `bug修复`: 修复在部分AMD矿机上设备初始化失败的bug
+
 #### v32.0(2020-09-30)
 
 - `新增算法`: `beamv3` 用于`BEAM`挖矿，支持Nvidia 3GB+ 显卡

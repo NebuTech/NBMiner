@@ -341,6 +341,10 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v32.1(2020-10-05)
+
+- `bug fix`: Fix AMD device initialization failure on some rigs.
+
 #### v32.0(2020-09-30)
 
 - `new algo`: `beamv3` for mining `BEAM` with Nvidia 3GB+ GPUs
