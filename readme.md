@@ -103,6 +103,7 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `TRB`, `CKB`,`AE`, `BTM`, `SERO`, `
 - **sparkpool:** nbminer -a ethash -o ethproxy+tcp://cn.sparkpool.com:3333 -u 0x12343bdgf.worker
 - **f2pool:** nbminer -a ethash -o ethproxy+tcp://eth.f2pool.com:8008 -u 0x12343bdgf.worker
 - **nanopool:** nbminer -a ethash -o ethproxy+tcp://eth-asia1.nanopool.org:9999 -u 0x12343bdgf.worker
+- **herominers:** nbminer -a ethash -o ethproxy+tcp://ethereum.herominers.com:10201 -u 0x12343bdgf.worker
 - **nicehash:** nbminer -a ethash -o nicehash+tcp://daggerhashimoto.eu.nicehash.com:3353 -u btc_address.worker
 
 #### BTM+ETH
@@ -127,6 +128,7 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `TRB`, `CKB`,`AE`, `BTM`, `SERO`, `
 
 - **sparkpool**: nbminer -a cuckatoo32 -o stratum+tcp://grin.sparkpool.com:6665 -u 123@qq.com/worker
 - **f2pool:** nbminer -a cuckatoo32 -o stratum+tcp://grin32.f2pool.com:13654 -u username.worker:passwd
+- **herominers:** nbminer -a cuckatoo32 -o stratum+tcp://grin.herominers.com:10301 -u username.worker:passwd
 - **nicehash:** nbminer -a cuckatoo32 -o nicehash+tcp://grincuckatoo32.hk.nicehash.com:3383 -u btc_address.worker
 
 #### AE
@@ -201,6 +203,7 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `TRB`, `CKB`,`AE`, `BTM`, `SERO`, `
 
 - **sparkpool**: nbminer -a beamv3 -o stratum+ssl://beam.sparkpool.com:2222 -u wallet.worker:passwd
 - **leafpool**: nbminer -a beamv3 -o stratum+ssl://beam-eu.leafpool.com:3333 -u wallet.worker:passwd
+- **herominers**: nbminer -a beamv3 -o stratum+ssl://beam.herominers.com:10231 -u wallet.worker:passwd
 - **nicehash**: nbminer -a beamv3 -o stratum+tcp://beamv3.eu.nicehash.com:3387 -u btc_address.worker
 
 ## CMD options：
