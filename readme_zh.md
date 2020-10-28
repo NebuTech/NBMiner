@@ -36,6 +36,7 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `TRB`, `CKB`,`AE`, `BTM`, `S
 | trb_ethash       | TRB+ETH | 122M+20.3M |  170M+34M  | 240M+26.7M | 315M+45M |    -     |      X       |
 | kawpow           |   RVN   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
 | beamv3           |  BEAM   |    12.5    |    19.6    |    18.6    |    26    |   30.5   |      X       |
+| octopus          |   CFX   |    900K    |    1.4M    |    1.7M    |   2.3M   |   9.0M   |      X       |
 
 ## 功能特点
 
@@ -54,6 +55,7 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `TRB`, `CKB`,`AE`, `BTM`, `S
   - trb 2%, trb_ethash 3%
   - kawpow 2%
   - beamv3 2%
+  - octopus 3%
 
 ## 配置需求
 
@@ -197,6 +199,10 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `TRB`, `CKB`,`AE`, `BTM`, `S
 - **leafpool**: nbminer -a beamv3 -o stratum+ssl://beam-eu.leafpool.com:3333 -u wallet.worker:passwd
 - **nicehash**: nbminer -a beamv3 -o stratum+tcp://beamv3.eu.nicehash.com:3387 -u btc_address.worker
 
+#### CONFLUX
+
+- **solo**: nbminer -a octopus -o solo_node_ip:port -u worker
+
 ## 命令行参数
 
 **nbminer -a algo -o 协议+连接类型://矿池地址:矿池端口 -u 钱包地址或用户名.矿工名:密码可选**
@@ -333,6 +339,14 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## 修改记录
+
+#### v33.0(2020-10-28)
+
+- `新增算法`: `octopus` 用于`conflux`挖矿，适用于solo和矿池，需要6G及以上N卡
+- `优化`: `ethash` Vega 及 Navi 显卡算力
+- `优化`: `beamv3` 在10系高端显卡上的算力
+- `特性`: 修改控制台算力统计输出形式，增加每张显卡的share接受和拒绝数
+- `修复`: `ethash` 修复小部分情况下出现0算力的情况
 
 #### v32.1(2020-10-05)
 

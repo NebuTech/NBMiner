@@ -42,6 +42,7 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `TRB`, `CKB`,`AE`, `BTM`, `SERO`, `
 | trb_ethash       | TRB+ETH | 122M+20.3M |  170M+34M  | 240M+26.7M | 315M+45M |    -     |      X       |
 | kawpow           |   RVN   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
 | beamv3           |  BEAM   |    12.5    |    19.6    |    18.6    |    26    |   30.5   |      X       |
+| octopus          |   CFX   |    900K    |    1.4M    |    1.7M    |   2.3M   |   9.0M   |      X       |
 
 ## Features
 
@@ -60,6 +61,7 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `TRB`, `CKB`,`AE`, `BTM`, `SERO`, `
   * trb 2%, trb_ethash 3%
   * kawpow 2%
   * beamv3 2%
+  * octopus 3%
 
 ## Requirements
 
@@ -206,6 +208,10 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `TRB`, `CKB`,`AE`, `BTM`, `SERO`, `
 - **herominers**: nbminer -a beamv3 -o stratum+ssl://beam.herominers.com:10231 -u wallet.worker:passwd
 - **nicehash**: nbminer -a beamv3 -o stratum+tcp://beamv3.eu.nicehash.com:3387 -u btc_address.worker
 
+#### CONFLUX
+
+- **solo**: nbminer -a octopus -o solo_node_ip:port -u worker
+
 ## CMD options：
 
 **nbminer -a algo -o protocol+socket_type://pool_host:pool_port -u wallet_address.worker:passwd**
@@ -343,6 +349,14 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v33.0(2020-10-28)
+
+- `new algo`: `octopus` for mining`conflux`，support both solo mining and pool mining, need Nvidia GPU above 6G
+- `optimize`: `ethash` improve performance on Vega & Navi GPUs
+- `optimize`: `beamv3` improve performance on high end 10xx Nvidia GPUs
+- `feature`: modify summary output on console, add share statistics for each GPU.
+- `fix`: `ethash` fix zero hashrate on certain cases for AMD GPUs
 
 #### v32.1(2020-10-05)
 
