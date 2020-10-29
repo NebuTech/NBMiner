@@ -2,7 +2,7 @@
 
 # NBMiner
 
-NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `TRB`, `CKB`,`AE`, `BTM`, `SERO`, `HNS`, `BFC`, `SIPC`挖矿软件。
+NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `TRB`, `CKB`,`AE`, `BTM`, `SERO`, `HNS`, `BFC`挖矿软件。
 
 ## 下载地址
 
@@ -35,7 +35,7 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `TRB`, `CKB`,`AE`, `BTM`, `S
 | trb              |   TRB   |    280M    |    435M    |    510M    |   750M   |   880M   |      X       |
 | trb_ethash       | TRB+ETH | 122M+20.3M |  170M+34M  | 240M+26.7M | 315M+45M |    -     |      X       |
 | kawpow           |   RVN   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
-| beamv3           |  BEAM   |    12.5    |    19.6    |    18.6    |    26    |   30.5   |      X       |
+| beamv3           |  BEAM   |    12.5    |    19.6    |    19.5    |    26    |   30.5   |      X       |
 | octopus          |   CFX   |    900K    |    1.4M    |    1.7M    |   2.3M   |   9.0M   |      X       |
 
 ## 功能特点
@@ -63,25 +63,27 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `TRB`, `CKB`,`AE`, `BTM`, `S
 - 显卡参数需求:
 
 | 算法             |  币种   | Compute Capability | 显存 (Win7 & Linux) | 显存 (Win10) |
-| :--------------- | :-----: | :----------------: | :-----------------: | :----------: |
-| tensority        |   BTM   |   6.1, 7.0, 7.5    |         1GB         |     1GB      |
-| ethash           |   ETH   | 6.0, 6.1, 7.0, 7.5 |         4GB         |     4GB      |
-| tensority_ethash | BTM+ETH |   6.1, 7.0, 7.5    |         4GB         |     4GB      |
-| cuckaroo(d)      | GRIN29  | 6.0, 6.1, 7.0, 7.5 |         5GB         |     6GB      |
-| cuckatoo         | GRIN31  | 6.0, 6.1, 7.0, 7.5 |         8GB         |     10GB     |
+| :--------------- | :-----: | :----------------: | :-------------------: | :------------: |
+| tensority        |   BTM   |   6.1, 7.0, 7.5, 8.6   |          1GB          |      1GB       |
+| ethash           |   ETH   | 6.0, 6.1, 7.0, 7.5, 8.6 |          4GB          |      4GB       |
+| tensority_ethash | BTM+ETH | 6.1, 7.0, 7.5, 8.6 |          4GB          |      4GB       |
+| cuckaroo(d)      | GRIN29  | 6.0, 6.1, 7.0, 7.5, 8.6 |          5GB          |      6GB       |
+| cuckatoo         | GRIN31  | 6.0, 6.1, 7.0, 7.5, 8.6 |          8GB          |      10GB      |
 | cuckatoo32 | GRIN32 | 6.0, 6.1, 7.0, 7.5 | 8GB | 10GB |
-| cuckoo_ae        |   AE    | 6.0, 6.1, 7.0, 7.5 |         5GB         |     6GB      |
-| cuckaroo_swap    |  SWAP   | 6.0, 6.1, 7.0, 7.5 |         5GB         |     6GB      |
-| progpow_sero     |  SERO   |     6.0 - 7.5      |         2GB         |     2GB      |
-| sipc             |  SIPC   | 6.0, 6.1, 7.0, 7.5 |         1GB         |     1GB      |
-| eaglesong        |   CKB   | 6.0, 6.1, 7.0, 7.5 |        0.1GB        |    0.1GB     |
-| eaglesong_ethash | CKB+ETH | 6.0, 6.1, 7.0, 7.5 |         4GB         |     4GB      |
-| bfc              |   BFC   | 6.0, 6.1, 7.0, 7.5 |         5GB         |     6GB      |
-| hns              |   HNS   | 6.0, 6.1, 7.0, 7.5 |         0.1GB         |      0.1GB  |
-| hns_ethash       | HNS+ETH | 6.0, 6.1, 7.0, 7.5 |          4GB          |      4GB       |
-| trb              |   TRB   | 6.0, 6.1, 7.0, 7.5 |         0.1GB         |     0.1GB      |
-| trb_ethash       | TRB+ETH | 6.0, 6.1, 7.0, 7.5 |          4GB          |      4GB       |
-| kawpow | RVN | 6.0, 6.1, 7.0, 7.5 | 3GB | 3GB |
+| cuckoo_ae        |   AE    | 6.0, 6.1, 7.0, 7.5, 8.6 |          5GB          |      6GB       |
+| cuckaroo_swap    |  SWAP   | 6.0, 6.1, 7.0, 7.5, 8.6 |          5GB          |      6GB       |
+| progpow_sero     |  SERO   | 6.0, 6.1, 7.0, 7.5, 8.6 |          2GB          |      2GB       |
+| sipc             |  SIPC   | 6.0, 6.1, 7.0, 7.5, 8.6 |          1GB          |      1GB       |
+| eaglesong        |   CKB   | 6.0, 6.1, 7.0, 7.5, 8.6 |         0.1GB         |     0.1GB      |
+| eaglesong_ethash | CKB+ETH | 6.0, 6.1, 7.0, 7.5, 8.6 |          4GB          |      4GB       |
+| bfc              |   BFC   | 6.0, 6.1, 7.0, 7.5, 8.6 |          5GB          |      6GB       |
+| hns              |   HNS   | 6.0, 6.1, 7.0, 7.5, 8.6 |         0.1GB         |     0.1GB      |
+| hns_ethash       | HNS+ETH | 6.0, 6.1, 7.0, 7.5, 8.6 |          4GB          |      4GB       |
+| trb              |   TRB   | 6.0, 6.1, 7.0, 7.5, 8.6 |         0.1GB         |     0.1GB      |
+| trb_ethash       | TRB+ETH | 6.0, 6.1, 7.0, 7.5, 8.6 |          4GB          |      4GB       |
+| kawpow           |   RVN   | 6.0, 6.1, 7.0, 7.5, 8.6 |          3GB          |      3GB       |
+| beamv3 | BEAM | 6.0, 6.1, 7.0, 7.5 | 3GB | 3GB |
+| octopus | CFX | 6.0, 6.1, 7.0, 7.5, 8.6 | 5GB | 5GB |
 
 - \* Compute Capability 查询参考链接: [维基百科](<https://en.wikipedia.org/wiki/CUDA#GPUs_supported>)
 
@@ -202,7 +204,7 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `TRB`, `CKB`,`AE`, `BTM`, `S
 
 #### CONFLUX
 
-- **solo**: nbminer -a octopus -o solo_node_ip:port -u worker
+- **solo**: nbminer -a octopus -o solo_node_ip:port -u worker --share-check 0
 
 ## 命令行参数
 
@@ -340,6 +342,12 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## 修改记录
+
+#### v33.1(2020-10-29)
+
+- `修复`: 部分打印格式错误
+- `优化`: 降低`octopus`挖矿CPU利用率
+- `特性`: 新增`--share-check`选项，设置一定时间内无`share`接受则重启，默认30分钟。solo矿工需设置为0以避免重启
 
 #### v33.0(2020-10-28)
 
