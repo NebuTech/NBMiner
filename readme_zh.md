@@ -36,7 +36,7 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `TRB`, `CKB`,`AE`, `B
 | trb_ethash       | TRB+ETH | 122M+20.3M |  170M+34M  | 240M+26.7M | 315M+45M |    -     |      X       |
 | kawpow           |   RVN   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
 | beamv3           |  BEAM   |    12.5    |    19.6    |    19.5    |    26    |   30.5   |      X       |
-| octopus          |   CFX   |    900K    |    1.4M    |    1.7M    |   2.3M   |   9.0M   |      X       |
+| octopus          |   CFX   |    2.2M    |    3.3M    |    3.9M    |   5.4M   |  15.5M   |      X       |
 
 ## 功能特点
 
@@ -342,6 +342,12 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## 修改记录
+
+#### v33.2(2020-11-01)
+
+- `优化`: `octopus` 提升算力，10系显卡+150%，16、20、30系显卡+80%
+- `修复`: `--share-check 0` 设置后CPU使用率高
+- `修复`: 打印增加 `Uptime` 运行总时间
 
 #### v33.1(2020-10-29)
 
