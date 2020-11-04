@@ -42,7 +42,7 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `TRB`, `CKB`,`AE`, `BTM`, `S
 | trb_ethash       | TRB+ETH | 122M+20.3M |  170M+34M  | 240M+26.7M | 315M+45M |    -     |      X       |
 | kawpow           |   RVN   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
 | beamv3           |  BEAM   |    12.5    |    19.6    |    19.5    |    26    |   30.5   |      X       |
-| octopus          |   CFX   |    2.2M    |    3.3M    |    3.9M    |   5.4M   |  15.5M   |      X       |
+| octopus          |   CFX   |   2.25M    |    3.4M    |    4.1M    |   5.7M   |  19.5M   |     2.8M     |
 
 ## Features
 
@@ -70,26 +70,26 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `TRB`, `CKB`,`AE`, `BTM`, `S
 
 | Algorithm        |  Coin   | Compute Capability | Memory (Win7 & Linux) | Memory (Win10) |
 | :--------------- | :-----: | :----------------: | :-------------------: | :------------: |
-| tensority        |   BTM   |   6.1, 7.0, 7.5, 8.6   |          1GB          |      1GB       |
-| ethash           |   ETH   | 6.0, 6.1, 7.0, 7.5, 8.6 |          4GB          |      4GB       |
+| tensority        |   BTM   |   6.1, 7.0, 7.5,8.0, 8.6   |          1GB          |      1GB       |
+| ethash           |   ETH   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          4GB          |      4GB       |
 | tensority_ethash | BTM+ETH | 6.1, 7.0, 7.5, 8.6 |          4GB          |      4GB       |
-| cuckaroo(d)      | GRIN29  | 6.0, 6.1, 7.0, 7.5, 8.6 |          5GB          |      6GB       |
-| cuckatoo         | GRIN31  | 6.0, 6.1, 7.0, 7.5, 8.6 |          8GB          |      10GB      |
+| cuckaroo(d)      | GRIN29  | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB       |
+| cuckatoo         | GRIN31  | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          8GB          |      10GB      |
 | cuckatoo32 | GRIN32 | 6.0, 6.1, 7.0, 7.5 | 8GB | 10GB |
-| cuckoo_ae        |   AE    | 6.0, 6.1, 7.0, 7.5, 8.6 |          5GB          |      6GB       |
-| cuckaroo_swap    |  SWAP   | 6.0, 6.1, 7.0, 7.5, 8.6 |          5GB          |      6GB       |
-| progpow_sero     |  SERO   | 6.0, 6.1, 7.0, 7.5, 8.6 |          2GB          |      2GB       |
-| sipc             |  SIPC   | 6.0, 6.1, 7.0, 7.5, 8.6 |          1GB          |      1GB       |
-| eaglesong        |   CKB   | 6.0, 6.1, 7.0, 7.5, 8.6 |         0.1GB         |     0.1GB      |
-| eaglesong_ethash | CKB+ETH | 6.0, 6.1, 7.0, 7.5, 8.6 |          4GB          |      4GB       |
-| bfc              |   BFC   | 6.0, 6.1, 7.0, 7.5, 8.6 |          5GB          |      6GB       |
-| hns              |   HNS   | 6.0, 6.1, 7.0, 7.5, 8.6 |         0.1GB         |     0.1GB      |
-| hns_ethash       | HNS+ETH | 6.0, 6.1, 7.0, 7.5, 8.6 |          4GB          |      4GB       |
-| trb              |   TRB   | 6.0, 6.1, 7.0, 7.5, 8.6 |         0.1GB         |     0.1GB      |
-| trb_ethash       | TRB+ETH | 6.0, 6.1, 7.0, 7.5, 8.6 |          4GB          |      4GB       |
-| kawpow           |   RVN   | 6.0, 6.1, 7.0, 7.5, 8.6 |          3GB          |      3GB       |
+| cuckoo_ae        |   AE    | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB       |
+| cuckaroo_swap    |  SWAP   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB       |
+| progpow_sero     |  SERO   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          2GB          |      2GB       |
+| sipc             |  SIPC   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          1GB          |      1GB       |
+| eaglesong        |   CKB   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |         0.1GB         |     0.1GB      |
+| eaglesong_ethash | CKB+ETH | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          4GB          |      4GB       |
+| bfc              |   BFC   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB       |
+| hns              |   HNS   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |         0.1GB         |     0.1GB      |
+| hns_ethash       | HNS+ETH | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          4GB          |      4GB       |
+| trb              |   TRB   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |         0.1GB         |     0.1GB      |
+| trb_ethash       | TRB+ETH | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          4GB          |      4GB       |
+| kawpow           |   RVN   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          3GB          |      3GB       |
 | beamv3 | BEAM | 6.0, 6.1, 7.0, 7.5 | 3GB | 3GB |
-| octopus | CFX | 6.0, 6.1, 7.0, 7.5, 8.6 | 5GB | 5GB |
+| octopus | CFX | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 | 5GB | 5GB |
 
 - \* Compute Capability reference link: [wikipedia](<https://en.wikipedia.org/wiki/CUDA#GPUs_supported>)
 
@@ -256,6 +256,7 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `TRB`, `CKB`,`AE`, `BTM`, `S
 * --no-watchdog    Disable watchdog process.
 * --platform \<platform>    Choose platform，0: NVIDIA+AMD (default), 1: NVIDIA only, 2: AMD only
 * --coin \<coin>    Set coin for ethash algo. E.g, eth, etc
+* --share-check \<value>    If \<value> minutes without share, reboot miner, set 0 to disable. Default: 30
 * **--mt, --memory-tweak \<mode>    Memory timings optimize for Nvidia GDDR5 & GDDR5X gpus. range [1-6]. Higher value equals higher hashrate. Individual value can be set via comma seperated list. Power limit may need to be tuned up to get more hashrate. Higher reject share ratio can happen if mining rig hits high temperature, set lower value of `-mt` can reduce reject ratio. Under windows, a custom driver need to be installed when using `-mt`, can installed manually by option  `--driver`, or run nbminer.exe with admin privilege to perform auto-install. Under linux, admin priviledge is needed to run, `sudo ./nbminer -mt x`. `OhGodAnETHlargementPill` is not needed anymore if `-mt` is enabled when mining on 1080 & 1080ti GPUs.**
 * **--driver \<action>    Windows only option, install / uninstall driver for `memory tweak`. Run with admin priviledge. install: `nbminer.exe --driver install`, uninstall: `nbminer.exe --driver uninstall`. **
 
@@ -351,6 +352,12 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v33.3(2020-11-04)
+
+- `optimize`: `octopus` improve hashrate: Nvidia, +3% on 10 series, +20% on 16, 20, 30 series
+- `new algo`: `octopus` for AMD support.
+- `fix`: crash upon start on certain Nvidia rigs.
 
 #### v33.2(2020-11-01)
 

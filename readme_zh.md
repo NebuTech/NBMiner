@@ -36,7 +36,7 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `TRB`, `CKB`,`AE`, `B
 | trb_ethash       | TRB+ETH | 122M+20.3M |  170M+34M  | 240M+26.7M | 315M+45M |    -     |      X       |
 | kawpow           |   RVN   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
 | beamv3           |  BEAM   |    12.5    |    19.6    |    19.5    |    26    |   30.5   |      X       |
-| octopus          |   CFX   |    2.2M    |    3.3M    |    3.9M    |   5.4M   |  15.5M   |      X       |
+| octopus          |   CFX   |   2.25M    |    3.4M    |    4.1M    |   5.7M   |  19.5M   |     2.8M     |
 
 ## 功能特点
 
@@ -64,26 +64,26 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `TRB`, `CKB`,`AE`, `B
 
 | 算法             |  币种   | Compute Capability | 显存 (Win7 & Linux) | 显存 (Win10) |
 | :--------------- | :-----: | :----------------: | :-------------------: | :------------: |
-| tensority        |   BTM   |   6.1, 7.0, 7.5, 8.6   |          1GB          |      1GB       |
-| ethash           |   ETH   | 6.0, 6.1, 7.0, 7.5, 8.6 |          4GB          |      4GB       |
+| tensority        |   BTM   |   6.1, 7.0, 7.5,8.0, 8.6   |          1GB          |      1GB       |
+| ethash           |   ETH   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          4GB          |      4GB       |
 | tensority_ethash | BTM+ETH | 6.1, 7.0, 7.5, 8.6 |          4GB          |      4GB       |
-| cuckaroo(d)      | GRIN29  | 6.0, 6.1, 7.0, 7.5, 8.6 |          5GB          |      6GB       |
-| cuckatoo         | GRIN31  | 6.0, 6.1, 7.0, 7.5, 8.6 |          8GB          |      10GB      |
+| cuckaroo(d)      | GRIN29  | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB       |
+| cuckatoo         | GRIN31  | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          8GB          |      10GB      |
 | cuckatoo32 | GRIN32 | 6.0, 6.1, 7.0, 7.5 | 8GB | 10GB |
-| cuckoo_ae        |   AE    | 6.0, 6.1, 7.0, 7.5, 8.6 |          5GB          |      6GB       |
-| cuckaroo_swap    |  SWAP   | 6.0, 6.1, 7.0, 7.5, 8.6 |          5GB          |      6GB       |
-| progpow_sero     |  SERO   | 6.0, 6.1, 7.0, 7.5, 8.6 |          2GB          |      2GB       |
-| sipc             |  SIPC   | 6.0, 6.1, 7.0, 7.5, 8.6 |          1GB          |      1GB       |
-| eaglesong        |   CKB   | 6.0, 6.1, 7.0, 7.5, 8.6 |         0.1GB         |     0.1GB      |
-| eaglesong_ethash | CKB+ETH | 6.0, 6.1, 7.0, 7.5, 8.6 |          4GB          |      4GB       |
-| bfc              |   BFC   | 6.0, 6.1, 7.0, 7.5, 8.6 |          5GB          |      6GB       |
-| hns              |   HNS   | 6.0, 6.1, 7.0, 7.5, 8.6 |         0.1GB         |     0.1GB      |
-| hns_ethash       | HNS+ETH | 6.0, 6.1, 7.0, 7.5, 8.6 |          4GB          |      4GB       |
-| trb              |   TRB   | 6.0, 6.1, 7.0, 7.5, 8.6 |         0.1GB         |     0.1GB      |
-| trb_ethash       | TRB+ETH | 6.0, 6.1, 7.0, 7.5, 8.6 |          4GB          |      4GB       |
-| kawpow           |   RVN   | 6.0, 6.1, 7.0, 7.5, 8.6 |          3GB          |      3GB       |
+| cuckoo_ae        |   AE    | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB       |
+| cuckaroo_swap    |  SWAP   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB       |
+| progpow_sero     |  SERO   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          2GB          |      2GB       |
+| sipc             |  SIPC   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          1GB          |      1GB       |
+| eaglesong        |   CKB   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |         0.1GB         |     0.1GB      |
+| eaglesong_ethash | CKB+ETH | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          4GB          |      4GB       |
+| bfc              |   BFC   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB       |
+| hns              |   HNS   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |         0.1GB         |     0.1GB      |
+| hns_ethash       | HNS+ETH | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          4GB          |      4GB       |
+| trb              |   TRB   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |         0.1GB         |     0.1GB      |
+| trb_ethash       | TRB+ETH | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          4GB          |      4GB       |
+| kawpow           |   RVN   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          3GB          |      3GB       |
 | beamv3 | BEAM | 6.0, 6.1, 7.0, 7.5 | 3GB | 3GB |
-| octopus | CFX | 6.0, 6.1, 7.0, 7.5, 8.6 | 5GB | 5GB |
+| octopus | CFX | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 | 5GB | 5GB |
 
 - \* Compute Capability 查询参考链接: [维基百科](<https://en.wikipedia.org/wiki/CUDA#GPUs_supported>)
 
@@ -247,7 +247,11 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `TRB`, `CKB`,`AE`, `B
 - --no-watchdog    不启动看门狗进程.
 - --platform \<platform>    选择平台，0: NVIDIA+AMD (默认), 1: 只启用NVIDIA, 2: 只启用AMD
 - --coin \<coin>    设置ethash算法的币种，如 eth、etc
-- **--mt, --memory-tweak \<mode>    Nvidia GDDR5 & GDDR5X 显卡时序优，取值 [1-6]，值越大算力越高。可以通过逗号分隔的列表针对每张卡单独设置，如：`-mt 4,5,6` 分别将0,1,2号卡的mt值设为4,5,6。可能需要提高功耗限制以达到更高的算力。如果你的矿机温度较高，可能会出现更高的拒绝率，此时可以降低数值再尝试。windows下使用该命令需使用`--drver`参数进行驱动安装，或使用管理员权限开启挖矿，会自动安装。linux下使用，需加`sudo`使用管理员权限运行。使用该命令后，1080、1080ti挖ETH不再需要OhGodAnETHlargementPill**
+- --share-check \<value>    设置检查share异常的时间（分钟），如果设定的时间内无share，则重启miner。默认: 30。如果用于solo挖矿，请设置 `--share-check 0` 以避免反复重启
+- **--mt, --memory-tweak \<mode>    Nvidia GDDR5 & GDDR5X 显卡时序优，取值 [1-6]，值越大
+  算力越高。可以通过逗号分隔的列表针对每张卡单独设置，如：`-mt 4,5,6` 分别将0,1,2号卡的mt值
+  设为4,5,6。可能需要提高功耗限制以达到更高的算力。如果你的矿机温度较高，可能会出现更高的拒
+  绝率，此时可以降低数值再尝试。windows下使用该命令需使用`--drver`参数进行驱动安装，或使用管理员权限开启挖矿，会自动安装。linux下使用，需加`sudo`使用管理员权限运行。使用该命令后，1080、1080ti挖ETH不再需要OhGodAnETHlargementPill**
 - **--driver \<action>    windows独有选项，如果要使用`-mt`，可使用该选项手动安装和卸载驱动。管理员权限运行`nbminer.exe --driver install` 安装驱动，卸载使用`nbminer.exe --driver uninstall`**
 
 ## API查询接口
@@ -342,6 +346,12 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## 修改记录
+
+#### v33.3(2020-11-04)
+
+- `优化`: `octopus` 提升算力，N卡 10 系显卡+3%，16、20、30系显卡+20%
+- `新增`: `octopus` 支持AMD显卡
+- `修复`: 在小部分N卡机器上启动时崩溃的情况
 
 #### v33.2(2020-11-01)
 
