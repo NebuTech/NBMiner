@@ -36,7 +36,7 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `TRB`, `CKB`,`AE`, `B
 | trb_ethash       | TRB+ETH | 122M+20.3M |  170M+34M  | 240M+26.7M | 315M+45M |    -     |      X       |
 | kawpow           |   RVN   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
 | beamv3           |  BEAM   |    12.5    |    19.6    |    19.5    |    26    |   30.5   |      X       |
-| octopus          |   CFX   |   2.25M    |    3.4M    |    4.1M    |   5.7M   |  19.5M   |     2.8M     |
+| octopus          |   CFX   |    2.7M    |    4.1M    |    4.8M    |   6.5M   |  26.6M   |     3.3M     |
 
 ## 功能特点
 
@@ -45,7 +45,7 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `TRB`, `CKB`,`AE`, `B
 - 支持SSL方式连接矿池
 - 开发手续费:
   - tensority(Pascal) 2%, tensority(Turing) 3%, tensority_ethash 3%
-  - ethash 1%
+  - ethash etchash 1%
   - cuckaroo & cuckarood & cuckatoo & cuckatoo32 & cuckoo_ae & cuckaroo_swap 2%
   - progpow_sero 2%
   - sipc 2%
@@ -204,7 +204,9 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `TRB`, `CKB`,`AE`, `B
 
 #### CONFLUX
 
-- **solo**: nbminer -a octopus -o solo_node_ip:port -u worker --share-check 0
+- **beepool**: nbminer -a octopus -o stratum+tcp://cfx-pool.beepool.org:9555 -u wallet.worker
+- **f2pool**: nbminer -a octopus -o stratum+tcp://cfx.f2pool.com:6800 -u username.worker
+- **matpool**: nbminer -a octopus -o  stratum+tcp://cfx.matpool.io:10620 -u wallet.worker
 
 ## 命令行参数
 
@@ -298,8 +300,6 @@ GET http://api_host:port/api/v1/status
                 "core_clock": 1607,
                 "core_utilization": 100,
                 "fan": 0,
-                "fidelity1": 0,
-                "fidelity2": 0,
                 "hashrate": "168.5 M",
                 "hashrate2": "42.11 M",
                 "hashrate2_raw": 42113955.19774488,
@@ -346,6 +346,12 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## 修改记录
+
+#### v33.4(2020-11-12)
+
+- `优化`: `octopus` 提升算力，16、20、30系N卡+35%，其余显卡 +20%
+- `新增`: `etchash` 算法支持`ETC`即将到来的DAG降低
+- `功能`: 增加矿池有效算力统计，分为10分钟、4小时、24小时，在日志和api中均可获取。
 
 #### v33.3(2020-11-04)
 
