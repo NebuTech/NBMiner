@@ -42,7 +42,7 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `TRB`, `CKB`,`AE`, `BTM`, `S
 | trb_ethash       | TRB+ETH | 122M+20.3M |  170M+34M  | 240M+26.7M | 315M+45M |    -     |      X       |
 | kawpow           |   RVN   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
 | beamv3           |  BEAM   |    12.5    |    19.6    |    19.5    |    26    |   30.5   |      X       |
-| octopus          |   CFX   |    5.5M    |    8.5M    |    9.8M    |  14.8M   |  47.5M   |     6.2M     |
+| octopus          |   CFX   |    5.5M    |    8.5M    |    9.8M    |  14.8M   |  48.5M   |     6.2M     |
 
 ## Features
 
@@ -354,6 +354,11 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v33.6(2020-11-21)
+
+- `optimize`: `octopus` improve hashrate: +10% on 16 20 30 series Nvidia GPUs, 27.5M on 1660s.
+- `note`: `octopus` From this version, GPUs that has higher core performance than memory performance, need to overclock memory to get higher hashrate, e.g. 2080 3070
 
 #### 33.5(2020-11-21)
 
