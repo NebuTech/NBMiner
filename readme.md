@@ -355,6 +355,12 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v33.7(2020-11-23)
+
+- `feature`: Add an option `-no-interrupt`, set this option will disable miner interrupting current GPU jobs when a new job coming from pool, will cause less power supply issue, but might lead to a bit higher stale ratio and reject shares.
+- `feature`: Add `effiecieny` display in console, showing `hashrate per watt` for each GPU
+- `feature`: Add 10min 4h 24h pool hashrate display in web monitor.
+
 #### v33.6(2020-11-21)
 
 - `optimize`: `octopus` improve hashrate: +10% on 16 20 30 series Nvidia GPUs, 27.5M on 1660s.
