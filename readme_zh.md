@@ -205,8 +205,10 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `TRB`, `CKB`,`AE`, `B
 #### CONFLUX
 
 - **beepool**: nbminer -a octopus -o stratum+tcp://cfx-pool.beepool.org:9555 -u wallet.worker
+- **poolflare**: nbminer -a octopus -o stratum+tcp://cfx.ss.poolflare.com:3366 -u wallet.worker
 - **f2pool**: nbminer -a octopus -o stratum+tcp://cfx.f2pool.com:6800 -u username.worker
-- **matpool**: nbminer -a octopus -o  stratum+tcp://cfx.matpool.io:10620 -u wallet.worker
+- **woolypooly**: nbminer -a octopus -o  stratum+tcp://cfx.woolypooly.com:3094 -u wallet.worker
+- **nicehash**: nbminer -a octopus -o stratum+tcp://octopus.eu.nicehash.com:3389 -u btc_address.worker
 
 ## 命令行参数
 
@@ -250,6 +252,7 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `TRB`, `CKB`,`AE`, `B
 - --platform \<platform>    选择平台，0: NVIDIA+AMD (默认), 1: 只启用NVIDIA, 2: 只启用AMD
 - --coin \<coin>    设置ethash算法的币种，如 eth、etc
 - --share-check \<value>    设置检查share异常的时间（分钟），如果设定的时间内无share，则重启miner。默认: 30。如果用于solo挖矿，请设置 `--share-check 0` 以避免反复重启
+- --no-interrupt    设置该选项将关闭当矿池发送新任务时中断GPU当前任务的特性，可部分改善因电源问题而导致miner或系统崩溃的情况，但理论上延迟率和拒绝率也会有少许增加。
 - **--mt, --memory-tweak \<mode>    Nvidia GDDR5 & GDDR5X 显卡时序优，取值 [1-6]，值越大
   算力越高。可以通过逗号分隔的列表针对每张卡单独设置，如：`-mt 4,5,6` 分别将0,1,2号卡的mt值
   设为4,5,6。可能需要提高功耗限制以达到更高的算力。如果你的矿机温度较高，可能会出现更高的拒
@@ -346,6 +349,10 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## 修改记录
+
+#### v33.8(2020-11-25)
+
+- `功能`: `octopus`新增对`NiceHash`的支持
 
 #### v33.7(2020-11-23)
 
