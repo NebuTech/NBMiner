@@ -358,6 +358,10 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v34.0(2020-11-28)
+
+- `optimize`: `ethash` Improve hashrate on Nvidia 10 series GPUs，3% higher hashrate under same PowerLimit, or same hashrate with 5%-10% lower PowerLimit.
+
 #### v33.8(2020-11-25)
 
 - `feature`: `octopus`Add support for mining on `NiceHash`
