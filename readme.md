@@ -358,6 +358,10 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v34.1(2020-11-28)
+
+- `fix`: `ethash` Fix display hashrate only half of normal hashrate on certain windows rigs.
+
 #### v34.0(2020-11-28)
 
 - `optimize`: `ethash` Improve hashrate on Nvidia 10 series GPUs，3% higher hashrate under same PowerLimit, or same hashrate with 5%-10% lower PowerLimit.
