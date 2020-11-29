@@ -358,6 +358,10 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v34.2(2020-11-29)
+
+- `fix`: `ethash` Reduce stale share ratio.
+
 #### v34.1(2020-11-28)
 
 - `fix`: `ethash` Fix display hashrate only half of normal hashrate on certain windows rigs.
