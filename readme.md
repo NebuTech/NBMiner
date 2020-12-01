@@ -358,6 +358,10 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v34.4(2020-12-02)
+
+- `optimize`: `octopus` Improve hashrate 1-5% on Nvidia 16, 20, 30 series GPUs, 29.2M on 1660s
+
 #### v34.3(2020-12-01)
 
 - `fix`: `etchash` error on swiching epoch, `ETC` miners should upgrade to this version.
