@@ -358,6 +358,12 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v34.3(2020-12-01)
+
+- `fix`: `etchash` error on swiching epoch, `ETC` miners should upgrade to this version.
+- `fix`: support for AMD 20.11.x driver version
+- `fix`: `ethash` more stable hashrate under windows
+
 #### v34.2(2020-11-29)
 
 - `fix`: `ethash` Reduce stale share ratio.

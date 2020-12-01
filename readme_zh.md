@@ -350,6 +350,12 @@ GET http://api_host:port/api/v1/status
 
 ## 修改记录
 
+#### v34.3(2020-12-01)
+
+- `修复`: `etchash` 切换epoch的时候错误，ETC用户需升级此版本
+- `修复`: 支持AMD 20.11.x 驱动版本
+- `修复`: `ethash` windows下更稳定的算力显示
+
 #### v34.2(2020-11-29)
 
 - `修复`: `ethash` 降低延迟和拒绝率
