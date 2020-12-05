@@ -358,6 +358,13 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v34.5(2020-12-05)
+
+- `optimize`: `ethash` Improve hashrate 1% on certain Nvidia GPUs
+- `optimize`: `octopus` Minor improvement on certain 20 & 30 series Nvidia GPUs
+- `feature`: `-mt` More effective and compatibility on Geforce Pascal GPUs
+- `fix`: `kawpow` `progpow_sero` Fix crash on certain AMD & Nvidia rigs
+
 #### v34.4(2020-12-02)
 
 - `optimize`: `octopus` Improve hashrate 1-5% on Nvidia 16, 20, 30 series GPUs, 29.2M on 1660s
