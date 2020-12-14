@@ -358,6 +358,14 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### 35.0(2020-12-14)
+
+- `feature`: `ethash` Add statistics for `invalid shares`, in cmd log, api and web monitor.
+- `feature`: Turn off limitation for not allowing to run under Virtual Machine.
+- `feature`: Add statistics for Health information of AMD GPU
+- `fix`: More detail error information of OpenCL api
+- `fix`: Reduce CPU usage.
+
 #### v34.5(2020-12-05)
 
 - `optimize`: `ethash` Improve hashrate 1% on certain Nvidia GPUs
