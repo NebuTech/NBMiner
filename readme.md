@@ -358,6 +358,11 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### 35.1(2020-12-21)
+
+- `optimize`: `ethash` More stable under high OC for Nvidia GPUs
+- `optimize`: `octopus` Improve hashrate 1-3% for 16, 20, 30 Nvidia GPUs
+
 #### 35.0(2020-12-14)
 
 - `feature`: `ethash` Add statistics for `invalid shares`, in cmd log, api and web monitor.
