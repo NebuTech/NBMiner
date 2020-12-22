@@ -358,6 +358,14 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### 35.2(2020-12-22)
+
+**Compared to v35.0**
+
+- `optimize`: `ethash` More stable under high OC for Nvidia 16、20、30 series GPUs.
+- `optimize`: `octopus` Improve hashrate 1-3% for 16, 20, 30 Nvidia GPUs
+- `feature`: `ethash` DAG verification after creation, if miner showed log in red font: `Verification failed, invalid 2.0%`, please consider lower GPU overclock
+
 #### 35.1(2020-12-21)
 
 - `optimize`: `ethash` More stable under high OC for Nvidia GPUs
