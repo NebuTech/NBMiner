@@ -265,14 +265,23 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
-#### 36.0(2020-12-28)
+####  v36.1(2021-01-11)
+
+- `optimize`: `octopus` Lower power comsumption for 20、30 series Nvidia GPU, improve hashrate 2% on 16 series Nvidia GPU
+- `fix`: `ethash` Fix performance  degradation  under win8 & win8.1 for Nvidia 10 series GPUs.
+- `fix`: `ethash` Slightly reduce stale ratio.
+- `fix`: A random crash bug fix, improve overall stability
+- `feature`: Add `detail datetime` & `cpu usage` in summary log
+- `feature`: `ethash` If DAG verification failed, display corresponding GPU name in red in summary.
+
+#### v36.0(2020-12-28)
 
 - `fix`: `kawpow` crash on some GPUs in versions `35.x`
 - `fix`: `ethash` performance  degradation  under win7 for Nvidia 10 series GPUs.
 - `delete algo`: `eaglesong`, `eaglesong_ethash`, `trb`, `trb_ethash`, `hns`, `hns_ethash`, `sipc`, `cuckaroo`, `cuckaroo_swap`
 - `feature`: smaller binary size
 
-#### 35.2(2020-12-22)
+#### v35.2(2020-12-22)
 
 **Compared to v35.0**
 
@@ -280,12 +289,12 @@ GET http://api_host:port/api/v1/status
 - `optimize`: `octopus` Improve hashrate 1-3% for 16, 20, 30 Nvidia GPUs
 - `feature`: `ethash` DAG verification after creation, if miner showed log in red font: `Verification failed, invalid 2.0%`, please consider lower GPU overclock
 
-#### 35.1(2020-12-21)
+#### v35.1(2020-12-21)
 
 - `optimize`: `ethash` More stable under high OC for Nvidia GPUs
 - `optimize`: `octopus` Improve hashrate 1-3% for 16, 20, 30 Nvidia GPUs
 
-#### 35.0(2020-12-14)
+#### v35.0(2020-12-14)
 
 - `feature`: `ethash` Add statistics for `invalid shares`, in cmd log, api and web monitor.
 - `feature`: Turn off limitation for not allowing to run under Virtual Machine.
