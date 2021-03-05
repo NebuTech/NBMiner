@@ -1,0 +1,1 @@
+nbminer -a ethash -o cn.sparkpool.com:3333 -u sp_yuanyou.cloud1 --mt 6

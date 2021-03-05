@@ -1,0 +1,1 @@
+nbminer -a cuckoo_ae -o stratum+tcp://ae-pool.beepool.org:9505 -u ak_2tsCxmwtPWUFg6NxrjXkCAdPq6sHwysK3NsVxGTnZhuGGRf4Cy.default

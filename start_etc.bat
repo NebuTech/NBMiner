@@ -1,0 +1,1 @@
+nbminer -a etchash -o stratum+tcp://etc-pool.beepool.org:9518 -u 0x4296116d44a4a7259B52B1A756e19083e675062A.default -log

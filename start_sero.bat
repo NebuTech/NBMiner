@@ -1,0 +1,1 @@
+nbminer -a progpow_sero -o stratum+tcp://sero.f2pool.com:4200 -u JCbZnEb8XtWV814QWRpDcDxpQpXZXw4ARneAtwXNYdd3reuo4xQDcuZivopA761QnQyfMermHR9Mpi156F5n7ez9tv75Wt7vWbHXtuyZsQVWLbKNHnZgwcXbR2yZmbw89WT.default

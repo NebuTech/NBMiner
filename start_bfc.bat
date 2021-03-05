@@ -1,0 +1,1 @@
+nbminer -a bfc -o stratum+tcp://bfc.uupool.cn:12210 -u bfcdefault.default
