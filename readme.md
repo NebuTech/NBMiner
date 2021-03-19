@@ -119,6 +119,13 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ERGO`, `AE`, `SERO`
 - **woolypooly**: nbminer -a octopus -o  stratum+tcp://cfx.woolypooly.com:3094 -u wallet.worker
 - **nicehash**: nbminer -a octopus -o stratum+tcp://octopus.eu.nicehash.com:3389 -u btc_address.worker
 
+#### ERGO
+
+- **herominers**: nbminer -a ergo -o stratum+tcp://ergo.herominers.com:10250 -u wallet.worker
+- **woolypooly**: nbminer -a ergo -o stratum+tcp://erg.woolypooly.com:3100 -u wallet.worker
+- **nanopool**: nbminer -a ergo -o stratum+tcp://ergo-eu1.nanopool.org:11111 -u wallet.worker
+- **666pool**: nbminer -a ergo -o stratum+tcp://ergo.666pool.cn:9556 -u wallet.worker
+
 ## CMD options：
 
 **nbminer -a algo -o protocol+socket_type://pool_host:pool_port -u wallet_address.worker:passwd**
