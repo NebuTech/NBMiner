@@ -2,7 +2,7 @@
 
 # NBMiner
 
-NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `AE`,  `SERO`,  `BFC`挖矿软件。
+NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ERGO`, `AE`,  `SERO`挖矿软件。
 
 ## 下载地址
 
@@ -16,16 +16,15 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `AE`,  `SERO`,  `BFC`
 
 | 算法             |  币种   |  P106-100  |  P104-8G   |   1070ti   |  1080ti  |   2080   | RX580 2048sp |
 | :--------------- | :-----: | :--------: | :--------: | :--------: | :------: | :------: | :----------: |
-| ethash           |   ETH   |   21.2M    |   34.5M    |   26.9M    |   46M    |  35.5M   |     24M      |
-| cuckarood        | GRIN29  |    3.45    |    5.6     |    5.25    |   8.1    |   9.1    |      X       |
+| ethash           |   ETH   |   21.2M   |   34.5M    |   26.9M    |   46M    |  35.5M   |     24M      |
 | cuckatoo         | GRIN31  |     X      |    0.89    |    0.94    |   1.56   |   1.65   |      X       |
 | cuckatoo32       | GRIN32  |   0.215    |    0.38    |    0.41    |   0.63   |   0.65   |      X       |
 | cuckoo_ae        |   AE    |    3.35    |    5.5     |    5.15    |   7.9    |   8.75   |      X       |
 | progpow_sero     |  SERO   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     10M      |
-| bfc              |   BFC   |     80     |    130     |    120     |   190    |   210    |      X       |
 | kawpow           |   RVN   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
 | beamv3           |  BEAM   |    12.5    |    19.6    |    19.5    |    26    |   30.5   |      X       |
-| octopus          |   CFX   |    5.5M    |    8.5M    |    9.8M    |  14.8M   |  48.5M   |     6.2M     |
+| octopus          |   CFX   |    5.5M    |    8.5M    |    9.8M    |  14.8M   |  48.5M   |     X     |
+| ergo | ERGO | 41M | 67M | 52M | 63M | 73M | X |
 
 ## 功能特点
 
@@ -34,12 +33,12 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `AE`,  `SERO`,  `BFC`
 - 支持SSL方式连接矿池
 - 开发手续费:
   - ethash etchash 1%
-  - cuckarood & cuckatoo & cuckatoo32 & cuckoo_ae  2%
+  - cuckatoo & cuckatoo32 & cuckoo_ae  2%
   - progpow_sero 2%
-  - bfc 3%
   - kawpow 2%
   - beamv3 2%
   - octopus 3%
+  - ergo 2%
 
 ## 配置需求
 
@@ -48,16 +47,15 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `AE`,  `SERO`,  `BFC`
 
 | 算法             |  币种   | Compute Capability | 显存 (Win7 & Linux) | 显存 (Win10) |
 | :--------------- | :-----: | :----------------: | :-------------------: | :------------: |
-| ethash           |   ETH   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          4GB          |      4GB       |
-| cuckarood      | GRIN29  | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB       |
+| ethash           |   ETH   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB      |
 | cuckatoo         | GRIN31  | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          8GB          |      10GB      |
 | cuckatoo32 | GRIN32 | 6.0, 6.1, 7.0, 7.5 | 8GB | 10GB |
 | cuckoo_ae        |   AE    | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB       |
-| progpow_sero     |  SERO   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          2GB          |      2GB       |
-| bfc              |   BFC   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB       |
-| kawpow           |   RVN   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          3GB          |      3GB       |
+| progpow_sero     |  SERO   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          3GB          |      4GB      |
+| kawpow           |   RVN   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          3GB          |      4GB      |
 | beamv3 | BEAM | 6.0, 6.1, 7.0, 7.5 | 3GB | 3GB |
-| octopus | CFX | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 | 5GB | 5GB |
+| octopus | CFX | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 | 5GB | 6GB |
+| ergo | ERGO | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 | 3GB | 3GB |
 
 - \* Compute Capability 查询参考链接: [维基百科](<https://en.wikipedia.org/wiki/CUDA#GPUs_supported>)
 
@@ -88,10 +86,6 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `AE`,  `SERO`,  `BFC`
 
 - **beepool**: nbminer -a progpow_sero -o stratum+tcp://sero-pool.beepool.org:9515 -u wallet_address.worker:pswd
 - **f2pool**: nbminer -a progpow_sero -o stratum+tcp//sero.f2pool.com:4200 -u wallet_address.worker:pswd
-
-#### BFC
-
-- **bfcpool**: nbminer -a bfc -o stratum+tcp://ss.bfcpool.com:3333 -u wallet.worker
 
 #### RVN
 
@@ -156,9 +150,9 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `AE`,  `SERO`,  `BFC`
 - --generate-config \<filename>    生成一个样例配置文件.
 - --no-watchdog    不启动看门狗进程.
 - --platform \<platform>    选择平台，0: NVIDIA+AMD (默认), 1: 只启用NVIDIA, 2: 只启用AMD
-- --coin \<coin>    设置ethash算法的币种，如 eth、etc
 - --share-check \<value>    设置检查share异常的时间（分钟），如果设定的时间内无share，则重启miner。默认: 30。如果用于solo挖矿，请设置 `--share-check 0` 以避免反复重启
 - --no-interrupt    设置该选项将关闭当矿池发送新任务时中断GPU当前任务的特性，可部分改善因电源问题而导致miner或系统崩溃的情况，但理论上延迟率和拒绝率也会有少许增加。
+- --enable-igpu    AMD集显默认被禁止，设置该选项可使用集显
 - **--mt, --memory-tweak \<mode>    Nvidia GDDR5 & GDDR5X 显卡时序优，取值 [1-6]，值越大
   算力越高。可以通过逗号分隔的列表针对每张卡单独设置，如：`-mt 4,5,6` 分别将0,1,2号卡的mt值
   设为4,5,6。可能需要提高功耗限制以达到更高的算力。如果你的矿机温度较高，可能会出现更高的拒
@@ -255,6 +249,16 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## 修改记录
+
+#### v37.0(2021-03-19)
+
+- `新增`: `ergo` 用于在Nvidia显卡挖`ERGO`币
+- `删除`: `bfc` & `cuckarood` 对N卡的支持，`octopus` 对A卡的支持
+- `修复`: `octopus` 支持 `CFX` 新地址格式
+- `修复`: 35.0 - 36.1 版本在Vega卡上出现`clBuildProgram error`的问题
+- `功能`: 默认不使用AMD集显进行挖矿，可设置参数`--enable-igpu`使能
+- `其他`: 细节改进，提高程序稳定性
+
 
 #### v36.1(2021-01-11)
 

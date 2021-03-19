@@ -2,7 +2,7 @@
 
 # NBMiner
 
-GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `AE`, `SERO`, `BFC`
+GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ERGO`, `AE`, `SERO`
 
 ## 中文说明
 
@@ -18,20 +18,19 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `AE`, `SERO`, `BFC`
 
 [Download here](https://github.com/NebuTech/BTMiner_NebuTech/releases)
 
-## Performance (stock frequency)
+## Performance (stock settings)
 
-| Algorithm        |  Coin   |  P106-100  |  P104-8G   |   1070ti   |  1080ti  |   2080   | RX580 2048sp |
+| Algorithm             |  COIN   |  P106-100  |  P104-8G   |   1070ti   |  1080ti  |   2080   | RX580 2048sp |
 | :--------------- | :-----: | :--------: | :--------: | :--------: | :------: | :------: | :----------: |
-| ethash           |   ETH   |   21.2M    |   34.5M    |   26.9M    |   46M    |  35.5M   |     24M      |
-| cuckarood        | GRIN29  |    3.45    |    5.6     |    5.25    |   8.1    |   9.1    |      X       |
+| ethash           |   ETH   |   21.2M   |   34.5M    |   26.9M    |   46M    |  35.5M   |     24M      |
 | cuckatoo         | GRIN31  |     X      |    0.89    |    0.94    |   1.56   |   1.65   |      X       |
 | cuckatoo32       | GRIN32  |   0.215    |    0.38    |    0.41    |   0.63   |   0.65   |      X       |
 | cuckoo_ae        |   AE    |    3.35    |    5.5     |    5.15    |   7.9    |   8.75   |      X       |
 | progpow_sero     |  SERO   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     10M      |
-| bfc              |   BFC   |     80     |    130     |    120     |   190    |   210    |      X       |
 | kawpow           |   RVN   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
 | beamv3           |  BEAM   |    12.5    |    19.6    |    19.5    |    26    |   30.5   |      X       |
-| octopus          |   CFX   |    5.5M    |    8.5M    |    9.8M    |  14.8M   |  48.5M   |     6.2M     |
+| octopus          |   CFX   |    5.5M    |    8.5M    |    9.8M    |  14.8M   |  48.5M   |     X     |
+| ergo | ERGO | 41M | 67M | 52M | 63M | 73M | X |
 
 ## Features
 
@@ -40,30 +39,29 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `AE`, `SERO`, `BFC`
 * Support SSL connection to mining pools.
 * Dev Fee: 
   * ethash etchash 1%
-  * cuckarood & cuckatoo & cuckatoo32 & cuckoo_ae 2%
+  * cuckatoo & cuckatoo32 & cuckoo_ae 2%
   * progpow_sero 2%
-  * bfc 3%
   * kawpow 2%
   * beamv3 2%
   * octopus 3%
+  * ergo 2%
 
 ## Requirements
 
 - **NVIDIA Driver version: >= 384**.
-- GPU Specific Requirements:
+- Nvidia GPU Specific Requirements:
 
 | Algorithm        |  Coin   | Compute Capability | Memory (Win7 & Linux) | Memory (Win10) |
 | :--------------- | :-----: | :----------------: | :-------------------: | :------------: |
-| ethash           |   ETH   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          4GB          |      4GB       |
-| cuckarood      | GRIN29  | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB       |
+| ethash           |   ETH   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB      |
 | cuckatoo         | GRIN31  | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          8GB          |      10GB      |
 | cuckatoo32 | GRIN32 | 6.0, 6.1, 7.0, 7.5 | 8GB | 10GB |
 | cuckoo_ae        |   AE    | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB       |
-| progpow_sero     |  SERO   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          2GB          |      2GB       |
-| bfc              |   BFC   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB       |
-| kawpow           |   RVN   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          3GB          |      3GB       |
+| progpow_sero     |  SERO   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          3GB          |      4GB      |
+| kawpow           |   RVN   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          3GB          |      4GB      |
 | beamv3 | BEAM | 6.0, 6.1, 7.0, 7.5 | 3GB | 3GB |
-| octopus | CFX | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 | 5GB | 5GB |
+| octopus | CFX | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 | 5GB | 6GB |
+| ergo | ERGO | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 | 3GB | 3GB |
 
 - \* Compute Capability reference link: [wikipedia](<https://en.wikipedia.org/wiki/CUDA#GPUs_supported>)
 
@@ -96,10 +94,6 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `AE`, `SERO`, `BFC`
 
 - **beepool**: nbminer -a progpow_sero -o stratum+tcp://sero-pool.beepool.org:9515 -u wallet_address.worker:pswd
 - **f2pool**: nbminer -a progpow_sero -o stratum+tcp//sero.f2pool.com:4200 -u wallet_address.worker:pswd
-
-#### BFC
-
-- **bfcpool**: nbminer -a bfc -o stratum+tcp://ss.bfcpool.com:3333 -u wallet.worker
 
 #### RVN
 
@@ -166,9 +160,9 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `AE`, `SERO`, `BFC`
 * --generate-config \<filename>    Generate a sample config json file.
 * --no-watchdog    Disable watchdog process.
 * --platform \<platform>    Choose platform，0: NVIDIA+AMD (default), 1: NVIDIA only, 2: AMD only
-* --coin \<coin>    Set coin for ethash algo. E.g, eth, etc
 * --share-check \<value>    If \<value> minutes without share, reboot miner, set 0 to disable. Default: 30
 * --no-interrupt    set this option will disable miner interrupting current GPU jobs when a new job coming from pool, will cause less power supply issue, but might lead to a bit higher stale ratio and reject shares.
+* --enable-igpu    AMD igpu is disabled by default, set this option to enable.
 * **--mt, --memory-tweak \<mode>    Memory timings optimize for Nvidia GDDR5 & GDDR5X gpus. range [1-6]. Higher value equals higher hashrate. Individual value can be set via comma seperated list. Power limit may need to be tuned up to get more hashrate. Higher reject share ratio can happen if mining rig hits high temperature, set lower value of `-mt` can reduce reject ratio. Under windows, a custom driver need to be installed when using `-mt`, can installed manually by option  `--driver`, or run nbminer.exe with admin privilege to perform auto-install. Under linux, admin priviledge is needed to run, `sudo ./nbminer -mt x`. `OhGodAnETHlargementPill` is not needed anymore if `-mt` is enabled when mining on 1080 & 1080ti GPUs.**
 * **--driver \<action>    Windows only option, install / uninstall driver for `memory tweak`. Run with admin priviledge. install: `nbminer.exe --driver install`, uninstall: `nbminer.exe --driver uninstall`. **
 
@@ -264,6 +258,15 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v37.0(2021-03-19)
+
+- `new algo`: `ergo` for mining `ERGO` coin on Nvidia GPUs.
+- `delete algo`: `bfc` `cuckarood` for Nvidia, `octopus` for AMD
+- `fix`: `octopus` support `CFX` new address format
+- `fix`: 'clBuildProgram error' issue on Vega for versions 35.0 - 36.1
+- `feature`: disable AMD iGPU by default, can be enabled back by setting `--enable-igpu`
+- `other`: minor bug fix, improve overall stability
 
 ####  v36.1(2021-01-11)
 
