@@ -266,6 +266,12 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v37.1(2021-03-25)
+
+- `fix`: `ergo` high reject ratio on 10 series Nvidia GPUs
+- `fix`: `ergo` pool compatibility
+- Recommend miners with `p106-90` & `1060 3G` to mine `ERGO`, hashrate will be increased significantly with `-mt` option.
+
 #### v37.0(2021-03-19)
 
 - `new algo`: `ergo` for mining `ERGO` coin on Nvidia GPUs.
