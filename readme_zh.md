@@ -73,13 +73,13 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ERGO`, `AE`,  `SERO`
 #### Grin32
 
 - **sparkpool**: nbminer -a cuckatoo32 -o stratum+tcp://grin.sparkpool.com:6665 -u 123@qq.com/worker
-- **f2pool:** nbminer -a cuckatoo32 -o stratum+tcp://grin32.f2pool.com:13654 -u username.worker:passwd
+- **f2pool:** nbminer -a cuckatoo32 -o stratum+tcp://grin32.f2pool.com:13654 -u username.worker
 - **nicehash:** nbminer -a cuckatoo32 -o nicehash+tcp://grincuckatoo32.hk.nicehash.com:3383 -u btc_address.worker
 
 #### AE
 
-- **f2pool**: nbminer -a cuckoo_ae -o stratum+tcp://ae.f2pool.com:7898 -u ak_xxxxxxx.worker:passwd
-- **beepool**: nbminer -a cuckoo_ae -o stratum+tcp://ae-pool.beepool.org:9505 -u ak_xxxx.worker:passwd
+- **f2pool**: nbminer -a cuckoo_ae -o stratum+tcp://ae.f2pool.com:7898 -u ak_xxxxxxx.worker
+- **beepool**: nbminer -a cuckoo_ae -o stratum+tcp://ae-pool.beepool.org:9505 -u ak_xxxx.worker
 - **nicehash**: nbminer -a cuckoo_ae -o nicehash+tcp://cuckoocycle.eu.nicehash.com:3376 -u btc_address.worker
 
 #### SERO
@@ -89,17 +89,17 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ERGO`, `AE`,  `SERO`
 
 #### RVN
 
-- **beepool**: nbminer -a kawpow -o  stratum+tcp://rvn-pool.beepool.org:9531 -u wallet.worker:passwd
-- **f2pool**: nbminer -a kawpow -o  stratum+tcp://raven.f2pool.com:3636 -u wallet.worker:passwd
+- **beepool**: nbminer -a kawpow -o  stratum+tcp://rvn-pool.beepool.org:9531 -u wallet.worker
+- **f2pool**: nbminer -a kawpow -o  stratum+tcp://raven.f2pool.com:3636 -u wallet.worker
 - **minermore**: nbminer -a kawpow -o stratum+tcp://us.rvn.minermore.com:4501 -u wallet.worker:paswd
-- **bsod**: nbminer -a kawpow -o stratum+tcp://pool.bsod.pw:2640 -u wallet.worker:passwd
-- **woolypooly**: nbminer -a kawpow -o stratum+tcp://rvn.woolypooly.com:55555 -u wallet.worker:passwd 
+- **bsod**: nbminer -a kawpow -o stratum+tcp://pool.bsod.pw:2640 -u wallet.worker
+- **woolypooly**: nbminer -a kawpow -o stratum+tcp://rvn.woolypooly.com:55555 -u wallet.worker 
 
 #### BEAM
 
-- **sparkpool**: nbminer -a beamv3 -o stratum+ssl://beam.sparkpool.com:2222 -u wallet.worker:passwd
-- **beepool**: nbminer -a beamv3 -o stratum+ssl://beam-pool.beepool.org:9507 -u wallet.worker:passwd
-- **leafpool**: nbminer -a beamv3 -o stratum+ssl://beam-eu.leafpool.com:3333 -u wallet.worker:passwd
+- **sparkpool**: nbminer -a beamv3 -o stratum+ssl://beam.sparkpool.com:2222 -u wallet.worker
+- **beepool**: nbminer -a beamv3 -o stratum+ssl://beam-pool.beepool.org:9507 -u wallet.worker
+- **leafpool**: nbminer -a beamv3 -o stratum+ssl://beam-eu.leafpool.com:3333 -u wallet.worker
 - **nicehash**: nbminer -a beamv3 -o stratum+tcp://beamv3.eu.nicehash.com:3387 -u btc_address.worker
 
 #### CONFLUX
@@ -128,11 +128,13 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ERGO`, `AE`,  `SERO`
 - --api \<host:port>    REST API监听端口.
 - -o, --url \<url>    矿池地址.
 - -u, --user \<user>    挖矿使用的用户名或钱包地址.
-  - 格式：[用户名|钱包地址].矿机名:密码
 - -o1, --url1 \<url> 备用矿池1的URL
 - -u1, --user1 \<user> 备用矿池1的用户名
 - -o2, --url2 \<url> 备用矿池2的URL
 - -u2, --user2 \<user> 备用矿池2的用户名
+- -p, --password \<password> 传给矿池的password参数
+- -p1, --password1 \<password> 传给备用矿池1的password参数
+- -p2, --password2 \<password> 传给备用矿池2的password参数
 - -di, --secondary-intensity \<intensity>    双挖时相对挖矿强度
 - -do, --secondary-url \<url>    双挖时ETH的矿池地址
 - -du, --secondary-user \<user>    双挖时ETH的用户名
@@ -256,6 +258,12 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## 修改记录
+
+#### 37.2(2021-04-24)
+
+- `功能`: 新增`-p -p1 -p2`参数，以单独设置矿池的`password`，旧格式`-u wallet.worker:password` 弃用
+- `优化`: `ethash` 小幅提高A卡 RDNA 显卡算力（5600xt - 6900xt）
+- `修复`: 在A卡最新驱动 `21.4.1` 的兼容性
 
 #### 37.1(2021-03-25)
 

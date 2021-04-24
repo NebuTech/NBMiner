@@ -137,11 +137,13 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ERGO`, `AE`, `SERO`
   * --api  \<host:port>    The endpoint for serving REST API.
   * -o, --url \<url>    Mining pool url.
   * -u, --user \<user>    User used in Mining pool, wallet address or username.
-      * Format: [username|wallet].workername:password
   * -o1, --url1 \<url> url for backup mining pool 1.
   * -u1, --user1 \<user> username for backup mining pool 1.
   * -o2, --url2 \<url> url for backup mining pool 2.
 * -u2, --user2 \<user> username for backup mining pool 2.
+* -p,  --password \<password>  password for mining pool
+* -p1,  --password1 \<password>  password for backup mining pool1
+* -p2,  --password2 \<password>  password for backup mining pool2
 * -di, --secondary-intensity \<intensity>    The relative intensity when dual mining.
 * -do, --secondary-url \<url>    ETH mining pool when dual mining.
 * -du, --secondary-user \<user>    ETH username when dual mining.
@@ -265,6 +267,12 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v37.2(2021-04-24)
+
+- `feature`: add option `-p -p1 -p2` for setting `password` of mining pool, old format `-u wallet.worker:passwd` is disabled，`:` can be added as part of worker or wallet
+- `optimize`: `ethash` minor hashrate improvement on RDNA GPUs
+- `fix`: compatibility issue on lasted AMD `21.4.1` driver.
 
 #### v37.1(2021-03-25)
 
