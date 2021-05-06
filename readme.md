@@ -2,7 +2,7 @@
 
 # NBMiner
 
-GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ERGO`, `AE`, `SERO`
+GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, `SERO`
 
 ## 中文说明
 
@@ -267,6 +267,10 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v37.3(2021-05-06)
+
+- `feature`: add option `--enable-dag-cache` to allow an extra `DAG` for different `epoch` cached in GPU memory, useful for `ETH+ZIL` mining and mining on `NiceHash`.
 
 #### v37.2(2021-04-24)
 
