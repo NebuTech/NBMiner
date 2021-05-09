@@ -267,7 +267,7 @@ GET http://api_host:port/api/v1/status
 
 #### v37.3(2021-05-06)
 
-- `功能`: 新增`--enable-cache-dag`选项，可额外在GPU显存中缓存另一个`epoch`的`DAG`文件，可用于`ETH+ZIL`挖矿以及在`NiceHash`挖矿的`DAG`快速切换
+- `功能`: 新增`--enable-dag-cache`选项，可额外在GPU显存中缓存另一个`epoch`的`DAG`文件，可用于`ETH+ZIL`挖矿以及在`NiceHash`挖矿的`DAG`快速切换
 
 #### 37.2(2021-04-24)
 
