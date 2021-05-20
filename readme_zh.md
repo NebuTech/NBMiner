@@ -24,7 +24,7 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, 
 | kawpow           |   RVN   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
 | beamv3           |  BEAM   |    12.5    |    19.6    |    19.5    |    26    |   30.5   |      X       |
 | octopus          |   CFX   |    5.5M    |    8.5M    |    9.8M    |  14.8M   |  48.5M   |     X     |
-| ergo | ERGO | 41M | 67M | 52M | 63M | 73M | X |
+| ergo | ERGO | 41M | 67M | 52M | 63M | 73M | 83M(eth bios) |
 
 ## 功能特点
 
@@ -154,7 +154,8 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, 
 - --proxy    使用Socks5代理连接矿池，例如: 127.0.0.1:1080
 - --cuckoo-intensity \<intensity>    设置挖Grin时的CPU负载，取值范围[1,12]，值越小挖矿算力越高，相对应的CPU负载也会更高。设置为0软件从1开始自适应调整。默认为0
 - --cuckatoo-power-optimize    减小多卡矿机挖Grin31的总功耗波动，避免电源过载关机（设置该选项可能导致算力略微降低，请测试后谨慎使用）
-- --temperature-limit \<temp-limit>    设置显卡温度上限，一旦超过，停止挖矿10s后继续
+- --temperature-limit, --tl \<temp-limit>    设置显卡温度上限，一旦超过，停止挖矿
+- --temperature-start, --ts \<temp-start>    设置显卡由于达到设定的温度上限停止后重新启动挖矿的温度条件，默认为\<temp-limit> - 5 度.
 - --log    生成日志文件，文件名为 `log_<时间戳>.txt`.
 - --log-file \<filename>    自定义日志文件名，该选项将覆盖`--log`.
 - --no-nvml    不周期性地查询GPU的温度功耗等状态.
@@ -264,6 +265,13 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## 修改记录
+
+#### v37.4(2021-05-20)
+
+- `新增算法`: `ergo` 在AMD显卡上的挖矿，配合ETH挖矿时序使用速度更快。参考典型算力：
+  - `580 8G`: 83MH/s
+  - `5700`: 125MH/s
+- `功能`: 调整温控策略，通过设置 `-tl`限制温度上限以停止挖矿，`-ts`设置重新启动挖矿的温度条件，详见readme_zh.md
 
 #### v37.3(2021-05-06)
 

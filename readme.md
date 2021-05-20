@@ -30,7 +30,7 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, `SERO`
 | kawpow           |   RVN   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
 | beamv3           |  BEAM   |    12.5    |    19.6    |    19.5    |    26    |   30.5   |      X       |
 | octopus          |   CFX   |    5.5M    |    8.5M    |    9.8M    |  14.8M   |  48.5M   |     X     |
-| ergo | ERGO | 41M | 67M | 52M | 63M | 73M | X |
+| ergo | ERGO | 41M | 67M | 52M | 63M | 73M | 83M(eth bios) |
 
 ## Features
 
@@ -162,7 +162,8 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, `SERO`
 * --proxy    Socks5 proxy used to eastablish connection with pool, E.g. 127.0.0.1:1080
 * --cuckoo-intensity \<intensity>    Set intensity of cuckoo, cuckaroo, cuckatoo, [1, 12]. Smaller value means higher CPU usage to gain more hashrate. Set to 0 means autumatically adapt. Default: 0.
 * --cuckatoo-power-optimize    Set this option to reduce the range of power consumed by rig when minining with algo cuckatoo. This feature can reduce the chance of power supply shutdown caused by overpowered. Warning: Setting this option may cause drop on minining performance.
-* --temperature-limit \<temp-limit>    Set temperature limit of GPU in Celsius. If it exceeds, stop the GPU for 10 seconds and continue.
+* --temperature-limit, --tl \<temp-limit>    Set temperature limit of GPU, if exceeds, stop GPU.
+* --temperature-start, --ts \<temp-start>    Set cool-down temperature target if GPU is stopped by `temperature-limit`, default to \<temp-limit> - 5.
 * --log    Generate log file named `logs/log_<timestamp>.txt`.
 * --log-file \<filename>    Generate custom log file. Note: This option will override `--log`.
 * --no-nvml    Do not query cuda device health status.
@@ -272,6 +273,13 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v37.4(2021-05-20)
+
+- `new algo`: `ergo` for AMD GPU, can be faster with ETH mining timings. typical hashrate
+  - `580 8G`: 83MH/s
+  - `5700`: 125MH/s
+- `feature`: use `--temperature-limit` & `--temperature-start` to protect GPU from overheat, detail in readme.md
 
 #### v37.3(2021-05-06)
 
