@@ -30,7 +30,7 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, `SERO`
 | kawpow           |   RVN   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
 | beamv3           |  BEAM   |    12.5    |    19.6    |    19.5    |    26    |   30.5   |      X       |
 | octopus          |   CFX   |    5.5M    |    8.5M    |    9.8M    |  14.8M   |  48.5M   |     X     |
-| ergo | ERGO | 41M | 67M | 52M | 63M | 73M | 83M(eth bios) |
+| ergo | ERGO | 42M | 68M | 53M | 64M | 74M | 64M(eth bios) |
 
 ## Features
 
@@ -274,11 +274,12 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
-#### v37.4(2021-05-20)
+#### v37.5(2021-05-21)
 
-- `new algo`: `ergo` for AMD GPU, can be faster with ETH mining timings. typical hashrate
-  - `580 8G`: 83MH/s
-  - `5700`: 125MH/s
+​    changes from 37.3
+
+- `new algo`: `ergo` for AMD GPU, can be faster with ETH mining timings
+- `optimize`: `ergo` slightly improce hashrate on Nvidia GPUs
 - `feature`: use `--temperature-limit` & `--temperature-start` to protect GPU from overheat, detail in readme.md
 
 #### v37.3(2021-05-06)

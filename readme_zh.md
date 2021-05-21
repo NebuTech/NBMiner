@@ -24,7 +24,7 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, 
 | kawpow           |   RVN   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
 | beamv3           |  BEAM   |    12.5    |    19.6    |    19.5    |    26    |   30.5   |      X       |
 | octopus          |   CFX   |    5.5M    |    8.5M    |    9.8M    |  14.8M   |  48.5M   |     X     |
-| ergo | ERGO | 41M | 67M | 52M | 63M | 73M | 83M(eth bios) |
+| ergo | ERGO | 42M | 68M | 53M | 64M | 74M | 64M(eth bios) |
 
 ## 功能特点
 
@@ -266,11 +266,12 @@ GET http://api_host:port/api/v1/status
 
 ## 修改记录
 
-#### v37.4(2021-05-20)
+#### v37.5(2021-05-21)
 
-- `新增算法`: `ergo` 在AMD显卡上的挖矿，配合ETH挖矿时序使用速度更快。参考典型算力：
-  - `580 8G`: 83MH/s
-  - `5700`: 125MH/s
+​    changes from 37.3
+
+- `新增算法`: `ergo` 在AMD显卡上的挖矿，配合ETH挖矿时序使用速度更快
+- `优化`: `ergo` 小幅提升Nvidia显卡挖矿算力
 - `功能`: 调整温控策略，通过设置 `-tl`限制温度上限以停止挖矿，`-ts`设置重新启动挖矿的温度条件，详见readme_zh.md
 
 #### v37.3(2021-05-06)
