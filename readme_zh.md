@@ -69,6 +69,7 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, 
 - **beepool:** nbminer -a ethash -o ethproxy+tcp://eth-pool.beepool.org:9530 -u 0x12343bdgf.worker
 - **nanopool:** nbminer -a ethash -o ethproxy+tcp://eth-asia1.nanopool.org:9999 -u wallet.worker
 - **nicehash:** nbminer -a ethash -o nicehash+tcp://daggerhashimoto.eu.nicehash.com:3353 -u btc_address.worker
+- **miningpoolhub**: nbminer -a ethash -o nicehash+tcp://asia.ethash-hub.miningpoolhub.com:20535 -u username.worker
 
 #### ETH+ZIL:
 
@@ -265,6 +266,11 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## 修改记录
+
+#### v37.6(2021-06-03)
+
+- `修复`: `ethash` `--enable-dag-cache` 在A卡上切换epoch时可能导致崩溃的情况
+- `修复`: `ergo` 在`Vega`显卡的支持
 
 #### v37.5(2021-05-21)
 

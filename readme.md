@@ -76,6 +76,7 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, `SERO`
 - **nanopool:** nbminer -a ethash -o ethproxy+tcp://eth-asia1.nanopool.org:9999 -u 0x12343bdgf.worker
 - **herominers:** nbminer -a ethash -o ethproxy+tcp://ethereum.herominers.com:10201 -u 0x12343bdgf.worker
 - **nicehash:** nbminer -a ethash -o nicehash+tcp://daggerhashimoto.eu.nicehash.com:3353 -u btc_address.worker
+- **miningpoolhub**: nbminer -a ethash -o nicehash+tcp://asia.ethash-hub.miningpoolhub.com:20535 -u username.worker
 
 #### ETH+ZIL:
 
@@ -273,6 +274,11 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v37.6(2021-06-03)
+
+- `fix`: `ethash` `--enable-dag-cache` cause crash on AMD GPUs when switch DAG file.
+- `fix`: `ergo` support on `AMD Vega` GPUs.
 
 #### v37.5(2021-05-21)
 
