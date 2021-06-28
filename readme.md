@@ -131,10 +131,11 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, `SERO`
 - **woolypooly**: nbminer -a ergo -o stratum+tcp://erg.woolypooly.com:3100 -u wallet.worker
 - **nanopool**: nbminer -a ergo -o stratum+tcp://ergo-eu1.nanopool.org:11111 -u wallet.worker
 - **666pool**: nbminer -a ergo -o stratum+tcp://ergo.666pool.cn:9556 -u wallet.worker
+- **nicehash**: nbminer -a ergo -o stratum+tcp://autolykos.eu-west.nicehash.com:3390 -u wallet.worker
 
 ## CMD options：
 
-**nbminer -a algo -o protocol+socket_type://pool_host:pool_port -u wallet_address.worker:passwd**
+**nbminer -a algo -o protocol+socket_type://pool_host:pool_port -u wallet_address.worker -p passwd**
 
   * -h, --help    Displays this help.
   * -v, --version    Displays version information.
@@ -150,13 +151,6 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, `SERO`
 * -p,  --password \<password>  password for mining pool
 * -p1,  --password1 \<password>  password for backup mining pool1
 * -p2,  --password2 \<password>  password for backup mining pool2
-* -di, --secondary-intensity \<intensity>    The relative intensity when dual mining.
-* -do, --secondary-url \<url>    ETH mining pool when dual mining.
-* -du, --secondary-user \<user>    ETH username when dual mining.
-* -do1, --secondary-url1 \<url>    Backup 1 ETH mining pool when dual mining.
-* -du1, --secondary-user1 \<user>    Backup 1 ETH username when dual mining.
-* -do2, --secondary-url2 \<url>    Backup 2 ETH mining pool when dual mining.
-* -du2, --secondary-user2 \<user>    Backup 2 ETH username when dual mining.
 * -d, --devices \<devices>    Specify GPU list to use. Format: "-d 0,1,2,3" to use first 4 GPU.
 * -i, --intensity \<intensities>    Comma-separated list of intensities (1 -100).
 * --strict-ssl    Check validity of certificate when use SSL connection.
@@ -274,6 +268,12 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v38.0(2021-06-29)
+
+- `feature`: `ergo` add `mining.extranonce.subscribe` support.
+- `fix`: eliminate memory leak by NVML library for Nvidia driver 460+ on windows.
+- `fix`: `--enable-dag-cache` causes crash on certain situation.
 
 #### v37.6(2021-06-03)
 

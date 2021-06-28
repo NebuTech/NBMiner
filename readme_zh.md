@@ -123,10 +123,11 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, 
 - **woolypooly**: nbminer -a ergo -o stratum+tcp://erg.woolypooly.com:3100 -u wallet.worker
 - **nanopool**: nbminer -a ergo -o stratum+tcp://ergo-eu1.nanopool.org:11111 -u wallet.worker
 - **666pool**: nbminer -a ergo -o stratum+tcp://ergo.666pool.cn:9556 -u wallet.worker
+- **nicehash**: nbminer -a ergo -o stratum+tcp://autolykos.eu-west.nicehash.com:3390 -u wallet.worker
 
 ## 命令行参数
 
-**nbminer -a algo -o 协议+连接类型://矿池地址:矿池端口 -u 钱包地址或用户名.矿工名:密码可选**
+**nbminer -a algo -o 协议+连接类型://矿池地址:矿池端口 -u 钱包地址或用户名.矿工名**
 
 - -?, -h, --help    显示帮助信息.
 - -v, --version    显示版本号.
@@ -142,13 +143,6 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, 
 - -p, --password \<password> 传给矿池的password参数
 - -p1, --password1 \<password> 传给备用矿池1的password参数
 - -p2, --password2 \<password> 传给备用矿池2的password参数
-- -di, --secondary-intensity \<intensity>    双挖时相对挖矿强度
-- -do, --secondary-url \<url>    双挖时ETH的矿池地址
-- -du, --secondary-user \<user>    双挖时ETH的用户名
-- -do1, --secondary-url \<url>    双挖备用矿池1的矿池地址
-- -du1, --secondary-user \<user>    双挖备用矿池1的用户名
-- -do2, --secondary-url \<url>    双挖备用矿池2的矿池地址
-- -du2, --secondary-user \<user>    双挖备用矿池2的用户名
 - -d, --devices \<devices>    指定使用哪些显卡来挖矿. 比如: "-d 0,1,2,3" 使用前4个显卡.
 - -i, --intensity \<intensities>    GPU使用强度列表 (1 -100)，默认100.
 - --strict-ssl    使用SSL连接时验证矿池证书
@@ -266,6 +260,12 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## 修改记录
+
+#### v38.0(2021-06-29)
+
+- `功能`: `ergo` 增加对 `mining.extranonce.subscribe` 协议支持.
+- `修复`: 消除Windows下N卡使用460+驱动的NVML库带来的内存泄漏问题
+- `修复`: `--enable-dag-cache` 在某些情况下导致的崩溃
 
 #### v37.6(2021-06-03)
 
