@@ -275,6 +275,10 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v38.1(2021-06-29)
+
+- `fix`: high CPU usage in v38.0
+
 #### v38.0(2021-06-29)
 
 - `feature`: `ergo` add `mining.extranonce.subscribe` support.

@@ -261,6 +261,10 @@ GET http://api_host:port/api/v1/status
 
 ## 修改记录
 
+#### v38.1(2021-06-29)
+
+- `修复`: `v38.0`CPU占用率高的问题
+
 #### v38.0(2021-06-29)
 
 - `功能`: `ergo` 增加对 `mining.extranonce.subscribe` 协议支持.
