@@ -4,6 +4,12 @@
 
 GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, `SERO`
 
+## Disclaimer
+
+[nbminer.com](https://nbminer.com) & [NBMiner_github](https://github.com/NebuTech/NBMiner) are the only 2 officially maintained site for publishing information and new releases of NBMiner.
+
+Be aware when you download NBMiner binaries from other sources.
+
 ## 中文说明
 
 [查看中文说明](/readme_zh.md)
