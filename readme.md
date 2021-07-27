@@ -275,6 +275,10 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v38.2(2021-07-27)
+
+- `fix`: AMD kernel error on certain GPUs with 21.6.1+ drivers under windows.
+
 #### v38.1(2021-06-29)
 
 - `fix`: high CPU usage in v38.0
