@@ -6,7 +6,7 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, 
 
 ## 下载地址
 
-[从这里下载](https://github.com/NebuTech/BTMiner_NebuTech/releases)
+[从这里下载](https://github.com/NebuTech/NBMiner/releases)
 
 ## 社区支持
 
@@ -260,6 +260,16 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## 修改记录
+
+#### 39.0(2021-08-15)
+
+- `功能`: `ethash` 新增部分破解 LHR 版本显卡算力的功能，适用于win和linux，大约可解锁70%左右的满速算力。
+  - 该功能通过`-lhr`参数启动，目前只对`ethash`算法有效
+  - 如果检测到有LHR显卡，即使不加`-lhr`参数时，也会自动对其使用 `-lhr 68`的参数应用。
+  - 其他非LHR显卡挖矿不受影响，3060 v1版本需要设置 `-lhr <value>` 才启用 LHR 模式
+  - 可通过 `-lhr <value>` 来手动指定，\<value>的值指尝试让miner达到的算力目标，比如 `-lhr 68` 即尝试让miner采用满算力（不带锁的卡）的68%的有效算力来运行，即越大算力越高。
+  - `-lhr` 的数值越大，挖矿过程中被锁算力的概率越大，默认值 68 是开发测试中可以长期稳定运行的值，用户可以尝试调高或者调低该数值，以取得算力和稳定性的平衡
+  - 可通过 `-lhr 65,68,0,-1` 格式来单独指定每一张卡的参数，其中 `-1`指关闭 LHR 破解功能
 
 #### v38.2(2021-07-27)
 

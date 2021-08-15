@@ -22,7 +22,7 @@ Be aware when you download NBMiner binaries from other sources.
 
 ## Download
 
-[Download here](https://github.com/NebuTech/BTMiner_NebuTech/releases)
+[Download here](https://github.com/NebuTech/NBMiner/releases)
 
 ## Performance (stock settings)
 
@@ -274,6 +274,16 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### 39.0(2021-08-15)
+
+- `feature`: `ethash` New LHR mode for ETH mining on RTX 30 series LHR GPUs, supports Windows & Linux, able to get ~70% of maximum unlocked hashrate.
+  - This mode can be tuned by argument `-lhr`, only works for `ethash` right now.
+  - `-lhr` default to 0, meaning even if `-lhr` is not set, LHR mode with `-lhr 68` will be applied to LHR GPUs if certain GPUs are detected.
+  - Tune LHR mode by setting `-lhr <value>`, a specific value will tell miner **try to reach** `value` percent of maximum unlocker hashrate, e.g. `-lhr 68` will expect to get 68% of hashrate for same model non-LHR GPU.
+  - Higher `-lhr` value will results in higher hashrate, but has higher possibility to run into lock state, which will leads to much less hashrate.
+  - A good start tuning value is 68, which has been tested to be stable on most rig configurations.
+  - `-lhr` value can be set for each GPU by using comma separeted list, `-lhr 65,68,0,-1`, where `-1` means turn off LHR mode.
 
 #### v38.2(2021-07-27)
 
