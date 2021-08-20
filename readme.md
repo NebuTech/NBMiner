@@ -181,6 +181,7 @@ Be aware when you download NBMiner binaries from other sources.
 * --enable-igpu    AMD igpu is disabled by default, set this option to enable.
 * **--mt, --memory-tweak \<mode>    Memory timings optimize for Nvidia GDDR5 & GDDR5X gpus. range [1-6]. Higher value equals higher hashrate. Individual value can be set via comma seperated list. Power limit may need to be tuned up to get more hashrate. Higher reject share ratio can happen if mining rig hits high temperature, set lower value of `-mt` can reduce reject ratio. Under windows, a custom driver need to be installed when using `-mt`, can installed manually by option  `--driver`, or run nbminer.exe with admin privilege to perform auto-install. Under linux, admin priviledge is needed to run, `sudo ./nbminer -mt x`. `OhGodAnETHlargementPill` is not needed anymore if `-mt` is enabled when mining on 1080 & 1080ti GPUs.**
 * **--driver \<action>    Windows only option, install / uninstall driver for `memory tweak`. Run with admin priviledge. install: `nbminer.exe --driver install`, uninstall: `nbminer.exe --driver uninstall`. **
+* **-lhr \<value>    Partially unlock hashrate for Nvidia LHR GPUs. [-1, 100]. 0: auto, -1: off. Others: set to 60 means trying to reach 60% of nonlocked max hashrate.**
 
 ## API Reference
 
@@ -274,6 +275,13 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### 39.1(2021-08-21)
+
+- `optimize`: `ethash` improve hashrate of `LHR` mode 1 - 2%，default value of `-lhr`changes from 68 to 69，manually set to 70 is also very promising.
+- `fix`: `LHR` mode support on windows driver 471.11
+- `fix`: `kawpow` issue of v39.0
+- `fix`: `Radeon vii` issue on windows driver 21.6.1+
 
 #### 39.0(2021-08-15)
 

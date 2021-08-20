@@ -169,6 +169,7 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, 
   设为4,5,6。可能需要提高功耗限制以达到更高的算力。如果你的矿机温度较高，可能会出现更高的拒
   绝率，此时可以降低数值再尝试。windows下使用该命令需使用`--drver`参数进行驱动安装，或使用管理员权限开启挖矿，会自动安装。linux下使用，需加`sudo`使用管理员权限运行。使用该命令后，1080、1080ti挖ETH不再需要OhGodAnETHlargementPill**
 - **--driver \<action>    windows独有选项，如果要使用`-mt`，可使用该选项手动安装和卸载驱动。管理员权限运行`nbminer.exe --driver install` 安装驱动，卸载使用`nbminer.exe --driver uninstall`**
+- **-lhr \<value>    部分破解N卡LHR型号算力，取值范围：[-1,100]。0：自动，-1：关闭。其他值表示让miner尝试达到的算力值，比如 -lhr 70，尝试达到同型号不锁显卡的算力的70%。**
 
 ## API查询接口
 
@@ -260,6 +261,13 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## 修改记录
+
+#### 39.1(2021-08-20)
+
+- `优化`: `ethash` `LHR`模式算力上限提高1-2%，`-lhr`默认值改为69，用户可尝试 70 
+- `修复`: `LHR` 模式修复`v39.0`在`471.11`驱动的支持
+- `修复`: `v39.0` 中 `kawpow`在A卡上无法启动的问题
+- `修复`: `Radeon vii`无法在Windows 21.6.1+ 驱动运行的问题
 
 #### 39.0(2021-08-15)
 
