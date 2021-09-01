@@ -276,14 +276,22 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
-#### 39.1(2021-08-21)
+#### v39.2(2021-09-01)
+
+- `feature`: `ethash` added LHR lock detection and recovery in LHR mode.
+- `feature`: added `memory temperature` display  (if available) for Nvidia and AMD GPU under windows.
+- `fix`: `ergo` more robust protocol handle.
+
+**Note: LHR mode requires NVML library to work, please make sure the driver is installed properly and do not add `-no-health` argument.** 
+
+#### v39.1(2021-08-21)
 
 - `optimize`: `ethash` improve hashrate of `LHR` mode 1 - 2%，default value of `-lhr`changes from 68 to 69，manually set to 70 is also very promising.
 - `fix`: `LHR` mode support on windows driver 471.11
 - `fix`: `kawpow` issue of v39.0
 - `fix`: `Radeon vii` issue on windows driver 21.6.1+
 
-#### 39.0(2021-08-15)
+#### v39.0(2021-08-15)
 
 - `feature`: `ethash` New LHR mode for ETH mining on RTX 30 series LHR GPUs, supports Windows & Linux, able to get ~70% of maximum unlocked hashrate.
   - This mode can be tuned by argument `-lhr`, only works for `ethash` right now.
