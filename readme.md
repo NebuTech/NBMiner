@@ -276,6 +276,17 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v39.3(2021-09-18)
+
+- `feature`: `ethash` new low power LHR mode, add `-lhr-mode` option.
+  - `-lhr-mode 2` is the default LHR mode, which is the new lower power mode.
+  - `-lhr-mode 1` changes LHR mode to old version, which is the same as `v39.2`
+  - `-lhr-mode 1` is suitable for only power limit bounded GPU, can achieve higher hashrate than mode 2
+  - `-lhr-mode 2` is able to achieve lower average power and temperature. espacially suitable for GPUs with gddr6x e.g.3070ti, 3080, 3080ti. Power consumtion is fluctuating in this mode, better be used with locked core clock.
+- `feature`: `-lhr` support decimal value
+- `feature`: for LHR GPUs, when mining lock is detected, miner will automatically decrease `-lhr` value by 0.1, and continue mining. max decrease times is 10, which sums to 1.0
+- `fix`: higher CPU usage when set `--share-check 0`
+
 #### v39.2(2021-09-01)
 
 - `feature`: `ethash` added LHR lock detection and recovery in LHR mode.
