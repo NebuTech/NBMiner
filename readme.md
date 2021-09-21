@@ -276,6 +276,10 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v39.4(2021-09-21)
+
+- `fix`: `octopus` Fix error hash issue.
+
 #### v39.3(2021-09-18)
 
 - `feature`: `ethash` new low power LHR mode, add `-lhr-mode` option.

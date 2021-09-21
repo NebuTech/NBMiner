@@ -262,6 +262,10 @@ GET http://api_host:port/api/v1/status
 
 ## 修改记录
 
+#### v39.4(2021-09-21)
+
+- `修复`: `octopus` 修复错误提交的问题
+
 #### v39.3(2021-09-18)
 
 - `功能`: `ethash` 新增低功耗LHR模式，通过`-lhr-mode`选择
