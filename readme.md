@@ -276,6 +276,16 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
+#### v39.5(2021-09-24)
+
+- `feature`: `ergo` new LHR mode for mining ERGO, enable it by manually adding `-lhr` option
+  - Same as LHR mode in `ethash`, `-lhr` value represents expected hashrate to reach `value` percent of non-LHR GPU's hashrate, supports comma-seperated list to indicate `-lhr` value for each GPU, and `-lhr -1` to disable.
+  - For GPUs with Hynix GDDR6 memory, LHR mode is not recommended for the poor performance.
+  - For GPUs with non-Hynix GDDR6 memory, e.g. 3060 3060ti 3070, start trying with `-lhr 85`
+  - For GPUs with GDDR6X memory, e.g. 3070ti 3080 3080ti, start trying with `-lhr 100`
+  - When mining lock is detected during ERGO mining, miner will automatically decrease `-lhr` value by 0.5, and continue mining. max decrease times is 10, which sums to 5.0
+- `optimize`: `ergo` Lower power consumption on Nvidia GPUs.
+
 #### v39.4(2021-09-21)
 
 - `fix`: `octopus` Fix error hash issue.
