@@ -1,0 +1,17 @@
+feature: ergo new LHR mode for mining ERGO, enable it by manually adding -lhr option
+
+Same as LHR mode in ethash, -lhr value represents expected hashrate to reach value percent of non-LHR GPU's hashrate, supports comma-seperated list to indicate -lhr value for each GPU, and -lhr -1 to disable.
+For GPUs with Hynix GDDR6 memory, LHR mode is not recommended for the poor performance.
+For GPUs with non-Hynix GDDR6 memory, e.g. 3060 3060ti 3070, start trying with -lhr 85
+For GPUs with GDDR6X memory, e.g. 3070ti 3080 3080ti, start trying with -lhr 100
+When mining lock is detected during ERGO mining, miner will automatically decrease -lhr value by 0.5, and continue mining. max decrease times is 10, which sums to 5.0
+optimize: ergo Lower power consumption on Nvidia GPUs.
+
+功能: ergo 新增LHR模式，需手动添加 -lhr 参数启用
+
+与ethash的LHR模式相同，-lhr值表示期望达到的非LHR卡算力的百分比，支持列表传入每张卡不同的参数，传入 -1 禁用
+对于海力士显存颗粒GDDR6的LHR显卡，不推荐使用 -lhr 模式，效果不明显
+对于其他 LHR 版本GDDR6显卡，即 3060 3060ti 3070，推荐 -lhr 85 开始尝试
+对于 LHR 版本GDDR6X显卡，即 3070ti 3080 3080ti，推荐 -lhr 100 开始尝试
+当ERGO挖矿中检测到LHR锁以后，miner将尝试恢复并自动将 -lhr值降低 0.5 继续挖矿，最多降低10次
+优化: ergo 降低N卡挖矿功耗
