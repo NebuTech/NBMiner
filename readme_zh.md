@@ -10,15 +10,13 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, 
 
 ## 社区支持
 
-官方QQ群：795224121
+Telegram 中文频道: https://t.me/nbminer_official
 
 ## 参考算力（默认频率）
 
 | 算法             |  币种   |  P106-100  |  P104-8G   |   1070ti   |  1080ti  |   2080   | RX580 2048sp |
 | :--------------- | :-----: | :--------: | :--------: | :--------: | :------: | :------: | :----------: |
 | ethash           |   ETH   |   21.2M   |   34.5M    |   26.9M    |   46M    |  35.5M   |     24M      |
-| cuckatoo         | GRIN31  |     X      |    0.89    |    0.94    |   1.56   |   1.65   |      X       |
-| cuckatoo32       | GRIN32  |   0.215    |    0.38    |    0.41    |   0.63   |   0.65   |      X       |
 | cuckoo_ae        |   AE    |    3.35    |    5.5     |    5.15    |   7.9    |   8.75   |      X       |
 | progpow_sero     |  SERO   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     10M      |
 | kawpow           |   RVN   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
@@ -33,7 +31,7 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, 
 - 支持SSL方式连接矿池
 - 开发手续费:
   - ethash etchash 1%
-  - cuckatoo & cuckatoo32 & cuckoo_ae  2%
+  - cuckoo_ae  2%
   - progpow_sero 2%
   - kawpow 2%
   - beamv3 2%
@@ -48,8 +46,6 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, 
 | 算法             |  币种   | Compute Capability | 显存 (Win7 & Linux) | 显存 (Win10) |
 | :--------------- | :-----: | :----------------: | :-------------------: | :------------: |
 | ethash           |   ETH   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB      |
-| cuckatoo         | GRIN31  | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          8GB          |      10GB      |
-| cuckatoo32 | GRIN32 | 6.0, 6.1, 7.0, 7.5 | 8GB | 10GB |
 | cuckoo_ae        |   AE    | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB       |
 | progpow_sero     |  SERO   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          3GB          |      4GB      |
 | kawpow           |   RVN   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          3GB          |      4GB      |
@@ -64,9 +60,7 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, 
 #### ETH
 
 - **ethermine:** nbminer -a ethash -o ethproxy+tcp://asia1.ethermine.org:4444 -u wallet.worker
-- **sparkpool:** nbminer -a ethash -o ethproxy+tcp://cn.sparkpool.com:3333 -u wallet.worker
 - **f2pool:** nbminer -a ethash -o ethproxy+tcp://eth.f2pool.com:8008 -u wallet.worker
-- **beepool:** nbminer -a ethash -o ethproxy+tcp://eth-pool.beepool.org:9530 -u 0x12343bdgf.worker
 - **nanopool:** nbminer -a ethash -o ethproxy+tcp://eth-asia1.nanopool.org:9999 -u wallet.worker
 - **nicehash:** nbminer -a ethash -o nicehash+tcp://daggerhashimoto.eu.nicehash.com:3353 -u btc_address.worker
 - **miningpoolhub**: nbminer -a ethash -o nicehash+tcp://asia.ethash-hub.miningpoolhub.com:20535 -u username.worker
@@ -76,27 +70,17 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, 
 - **ezil**: nbminer -a ethash -o stratum+tcp://cn.ezil.me:5555 -u ETH_WALLET.ZIL_WALLET.WORKER --enable-dag-cache
 - **shardpool**: nbminer -a ethash -o stratum+tcp://ch1-zil.shardpool.io:3333 -u ETH_WALLET.WORKER -p ZIL_WALLET@cn.sparkpool.com:3333 -enable-dag-cache
 
-#### Grin32
-
-- **goblinpool**: nbminer -a cuckatoo32 -o stratum+tcp://grin32.goblinpool.com:3344 -u username.worker:passwd
-- **f2pool:** nbminer -a cuckatoo32 -o stratum+tcp://grin32.f2pool.com:13654 -u username.worker:passwd
-- **herominers:** nbminer -a cuckatoo32 -o stratum+tcp://grin.herominers.com:10301 -u username.worker:passwd
-- **nicehash:** nbminer -a cuckatoo32 -o nicehash+tcp://grincuckatoo32.hk.nicehash.com:3383 -u btc_address.worker
-
 #### AE
 
 - **f2pool**: nbminer -a cuckoo_ae -o stratum+tcp://ae.f2pool.com:7898 -u ak_xxxxxxx.worker
-- **beepool**: nbminer -a cuckoo_ae -o stratum+tcp://ae-pool.beepool.org:9505 -u ak_xxxx.worker
 - **nicehash**: nbminer -a cuckoo_ae -o nicehash+tcp://cuckoocycle.eu.nicehash.com:3376 -u btc_address.worker
 
 #### SERO
 
-- **beepool**: nbminer -a progpow_sero -o stratum+tcp://sero-pool.beepool.org:9515 -u wallet_address.worker:pswd
 - **f2pool**: nbminer -a progpow_sero -o stratum+tcp//sero.f2pool.com:4200 -u wallet_address.worker:pswd
 
 #### RVN
 
-- **beepool**: nbminer -a kawpow -o  stratum+tcp://rvn-pool.beepool.org:9531 -u wallet.worker
 - **f2pool**: nbminer -a kawpow -o  stratum+tcp://raven.f2pool.com:3636 -u wallet.worker
 - **minermore**: nbminer -a kawpow -o stratum+tcp://us.rvn.minermore.com:4501 -u wallet.worker:paswd
 - **bsod**: nbminer -a kawpow -o stratum+tcp://pool.bsod.pw:2640 -u wallet.worker
@@ -104,14 +88,11 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, 
 
 #### BEAM
 
-- **sparkpool**: nbminer -a beamv3 -o stratum+ssl://beam.sparkpool.com:2222 -u wallet.worker
-- **beepool**: nbminer -a beamv3 -o stratum+ssl://beam-pool.beepool.org:9507 -u wallet.worker
 - **leafpool**: nbminer -a beamv3 -o stratum+ssl://beam-eu.leafpool.com:3333 -u wallet.worker
 - **nicehash**: nbminer -a beamv3 -o stratum+tcp://beamv3.eu.nicehash.com:3387 -u btc_address.worker
 
 #### CONFLUX
 
-- **beepool**: nbminer -a octopus -o stratum+tcp://cfx-pool.beepool.org:9555 -u wallet.worker
 - **poolflare**: nbminer -a octopus -o stratum+tcp://cfx.ss.poolflare.com:3366 -u wallet.worker
 - **f2pool**: nbminer -a octopus -o stratum+tcp://cfx.f2pool.com:6800 -u username.worker
 - **woolypooly**: nbminer -a octopus -o  stratum+tcp://cfx.woolypooly.com:3094 -u wallet.worker
@@ -148,7 +129,6 @@ NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`, 
 - --strict-ssl    使用SSL连接时验证矿池证书
 - --proxy    使用Socks5代理连接矿池，例如: 127.0.0.1:1080
 - --cuckoo-intensity \<intensity>    设置挖Grin时的CPU负载，取值范围[1,12]，值越小挖矿算力越高，相对应的CPU负载也会更高。设置为0软件从1开始自适应调整。默认为0
-- --cuckatoo-power-optimize    减小多卡矿机挖Grin31的总功耗波动，避免电源过载关机（设置该选项可能导致算力略微降低，请测试后谨慎使用）
 - --temperature-limit, --tl \<temp-limit>    设置显卡温度上限，一旦超过，停止挖矿
 - --temperature-start, --ts \<temp-start>    设置显卡由于达到设定的温度上限停止后重新启动挖矿的温度条件，默认为\<temp-limit> - 5 度.
 - --log    生成日志文件，文件名为 `log_<时间戳>.txt`.
@@ -261,6 +241,22 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## 修改记录
+
+#### v39.6(2021-10-27)
+
+- `优化`: `ethash` LHR 模式显著优化
+  - 算力更高，解锁更稳定的 `-lhr-mode 1` （高算力模式）和 `-lhr-mode 2`（省电模式）
+  - 针对LHR显卡，默认的模式改为 `-lhr-mode 1`
+  - `-lhr-mode 1`中的`-lhr`默认值提升到74，`-lhr-mode 2`中的`-lhr`默认值提升到71
+  - 新增三个用于控制LHR自动调参策略的选项，绝大多数情况下不需要修改：
+    - `-lhr-reduce-value`：单次降低的`-lhr`值，默认为`0.5`
+    - `-lhr-reduce-time`：距离上次被锁的时间，超过该时间则不进行`-lhr`降低，默认为`15`，即15分钟
+    - `-lhr-reduce-limit`：最多降低`-lhr`值的次数，默认为`6`
+  - 典型算力：3060ti LHR 默认LHR选项，45.5MH/s @ 显存+1200 (win10)
+- `功能`: `ergo`同样适配`-lhr-reduce-value`, `-lhr-reduce-time`, `-lhr-reduce-limit`三个选项
+- `功能`: 新增`-cmd-output`选项，可指定命令行输出到`stdout`或者`stderr`，`1=stdout`，`2=stderr`，默认为`2`
+- `功能`: 默认对ssl连接关闭SNI扩展，可通过`-enable-sni`开启
+- `删除`: `cuckatoo` 及`cuckatoo32`算法的支持
 
 #### v39.5(2021-09-24)
 
