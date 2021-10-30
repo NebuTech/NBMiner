@@ -251,7 +251,7 @@ GET http://api_host:port/api/v1/status
 
 #### v39.7(2021-10-30)
 
-- `feature`: LHR mode support new GA104 version of 3060 & 3060ti
+- `feature`: LHR mode support new GA104 version of 3060
 - `feature`: `ethash` Turn on LHR mode by default for 3060 v1, disabled by default only on windows 470.05
 - `fix`: `ethash` Fail to detect LHR lock on certain situation.
 - `fix`: Nvidia GPU power consumption issue on certain rig config.
