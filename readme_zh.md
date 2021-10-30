@@ -2,7 +2,7 @@
 
 # NBMiner
 
-NVIDIA、AMD显卡的`ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`,  `SERO`挖矿软件。
+NVIDIA、AMD显卡的`ETH`, `RVN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`挖矿软件。
 
 ## 下载地址
 
@@ -18,7 +18,6 @@ Telegram 中文频道: https://t.me/nbminer_official
 | :--------------- | :-----: | :--------: | :--------: | :--------: | :------: | :------: | :----------: |
 | ethash           |   ETH   |   21.2M   |   34.5M    |   26.9M    |   46M    |  35.5M   |     24M      |
 | cuckoo_ae        |   AE    |    3.35    |    5.5     |    5.15    |   7.9    |   8.75   |      X       |
-| progpow_sero     |  SERO   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     10M      |
 | kawpow           |   RVN   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
 | beamv3           |  BEAM   |    12.5    |    19.6    |    19.5    |    26    |   30.5   |      X       |
 | octopus          |   CFX   |    5.5M    |    8.5M    |    9.8M    |  14.8M   |  48.5M   |     X     |
@@ -32,7 +31,6 @@ Telegram 中文频道: https://t.me/nbminer_official
 - 开发手续费:
   - ethash etchash 1%
   - cuckoo_ae  2%
-  - progpow_sero 2%
   - kawpow 2%
   - beamv3 2%
   - octopus 3%
@@ -47,7 +45,6 @@ Telegram 中文频道: https://t.me/nbminer_official
 | :--------------- | :-----: | :----------------: | :-------------------: | :------------: |
 | ethash           |   ETH   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB      |
 | cuckoo_ae        |   AE    | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB       |
-| progpow_sero     |  SERO   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          3GB          |      4GB      |
 | kawpow           |   RVN   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          3GB          |      4GB      |
 | beamv3 | BEAM | 6.0, 6.1, 7.0, 7.5 | 3GB | 3GB |
 | octopus | CFX | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 | 5GB | 6GB |
@@ -74,10 +71,6 @@ Telegram 中文频道: https://t.me/nbminer_official
 
 - **f2pool**: nbminer -a cuckoo_ae -o stratum+tcp://ae.f2pool.com:7898 -u ak_xxxxxxx.worker
 - **nicehash**: nbminer -a cuckoo_ae -o nicehash+tcp://cuckoocycle.eu.nicehash.com:3376 -u btc_address.worker
-
-#### SERO
-
-- **f2pool**: nbminer -a progpow_sero -o stratum+tcp//sero.f2pool.com:4200 -u wallet_address.worker:pswd
 
 #### RVN
 
