@@ -20,7 +20,7 @@ Be aware when you download NBMiner binaries from other sources.
 
 | version | Windows                                                      | Linux                                                        |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 40.0    | [NBMiner_40.0_Win.zip](https://dl.nbminer.com/NBMiner_40.0_Win.zip) | [NBMiner_40.0_Linux.tgz](https://dl.nbminer.com/NBMiner_40.0_Linux.tgz) |
+| 40.1    | [NBMiner_40.1_Win.zip](https://dl.nbminer.com/NBMiner_40.1_Win.zip) | [NBMiner_40.1_Linux.tgz](https://dl.nbminer.com/NBMiner_40.1_Linux.tgz) |
 | 39.7    | [NBMiner_39.7_Win.zip](https://dl.nbminer.com/NBMiner_39.7_Win.zip) | [NBMiner_39.7_Linux.tgz](https://dl.nbminer.com/NBMiner_39.7_Linux.tgz) |
 | 39.6    | [NBMiner_39.6_Win.zip](https://dl.nbminer.com/NBMiner_39.6_Win.zip) | [NBMiner_39.6_Linux.tgz](https://dl.nbminer.com/NBMiner_39.6_Linux.tgz) |
 
@@ -306,6 +306,11 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v40.1(2021-11-24)
+
+- `fix`: `ethash` v40.0 false detected as LHR lock under lastest Nvidia driver versions.
+- `feature`: supports future LHR GPU models.
 
 #### v40.0(2021-11-23)
 
