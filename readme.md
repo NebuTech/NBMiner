@@ -2,45 +2,39 @@
 
 # NBMiner
 
-GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ERGO`, `AE`, `SERO`
+GPU Miner for `ETH`, `RVN`, `BEAM`, `CFX`, `ZIL`, `ERGO`, `AE`
 
-## 中文说明
+## Disclaimer
 
-[查看中文说明](/readme_zh.md)
+[nbminer.com](https://nbminer.com) & [NBMiner_github](https://github.com/NebuTech/NBMiner) are the only 2 officially maintained site for publishing information and new releases of NBMiner.
+
+Be aware when you download NBMiner binaries from other sources.
 
 ## Contact Us
 
 - Email: nebutech@hotmail.com
-- Discord: https://discord.gg/ZMejVXj
-- BitcoinTalk: https://bitcointalk.org/index.php?topic=5099379
+- [Discord](https://discord.gg/ZMejVXj)
+- [BitcoinTalk](https://bitcointalk.org/index.php?topic=5099379)
 
 ## Download
 
-[Download here](https://github.com/NebuTech/BTMiner_NebuTech/releases)
+| version | Windows                                                      | Linux                                                        |
+| ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 40.1    | [NBMiner_40.1_Win.zip](https://dl.nbminer.com/NBMiner_40.1_Win.zip) | [NBMiner_40.1_Linux.tgz](https://dl.nbminer.com/NBMiner_40.1_Linux.tgz) |
+| 39.7    | [NBMiner_39.7_Win.zip](https://dl.nbminer.com/NBMiner_39.7_Win.zip) | [NBMiner_39.7_Linux.tgz](https://dl.nbminer.com/NBMiner_39.7_Linux.tgz) |
+| 39.6    | [NBMiner_39.6_Win.zip](https://dl.nbminer.com/NBMiner_39.6_Win.zip) | [NBMiner_39.6_Linux.tgz](https://dl.nbminer.com/NBMiner_39.6_Linux.tgz) |
 
-## Performance (stock settings)
-
-| Algorithm             |  COIN   |  P106-100  |  P104-8G   |   1070ti   |  1080ti  |   2080   | RX580 2048sp |
-| :--------------- | :-----: | :--------: | :--------: | :--------: | :------: | :------: | :----------: |
-| ethash           |   ETH   |   21.2M   |   34.5M    |   26.9M    |   46M    |  35.5M   |     24M      |
-| cuckatoo         | GRIN31  |     X      |    0.89    |    0.94    |   1.56   |   1.65   |      X       |
-| cuckatoo32       | GRIN32  |   0.215    |    0.38    |    0.41    |   0.63   |   0.65   |      X       |
-| cuckoo_ae        |   AE    |    3.35    |    5.5     |    5.15    |   7.9    |   8.75   |      X       |
-| progpow_sero     |  SERO   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     10M      |
-| kawpow           |   RVN   |   10.3M    |   17.5M    |   13.3M    |  22.5M   |  25.8M   |     11M      |
-| beamv3           |  BEAM   |    12.5    |    19.6    |    19.5    |    26    |   30.5   |      X       |
-| octopus          |   CFX   |    5.5M    |    8.5M    |    9.8M    |  14.8M   |  48.5M   |     X     |
-| ergo | ERGO | 41M | 67M | 52M | 63M | 73M | X |
+- Download older versions from [github releases](https://github.com/NebuTech/NBMiner/releases)
 
 ## Features
 
 * Support Windows & Linux.
+* Nvidia LHR GPU ethash partial unlock.
 * Support backup mining pool configuration.
 * Support SSL connection to mining pools.
 * Dev Fee: 
   * ethash etchash 1%
-  * cuckatoo & cuckatoo32 & cuckoo_ae 2%
-  * progpow_sero 2%
+  * cuckoo_ae 2%
   * kawpow 2%
   * beamv3 2%
   * octopus 3%
@@ -54,10 +48,7 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ERGO`, `AE`, `SERO`
 | Algorithm        |  Coin   | Compute Capability | Memory (Win7 & Linux) | Memory (Win10) |
 | :--------------- | :-----: | :----------------: | :-------------------: | :------------: |
 | ethash           |   ETH   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB      |
-| cuckatoo         | GRIN31  | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          8GB          |      10GB      |
-| cuckatoo32 | GRIN32 | 6.0, 6.1, 7.0, 7.5 | 8GB | 10GB |
 | cuckoo_ae        |   AE    | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB       |
-| progpow_sero     |  SERO   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          3GB          |      4GB      |
 | kawpow           |   RVN   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          3GB          |      4GB      |
 | beamv3 | BEAM | 6.0, 6.1, 7.0, 7.5 | 3GB | 3GB |
 | octopus | CFX | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 | 5GB | 6GB |
@@ -70,35 +61,25 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ERGO`, `AE`, `SERO`
 #### ETH
 
 - **ethermine:** nbminer -a ethash -o ethproxy+tcp://asia1.ethermine.org:4444 -u 0x12343bdgf.worker
-- **sparkpool:** nbminer -a ethash -o ethproxy+tcp://cn.sparkpool.com:3333 -u 0x12343bdgf.worker
 - **f2pool:** nbminer -a ethash -o ethproxy+tcp://eth.f2pool.com:8008 -u 0x12343bdgf.worker
-- **beepool:** nbminer -a ethash -o ethproxy+tcp://eth-pool.beepool.org:9530 -u 0x12343bdgf.worker
 - **nanopool:** nbminer -a ethash -o ethproxy+tcp://eth-asia1.nanopool.org:9999 -u 0x12343bdgf.worker
 - **herominers:** nbminer -a ethash -o ethproxy+tcp://ethereum.herominers.com:10201 -u 0x12343bdgf.worker
 - **nicehash:** nbminer -a ethash -o nicehash+tcp://daggerhashimoto.eu.nicehash.com:3353 -u btc_address.worker
+- **miningpoolhub**: nbminer -a ethash -o nicehash+tcp://asia.ethash-hub.miningpoolhub.com:20535 -u username.worker
 - **binance:** nbminer -a ethash -o ethproxy+tcp://ethash.poolbinance.com:8888 -u account.worker
 
-#### Grin32
+#### ETH+ZIL:
 
-- **goblinpool**: nbminer -a cuckatoo32 -o stratum+tcp://grin32.goblinpool.com:3344 -u username.worker:passwd
-- **f2pool:** nbminer -a cuckatoo32 -o stratum+tcp://grin32.f2pool.com:13654 -u username.worker:passwd
-- **herominers:** nbminer -a cuckatoo32 -o stratum+tcp://grin.herominers.com:10301 -u username.worker:passwd
-- **nicehash:** nbminer -a cuckatoo32 -o nicehash+tcp://grincuckatoo32.hk.nicehash.com:3383 -u btc_address.worker
+- **ezil**: nbminer -a ethash -o stratum+tcp://cn.ezil.me:5555 -u ETH_WALLET.ZIL_WALLET.WORKER --enable-dag-cache
+- **shardpool**: nbminer -a ethash -o stratum+tcp://ch1-zil.shardpool.io:3333 -u ETH_WALLET.WORKER -p ZIL_WALLET@cn.sparkpool.com:3333 -enable-dag-cache
 
 #### AE
 
 - **f2pool**: nbminer -a cuckoo_ae -o stratum+tcp://ae.f2pool.com:7898 -u ak_xxxxxxx.worker:passwd
-- **beepool**: nbminer -a cuckoo_ae -o stratum+tcp://ae-pool.beepool.org:9505 -u ak_xxxx.worker:passwd
 - **nicehash**: nbminer -a cuckoo_ae -o nicehash+tcp://cuckoocycle.eu.nicehash.com:3376 -u btc_address.test
-
-#### SERO
-
-- **beepool**: nbminer -a progpow_sero -o stratum+tcp://sero-pool.beepool.org:9515 -u wallet_address.worker:pswd
-- **f2pool**: nbminer -a progpow_sero -o stratum+tcp//sero.f2pool.com:4200 -u wallet_address.worker:pswd
 
 #### RVN
 
-- **beepool**: nbminer -a kawpow -o  stratum+tcp://rvn-pool.beepool.org:9531 -u wallet.worker:passwd
 - **f2pool**: nbminer -a kawpow -o  stratum+tcp://raven.f2pool.com:3636 -u wallet.worker:passwd
 - **minermore**: nbminer -a kawpow -o stratum+tcp://us.rvn.minermore.com:4501 -u wallet.worker:paswd
 - **bsod**: nbminer -a kawpow -o stratum+tcp://pool.bsod.pw:2640 -u wallet.worker:passwd
@@ -106,15 +87,12 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ERGO`, `AE`, `SERO`
 
 #### BEAM
 
-- **sparkpool**: nbminer -a beamv3 -o stratum+ssl://beam.sparkpool.com:2222 -u wallet.worker:passwd
-- **beepool**: nbminer -a beamv3 -o stratum+ssl://beam-pool.beepool.org:9507 -u wallet.worker:passwd
 - **leafpool**: nbminer -a beamv3 -o stratum+ssl://beam-eu.leafpool.com:3333 -u wallet.worker:passwd
 - **herominers**: nbminer -a beamv3 -o stratum+ssl://beam.herominers.com:10231 -u wallet.worker:passwd
 - **nicehash**: nbminer -a beamv3 -o stratum+tcp://beamv3.eu.nicehash.com:3387 -u btc_address.worker
 
 #### CONFLUX
 
-- **beepool**: nbminer -a octopus -o stratum+tcp://cfx-pool.beepool.org:9555 -u wallet.worker
 - **poolflare**: nbminer -a octopus -o stratum+tcp://cfx.ss.poolflare.com:3366 -u wallet.worker
 - **f2pool**: nbminer -a octopus -o stratum+tcp://cfx.f2pool.com:6800 -u username.worker
 - **woolypooly**: nbminer -a octopus -o  stratum+tcp://cfx.woolypooly.com:3094 -u wallet.worker
@@ -126,53 +104,121 @@ GPU Miner for `ETH`, `RVN`,  `GRIN`, `BEAM`, `CFX`, `ERGO`, `AE`, `SERO`
 - **woolypooly**: nbminer -a ergo -o stratum+tcp://erg.woolypooly.com:3100 -u wallet.worker
 - **nanopool**: nbminer -a ergo -o stratum+tcp://ergo-eu1.nanopool.org:11111 -u wallet.worker
 - **666pool**: nbminer -a ergo -o stratum+tcp://ergo.666pool.cn:9556 -u wallet.worker
+- **nicehash**: nbminer -a ergo -o stratum+tcp://autolykos.eu-west.nicehash.com:3390 -u wallet.worker
 
 ## CMD options：
 
-**nbminer -a algo -o protocol+socket_type://pool_host:pool_port -u wallet_address.worker:passwd**
+**nbminer -a algo -o protocol+socket_type://pool_host:pool_port -u wallet_address.worker -p passwd**
 
   * -h, --help    Displays this help.
+
   * -v, --version    Displays version information.
+
   * -c, --config \<config file path>    Use json format config file rather than cmd line options.
+
+  * --generate-config \<filename>    Generate a sample config json file.
+
   * -a, --algo \<algo>    Select mining algorithm
+
   * --api  \<host:port>    The endpoint for serving REST API.
+
   * -o, --url \<url>    Mining pool url.
+
   * -u, --user \<user>    User used in Mining pool, wallet address or username.
-      * Format: [username|wallet].workername:password
+
   * -o1, --url1 \<url> url for backup mining pool 1.
+
   * -u1, --user1 \<user> username for backup mining pool 1.
+
   * -o2, --url2 \<url> url for backup mining pool 2.
+
 * -u2, --user2 \<user> username for backup mining pool 2.
-* -di, --secondary-intensity \<intensity>    The relative intensity when dual mining.
-* -do, --secondary-url \<url>    ETH mining pool when dual mining.
-* -du, --secondary-user \<user>    ETH username when dual mining.
-* -do1, --secondary-url1 \<url>    Backup 1 ETH mining pool when dual mining.
-* -du1, --secondary-user1 \<user>    Backup 1 ETH username when dual mining.
-* -do2, --secondary-url2 \<url>    Backup 2 ETH mining pool when dual mining.
-* -du2, --secondary-user2 \<user>    Backup 2 ETH username when dual mining.
+
+* -p,  --password \<password>  password for mining pool
+
+* -p1,  --password1 \<password>  password for backup mining pool1
+
+* -p2,  --password2 \<password>  password for backup mining pool2
+
 * -d, --devices \<devices>    Specify GPU list to use. Format: "-d 0,1,2,3" to use first 4 GPU.
+
 * -i, --intensity \<intensities>    Comma-separated list of intensities (1 -100).
+
 * --strict-ssl    Check validity of certificate when use SSL connection.
+
 * --proxy    Socks5 proxy used to eastablish connection with pool, E.g. 127.0.0.1:1080
+
 * --cuckoo-intensity \<intensity>    Set intensity of cuckoo, cuckaroo, cuckatoo, [1, 12]. Smaller value means higher CPU usage to gain more hashrate. Set to 0 means autumatically adapt. Default: 0.
-* --cuckatoo-power-optimize    Set this option to reduce the range of power consumed by rig when minining with algo cuckatoo. This feature can reduce the chance of power supply shutdown caused by overpowered. Warning: Setting this option may cause drop on minining performance.
-* --temperature-limit \<temp-limit>    Set temperature limit of GPU in Celsius. If it exceeds, stop the GPU for 10 seconds and continue.
+
+* --temperature-limit, --tl \<temp-limit>    Set temperature limit of GPU, if exceeds, stop GPU.
+
+* --temperature-start, --ts \<temp-start>    Set cool-down temperature target if GPU is stopped by `temperature-limit`, default to \<temp-limit> - 5.
+
 * --log    Generate log file named `logs/log_<timestamp>.txt`.
+
 * --log-file \<filename>    Generate custom log file. Note: This option will override `--log`.
-* --no-nvml    Do not query cuda device health status.
-* --fidelity-timeframe \<timeframe>    Set timeframe for the calculation of fidelity, unit in hour. Default: 24.
-* --long-format    Use 'yyyy-MM-dd HH:mm:ss,zzz' for log time format.
+
+* --log-no-job    Set this option to disable 'New job' info in console and log file.
+
+* --log-cycle \<cycle>    Set to change the cycle of Summary table show in console and log, in seconds, defaults to 30.
+
+* --no-health    Do not query device health status. (Do not set if use LHR gpu)
+
+* --no-color    Do not use colorful output log in cmd line.
+
+* --long-format    Use 'yyMMdd HH:mm:ss,zzz' for log time format.
+
 * --verbose    Print communication data between miner and pool in log file.
+
 * --device-info    Print device cuda information.
-* --fee \<fee>    Change devfee in percentage, [0-5]. Set to '0' to turn off devfee with lower hashrate. Otherwise, devfee = max(set_value, def_value).
-* --generate-config \<filename>    Generate a sample config json file.
+
+* --device-info-json    Print out detailed information for every device in json format.
+
+* --fee \<fee>    Change devfee in percentage, [0-5]. Set to '0' to turn off devfee with lower hashrate. Otherwise, devfee = max(set_value, default_value).
+
 * --no-watchdog    Disable watchdog process.
+
 * --platform \<platform>    Choose platform，0: NVIDIA+AMD (default), 1: NVIDIA only, 2: AMD only
+
 * --share-check \<value>    If \<value> minutes without share, reboot miner, set 0 to disable. Default: 30
+
 * --no-interrupt    set this option will disable miner interrupting current GPU jobs when a new job coming from pool, will cause less power supply issue, but might lead to a bit higher stale ratio and reject shares.
+
 * --enable-igpu    AMD igpu is disabled by default, set this option to enable.
-* **--mt, --memory-tweak \<mode>    Memory timings optimize for Nvidia GDDR5 & GDDR5X gpus. range [1-6]. Higher value equals higher hashrate. Individual value can be set via comma seperated list. Power limit may need to be tuned up to get more hashrate. Higher reject share ratio can happen if mining rig hits high temperature, set lower value of `-mt` can reduce reject ratio. Under windows, a custom driver need to be installed when using `-mt`, can installed manually by option  `--driver`, or run nbminer.exe with admin privilege to perform auto-install. Under linux, admin priviledge is needed to run, `sudo ./nbminer -mt x`. `OhGodAnETHlargementPill` is not needed anymore if `-mt` is enabled when mining on 1080 & 1080ti GPUs.**
-* **--driver \<action>    Windows only option, install / uninstall driver for `memory tweak`. Run with admin priviledge. install: `nbminer.exe --driver install`, uninstall: `nbminer.exe --driver uninstall`. **
+
+* --mt, --memory-tweak \<mode>    Memory timings optimize for Nvidia GDDR5 & GDDR5X gpus. range [1-6]. Higher value equals higher hashrate. Individual value can be set via comma seperated list. Power limit may need to be tuned up to get more hashrate. Higher reject share ratio can happen if mining rig hits high temperature, set lower value of `-mt` can reduce reject ratio. Under windows, a custom driver need to be installed when using `-mt`, can installed manually by option  `--driver`, or run nbminer.exe with admin privilege to perform auto-install. Under linux, admin priviledge is needed to run, `sudo ./nbminer -mt x`. `OhGodAnETHlargementPill` is not needed anymore if `-mt` is enabled when mining on 1080 & 1080ti GPUs.
+
+* --driver \<action>    Windows only option, install / uninstall driver for `memory tweak`. Run with admin priviledge. 
+  	                           install: `nbminer.exe --driver install`, uninstall: `nbminer.exe --driver uninstall`. 
+
+* --power-limit, --pl \<limit>    Set power limit of GPU.
+
+  ​										   Set PL in watts: -pl 200.
+
+  ​										   Set PL in percetage of default PowerLimit: -pl 75%
+
+* --cclock \<clocks>    Set core clock in MHz.
+                                  Set clock offsets: -cclock 100, -cclock -500 (Windows only)
+                                  Set locked clock: -cclock @1500.
+
+* --mclock \<clocks>    Set memory clock offsets in MHz. (Windows only)
+
+* --lock-cv \<cv>    Set locked core voltages in mV. (Windows only)
+
+* --fan \<speed>    Set GPU fan speed in percentage. (Windows only)
+
+* --lhr \<modes>    Partial unlock hashrate for Nvidia LHR GPUs. [-1, 100]. 0: auto, -1: off.
+                            Others: set to 60 means tryiung to reach 60% of nonlocked max hashrate.
+
+* --lhr-mode, --lm \<modes>    LHR unlock mode for Nvidia LHR GPUs. 1 or 2. 
+  										     1: higher max hashrate, higher power consumption;
+                                               2: lower max hashrate, lower average power consumption
+
+* --lhr-reduce-value, --lrv \<value>  The amount of `-lhr` valud reduced each time when GPU hits LHR lock
+
+* --lhr-reduce-time, --lrt \<time>    The `-lhr` value will reduce by `-lhr-reduce-value` if the time since last lock
+
+* --lhr-reduce-limit, --lrl \<limit>  Limit the times of `-lhr` been reduced.
 
 ## API Reference
 
@@ -191,81 +237,229 @@ GET http://api_host:port/api/v1/status
     "miner": {
         "devices": [
             {
-                "accepted_shares": 2,
-                "accepted_shares2": 0,
-                "core_clock": 1620,
+                "accepted_shares": 4,
+                "core_clock": 1530,
                 "core_utilization": 100,
-                "fan": 47,
-                "fidelity1": 5.859799716605649,
-                "fidelity2": 0,
-                "hashrate": "217.1 M",
-                "hashrate2": "36.19 M",
-                "hashrate2_raw": 36190716.266428046,
-                "hashrate_raw": 217144297.59856823,
+                "fan": 59,
+                "hashrate": "61.50 M",
+                "hashrate2": "0.000 ",
+                "hashrate2_raw": 0,
+                "hashrate_raw": 61497708.17088159,
                 "id": 0,
-                "info": "GeForce RTX 2070",
-                "mem_clock": 6801,
-                "mem_utilization": 86,
+                "info": "NVIDIA GeForce RTX 3070",
+                "invalid_shares": 0,
+                "lhr": 0,
+                "memTemperature": -1,
+                "mem_clock": 8000,
+                "mem_utilization": 100,
                 "pci_bus_id": 1,
-                "power": 188,
+                "power": 131,
                 "rejected_shares": 0,
-                "rejected_shares2": 0,
-                "temperature": 72
+                "temperature": 57
             },
             {
-                "accepted_shares": 0,
-                "accepted_shares2": 0,
-                "core_clock": 1607,
+                "accepted_shares": 3,
+                "core_clock": 1035,
                 "core_utilization": 100,
-                "fan": 0,
-                "fidelity1": 0,
-                "fidelity2": 0,
-                "hashrate": "168.5 M",
-                "hashrate2": "42.11 M",
-                "hashrate2_raw": 42113955.19774488,
-                "hashrate_raw": 168455820.79097953,
+                "fan": 80,
+                "hashrate": "85.07 M",
+                "hashrate2": "0.000 ",
+                "hashrate2_raw": 0,
+                "hashrate_raw": 85069773.34248555,
                 "id": 1,
-                "info": "P102-100",
-                "mem_clock": 5508,
+                "info": "NVIDIA GeForce RTX 3080 Ti LHR",
+                "invalid_shares": 0,
+                "lhr": 74,
+                "memTemperature": 104,
+                "mem_clock": 10251,
                 "mem_utilization": 100,
-                "pci_bus_id": 4,
-                "power": 232,
+                "pci_bus_id": 48,
+                "power": 258,
                 "rejected_shares": 0,
-                "rejected_shares2": 0,
-                "temperature": 57
+                "temperature": 64
             }
         ],
-        "total_hashrate": "708 M",
-        "total_hashrate2": "164.4 M",
-        "total_hashrate2_raw": 164395439.13815895,
-        "total_hashrate_raw": 708044466.8349969,
-        "total_power_consume": 839
+        "total_hashrate": "146.6 M",
+        "total_hashrate2": "0.000 ",
+        "total_hashrate2_raw": 0,
+        "total_hashrate_raw": 146567481.51336715,
+        "total_power_consume": 389
     },
     "reboot_times": 0,
-    "start_time": 1586944619,
+    "start_time": 1637549633,
     "stratum": {
-        "accepted_shares": 2,
-        "accepted_shares2": 0,
-        "algorithm": "hns_ethash",
-        "difficulty": "8.59 G",
-        "difficulty2": "8.59 G",
-        "dual_mine": true,
-        "latency": 221,
-        "latency2": 0,
+        "accepted_shares": 7,
+        "algorithm": "ethash",
+        "difficulty": "4.295 G",
+        "dual_mine": false,
+        "invalid_shares": 0,
+        "latency": 217,
+        "pool_hashrate_10m": "217.9 M",
+        "pool_hashrate_24h": "217.9 M",
+        "pool_hashrate_4h": "217.9 M",
         "rejected_shares": 0,
-        "rejected_shares2": 0,
-        "url": "handshake.hk.nicehash.com:3384",
-        "url2": "daggerhashimoto.hk.nicehash.com:3353",
-        "use_ssl": false,
-        "use_ssl2": false,
-        "user": "3QHNv52ahdCyeYTGVYDPGjRzMpkknjjfAf.test",
-        "user2": "3QHNv52ahdCyeYTGVYDPGjRzMpkknjjfAf.test"
+        "url": "asia2.ethermine.org:5555",
+        "use_ssl": true,
+        "user": "0x4296116d44a4a7259B52B1A756e19083e675062A"
     },
-    "version": "30.0"
+    "version": "40.0"
 }
 ```
 
 ## Change Log
+
+#### v40.1(2021-11-24)
+
+- `fix`: `ethash` v40.0 false detected as LHR lock under lastest Nvidia driver versions.
+- `feature`: supports future LHR GPU models.
+
+#### v40.0(2021-11-23)
+
+- `feature`: Add overclock options for Nvidia GPUs, require admin priviledge, accept comma seprated list to specify for each GPU.
+
+  - `-power-limit, -pl`: Set power limitation of GPU. Examples:
+
+    ​								  Set PL in watts: `-pl 200`
+
+    ​                                  Set PL in percentage of default PowerLimit: `-pl 75%` (in Windows bat file, need dual `%` , `-pl 75%%`)
+
+  - `-cclock`: Set core clock in MHz. Examples:
+
+    ​		        Set clock offsets: `-cclock 100`  (Windows only)
+
+    ​				Set locked clocks: `-cclock @1500`
+
+  - `-mclock`: Set memory clock offsets in MHz (Windows only)
+
+  - `-lock-cv`: Set locked core voltage of GPU in mV, support Turing and newer GPUs. (Windows only)
+
+  - `-fan`: Set fan speed in percentage of GPU. (Windows only)
+
+- `feature`: Display current LHR value in console summary table and web monitor.
+
+- `feature`: `-proxy` options now support username & password for SOCKS5 proxy. format: `-proxy user:pass@host:port`
+
+- `feature`: Web monitor changes, delete unused information for dual mining.
+
+- `feature`: new options for log control.
+
+  - `-log-no-job`: Turn off the `New job` line in console.
+  - `-log-cycle`: Set to change the cycle of Summary table show in console and log, in seconds, defaults to 30.
+
+- `fix`: `ethash` Change CPU share validation to independent thread, lower performance degradation when mining at very low difficulty pools. 
+
+- `fix`: LHR lock detected failure on some cases.
+
+#### v39.7(2021-10-30)
+
+- `feature`: LHR mode support new GA104 version of 3060
+- `feature`: `ethash` Turn on LHR mode by default for 3060 v1, disabled by default only on windows 470.05
+- `fix`: `ethash` Fail to detect LHR lock on certain situation.
+- `fix`: Nvidia GPU power consumption issue on certain rig config.
+- `delete`: support for `sero`.
+
+#### v39.6(2021-10-27)
+
+- `optimize`:`ethash` LHR mode significant improvement:
+  - higher hashrate, more stable LHR unlocking for both `-lhr-mode 1` and `-lhr-mode 2`
+  - default LHR mode changes to `-lhr-mode 1` for LHR GPUs
+  - default values of LHR mode increased, `-lhr-mode 1` -> 74, `-lhr-mode 2` -> 71
+  - added 3 new options for LHR auto-tuning control, at most cases you don't need to change:
+    - `-lhr-reduce-value`: the amount to reduce `-lhr` value on a single `-lhr` tuning. defaults to `0.5`.
+    - `-lhr-reduce-time`: When LHR lock is detected, and the time since the last lock exceeds this value, the `-lhr` reduce will not perform. defaults to `15`, which means 15 minutes.
+    - `-lhr-reduce-limit`: the maximum number of times to reduce `-lhr` value, defaults to `6`.
+  - Typical hashrate: 3060Ti LHR on defaults options, 45.5 MH/s @ mem+1200 (win10)
+- `feature`: `ergo` also adapts the 3 new LHR options.
+- `feature`: add `-cmd-output` option to specify command line outpu to `stdout` or `stderr`, `1=stdout`, `2=stderr`, defaults to `2`.
+- `feature`: disable SNI extension for ssl connections by default, can be enabled with `-enable-sni` option
+- `delete`: `cuckatoo` & `cuckatoo32` support
+
+#### v39.5(2021-09-24)
+
+- `feature`: `ergo` new LHR mode for mining ERGO, enable it by manually adding `-lhr` option
+  - Same as LHR mode in `ethash`, `-lhr` value represents expected hashrate to reach `value` percent of non-LHR GPU's hashrate, supports comma-seperated list to indicate `-lhr` value for each GPU, and `-lhr -1` to disable.
+  - For GPUs with Hynix GDDR6 memory, LHR mode is not recommended for the poor performance.
+  - For GPUs with non-Hynix GDDR6 memory, e.g. 3060 3060ti 3070, start trying with `-lhr 85`
+  - For GPUs with GDDR6X memory, e.g. 3070ti 3080 3080ti, start trying with `-lhr 100`
+  - When mining lock is detected during ERGO mining, miner will automatically decrease `-lhr` value by 0.5, and continue mining. max decrease times is 10, which sums to 5.0
+- `optimize`: `ergo` Lower power consumption on Nvidia GPUs.
+
+#### v39.4(2021-09-21)
+
+- `fix`: `octopus` Fix error hash issue.
+
+#### v39.3(2021-09-18)
+
+- `feature`: `ethash` new low power LHR mode, add `-lhr-mode` option.
+  - `-lhr-mode 2` is the default LHR mode, which is the new lower power mode.
+  - `-lhr-mode 1` changes LHR mode to old version, which is the same as `v39.2`
+  - `-lhr-mode 1` is suitable for only power limit bounded GPU, can achieve higher hashrate than mode 2
+  - `-lhr-mode 2` is able to achieve lower average power and temperature. espacially suitable for GPUs with gddr6x e.g.3070ti, 3080, 3080ti. Power consumtion is fluctuating in this mode, better be used with locked core clock.
+- `feature`: `-lhr` support decimal value
+- `feature`: for LHR GPUs, when mining lock is detected, miner will automatically decrease `-lhr` value by 0.1, and continue mining. max decrease times is 10, which sums to 1.0
+- `fix`: higher CPU usage when set `--share-check 0`
+
+#### v39.2(2021-09-01)
+
+- `feature`: `ethash` added LHR lock detection and recovery in LHR mode.
+- `feature`: added `memory temperature` display  (if available) for Nvidia and AMD GPU under windows.
+- `fix`: `ergo` more robust protocol handle.
+
+**Note: LHR mode requires NVML library to work, please make sure the driver is installed properly and do not add `-no-health` argument.** 
+
+#### v39.1(2021-08-21)
+
+- `optimize`: `ethash` improve hashrate of `LHR` mode 1 - 2%，default value of `-lhr`changes from 68 to 69，manually set to 70 is also very promising.
+- `fix`: `LHR` mode support on windows driver 471.11
+- `fix`: `kawpow` issue of v39.0
+- `fix`: `Radeon vii` issue on windows driver 21.6.1+
+
+#### v39.0(2021-08-15)
+
+- `feature`: `ethash` New LHR mode for ETH mining on RTX 30 series LHR GPUs, supports Windows & Linux, able to get ~70% of maximum unlocked hashrate.
+  - This mode can be tuned by argument `-lhr`, only works for `ethash` right now.
+  - `-lhr` default to 0, meaning even if `-lhr` is not set, LHR mode with `-lhr 68` will be applied to LHR GPUs if certain GPUs are detected.
+  - Tune LHR mode by setting `-lhr <value>`, a specific value will tell miner **try to reach** `value` percent of maximum unlocker hashrate, e.g. `-lhr 68` will expect to get 68% of hashrate for same model non-LHR GPU.
+  - Higher `-lhr` value will results in higher hashrate, but has higher possibility to run into lock state, which will leads to much less hashrate.
+  - A good start tuning value is 68, which has been tested to be stable on most rig configurations.
+  - `-lhr` value can be set for each GPU by using comma separeted list, `-lhr 65,68,0,-1`, where `-1` means turn off LHR mode.
+
+#### v38.2(2021-07-27)
+
+- `fix`: AMD kernel error on certain GPUs with 21.6.1+ drivers under windows.
+
+#### v38.1(2021-06-29)
+
+- `fix`: high CPU usage in v38.0
+
+#### v38.0(2021-06-29)
+
+- `feature`: `ergo` add `mining.extranonce.subscribe` support.
+- `fix`: eliminate memory leak by NVML library for Nvidia driver 460+ on windows.
+- `fix`: `--enable-dag-cache` causes crash on certain situation.
+
+#### v37.6(2021-06-03)
+
+- `fix`: `ethash` `--enable-dag-cache` cause crash on AMD GPUs when switch DAG file.
+- `fix`: `ergo` support on `AMD Vega` GPUs.
+
+#### v37.5(2021-05-21)
+
+​    changes from 37.3
+
+- `new algo`: `ergo` for AMD GPU, can be faster with ETH mining timings
+- `optimize`: `ergo` slightly improce hashrate on Nvidia GPUs
+- `feature`: use `--temperature-limit` & `--temperature-start` to protect GPU from overheat, detail in readme.md
+
+#### v37.3(2021-05-06)
+
+- `feature`: add option `--enable-dag-cache` to allow an extra `DAG` for different `epoch` cached in GPU memory, useful for `ETH+ZIL` mining and mining on `NiceHash`.
+
+#### v37.2(2021-04-24)
+
+- `feature`: add option `-p -p1 -p2` for setting `password` of mining pool, old format `-u wallet.worker:passwd` is disabled，`:` can be added as part of worker or wallet
+- `optimize`: `ethash` minor hashrate improvement on RDNA GPUs
+- `fix`: compatibility issue on lasted AMD `21.4.1` driver.
 
 #### v37.1(2021-03-25)
 
