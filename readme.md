@@ -206,19 +206,6 @@ Be aware when you download NBMiner binaries from other sources.
 
 * --fan \<speed>    Set GPU fan speed in percentage. (Windows only)
 
-* --lhr \<modes>    Partial unlock hashrate for Nvidia LHR GPUs. [-1, 100]. 0: auto, -1: off.
-                            Others: set to 60 means tryiung to reach 60% of nonlocked max hashrate.
-
-* --lhr-mode, --lm \<modes>    LHR unlock mode for Nvidia LHR GPUs. 1 or 2. 
-  										     1: higher max hashrate, higher power consumption;
-                                               2: lower max hashrate, lower average power consumption
-
-* --lhr-reduce-value, --lrv \<value>  The amount of `-lhr` valud reduced each time when GPU hits LHR lock
-
-* --lhr-reduce-time, --lrt \<time>    The `-lhr` value will reduce by `-lhr-reduce-value` if the time since last lock
-
-* --lhr-reduce-limit, --lrl \<limit>  Limit the times of `-lhr` been reduced.
-
 ## API Reference
 
 ### Web Monitor
@@ -306,6 +293,14 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v41.0(2022-05-08)
+
+- `feature`: `ethash` 100% LHR unlocker added, for both Windows & Linux.
+  - Run nbminer with admin priviledge to get 100% LHR unlock
+  - Tested and verified on drivers: `512.15` for Windows, `510.60` for Linux.
+  - Other driver versions may have some compatibility issue.
+  - Previous LHR mode are removed.
 
 #### v40.1(2021-11-24)
 
