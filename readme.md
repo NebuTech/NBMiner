@@ -20,6 +20,7 @@ Be aware when you download NBMiner binaries from other sources.
 
 | version | Windows                                                      | Linux                                                        |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 41.0    | [NBMiner_41.0_Win.zip](https://dl.nbminer.com/NBMiner_41.0_Win.zip) | [NBMiner_41.0_Linux.tgz](https://dl.nbminer.com/NBMiner_41.0_Linux.tgz) |
 | 40.1    | [NBMiner_40.1_Win.zip](https://dl.nbminer.com/NBMiner_40.1_Win.zip) | [NBMiner_40.1_Linux.tgz](https://dl.nbminer.com/NBMiner_40.1_Linux.tgz) |
 | 39.7    | [NBMiner_39.7_Win.zip](https://dl.nbminer.com/NBMiner_39.7_Win.zip) | [NBMiner_39.7_Linux.tgz](https://dl.nbminer.com/NBMiner_39.7_Linux.tgz) |
 | 39.6    | [NBMiner_39.6_Win.zip](https://dl.nbminer.com/NBMiner_39.6_Win.zip) | [NBMiner_39.6_Linux.tgz](https://dl.nbminer.com/NBMiner_39.6_Linux.tgz) |
