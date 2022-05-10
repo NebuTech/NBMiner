@@ -20,6 +20,7 @@ Be aware when you download NBMiner binaries from other sources.
 
 | version | Windows                                                      | Linux                                                        |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 41.3    | [NBMiner_41.3_Win.zip](https://dl.nbminer.com/NBMiner_41.3_Win.zip) | [NBMiner_41.3_Linux.tgz](https://dl.nbminer.com/NBMiner_41.3_Linux.tgz) |
 | 41.0    | [NBMiner_41.0_Win.zip](https://dl.nbminer.com/NBMiner_41.0_Win.zip) | [NBMiner_41.0_Linux.tgz](https://dl.nbminer.com/NBMiner_41.0_Linux.tgz) |
 | 40.1    | [NBMiner_40.1_Win.zip](https://dl.nbminer.com/NBMiner_40.1_Win.zip) | [NBMiner_40.1_Linux.tgz](https://dl.nbminer.com/NBMiner_40.1_Linux.tgz) |
 | 39.7    | [NBMiner_39.7_Win.zip](https://dl.nbminer.com/NBMiner_39.7_Win.zip) | [NBMiner_39.7_Linux.tgz](https://dl.nbminer.com/NBMiner_39.7_Linux.tgz) |
@@ -294,6 +295,13 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v41.3(2022-05-10)
+
+- `fix`: `ethash` Improve stability of LHR unlocker.
+- `fix`: `ethash` Fix crash on AMD GPUs
+- `fix`: `ethash` Improve compatibility on rigs with small system memory.
+- `note`: **Recommend driver versions: `512.15` for Windows, `510.60` for Linux.**
 
 #### v41.0(2022-05-08)
 
