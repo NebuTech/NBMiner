@@ -20,18 +20,17 @@ Be aware when you download NBMiner binaries from other sources.
 
 | version | Windows                                                      | Linux                                                        |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 41.5    | [NBMiner_41.5_Win.zip](https://dl.nbminer.com/NBMiner_41.5_Win.zip) | [NBMiner_41.5_Linux.tgz](https://dl.nbminer.com/NBMiner_41.5_Linux.tgz) |
 | 41.3    | [NBMiner_41.3_Win.zip](https://dl.nbminer.com/NBMiner_41.3_Win.zip) | [NBMiner_41.3_Linux.tgz](https://dl.nbminer.com/NBMiner_41.3_Linux.tgz) |
 | 41.0    | [NBMiner_41.0_Win.zip](https://dl.nbminer.com/NBMiner_41.0_Win.zip) | [NBMiner_41.0_Linux.tgz](https://dl.nbminer.com/NBMiner_41.0_Linux.tgz) |
 | 40.1    | [NBMiner_40.1_Win.zip](https://dl.nbminer.com/NBMiner_40.1_Win.zip) | [NBMiner_40.1_Linux.tgz](https://dl.nbminer.com/NBMiner_40.1_Linux.tgz) |
-| 39.7    | [NBMiner_39.7_Win.zip](https://dl.nbminer.com/NBMiner_39.7_Win.zip) | [NBMiner_39.7_Linux.tgz](https://dl.nbminer.com/NBMiner_39.7_Linux.tgz) |
-| 39.6    | [NBMiner_39.6_Win.zip](https://dl.nbminer.com/NBMiner_39.6_Win.zip) | [NBMiner_39.6_Linux.tgz](https://dl.nbminer.com/NBMiner_39.6_Linux.tgz) |
 
 - Download older versions from [github releases](https://github.com/NebuTech/NBMiner/releases)
 
 ## Features
 
 * Support Windows & Linux.
-* Nvidia LHR GPU ethash partial unlock.
+* **Nvidia LHR GPU 100% unlock for ETH mining.**
 * Support backup mining pool configuration.
 * Support SSL connection to mining pools.
 * Dev Fee: 
@@ -295,6 +294,12 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v41.5(2022-05-13)
+
+- `feature`: `ethash` Add 90% LHR unlocker for `3080 12G` & `3050`.
+- `feature`: `ergo` Add LHR unlocker support.
+- `fix`: `ethash` LHR unlocker improve stability.
 
 #### v41.3(2022-05-10)
 
