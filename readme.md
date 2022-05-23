@@ -20,6 +20,7 @@ Be aware when you download NBMiner binaries from other sources.
 
 | version | Windows                                                      | Linux                                                        |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 42.0    | [NBMiner_42.0_Win.zip](https://dl.nbminer.com/NBMiner_42.0_Win.zip) | [NBMiner_42.0_Linux.tgz](https://dl.nbminer.com/NBMiner_42.0_Linux.tgz) |
 | 41.5    | [NBMiner_41.5_Win.zip](https://dl.nbminer.com/NBMiner_41.5_Win.zip) | [NBMiner_41.5_Linux.tgz](https://dl.nbminer.com/NBMiner_41.5_Linux.tgz) |
 | 41.3    | [NBMiner_41.3_Win.zip](https://dl.nbminer.com/NBMiner_41.3_Win.zip) | [NBMiner_41.3_Linux.tgz](https://dl.nbminer.com/NBMiner_41.3_Linux.tgz) |
 | 41.0    | [NBMiner_41.0_Win.zip](https://dl.nbminer.com/NBMiner_41.0_Win.zip) | [NBMiner_41.0_Linux.tgz](https://dl.nbminer.com/NBMiner_41.0_Linux.tgz) |
@@ -43,12 +44,12 @@ Be aware when you download NBMiner binaries from other sources.
 
 ## Requirements
 
-- **NVIDIA Driver version: >= 384**.
+- **NVIDIA Driver version: >= 410**.
 - Nvidia GPU Specific Requirements:
 
 | Algorithm        |  Coin   | Compute Capability | Memory (Win7 & Linux) | Memory (Win10) |
 | :--------------- | :-----: | :----------------: | :-------------------: | :------------: |
-| ethash           |   ETH   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB      |
+| ethash           |   ETH   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          6GB          |      6GB      |
 | cuckoo_ae        |   AE    | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB       |
 | kawpow           |   RVN   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          3GB          |      4GB      |
 | beamv3 | BEAM | 6.0, 6.1, 7.0, 7.5 | 3GB | 3GB |
@@ -186,10 +187,7 @@ Be aware when you download NBMiner binaries from other sources.
 
 * --enable-igpu    AMD igpu is disabled by default, set this option to enable.
 
-* --mt, --memory-tweak \<mode>    Memory timings optimize for Nvidia GDDR5 & GDDR5X gpus. range [1-6]. Higher value equals higher hashrate. Individual value can be set via comma seperated list. Power limit may need to be tuned up to get more hashrate. Higher reject share ratio can happen if mining rig hits high temperature, set lower value of `-mt` can reduce reject ratio. Under windows, a custom driver need to be installed when using `-mt`, can installed manually by option  `--driver`, or run nbminer.exe with admin privilege to perform auto-install. Under linux, admin priviledge is needed to run, `sudo ./nbminer -mt x`. `OhGodAnETHlargementPill` is not needed anymore if `-mt` is enabled when mining on 1080 & 1080ti GPUs.
-
-* --driver \<action>    Windows only option, install / uninstall driver for `memory tweak`. Run with admin priviledge. 
-  	                           install: `nbminer.exe --driver install`, uninstall: `nbminer.exe --driver uninstall`. 
+* --mt, --memory-tweak \<mode>    Memory timings optimize for Nvidia GDDR5 & GDDR5X gpus. range [1-6]. Higher value equals higher hashrate. Individual value can be set via comma seperated list. Power limit may need to be tuned up to get more hashrate. Higher reject share ratio can happen if mining rig hits high temperature, set lower value of `-mt` can reduce reject ratio. 
 
 * --power-limit, --pl \<limit>    Set power limit of GPU.
 
@@ -294,6 +292,18 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v42.0(2020-05-23)
+
+- `feature`: `ethash` Extend LHR unlocker work with old driver versions. All previous drivers should work until `515.x`.
+- `fix`: `ethash` Improve LHR unlocker stability under Linux.
+- `optimize`: `ethash` small hashrate improvement on Nvidia GPUs.
+- `feature`: Add `GDDR6X` memory temp in summary table for Linux.
+- `feature`: Add `GPU RAM type` and `GPU RAM vendor` in log.
+- `feature`: Add Nvidia driver versoin in summary table.
+- `feature`: If `Overclock` applies through `nbminer`, reset settings to stock when miner exit.
+- `feature`: `-mt` option on windows does not require custom driver anymore (admin priviledge is required).
+- **`NOTE`: NBMiner versions older than v39.5 (not included) will run into issue when ETH reaches `EPOCH 520` (Approx mid September). Please make sure to upgrade to a newer version before that if ETH is still with POW.**
 
 #### v41.5(2022-05-13)
 
