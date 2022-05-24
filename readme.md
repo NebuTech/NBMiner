@@ -20,6 +20,7 @@ Be aware when you download NBMiner binaries from other sources.
 
 | version | Windows                                                      | Linux                                                        |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 42.1    | [NBMiner_42.1_Win.zip](https://dl.nbminer.com/NBMiner_42.1_Win.zip) | [NBMiner_42.1_Linux.tgz](https://dl.nbminer.com/NBMiner_42.1_Linux.tgz) |
 | 42.0    | [NBMiner_42.0_Win.zip](https://dl.nbminer.com/NBMiner_42.0_Win.zip) | [NBMiner_42.0_Linux.tgz](https://dl.nbminer.com/NBMiner_42.0_Linux.tgz) |
 | 41.5    | [NBMiner_41.5_Win.zip](https://dl.nbminer.com/NBMiner_41.5_Win.zip) | [NBMiner_41.5_Linux.tgz](https://dl.nbminer.com/NBMiner_41.5_Linux.tgz) |
 | 41.3    | [NBMiner_41.3_Win.zip](https://dl.nbminer.com/NBMiner_41.3_Win.zip) | [NBMiner_41.3_Linux.tgz](https://dl.nbminer.com/NBMiner_41.3_Linux.tgz) |
@@ -293,7 +294,11 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
-#### v42.0(2020-05-23)
+#### v42.1(2022-05-24)
+
+- `fix`: `ethash` Linux LHR unlocker can not unlock on certain GPUs.
+
+#### v42.0(2022-05-23)
 
 - `feature`: `ethash` Extend LHR unlocker work with old driver versions. All previous drivers should work until `515.x`.
 - `fix`: `ethash` Improve LHR unlocker stability under Linux.
