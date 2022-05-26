@@ -20,8 +20,7 @@ Be aware when you download NBMiner binaries from other sources.
 
 | version | Windows                                                      | Linux                                                        |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 42.1    | [NBMiner_42.1_Win.zip](https://dl.nbminer.com/NBMiner_42.1_Win.zip) | [NBMiner_42.1_Linux.tgz](https://dl.nbminer.com/NBMiner_42.1_Linux.tgz) |
-| 42.0    | [NBMiner_42.0_Win.zip](https://dl.nbminer.com/NBMiner_42.0_Win.zip) | [NBMiner_42.0_Linux.tgz](https://dl.nbminer.com/NBMiner_42.0_Linux.tgz) |
+| 42.2    | [NBMiner_42.2_Win.zip](https://dl.nbminer.com/NBMiner_42.2_Win.zip) | [NBMiner_42.2_Linux.tgz](https://dl.nbminer.com/NBMiner_42.2_Linux.tgz) |
 | 41.5    | [NBMiner_41.5_Win.zip](https://dl.nbminer.com/NBMiner_41.5_Win.zip) | [NBMiner_41.5_Linux.tgz](https://dl.nbminer.com/NBMiner_41.5_Linux.tgz) |
 | 41.3    | [NBMiner_41.3_Win.zip](https://dl.nbminer.com/NBMiner_41.3_Win.zip) | [NBMiner_41.3_Linux.tgz](https://dl.nbminer.com/NBMiner_41.3_Linux.tgz) |
 | 41.0    | [NBMiner_41.0_Win.zip](https://dl.nbminer.com/NBMiner_41.0_Win.zip) | [NBMiner_41.0_Linux.tgz](https://dl.nbminer.com/NBMiner_41.0_Linux.tgz) |
@@ -206,6 +205,9 @@ Be aware when you download NBMiner binaries from other sources.
 
 * --fan \<speed>    Set GPU fan speed in percentage. (Windows only)
 
+* --lhr-mode \<mode>    LHR unlock mode. Mode 1 better compatibility (default mode), Mode 2 better stability.
+
+
 ## API Reference
 
 ### Web Monitor
@@ -294,18 +296,20 @@ GET http://api_host:port/api/v1/status
 
 ## Change Log
 
-#### v42.1(2022-05-24)
+#### v42.2(2022-05-26)
 
-- `fix`: `ethash` Linux LHR unlocker can not unlock on certain GPUs.
+**Compared to v41.5**
 
-#### v42.0(2022-05-23)
-
-- `feature`: `ethash` Extend LHR unlocker work with old driver versions. All previous drivers should work until `515.x`.
-- `fix`: `ethash` Improve LHR unlocker stability under Linux.
+- `feature`: `ethash` Add a new option `--lhr-mode` to select LHR unlock mode.
+  - `--lhr-mode 1` is the default mode and is the same as which in `v41.5`
+  - Try to use `--lhr-mode 2` if stability issue encountered in `mode 1`, for json config, use `"lhr-mode": "2"`
+  - `LHR v3` GPUs can only use `mode 1`
+- `feature`: `ethash` Extend LHR unlocker to work with old driver versions. Starting from `Windows v512.95` and `Linux v515.x`, LHR unlocker no longer works, make sure not to use these new driver versions.
 - `optimize`: `ethash` small hashrate improvement on Nvidia GPUs.
 - `feature`: Add `GDDR6X` memory temp in summary table for Linux.
 - `feature`: Add `GPU RAM type` and `GPU RAM vendor` in log.
 - `feature`: Add Nvidia driver versoin in summary table.
+- `feature`: `ethash` Add `eth_submitHashrate` for `nicehash (EthereumStratum)` protocol.
 - `feature`: If `Overclock` applies through `nbminer`, reset settings to stock when miner exit.
 - `feature`: `-mt` option on windows does not require custom driver anymore (admin priviledge is required).
 - **`NOTE`: NBMiner versions older than v39.5 (not included) will run into issue when ETH reaches `EPOCH 520` (Approx mid September). Please make sure to upgrade to a newer version before that if ETH is still with POW.**
