@@ -68,6 +68,7 @@ Be aware when you download NBMiner binaries from other sources.
 - **herominers:** nbminer -a ethash -o ethproxy+tcp://ethereum.herominers.com:10201 -u 0x12343bdgf.worker
 - **nicehash:** nbminer -a ethash -o nicehash+tcp://daggerhashimoto.eu.nicehash.com:3353 -u btc_address.worker
 - **miningpoolhub**: nbminer -a ethash -o nicehash+tcp://asia.ethash-hub.miningpoolhub.com:20535 -u username.worker
+- **cruxpool**: nbminer -a ethash -o stratum+tcp://eth-us.cruxpool.com:5555 -u username.worker
 
 #### ETH+ZIL:
 
@@ -85,12 +86,14 @@ Be aware when you download NBMiner binaries from other sources.
 - **minermore**: nbminer -a kawpow -o stratum+tcp://us.rvn.minermore.com:4501 -u wallet.worker:paswd
 - **bsod**: nbminer -a kawpow -o stratum+tcp://pool.bsod.pw:2640 -u wallet.worker:passwd
 - **woolypooly**: nbminer -a kawpow -o stratum+tcp://rvn.woolypooly.com:55555 -u wallet.worker:passwd 
+- **cruxpool**: nbminer -a kawpow -o stratum+tcp://rvn.cruxpool.com:9999 -u username.worker:passwd
 
 #### BEAM
 
 - **leafpool**: nbminer -a beamv3 -o stratum+ssl://beam-eu.leafpool.com:3333 -u wallet.worker:passwd
 - **herominers**: nbminer -a beamv3 -o stratum+ssl://beam.herominers.com:10231 -u wallet.worker:passwd
 - **nicehash**: nbminer -a beamv3 -o stratum+tcp://beamv3.eu.nicehash.com:3387 -u btc_address.worker
+- **cruxpool**: nbminer -a beamv3 -o stratum+ssl://beam.cruxpool.com:3333 -u username.worker
 
 #### CONFLUX
 
@@ -106,6 +109,7 @@ Be aware when you download NBMiner binaries from other sources.
 - **nanopool**: nbminer -a ergo -o stratum+tcp://ergo-eu1.nanopool.org:11111 -u wallet.worker
 - **666pool**: nbminer -a ergo -o stratum+tcp://ergo.666pool.cn:9556 -u wallet.worker
 - **nicehash**: nbminer -a ergo -o stratum+tcp://autolykos.eu-west.nicehash.com:3390 -u wallet.worker
+- **cruxpool**: nbminer -a ergo -o stratum+tcp://ergo.cruxpool.com:4444 -u wallet.worker
 
 ## CMD options：
 
