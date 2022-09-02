@@ -20,6 +20,7 @@ Be aware when you download NBMiner binaries from other sources.
 
 | version | Windows                                                      | Linux                                                        |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 42.3    | [NBMiner_42.3_Win.zip](https://dl.nbminer.com/NBMiner_42.3_Win.zip) | [NBMiner_42.3_Linux.tgz](https://dl.nbminer.com/NBMiner_42.3_Linux.tgz) |
 | 42.2    | [NBMiner_42.2_Win.zip](https://dl.nbminer.com/NBMiner_42.2_Win.zip) | [NBMiner_42.2_Linux.tgz](https://dl.nbminer.com/NBMiner_42.2_Linux.tgz) |
 | 41.5    | [NBMiner_41.5_Win.zip](https://dl.nbminer.com/NBMiner_41.5_Win.zip) | [NBMiner_41.5_Linux.tgz](https://dl.nbminer.com/NBMiner_41.5_Linux.tgz) |
 | 41.3    | [NBMiner_41.3_Win.zip](https://dl.nbminer.com/NBMiner_41.3_Win.zip) | [NBMiner_41.3_Linux.tgz](https://dl.nbminer.com/NBMiner_41.3_Linux.tgz) |
@@ -31,7 +32,7 @@ Be aware when you download NBMiner binaries from other sources.
 ## Features
 
 * Support Windows & Linux.
-* **Nvidia LHR GPU 100% unlock for ETH mining.**
+* **Nvidia LHR GPU 100% unlock for ETH & ETC mining.**
 * Support backup mining pool configuration.
 * Support SSL connection to mining pools.
 * Dev Fee: 
@@ -49,9 +50,10 @@ Be aware when you download NBMiner binaries from other sources.
 
 | Algorithm        |  Coin   | Compute Capability | Memory (Win7 & Linux) | Memory (Win10) |
 | :--------------- | :-----: | :----------------: | :-------------------: | :------------: |
-| ethash           |   ETH   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          6GB          |      6GB      |
+| ethash |   ETH   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          6GB          |      6GB      |
+| etchash |   ETC   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          4GB          |      4GB      |
 | cuckoo_ae        |   AE    | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          5GB          |      6GB       |
-| kawpow           |   RVN   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          3GB          |      4GB      |
+| kawpow           |   RVN   | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 |          4GB          |      4GB      |
 | beamv3 | BEAM | 6.0, 6.1, 7.0, 7.5 | 3GB | 3GB |
 | octopus | CFX | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 | 5GB | 6GB |
 | ergo | ERGO | 6.0, 6.1, 7.0, 7.5, 8.0,8.6 | 3GB | 3GB |
@@ -66,10 +68,17 @@ Be aware when you download NBMiner binaries from other sources.
 - **f2pool:** nbminer -a ethash -o ethproxy+tcp://eth.f2pool.com:8008 -u 0x12343bdgf.worker
 - **nanopool:** nbminer -a ethash -o ethproxy+tcp://eth-asia1.nanopool.org:9999 -u 0x12343bdgf.worker
 - **herominers:** nbminer -a ethash -o ethproxy+tcp://ethereum.herominers.com:10201 -u 0x12343bdgf.worker
-- **nicehash:** nbminer -a ethash -o nicehash+tcp://daggerhashimoto.eu.nicehash.com:3353 -u btc_address.worker
+- **nicehash:** nbminer -a ethash -o nicehash+tcp://daggerhashimoto.auto.nicehash.com:9200 -u btc_address.worker
 - **miningpoolhub**: nbminer -a ethash -o nicehash+tcp://asia.ethash-hub.miningpoolhub.com:20535 -u username.worker
 
-#### ETH+ZIL:
+#### ETC
+
+- **ethermine**: nbminer -a etchash -o stratum+tcp://asia1-etc.ethermine.org:4444 -u wallet.worker
+- **nicehash**: nbminer -a etchash -o nicehash+tcp://etchash.auto.nicehash.com:9200 -u btc_address.worker
+- **f2pool**: nbminer -a etchash -o stratum+tcp://etc.f2pool.com:8118 -u wallet.worker
+- **2miners**: nbminer -a etchash -o stratum+tcp://etc.2miners.com:1010 -u wallet.worker
+
+#### ETH+ZIL
 
 - **ezil**: nbminer -a ethash -o stratum+tcp://cn.ezil.me:5555 -u ETH_WALLET.ZIL_WALLET.WORKER --enable-dag-cache
 - **shardpool**: nbminer -a ethash -o stratum+tcp://ch1-zil.shardpool.io:3333 -u ETH_WALLET.WORKER -p ZIL_WALLET@cn.sparkpool.com:3333 -enable-dag-cache
@@ -97,7 +106,7 @@ Be aware when you download NBMiner binaries from other sources.
 - **poolflare**: nbminer -a octopus -o stratum+tcp://cfx.ss.poolflare.com:3366 -u wallet.worker
 - **f2pool**: nbminer -a octopus -o stratum+tcp://cfx.f2pool.com:6800 -u username.worker
 - **woolypooly**: nbminer -a octopus -o  stratum+tcp://cfx.woolypooly.com:3094 -u wallet.worker
-- **nicehash**: nbminer -a octopus -o stratum+tcp://octopus.eu.nicehash.com:3389 -u btc_address.worker
+- **nicehash**: nbminer -a octopus -o stratum+tcp://octopus.auto.nicehash.com:9200 -u btc_address.worker
 
 #### ERGO
 
@@ -105,7 +114,7 @@ Be aware when you download NBMiner binaries from other sources.
 - **woolypooly**: nbminer -a ergo -o stratum+tcp://erg.woolypooly.com:3100 -u wallet.worker
 - **nanopool**: nbminer -a ergo -o stratum+tcp://ergo-eu1.nanopool.org:11111 -u wallet.worker
 - **666pool**: nbminer -a ergo -o stratum+tcp://ergo.666pool.cn:9556 -u wallet.worker
-- **nicehash**: nbminer -a ergo -o stratum+tcp://autolykos.eu-west.nicehash.com:3390 -u wallet.worker
+- **nicehash**: nbminer -a ergo -o stratum+tcp://autolykos.auto.nicehash.com:9200 -u wallet.worker
 
 ## CMD options：
 
@@ -295,6 +304,10 @@ GET http://api_host:port/api/v1/status
 ```
 
 ## Change Log
+
+#### v42.3(2022-09-02)
+
+- `etchash`: Add support for NiceHash ETC pool.
 
 #### v42.2(2022-05-26)
 
