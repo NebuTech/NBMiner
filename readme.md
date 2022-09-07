@@ -70,6 +70,7 @@ Be aware when you download NBMiner binaries from other sources.
 - **herominers:** nbminer -a ethash -o ethproxy+tcp://ethereum.herominers.com:10201 -u 0x12343bdgf.worker
 - **nicehash:** nbminer -a ethash -o nicehash+tcp://daggerhashimoto.auto.nicehash.com:9200 -u btc_address.worker
 - **miningpoolhub**: nbminer -a ethash -o nicehash+tcp://asia.ethash-hub.miningpoolhub.com:20535 -u username.worker
+- **binance:** nbminer -a ethash -o ethproxy+tcp://ethash.poolbinance.com:8888 -u account.worker
 
 #### ETC
 
