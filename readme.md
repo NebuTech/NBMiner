@@ -71,12 +71,14 @@ Be aware when you download NBMiner binaries from other sources.
 - **nicehash:** nbminer -a ethash -o nicehash+tcp://daggerhashimoto.auto.nicehash.com:9200 -u btc_address.worker
 - **miningpoolhub**: nbminer -a ethash -o nicehash+tcp://asia.ethash-hub.miningpoolhub.com:20535 -u username.worker
 
+
 #### ETC
 
 - **ethermine**: nbminer -a etchash -o stratum+tcp://asia1-etc.ethermine.org:4444 -u wallet.worker
 - **nicehash**: nbminer -a etchash -o nicehash+tcp://etchash.auto.nicehash.com:9200 -u btc_address.worker
 - **f2pool**: nbminer -a etchash -o stratum+tcp://etc.f2pool.com:8118 -u wallet.worker
 - **2miners**: nbminer -a etchash -o stratum+tcp://etc.2miners.com:1010 -u wallet.worker
+- **okminer**: nbminer：nbminer -a etchash -o stratum+tcp://etc.okminer-pool.com:1777 -u wallet.worker -log
 
 #### ETH+ZIL
 
@@ -93,7 +95,8 @@ Be aware when you download NBMiner binaries from other sources.
 - **f2pool**: nbminer -a kawpow -o  stratum+tcp://raven.f2pool.com:3636 -u wallet.worker:passwd
 - **minermore**: nbminer -a kawpow -o stratum+tcp://us.rvn.minermore.com:4501 -u wallet.worker:paswd
 - **bsod**: nbminer -a kawpow -o stratum+tcp://pool.bsod.pw:2640 -u wallet.worker:passwd
-- **woolypooly**: nbminer -a kawpow -o stratum+tcp://rvn.woolypooly.com:55555 -u wallet.worker:passwd 
+- **woolypooly**: nbminer -a kawpow -o stratum+tcp://rvn.woolypooly.com:55555 -u wallet.worker:passwd
+- **okminer**: nbminer -a kawpow -o stratum+tcp://rvn.okminer-pool.com:1997 -u wallet.worker
 
 #### BEAM
 
@@ -107,6 +110,7 @@ Be aware when you download NBMiner binaries from other sources.
 - **f2pool**: nbminer -a octopus -o stratum+tcp://cfx.f2pool.com:6800 -u username.worker
 - **woolypooly**: nbminer -a octopus -o  stratum+tcp://cfx.woolypooly.com:3094 -u wallet.worker
 - **nicehash**: nbminer -a octopus -o stratum+tcp://octopus.auto.nicehash.com:9200 -u btc_address.worker
+- **okminer**: nbminer -a octopus -o stratum+tcp://cfx.okminer-pool.com:1400 -u wallet.worker
 
 #### ERGO
 
@@ -115,6 +119,7 @@ Be aware when you download NBMiner binaries from other sources.
 - **nanopool**: nbminer -a ergo -o stratum+tcp://ergo-eu1.nanopool.org:11111 -u wallet.worker
 - **666pool**: nbminer -a ergo -o stratum+tcp://ergo.666pool.cn:9556 -u wallet.worker
 - **nicehash**: nbminer -a ergo -o stratum+tcp://autolykos.auto.nicehash.com:9200 -u wallet.worker
+- **okminer**: nbminer -a ergo -o stratum+tcp://erg.okminer-pool.com:1680 -u wallet.worker -log
 
 ## CMD options：
 
